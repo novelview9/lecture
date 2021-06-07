@@ -7,11 +7,16 @@
     "start": "next start"
   },
   "dependencies": {
+    "css-to-style": "^1.4.0",
+    "lodash": "^4.17.21",
     "next": "latest",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-is": "^17.0.2",
-    "styled-components": "^5.2.3"
+    "react-rnd": "^10.3.3",
+    "shortid": "^2.2.16",
+    "styled-components": "^5.2.3",
+    "styled-reset": "^4.3.4"
   },
   "devDependencies": {
     "babel-plugin-styled-components": "^1.12.0"

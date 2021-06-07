@@ -1,0 +1,68 @@
+[
+    {
+        "shot_id": 1,
+        "column": 1,
+        "bg_image": "/bg_video5_5_1_shot11.jpg",
+        "start_time": 0,
+        "end_time": 7.44,
+        "learning_material": [
+            {
+                "label": "text_box",
+                "box_info_original": [147, 417, 796, 69],
+
+                "in_column": 1,
+                "order": 2,
+
+                "text_content": "* Forecast Accuracy: the further in advance of demand, the more inaccurate a forecast is.",
+                "original_font_size": 20,
+                "avail_font_size": 22,
+                "typeface": "Arial",
+                "color_font": "(18, 18, 18)",
+                "color_bg": "(253, 253, 253)"
+            },
+            {
+                "label": "picture",
+                "box_info_original": [158, 183, 828, 204],
+                "path": "./input/video5_5_1_shot11_DE10022_picture.png",
+
+                "in_column": 1,
+                "order": 1,
+
+                "avail_size": 1.3
+            },
+            {
+                "label": "title",
+                "box_info_original": [151, 122, 388, 49],
+
+                "in_column": 1
+            }
+        ],
+
+        "template": [
+            {
+                "label": "header",
+                "box_info_original": [170, 7, 290, 58],
+                "path": "./input/video5_5_1_shot11_DE10020_header.png"
+            },
+            {
+                "label": "header",
+                "box_info_original": [692, 49, 222, 15],
+                "path": "./input/video5_5_1_shot11_DE10021_header.png"
+            },
+            {
+                "label": "footer",
+                "box_info_original": [138, 681, 66, 16],
+                "path": "./input/video5_5_1_shot11_DE10025_footer.png"
+            }
+        ],
+
+        "instructor": {
+            "box_info_original": [986, 386, 294, 334],
+            "start_time": 3,
+            "end_time": 7.44,
+            "file": "/video1_4_3.mp4"
+        }
+    },
+
+    {}
+]
