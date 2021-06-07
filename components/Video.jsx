@@ -13,16 +13,14 @@ const Container = styled.div`
     right: 0;
     bottom: 0;
     max-height: 100%;
-    width: 100%;
 `;
 
 const VideoEl = styled.video`
     margin-left: auto;
     display: block;
     opacity: 0;
-    width: 40%;
     height: inherit;
-    max-width: 500px;
+    max-width: 300px;
     ${(props) =>
         props.active &&
         css`

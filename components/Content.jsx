@@ -23,14 +23,14 @@ function Content({ data, withVideo }) {
 const Container = styled.div`
     background-color: gray;
     > div {
-        margin: 20px;
+        padding: 20px;
     }
     display: flex;
     flex-wrap: wrap;
     height: 100%;
     @media only screen and (max-width: 900px) {
         > div {
-            margin: 5px;
+            padding: 2px;
         }
     }
 

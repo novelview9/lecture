@@ -24,8 +24,8 @@ function Text({ label, style, xy }) {
     };
     if (!isDrag) {
         return (
-            <Container onClick={onDrag}>
-                <TextEl style={{ ...filteredData }} left={xy[0]} top={xy[1]} fontSize={fontSize}>
+            <Container>
+                <TextEl style={{ ...filteredData }} left={xy[0]} top={xy[1]} fontSize={fontSize} onClick={onDrag}>
                     {label}
                 </TextEl>
             </Container>
@@ -56,17 +56,11 @@ const RndP = styled.p``;
 const Container = styled.div`
     width: 100%;
     cursor: pointer;
-    ${(props) =>
-        props.isMoved &&
-        css`
-            position: absolute;
-            width: 200px;
-            height: 200px;
-        `};
 `;
 const TextEl = styled.p`
     font-size: ${(props) => (props.fontSize ? props.fontSize : "12px")};
     max-width: 100%;
+    z-index: 200;
     @media only screen and (max-width: 900px) {
         font-size: 15px;
     }
