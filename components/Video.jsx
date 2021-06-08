@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 function Video({ videoRef, src, onTimeEvent, withVideo }) {
     return (
         <Container>
-            <VideoEl src={src} onTimeUpdate={onTimeEvent} ref={videoRef} active={withVideo} />
+            <VideoEl src={src} onTimeUpdate={onTimeEvent} ref={videoRef} active={withVideo} playsInline />
         </Container>
     );
 }
