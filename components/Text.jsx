@@ -4,10 +4,7 @@ import styled, { css } from "styled-components";
 import { Rnd } from "react-rnd";
 import { useState } from "react";
 
-function Text({ label, style, xy }) {
-    const styleData = toStyle(style);
-    const fontSize = _.get(styleData, "fontSize");
-    const filteredData = _.omit(styleData, ["fontSize", "height"]);
+function Text({ content }) {
     const [isDrag, setIsDrag] = useState(false);
     const [state, setState] = useState({ x: 0, y: 0, width: 0, height: 0 });
     const [nodeStyle, setNodeStyle] = useState({});
@@ -25,9 +22,7 @@ function Text({ label, style, xy }) {
     if (!isDrag) {
         return (
             <Container>
-                <TextEl style={{ ...filteredData }} left={xy[0]} top={xy[1]} fontSize={fontSize} onClick={onDrag}>
-                    {label}
-                </TextEl>
+                <TextEl onClick={onDrag}>{content}</TextEl>
             </Container>
         );
     }
@@ -47,7 +42,7 @@ function Text({ label, style, xy }) {
                 });
             }}
         >
-            <RndP>{label}</RndP>
+            <RndP>{content}</RndP>
         </Rnd>
     );
 }
@@ -56,6 +51,7 @@ const RndP = styled.p``;
 const Container = styled.div`
     width: 100%;
     cursor: pointer;
+    min-height: 20px; ;
 `;
 const TextEl = styled.p`
     font-size: ${(props) => (props.fontSize ? props.fontSize : "12px")};

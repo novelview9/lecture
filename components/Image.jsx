@@ -1,13 +1,9 @@
 import _ from "lodash";
 import styled from "styled-components";
-import toStyle from "css-to-style";
 import { Rnd } from "react-rnd";
 import { useState } from "react";
 
-function Image({ url, style, xy }) {
-    const styleData = toStyle(style);
-    const filteredStyle = _.omit(styleData, ["width", "max-width", "height"]);
-    const width = _.get(styleData, "width");
+function Image({ url }) {
     const [state, setState] = useState({ x: 0, y: 0, width: 0, height: 0 });
     const [isDrag, setIsDrag] = useState(false);
     const onDrag = (e) => {
@@ -18,7 +14,7 @@ function Image({ url, style, xy }) {
     if (!isDrag) {
         return (
             <Container onClick={onDrag}>
-                <Img src={url} style={{ ...filteredStyle }} left={xy[0]} top={xy[1]} maxWidth={width} />;
+                <Img src={url} draggable="false" />;
             </Container>
         );
     }
@@ -37,7 +33,7 @@ function Image({ url, style, xy }) {
                 });
             }}
         >
-            <RndImg src={url} />
+            <RndImg src={url} draggable="false" />
         </Rnd>
     );
 }
@@ -50,11 +46,14 @@ const RndImg = styled.img`
 
 const Container = styled.div`
     width: 100%;
+    max-height: 200px;
 `;
 const Img = styled.img`
     width: inherit;
     max-width: ${(props) => (props.maxWidth ? props.maxWidth : "100%")};
     object-fit: contain;
+    height: inherit;
+    max-height: inherit;
     @media only screen and (max-width: 900px) {
         max-width: 50%;
     }

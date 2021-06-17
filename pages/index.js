@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import Content from "../components/Content";
 import Controller from "../components/Controller";
 import Video from "../components/Video";
-import data from "../data";
+import data from "../example_input.json";
 
 function Home() {
     const [withFrame, setWithFrame] = useState(false);
@@ -26,13 +26,13 @@ function Home() {
     };
     const onResetData = (currentTime) => {
         const video = videoRef.current;
-        const nodeIndex = _.findLastIndex(data, (obj) => obj.defDuration < currentTime);
+        const nodeIndex = _.findLastIndex(data.content, (obj) => obj.start_time < currentTime);
         const percentPoint = (currentTime / video.duration) * 100;
         setPercent(percentPoint);
         if (_.isUndefined(nodeIndex)) {
             return;
         }
-        setNodeData(data[nodeIndex]);
+        setNodeData(data.content[nodeIndex]);
     };
 
     const onTimeEvent = () => {
@@ -46,11 +46,13 @@ function Home() {
         video.currentTime = currentTime;
         onResetData(currentTime);
     };
+    const sourcePath = "/example_input1_source/";
+    const videoSource = sourcePath + data.video.source;
     return (
         <Container>
             <Wrapper bg={withFrame}>
                 <Content data={nodeData} withVideo={withVideo} />
-                <Video src={"/video1_4_3.mp4"} videoRef={videoRef} onTimeEvent={onTimeEvent} withVideo={withVideo} />
+                <Video src={videoSource} videoRef={videoRef} onTimeEvent={onTimeEvent} withVideo={withVideo} />
             </Wrapper>
             <Controller toggleFrame={toggleFrame} togglePlay={togglePlay} toggleVideo={toggleVideo} jumpToPlay={jumpToPlay} percent={percent} barRef={barRef} />
         </Container>
