@@ -9,7 +9,7 @@ import Text from "./Text";
 
 const sourcePath = "/example_input1_source/";
 
-const ChunkedData = ({ data }) => {
+const ChunkedData = React.memo(({ data }) => {
     return (
         // <p>{`${data}`}</p>
         <>
@@ -24,12 +24,11 @@ const ChunkedData = ({ data }) => {
             })}
         </>
     );
-};
+});
 
 function Content({ data, withVideo }) {
     const column = data.column;
     const chunkedData = _.groupBy(data.learning_material, "in_column");
-    console.log(chunkedData);
     const titleObj = _.find(data.learning_material, (o) => o.label === "title");
     const [fixed, setFixed] = useState(false);
     if (!data) {
@@ -42,6 +41,7 @@ function Content({ data, withVideo }) {
     };
     return (
         <Container isFull={!withVideo}>
+            <button onClick={addNum}>{num}</button>
             {_.times(column, (i) => {
                 return (
                     <Column key={shortid.generate()}>
@@ -71,6 +71,7 @@ const Container = styled.div`
     display: flex;
     flex-wrap: wrap;
     height: 100%;
+    position: relative;
     @media only screen and (max-width: 900px) {
         > div {
             padding: 2px;

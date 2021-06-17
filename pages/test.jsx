@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useState } from "react";
 
-import Content from "../components/Content";
+import NewContent from "../components/Content";
 import input from "../example_input.json";
 
 const Main = ({ status }) => {
@@ -9,7 +9,7 @@ const Main = ({ status }) => {
     return content.map((data, index) => {
         return (
             <Container>
-                <Content key={index} data={data} />
+                <NewContent key={index} data={data} />
             </Container>
         );
     });

@@ -1,7 +1,7 @@
 import _ from "lodash";
 import styled from "styled-components";
+import React, { useState } from "react";
 import { Rnd } from "react-rnd";
-import { useState } from "react";
 
 function Image({ url }) {
     const [state, setState] = useState({ x: 0, y: 0, width: 0, height: 0 });
@@ -59,4 +59,4 @@ const Img = styled.img`
     }
 `;
 
-export default Image;
+export default React.memo(Image);
