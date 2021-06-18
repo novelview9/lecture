@@ -5,61 +5,33 @@ import { Rnd } from "react-rnd";
 import { useState } from "react";
 
 function Text({ content }) {
-    const [isDrag, setIsDrag] = useState(false);
-    const [state, setState] = useState({ x: 0, y: 0, width: 0, height: 0 });
-    const [nodeStyle, setNodeStyle] = useState({});
-    const onDrag = (e) => {
-        setIsDrag(true);
-        const { x, y, width, height } = e.target.getBoundingClientRect();
-        setState({ x, y, width, height });
-        const { background, color, font } = window.getComputedStyle(e.target);
-        setNodeStyle({
-            font,
-            background,
-            color,
-        });
+    const [fixed, setFixed] = useState();
+    const onClick = () => {
+        setFixed(true);
     };
-    if (!isDrag) {
-        return (
-            <Container>
-                <TextEl onClick={onDrag}>{content}</TextEl>
-            </Container>
-        );
-    }
     return (
-        <Rnd
-            style={{ ...nodeStyle }}
-            size={{ width: state.width, height: state.height }}
-            position={{ x: state.x, y: state.y }}
-            onDragStop={(e, d) => {
-                setState({ ...state, x: d.x, y: d.y });
-            }}
-            onResizeStop={(e, direction, ref, delta, position) => {
-                setState({
-                    width: ref.style.width,
-                    height: ref.style.height,
-                    ...position,
-                });
-            }}
-        >
-            <RndP>{content}</RndP>
-        </Rnd>
+        <Container fixed={fixed} onClick={onClick}>
+            <TextEl>{content}</TextEl>
+        </Container>
     );
 }
 
-const RndP = styled.p``;
 const Container = styled.div`
     width: 100%;
     cursor: pointer;
-    min-height: 20px; ;
+    min-height: 20px;
+    background-color: white;
+    padding: 5px;
+    visibility: ${(props) => (props.fixed ? "hidden" : "visiable")};
 `;
 const TextEl = styled.p`
-    font-size: ${(props) => (props.fontSize ? props.fontSize : "12px")};
+    /* font-size: ${(props) => (props.fontSize ? props.fontSize : "12px")}; */
+    font-size: 2vw;
     max-width: 100%;
     z-index: 200;
-    @media only screen and (max-width: 900px) {
+    /* @media only screen and (max-width: 900px) {
         font-size: 15px;
-    }
+    } */
 `;
 
 export default Text;

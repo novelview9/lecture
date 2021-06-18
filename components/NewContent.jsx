@@ -1,56 +1,47 @@
-import React from "react";
 import shortid from "shortid";
 import toStyle from "css-to-style";
+import React, { useEffect } from "react";
 import styled, { css } from "styled-components";
+import { useAtom } from "jotai";
 import { useState } from "react";
 
 import Image from "./Image";
 import Text from "./Text";
+import activityAtom from "../activityAtom";
 
 const sourcePath = "/example_input1_source/";
 
 const ChunkedData = React.memo(({ data }) => {
+    console.log("gg");
     return (
-        // <p>{`${data}`}</p>
         <>
             {data.map((obj) => {
                 if (obj.label === "text_box") {
-                    return <Text content={obj.text_content} />;
+                    return <Text content={obj.text_content} key={shortid.generate()} />;
                 } else if (obj.label === "video") {
-                    return <Text>{obj.text_content}</Text>;
+                    return <Text key={shortid.generate()}>{obj.text_content}</Text>;
                 } else {
-                    return <Image url={`${sourcePath}${obj.path}`} />;
+                    return <Image url={`${sourcePath}${obj.path}`} key={shortid.generate()} />;
                 }
             })}
         </>
     );
 });
 
-function Content({ data, withVideo }) {
-    const column = data.column;
+function Content({ data, withVideo, index }) {
     const chunkedData = _.groupBy(data.learning_material, "in_column");
-    const titleObj = _.find(data.learning_material, (o) => o.label === "title");
-    const [fixed, setFixed] = useState(false);
-    if (!data) {
-        return <Container isFull={!withVideo}></Container>;
-    }
-    const { images, textContainers } = data;
-    const [num, setNum] = useState(0);
-    const addNum = () => {
-        setNum(num + 1);
-    };
+    const [activity] = useAtom(activityAtom);
+    const isActive = activity.slide === index;
+    const [state] = useState({ chunkedData, column: data.column });
     return (
-        <Container isFull={!withVideo}>
-            <button onClick={addNum}>{num}</button>
-            {_.times(column, (i) => {
+        <Container isFull={!withVideo} isActive={isActive}>
+            {_.times(state.column, (i) => {
                 return (
-                    <Column key={shortid.generate()}>
-                        <ChunkedData data={chunkedData[i + 1]} key={shortid.generate()} />
+                    <Column key={i}>
+                        <ChunkedData data={state.chunkedData[i + 1]} key={i} />
                     </Column>
                 );
             })}
-            {/* {images && images.map(({ url, style, xy }, index) => <Image url={url} style={style} xy={xy} key={shortid.generate()} />)}
-            {textContainers && textContainers.map(({ label, style, xy }, index) => <Text style={style} xy={xy} label={label} key={shortid.generate()} />)} */}
         </Container>
     );
 }
@@ -72,6 +63,7 @@ const Container = styled.div`
     flex-wrap: wrap;
     height: 100%;
     position: relative;
+    display: ${(props) => (props.isActive ? "default" : "none")};
     @media only screen and (max-width: 900px) {
         > div {
             padding: 2px;

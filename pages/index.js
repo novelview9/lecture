@@ -19,11 +19,6 @@ function Home() {
     const toggleVideo = () => {
         setWithVideo(!withVideo);
     };
-    const togglePlay = () => {
-        const video = videoRef.current;
-        const method = video.paused ? "play" : "pause";
-        video[method]();
-    };
     const onResetData = (currentTime) => {
         const video = videoRef.current;
         const nodeIndex = _.findLastIndex(data.content, (obj) => obj.start_time < currentTime);
