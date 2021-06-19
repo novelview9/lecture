@@ -103,7 +103,10 @@ const FixedElement = ({ data, clicked, keyValue, isActive }) => {
 const Clear = styled.button`
     position: absolute;
     right: 0;
-    top: 0;
+    top: -20px;
+    @media only screen and (max-width: 900px) {
+        display: none;
+    }
 `;
 
 function Content({ data, index }) {
@@ -151,7 +154,8 @@ function Content({ data, index }) {
 const ColumnContainer = styled.div`
     display: flex;
     flex-direction: row;
-    overflow: hidden;
+    flex: 1;
+    height: 100%;
 `;
 const TitleImg = styled.img`
     width: 100%;
@@ -187,10 +191,8 @@ const RndImg = styled.img`
 const Column = styled.div`
     display: flex;
     flex-direction: column;
-    height: 100%;
     width: 100%;
-    flex: 1;
-    overflow: hidden;
+    align-items: stretch;
 `;
 
 const Container = styled.div`
@@ -198,6 +200,12 @@ const Container = styled.div`
         padding: 20px;
         box-sizing: border-box;
     }
+    @media only screen and (max-width: 900px) {
+        > div {
+            padding: 1px;
+        }
+    }
+
     flex: 1;
     overflow: hidden;
     height: 100%;
@@ -205,6 +213,7 @@ const Container = styled.div`
     display: ${(props) => (props.isActive ? "flex" : "none")};
     flex-direction: column;
     position: relative;
+    align-items: stretch;
 `;
 
 export default React.memo(Content);

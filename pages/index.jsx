@@ -130,7 +130,7 @@ const InnerContainer = styled.div`
     box-sizing: border-box;
     width: 80%;
     display: flex;
-    overflow: auto;
+    overflow: hidden;
     ${(props) =>
         props.withFrame &&
         css`
@@ -152,7 +152,6 @@ const Container = styled.div`
     width: 100%;
     height: 100vh;
     box-sizing: border-box;
-
     padding: 10px;
     position: relative;
     @supports (-webkit-touch-callout: none) {

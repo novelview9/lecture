@@ -31,8 +31,9 @@ function Image({ url, addFixedData }) {
 }
 
 const Container = styled.div`
-    flex: 1;
-    height: 100%;
+    flex: 1 1 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
     display: inline-flex;
     visibility: ${(props) => (props.fixed ? "hidden" : "visible")};
 `;
