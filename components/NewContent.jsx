@@ -19,13 +19,9 @@ const ChunkedData = React.memo(({ data, addFixedData }) => {
         <Column>
             {data.map((obj) => {
                 if (obj.label === "text_box") {
-                    return <Text content={obj.text_content} key={shortid.generate()} addFixedData={addFixedData} goal={goal} />;
+                    return <Text obj={obj} key={shortid.generate()} addFixedData={addFixedData} goal={goal} />;
                 } else if (obj.label === "video") {
-                    return (
-                        <Text key={shortid.generate()} addFixedData={addFixedData} goal={goal}>
-                            {obj.text_content}
-                        </Text>
-                    );
+                    return <></>;
                 } else {
                     return <Image url={`${sourcePath}${obj.path}`} key={shortid.generate()} addFixedData={addFixedData} />;
                 }
