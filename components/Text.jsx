@@ -37,6 +37,7 @@ function Text({ content, addFixedData, goal }) {
 
 const Container = styled.div`
     flex: 1;
+    flex-shrink: 1;
     width: 100%;
     cursor: pointer;
     min-height: 20px;
