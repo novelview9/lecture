@@ -150,6 +150,9 @@ const Container = styled.div`
 
     padding: 10px;
     position: relative;
+    @supports (-webkit-touch-callout: none) {
+        height: -webkit-fill-available;
+    }
 `;
 
 export default Main;
