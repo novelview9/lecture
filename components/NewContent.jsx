@@ -1,7 +1,7 @@
 import shortid from "shortid";
 import toStyle from "css-to-style";
 import useFitText from "use-fit-text";
-import React, { useCallback, useEffect } from "react";
+import React, { useCallback, useEffect, useReducer, useRef } from "react";
 import styled, { css } from "styled-components";
 import { Rnd } from "react-rnd";
 import { useAtom } from "jotai";
@@ -119,6 +119,15 @@ function Content({ data, index }) {
             return { ...prevState, [newKey]: { ...data } };
         });
     });
+    const ref1 = useRef();
+    const ref2 = useRef();
+    useEffect(() => {
+        console.log(isActive);
+        if (isActive && ref1 && ref2) {
+            alert(ref1.i(urrent.clientHeight);
+            alert(ref2.current.clientHeight);
+        }
+    }, [isActive, ref1, ref2]);
 
     const titleObj = _.find(data.learning_material, (o) => o.label === "title");
     const sourcePath = "/example_input1_source/";
@@ -134,10 +143,10 @@ function Content({ data, index }) {
                     <TitleImg src={`${sourcePath}${titleObj.path}`} />
                 </TitleContainer>
             )}
-            <ColumnContainer>
+            <ColumnContainer ref={ref1}>
                 {_.times(state.column, (i) => {
                     return (
-                        <Column key={i}>
+                        <Column key={i} ref={ref2}>
                             <MemoedChunkedData data={state.chunkedData[i + 1]} key={i} addFixedData={addFixedData} />
                         </Column>
                     );
