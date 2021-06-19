@@ -1,13 +1,50 @@
+import _ from "lodash";
+import React from "react";
 import shortid from "shortid";
 import styled, { css } from "styled-components";
 import { useAtom } from "jotai";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import Controller from "../components/Controller";
 import NewContent from "../components/NewContent";
 import Video from "../components/Video";
 import activityAtom from "../activityAtom";
 import input from "../example_input.json";
+
+const ControllerLine = ({ content, videoRef }) => {
+    const [duration, setDuration] = useState("");
+    const startTimes = _.map(content, "start_time");
+    useEffect(() => {
+        const due = _.get(videoRef, "current.duration");
+        if (due) {
+            setDuration(due);
+        }
+    }, [videoRef.current]);
+    if (!duration) {
+        return <p></p>;
+    }
+
+    return (
+        <Line>
+            {startTimes.map((time) => {
+                return <LinePoint value={(time / duration) * 100} />;
+            })}
+        </Line>
+    );
+};
+const LinePoint = styled.div`
+    flex-basis: ${(props) => props.value}%;
+    border-right: 2px solid #45b945;
+`;
+const Line = styled.div`
+    pointer-events: none;
+    display: flex;
+    width: 100%;
+    height: 20px;
+    position: absolute;
+    z-index: 200;
+    top: 0;
+`;
 
 const Main = () => {
     const content = input.content;
@@ -63,6 +100,7 @@ const Main = () => {
         const action = "jump";
         setActivity({ slide, action, time });
     };
+
     return (
         <Container key={key}>
             <InnerContainer isFull={!withVideo} withFrame={withFrame}>
@@ -70,11 +108,18 @@ const Main = () => {
                     return <NewContent key={index} data={data} index={index} />;
                 })}
             </InnerContainer>
-            <Controller togglePlay={togglePlay} toggleVideo={toggleVideo} jumpToPlay={jumpToPlay} barRef={barRef} reset={resetKey} toggleFrame={toggleFrame} percent={percent} />
+            <ControllerContainer>
+                <Controller togglePlay={togglePlay} toggleVideo={toggleVideo} jumpToPlay={jumpToPlay} barRef={barRef} reset={resetKey} toggleFrame={toggleFrame} percent={percent} />
+                <ControllerLine content={content} videoRef={videoRef} />
+            </ControllerContainer>
             <Video src={videoSource} videoRef={videoRef} onTimeEvent={onTimeEvent} withVideo={withVideo} />
         </Container>
     );
 };
+const ControllerContainer = styled.div`
+    width: 100%;
+    position: relative;
+`;
 const InnerContainer = styled.div`
     height: 100%;
     box-sizing: border-box;

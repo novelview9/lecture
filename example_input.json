@@ -198,7 +198,7 @@
         {
             "shot_id": 3,
             "column": 2,
-            "bg_image": "/bg_video5_2_9_shot5.jpg",
+            "bg_image": "bg_video5_2_9_shot5.jpg",
             "start_time": 9.66,
             "end_time": 18.0,
             "learning_material": [
@@ -244,7 +244,7 @@
                 {
                     "label": "title",
                     "box_info_original": [140, 121, 383, 48],
-                    "path": "./video5_2_9_shot5_DE5073_title.png"
+                    "path": "video5_2_9_shot5_DE5073_title.png"
                 },
                 {
                     "label": "text_box",

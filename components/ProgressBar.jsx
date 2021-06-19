@@ -20,6 +20,7 @@ const ProgressBarFilled = styled.div`
     color: white;
     flex-basis: ${(props) => props.percent}%;
     background-color: #4568e2;
+    z-index: 150;
 `;
 
 export default Control;

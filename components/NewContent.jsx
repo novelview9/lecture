@@ -99,8 +99,17 @@ function Content({ data, index }) {
         });
     });
 
+    const titleObj = _.find(data.learning_material, (o) => o.label === "title");
+    const sourcePath = "/example_input1_source/";
+    console.log(titleObj);
+
     return (
         <Container isActive={isActive}>
+            {titleObj && (
+                <TitleContainer>
+                    <TitleImg src={`${sourcePath}${titleObj.path}`} />
+                </TitleContainer>
+            )}
             {_.times(state.column, (i) => {
                 return (
                     <Column key={i}>
@@ -115,6 +124,13 @@ function Content({ data, index }) {
     );
 }
 
+const TitleImg = styled.img`
+    height: 100%;
+`;
+const TitleContainer = styled.div`
+    height: 10%;
+    padding: 0 20px 0 !important;
+`;
 const PCon = styled.div`
     width: 100%;
     height: 100%;
@@ -143,6 +159,7 @@ const Container = styled.div`
     }
     flex: 1;
     display: flex;
+    flex-direction: column;
     overflow: auto;
     flex-wrap: wrap;
     height: 100%;
