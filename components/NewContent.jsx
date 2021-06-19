@@ -123,7 +123,6 @@ const CustomRnd = styled(Rnd)`
     box-sizing: border-box;
     :hover {
         border: 2px solid yellow;
-        background-color: green;
     }
 `;
 const RndP = styled.p``;

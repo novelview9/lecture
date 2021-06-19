@@ -11,6 +11,8 @@ import input from "../example_input.json";
 
 const Main = () => {
     const content = input.content;
+
+    const [percent, setPercent] = useState(0);
     const [key, setKey] = useState(shortid.generate());
     const resetKey = () => {
         setKey(shortid.generate());
@@ -40,10 +42,13 @@ const Main = () => {
     };
 
     const onTimeEvent = () => {
-        const time = videoRef.current.currentTime;
+        const video = videoRef.current;
+        const time = video.currentTime;
         const slide = _.findLastIndex(input.content, (obj) => obj.start_time < time);
         const action = activity.slide === slide ? "playing" : "flip";
         setActivity({ slide, action, time });
+        const percentPoint = time / video.duration;
+        setPercent(percentPoint * 100);
     };
 
     const barRef = useRef(null);
@@ -51,6 +56,7 @@ const Main = () => {
     const jumpToPlay = (e) => {
         const video = videoRef.current;
         const percentPoint = e.nativeEvent.offsetX / barRef.current.offsetWidth;
+        setPercent(percentPoint * 100);
         const time = percentPoint * video.duration;
         video.currentTime = time;
         const slide = _.findLastIndex(input.content, (obj) => obj.start_time < time);
@@ -64,7 +70,7 @@ const Main = () => {
                     return <NewContent key={index} data={data} index={index} />;
                 })}
             </InnerContainer>
-            <Controller togglePlay={togglePlay} toggleVideo={toggleVideo} jumpToPlay={jumpToPlay} barRef={barRef} reset={resetKey} toggleFrame={toggleFrame} />
+            <Controller togglePlay={togglePlay} toggleVideo={toggleVideo} jumpToPlay={jumpToPlay} barRef={barRef} reset={resetKey} toggleFrame={toggleFrame} percent={percent} />
             <Video src={videoSource} videoRef={videoRef} onTimeEvent={onTimeEvent} withVideo={withVideo} />
         </Container>
     );
