@@ -27,13 +27,17 @@ const ControllerLine = ({ content, videoRef }) => {
     return (
         <Line>
             {startTimes.map((time) => {
-                return <LinePoint value={(time / duration) * 100} />;
+                return <LinePoint value={(time / duration) * 100} key={() => shortid.generate()} />;
             })}
         </Line>
     );
 };
 const LinePoint = styled.div`
-    flex-basis: ${(props) => props.value}%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: ${(props) => props.value}%;
+    height: 20px;
     border-right: 2px solid #45b945;
 `;
 const Line = styled.div`
@@ -43,6 +47,7 @@ const Line = styled.div`
     height: 20px;
     position: absolute;
     z-index: 200;
+    overflow: hidden;
     top: 0;
 `;
 

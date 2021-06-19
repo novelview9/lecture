@@ -16,7 +16,7 @@ const sourcePath = "/example_input1_source/";
 const ChunkedData = React.memo(({ data, addFixedData }) => {
     const [goal, setGoal] = useState(200);
     return (
-        <>
+        <Column>
             {data.map((obj) => {
                 if (obj.label === "text_box") {
                     return <Text content={obj.text_content} key={shortid.generate()} addFixedData={addFixedData} goal={goal} />;
@@ -30,7 +30,7 @@ const ChunkedData = React.memo(({ data, addFixedData }) => {
                     return <Image url={`${sourcePath}${obj.path}`} key={shortid.generate()} addFixedData={addFixedData} />;
                 }
             })}
-        </>
+        </Column>
     );
 });
 
@@ -121,13 +121,6 @@ function Content({ data, index }) {
     });
     const ref1 = useRef();
     const ref2 = useRef();
-    useEffect(() => {
-        console.log(isActive);
-        if (isActive && ref1 && ref2) {
-            alert(ref1.i(urrent.clientHeight);
-            alert(ref2.current.clientHeight);
-        }
-    }, [isActive, ref1, ref2]);
 
     const titleObj = _.find(data.learning_material, (o) => o.label === "title");
     const sourcePath = "/example_input1_source/";
@@ -143,13 +136,9 @@ function Content({ data, index }) {
                     <TitleImg src={`${sourcePath}${titleObj.path}`} />
                 </TitleContainer>
             )}
-            <ColumnContainer ref={ref1}>
+            <ColumnContainer>
                 {_.times(state.column, (i) => {
-                    return (
-                        <Column key={i} ref={ref2}>
-                            <MemoedChunkedData data={state.chunkedData[i + 1]} key={i} addFixedData={addFixedData} />
-                        </Column>
-                    );
+                    return <MemoedChunkedData data={state.chunkedData[i + 1]} key={i} addFixedData={addFixedData} />;
                 })}
             </ColumnContainer>
             {Object.entries(fixedData).map((value) => (
