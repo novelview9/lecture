@@ -154,7 +154,7 @@ function Content({ data, index }) {
 const ColumnContainer = styled.div`
     display: flex;
     flex-direction: row;
-    flex: 1;
+    width: 100%;
     height: 100%;
 `;
 const TitleImg = styled.img`
@@ -196,24 +196,13 @@ const Column = styled.div`
 `;
 
 const Container = styled.div`
-    > div {
-        padding: 20px;
-        box-sizing: border-box;
-    }
-    @media only screen and (max-width: 900px) {
-        > div {
-            padding: 1px;
-        }
-    }
-
-    flex: 1;
-    overflow: hidden;
-    height: 100%;
     box-sizing: border-box;
     display: ${(props) => (props.isActive ? "flex" : "none")};
     flex-direction: column;
     position: relative;
     align-items: stretch;
+    width: 100%;
+    padding-bottom: 2vh;
 `;
 
 export default React.memo(Content);

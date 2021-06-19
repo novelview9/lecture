@@ -49,17 +49,9 @@ const Container = styled.div`
     cursor: pointer;
     min-height: 20px;
     background-color: white;
-    padding: 5px;
     box-sizing: border-box;
     visibility: ${(props) => (props.fixed ? "hidden" : "visiable")};
-`;
-const TextEl = styled.p`
-    /* font-size: ${(props) => (props.fontSize ? props.fontSize : "12px")}; */
-    max-width: 100%;
-    z-index: 200;
-    /* @media only screen and (max-width: 900px) {
-        font-size: 15px;
-    } */
+    display: flex;
 `;
 
 export default Text;

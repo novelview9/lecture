@@ -130,6 +130,7 @@ const InnerContainer = styled.div`
     box-sizing: border-box;
     width: 80%;
     display: flex;
+    align-items: stretch;
     overflow: hidden;
     ${(props) =>
         props.withFrame &&
