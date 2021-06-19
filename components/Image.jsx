@@ -25,17 +25,20 @@ function Image({ url, addFixedData }) {
     };
     return (
         <Container fixed={fixed} onClick={onClick}>
-            <Img src={url} draggable="false" />;
+            <Img src={url} draggable="false" />
         </Container>
     );
 }
 
 const Container = styled.div`
     flex: 1;
+    height: 100%;
     display: inline-flex;
     visibility: ${(props) => (props.fixed ? "hidden" : "visible")};
 `;
 const Img = styled.img`
+    width: 100%;
+    height: 100%;
     object-fit: contain;
 `;
 

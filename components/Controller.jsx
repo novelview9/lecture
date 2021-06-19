@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 import ProgressBar from "./ProgressBar";
 
-function Controller({ jumpToPlay, togglePlay, toggleFrame, toggleVideo, percent, barRef }) {
+function Controller({ jumpToPlay, togglePlay, toggleFrame, toggleVideo, percent, barRef, reset }) {
     return (
         <Container>
             <ProgressBar jumpToPlay={jumpToPlay} percent={percent} barRef={barRef} />
@@ -10,6 +10,7 @@ function Controller({ jumpToPlay, togglePlay, toggleFrame, toggleVideo, percent,
                 <Button onClick={togglePlay}>play/pause</Button>
                 <Button onClick={toggleFrame}>background on/off</Button>
                 <Button onClick={toggleVideo}>video on/off</Button>
+                <Button onClick={reset}>reset</Button>
             </Buttons>
         </Container>
     );

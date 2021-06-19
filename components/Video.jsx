@@ -11,7 +11,7 @@ function Video({ videoRef, src, onTimeEvent, withVideo }) {
 const Container = styled.div`
     position: absolute;
     right: 0;
-    bottom: 10px;
+    bottom: 40px;
     max-height: 100%;
     width: 20%;
 `;

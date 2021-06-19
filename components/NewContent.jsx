@@ -14,14 +14,15 @@ import activityAtom from "../activityAtom";
 const sourcePath = "/example_input1_source/";
 
 const ChunkedData = React.memo(({ data, addFixedData }) => {
+    const [goal, setGoal] = useState(200);
     return (
         <>
             {data.map((obj) => {
                 if (obj.label === "text_box") {
-                    return <Text content={obj.text_content} key={shortid.generate()} addFixedData={addFixedData} />;
+                    return <Text content={obj.text_content} key={shortid.generate()} addFixedData={addFixedData} goal={goal} />;
                 } else if (obj.label === "video") {
                     return (
-                        <Text key={shortid.generate()} addFixedData={addFixedData}>
+                        <Text key={shortid.generate()} addFixedData={addFixedData} goal={goal}>
                             {obj.text_content}
                         </Text>
                     );
@@ -37,12 +38,21 @@ const checkOnlyData = (prev, next) => prev.data === next.data;
 
 const MemoedChunkedData = React.memo(ChunkedData, checkOnlyData);
 
-const FixedElement = ({ data }) => {
+const FixedElement = ({ data, clicked, keyValue, isActive }) => {
     const [state, setState] = useState({ x: data.x, y: data.y, width: data.width, height: data.height });
     const { fontSize, ref } = useFitText();
+    const run = () => {
+        clicked(keyValue);
+    };
+    const clear = () => {
+        clicked("");
+    };
     if (data.label === "IMG") {
         return (
             <CustomRnd
+                onDragStart={run}
+                onResizeStart={run}
+                isActive={isActive}
                 size={{ width: state.width, height: state.height, background: "red" }}
                 position={{ x: state.x, y: state.y }}
                 onDragStop={(e, d) => {
@@ -58,12 +68,16 @@ const FixedElement = ({ data }) => {
                 }}
             >
                 <RndImg src={data.src} draggable="false" />
+                {isActive && <Clear onClick={clear}>confirm</Clear>}
             </CustomRnd>
         );
     }
     if (data.label === "P") {
         return (
             <CustomRnd
+                onDragStart={run}
+                onResizeStart={run}
+                isActive={isActive}
                 size={{ width: state.width, height: state.height, background: "red" }}
                 position={{ x: state.x, y: state.y }}
                 onDragStop={(e, d) => {
@@ -81,10 +95,16 @@ const FixedElement = ({ data }) => {
                 <PCon ref={ref} style={{ fontSize }}>
                     {data.text}
                 </PCon>
+                {isActive && <Clear onClick={clear}>confirm</Clear>}
             </CustomRnd>
         );
     }
 };
+const Clear = styled.button`
+    position: absolute;
+    right: 0;
+    top: 0;
+`;
 
 function Content({ data, index }) {
     const chunkedData = _.groupBy(data.learning_material, "in_column");
@@ -95,13 +115,17 @@ function Content({ data, index }) {
     const addFixedData = useCallback((data) => {
         const newKey = shortid.generate();
         setFixedData((prevState) => {
+            setNodeEl(newKey);
             return { ...prevState, [newKey]: { ...data } };
         });
     });
 
     const titleObj = _.find(data.learning_material, (o) => o.label === "title");
     const sourcePath = "/example_input1_source/";
-    console.log(titleObj);
+    const [nodeEl, setNodeEl] = useState();
+    const clicked = (key) => {
+        setNodeEl(key);
+    };
 
     return (
         <Container isActive={isActive}>
@@ -110,25 +134,36 @@ function Content({ data, index }) {
                     <TitleImg src={`${sourcePath}${titleObj.path}`} />
                 </TitleContainer>
             )}
-            {_.times(state.column, (i) => {
-                return (
-                    <Column key={i}>
-                        <MemoedChunkedData data={state.chunkedData[i + 1]} key={i} addFixedData={addFixedData} />
-                    </Column>
-                );
-            })}
+            <ColumnContainer>
+                {_.times(state.column, (i) => {
+                    return (
+                        <Column key={i}>
+                            <MemoedChunkedData data={state.chunkedData[i + 1]} key={i} addFixedData={addFixedData} />
+                        </Column>
+                    );
+                })}
+            </ColumnContainer>
             {Object.entries(fixedData).map((value) => (
-                <FixedElement data={value[1]} key={value[0]} />
+                <FixedElement data={value[1]} key={value[0]} clicked={clicked} isActive={nodeEl === value[0]} keyValue={value[0]} />
             ))}
         </Container>
     );
 }
 
+const ColumnContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+`;
 const TitleImg = styled.img`
+    width: 100%;
     height: 100%;
+    object-fit: contain;
+    object-position: left top;
 `;
 const TitleContainer = styled.div`
     height: 10%;
+    width: 100%;
     padding: 0 20px 0 !important;
 `;
 const PCon = styled.div`
@@ -137,11 +172,12 @@ const PCon = styled.div`
 `;
 const CustomRnd = styled(Rnd)`
     box-sizing: border-box;
-    :hover {
-        border: 2px solid yellow;
-    }
+    ${(props) =>
+        props.isActive &&
+        css`
+            outline: 3px solid yellow;
+        `};
 `;
-const RndP = styled.p``;
 const RndImg = styled.img`
     object-fit: contain;
     width: inherit;
@@ -150,21 +186,23 @@ const RndImg = styled.img`
 const Column = styled.div`
     display: flex;
     flex-direction: column;
+    height: 100%;
+    width: 100%;
     flex: 1;
 `;
 
 const Container = styled.div`
     > div {
         padding: 20px;
+        box-sizing: border-box;
     }
     flex: 1;
-    display: flex;
-    flex-direction: column;
-    overflow: auto;
-    flex-wrap: wrap;
+    overflow: hidden;
     height: 100%;
+    box-sizing: border-box;
+    display: ${(props) => (props.isActive ? "flex" : "none")};
+    flex-direction: column;
     position: relative;
-    display: ${(props) => (props.isActive ? "default" : "none")};
 `;
 
 export default React.memo(Content);

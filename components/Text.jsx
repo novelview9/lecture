@@ -5,11 +5,13 @@ import styled, { css } from "styled-components";
 import { Rnd } from "react-rnd";
 import { useState } from "react";
 
-function Text({ content, addFixedData }) {
+function Text({ content, addFixedData, goal }) {
     const [fixed, setFixed] = useState();
     const onClick = (e) => {
         setFixed(true);
-        const { top, right, bottom, left, width, height, x, y } = e.currentTarget.getBoundingClientRect();
+        const { top, right, bottom, left, width, height } = e.currentTarget.getBoundingClientRect();
+        const x = e.currentTarget.offsetLeft;
+        const y = e.currentTarget.offsetTop;
         addFixedData({
             label: "P",
             text: e.currentTarget.textContent,
@@ -25,7 +27,7 @@ function Text({ content, addFixedData }) {
             y,
         });
     };
-    const { fontSize, ref } = useFitText({ maxFontSize: 200 });
+    const { fontSize, ref } = useFitText({ maxFontSize: goal });
     return (
         <Container fixed={fixed} onClick={onClick} ref={ref} style={{ fontSize }}>
             {content}
@@ -40,6 +42,7 @@ const Container = styled.div`
     min-height: 20px;
     background-color: white;
     padding: 5px;
+    box-sizing: border-box;
     visibility: ${(props) => (props.fixed ? "hidden" : "visiable")};
 `;
 const TextEl = styled.p`

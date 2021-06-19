@@ -100,31 +100,32 @@ const Main = () => {
         const action = "jump";
         setActivity({ slide, action, time });
     };
-
     return (
-        <Container key={key}>
-            <InnerContainer isFull={!withVideo} withFrame={withFrame}>
+        <Container className="node">
+            <InnerContainer isFull={!withVideo} withFrame={withFrame} key={key}>
                 {content.map((data, index) => {
                     return <NewContent key={index} data={data} index={index} />;
                 })}
             </InnerContainer>
+            <Video src={videoSource} videoRef={videoRef} onTimeEvent={onTimeEvent} withVideo={withVideo} />
             <ControllerContainer>
                 <Controller togglePlay={togglePlay} toggleVideo={toggleVideo} jumpToPlay={jumpToPlay} barRef={barRef} reset={resetKey} toggleFrame={toggleFrame} percent={percent} />
                 <ControllerLine content={content} videoRef={videoRef} />
             </ControllerContainer>
-            <Video src={videoSource} videoRef={videoRef} onTimeEvent={onTimeEvent} withVideo={withVideo} />
         </Container>
     );
 };
 const ControllerContainer = styled.div`
     width: 100%;
+    height: 30px;
     position: relative;
 `;
 const InnerContainer = styled.div`
-    height: 100%;
+    flex: 1;
     box-sizing: border-box;
     width: 80%;
     display: flex;
+    overflow: auto;
     ${(props) =>
         props.withFrame &&
         css`
@@ -141,8 +142,12 @@ const InnerContainer = styled.div`
         `};
 `;
 const Container = styled.div`
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    height: 30vw;
+    height: 100vh;
+    box-sizing: border-box;
+
     padding: 10px;
     position: relative;
 `;
