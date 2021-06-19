@@ -165,6 +165,9 @@ const TitleContainer = styled.div`
     height: 10%;
     width: 100%;
     padding: 0 20px 0 !important;
+    @media only screen and (max-width: 900px) {
+        height: 20px;
+    }
 `;
 const PCon = styled.div`
     width: 100%;
