@@ -1,5 +1,5 @@
 import shortid from "shortid";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { useAtom } from "jotai";
 import { useRef, useState } from "react";
 
@@ -53,7 +53,7 @@ const Main = () => {
     };
     return (
         <Container key={key}>
-            <InnerContainer>
+            <InnerContainer isFull={!withVideo}>
                 {content.map((data, index) => {
                     return <NewContent key={index} data={data} index={index} />;
                 })}
@@ -65,8 +65,13 @@ const Main = () => {
     );
 };
 const InnerContainer = styled.div`
-    width: 80vw;
     height: 500px;
+    width: 80%;
+    ${(props) =>
+        props.isFull &&
+        css`
+            width: 100%;
+        `};
 `;
 const Container = styled.div`
     width: 100%;

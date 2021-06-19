@@ -3,50 +3,37 @@ import styled from "styled-components";
 import React, { useState } from "react";
 import { Rnd } from "react-rnd";
 
-function Image({ url }) {
-    const [state, setState] = useState({ x: 0, y: 0, width: 0, height: 0 });
-    const [isDrag, setIsDrag] = useState(false);
-    const onDrag = (e) => {
-        setIsDrag(true);
-        const { x, y, width, height } = e.target.getBoundingClientRect();
-        setState({ x, y, width, height });
+function Image({ url, addFixedData }) {
+    const [fixed, setFixed] = useState();
+    const onClick = (e) => {
+        setFixed(true);
+        const { top, right, bottom, left, width, height, x, y } = e.currentTarget.getBoundingClientRect();
+        addFixedData({
+            label: e.target.tagName,
+            text: e.target.InnerHTML,
+            src: e.target.src,
+            style: _.pick(window.getComputedStyle(e.currentTarget), ["font-size", "padding", "color", "background-color"]),
+            top,
+            right,
+            bottom,
+            left,
+            width,
+            height,
+            x,
+            y,
+        });
     };
-    if (!isDrag) {
-        return (
-            <Container onClick={onDrag}>
-                <Img src={url} draggable="false" />;
-            </Container>
-        );
-    }
     return (
-        <Rnd
-            size={{ width: state.width, height: state.height, background: "red" }}
-            position={{ x: state.x, y: state.y }}
-            onDragStop={(e, d) => {
-                setState({ ...state, x: d.x, y: d.y });
-            }}
-            onResizeStop={(e, direction, ref, delta, position) => {
-                setState({
-                    width: ref.style.width,
-                    height: ref.style.height,
-                    ...position,
-                });
-            }}
-        >
-            <RndImg src={url} draggable="false" />
-        </Rnd>
+        <Container fixed={fixed} onClick={onClick}>
+            <Img src={url} draggable="false" />;
+        </Container>
     );
 }
 
-const RndImg = styled.img`
-    object-fit: contain;
-    width: inherit;
-    height: inherit;
-`;
-
 const Container = styled.div`
     width: 100%;
-    max-height: 200px;
+    max-height: 20vh;
+    visibility: ${(props) => (props.fixed ? "hidden" : "visible")};
 `;
 const Img = styled.img`
     width: inherit;

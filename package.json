@@ -17,7 +17,8 @@
     "react-rnd": "^10.3.3",
     "shortid": "^2.2.16",
     "styled-components": "^5.2.3",
-    "styled-reset": "^4.3.4"
+    "styled-reset": "^4.3.4",
+    "use-fit-text": "^2.4.0"
   },
   "devDependencies": {
     "babel-plugin-styled-components": "^1.12.0"

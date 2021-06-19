@@ -2,6 +2,7 @@ import React from "react";
 import shortid from "shortid";
 import toStyle from "css-to-style";
 import styled, { css } from "styled-components";
+import { Rnd } from "react-rnd";
 import { useState } from "react";
 
 import Image from "./Image";
@@ -26,10 +27,17 @@ const ChunkedData = ({ data }) => {
     );
 };
 
+const RndElement = ({ data }) => {
+    return (
+        <Rnd>
+            <p>{`${data}`}</p>
+        </Rnd>
+    );
+};
+
 function Content({ data, withVideo }) {
     const column = data.column;
     const chunkedData = _.groupBy(data.learning_material, "in_column");
-    console.log(chunkedData);
     const titleObj = _.find(data.learning_material, (o) => o.label === "title");
     const [fixed, setFixed] = useState(false);
     if (!data) {
