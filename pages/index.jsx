@@ -13,7 +13,7 @@ import input from "../example_input.json";
 
 const ControllerLine = ({ content, videoRef }) => {
     const [duration, setDuration] = useState("");
-    const startTimes = _.map(content, "start_time");
+    const startTimes = _.map(content, "end_time");
     useEffect(() => {
         const due = _.get(videoRef, "current.duration");
         if (due) {
