@@ -122,7 +122,8 @@ const PCon = styled.div`
 const CustomRnd = styled(Rnd)`
     box-sizing: border-box;
     :hover {
-        border: 1px solid yellow;
+        border: 2px solid yellow;
+        background-color: green;
     }
 `;
 const RndP = styled.p``;
@@ -138,10 +139,10 @@ const Column = styled.div`
 `;
 
 const Container = styled.div`
-    background-color: gray;
     > div {
         padding: 20px;
     }
+    flex: 1;
     display: flex;
     overflow: auto;
     flex-wrap: wrap;

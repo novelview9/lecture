@@ -18,12 +18,18 @@ const Main = () => {
     const [activity, setActivity] = useAtom(activityAtom);
     const videoRef = useRef(null);
 
+    const [withFrame, setWithFrame] = useState(false);
+
     const [withVideo, setWithVideo] = useState(true);
 
     const togglePlay = () => {
         const video = videoRef.current;
         const method = video.paused ? "play" : "pause";
         video[method]();
+    };
+
+    const toggleFrame = () => {
+        setWithFrame(!withFrame);
     };
 
     const sourcePath = "/example_input1_source/";
@@ -53,19 +59,30 @@ const Main = () => {
     };
     return (
         <Container key={key}>
-            <InnerContainer isFull={!withVideo}>
+            <InnerContainer isFull={!withVideo} withFrame={withFrame}>
                 {content.map((data, index) => {
                     return <NewContent key={index} data={data} index={index} />;
                 })}
             </InnerContainer>
-            <Controller togglePlay={togglePlay} toggleVideo={toggleVideo} jumpToPlay={jumpToPlay} barRef={barRef} reset={resetKey} />
+            <Controller togglePlay={togglePlay} toggleVideo={toggleVideo} jumpToPlay={jumpToPlay} barRef={barRef} reset={resetKey} toggleFrame={toggleFrame} />
             <Video src={videoSource} videoRef={videoRef} onTimeEvent={onTimeEvent} withVideo={withVideo} />
         </Container>
     );
 };
 const InnerContainer = styled.div`
-    height: 500px;
+    height: 100%;
+    box-sizing: border-box;
     width: 80%;
+    display: flex;
+    ${(props) =>
+        props.withFrame &&
+        css`
+            padding-top: 4%;
+            padding-bottom: 3%;
+            background-image: url("/bg_video5_5_1_shot11.jpg");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        `};
     ${(props) =>
         props.isFull &&
         css`
@@ -74,8 +91,7 @@ const InnerContainer = styled.div`
 `;
 const Container = styled.div`
     width: 100%;
-    height: 500px;
-    background-color: red;
+    height: 30vw;
     padding: 10px;
     position: relative;
 `;
