@@ -31,19 +31,12 @@ function Image({ url, addFixedData }) {
 }
 
 const Container = styled.div`
-    width: 100%;
-    max-height: 20vh;
+    flex: 1;
+    display: inline-flex;
     visibility: ${(props) => (props.fixed ? "hidden" : "visible")};
 `;
 const Img = styled.img`
-    width: inherit;
-    max-width: ${(props) => (props.maxWidth ? props.maxWidth : "100%")};
     object-fit: contain;
-    height: inherit;
-    max-height: inherit;
-    @media only screen and (max-width: 900px) {
-        max-width: 50%;
-    }
 `;
 
 export default React.memo(Image);

@@ -11,8 +11,9 @@ function Video({ videoRef, src, onTimeEvent, withVideo }) {
 const Container = styled.div`
     position: absolute;
     right: 0;
-    bottom: 0;
+    bottom: 10px;
     max-height: 100%;
+    width: 20%;
 `;
 
 const VideoEl = styled.video`
@@ -20,7 +21,7 @@ const VideoEl = styled.video`
     display: block;
     opacity: 0;
     height: inherit;
-    max-width: 300px;
+    max-width: 100%;
     ${(props) =>
         props.active &&
         css`

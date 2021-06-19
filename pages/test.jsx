@@ -58,7 +58,6 @@ const Main = () => {
                     return <NewContent key={index} data={data} index={index} />;
                 })}
             </InnerContainer>
-
             <Controller togglePlay={togglePlay} toggleVideo={toggleVideo} jumpToPlay={jumpToPlay} barRef={barRef} reset={resetKey} />
             <Video src={videoSource} videoRef={videoRef} onTimeEvent={onTimeEvent} withVideo={withVideo} />
         </Container>

@@ -99,7 +99,6 @@ function Content({ data, index }) {
         });
     });
 
-    const getData = () => {};
     return (
         <Container isActive={isActive}>
             {_.times(state.column, (i) => {
@@ -144,6 +143,7 @@ const Container = styled.div`
         padding: 20px;
     }
     display: flex;
+    overflow: auto;
     flex-wrap: wrap;
     height: 100%;
     position: relative;
