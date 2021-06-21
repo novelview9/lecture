@@ -118,8 +118,6 @@ function Content({ data, index }) {
             return { ...prevState, [newKey]: { ...data } };
         });
     });
-    const ref1 = useRef();
-    const ref2 = useRef();
 
     const titleObj = _.find(data.learning_material, (o) => o.label === "title");
     const sourcePath = "/example_input1_source/";
@@ -180,7 +178,6 @@ const CustomRnd = styled(Rnd)`
         `};
 `;
 const RndImg = styled.img`
-    object-fit: contain;
     width: inherit;
     height: inherit;
 `;
@@ -192,13 +189,13 @@ const Column = styled.div`
 `;
 
 const Container = styled.div`
-    box-sizing: border-box;
+    box-sizing: content-box;
     display: ${(props) => (props.isActive ? "flex" : "none")};
     flex-direction: column;
     position: relative;
     align-items: stretch;
     width: 100%;
-    padding-bottom: 2vh;
+    padding: 2vh;
 `;
 
 export default React.memo(Content);

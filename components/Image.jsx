@@ -6,13 +6,14 @@ import { Rnd } from "react-rnd";
 function Image({ url, addFixedData }) {
     const [fixed, setFixed] = useState();
     const onClick = (e) => {
+        console.log(e.currentTarget.firstChild);
         setFixed(true);
-        const { top, right, bottom, left, width, height, x, y } = e.currentTarget.getBoundingClientRect();
+        const { top, right, bottom, left, width, height, x, y } = e.currentTarget.firstChild.getBoundingClientRect();
         addFixedData({
             label: e.target.tagName,
             text: e.target.InnerHTML,
             src: e.target.src,
-            style: _.pick(window.getComputedStyle(e.currentTarget), ["font-size", "padding", "color", "background-color"]),
+            style: _.pick(window.getComputedStyle(e.currentTarget.firstChild), ["font-size", "padding", "color", "background-color"]),
             top,
             right,
             bottom,
@@ -38,9 +39,9 @@ const Container = styled.div`
     visibility: ${(props) => (props.fixed ? "hidden" : "visible")};
 `;
 const Img = styled.img`
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
 `;
 
 export default React.memo(Image);
