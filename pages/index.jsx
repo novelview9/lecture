@@ -48,6 +48,7 @@ const Main = () => {
     const content = input.content;
 
     const [percent, setPercent] = useState(0);
+    const [currentTime, setCurrentTime] = useState("00:00");
     const [key, setKey] = useState(shortid.generate());
     const resetKey = () => {
         setKey(shortid.generate());
@@ -83,6 +84,11 @@ const Main = () => {
         const action = activity.slide === slide ? "playing" : "flip";
         setActivity({ slide, action, time });
         const percentPoint = time / video.duration;
+        var minutes = Math.floor(time / 60)
+            .toString()
+            .padStart(2, "0");
+        var seconds = Math.floor(time).toString().padStart(2, "0");
+        setCurrentTime(`${minutes}:${seconds}`);
         setPercent(percentPoint * 100);
     };
 
@@ -97,6 +103,11 @@ const Main = () => {
         const slide = _.findLastIndex(input.content, (obj) => obj.start_time < time);
         const action = "jump";
         setActivity({ slide, action, time });
+        var minutes = Math.floor(time / 60)
+            .toString()
+            .padStart(2, "0");
+        var seconds = Math.floor(time).toString().padStart(2, "0");
+        setCurrentTime(`${minutes}:${seconds}`);
     };
 
     const [duration, setDuration] = useState("");
@@ -109,7 +120,16 @@ const Main = () => {
             </InnerContainer>
             <Video src={videoSource} videoRef={videoRef} onTimeEvent={onTimeEvent} withVideo={withVideo} setDuration={setDuration} />
             <ControllerContainer>
-                <Controller togglePlay={togglePlay} toggleVideo={toggleVideo} jumpToPlay={jumpToPlay} barRef={barRef} reset={resetKey} toggleFrame={toggleFrame} percent={percent} />
+                <Controller
+                    togglePlay={togglePlay}
+                    toggleVideo={toggleVideo}
+                    jumpToPlay={jumpToPlay}
+                    barRef={barRef}
+                    reset={resetKey}
+                    toggleFrame={toggleFrame}
+                    percent={percent}
+                    currentTime={currentTime}
+                />
                 <ControllerLine content={content} duration={duration} />
             </ControllerContainer>
         </Container>
