@@ -14,10 +14,11 @@ import activityAtom from "../activityAtom";
 const sourcePath = "/example_input1_source/";
 
 const ChunkedData = React.memo(({ data, addFixedData }) => {
+    const sortedData = _.orderBy(data, "order");
     const [goal, setGoal] = useState(200);
     return (
         <Column>
-            {data.map((obj) => {
+            {sortedData.map((obj) => {
                 if (obj.label === "text_box") {
                     return <Text obj={obj} key={shortid.generate()} addFixedData={addFixedData} goal={goal} />;
                 } else if (obj.label === "video") {
