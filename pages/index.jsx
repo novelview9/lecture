@@ -96,6 +96,8 @@ const Main = () => {
 
     const jumpToPlay = (e) => {
         const video = videoRef.current;
+        video.play();
+        video.pause();
         const percentPoint = e.nativeEvent.offsetX / barRef.current.offsetWidth;
         setPercent(percentPoint * 100);
         const time = percentPoint * video.duration;
@@ -109,6 +111,12 @@ const Main = () => {
         var seconds = Math.floor(time).toString().padStart(2, "0");
         setCurrentTime(`${minutes}:${seconds}`);
     };
+    // useEffect(() => {
+    //     setTimeout(function () {
+    //         const video = videoRef.current;
+    //         video.paused = "start";
+    //     }, 100);
+    // }, []);
 
     const [duration, setDuration] = useState("");
     return (
