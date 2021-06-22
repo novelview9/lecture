@@ -127,7 +127,7 @@ const Main = () => {
         <Container className="node">
             <InnerContainer isFull={!withVideo} withFrame={withFrame} key={key}>
                 {content.map((data, index) => {
-                    return <NewContent key={index} data={data} index={index} />;
+                    return <NewContent key={index} data={data} index={index} withFrame={withFrame} />;
                 })}
             </InnerContainer>
             <Video src={videoSource} videoRef={videoRef} onTimeEvent={onTimeEvent} withVideo={withVideo} setDuration={setDuration} />

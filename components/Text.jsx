@@ -28,7 +28,7 @@ function Text({ obj, addFixedData, goal }) {
             y,
         });
     };
-    const { fontSize, ref } = useFitText({ maxFontSize: goal });
+    const { fontSize, ref } = useFitText({ maxFontSize: goal, resolution: 30 });
     return (
         <Container fixed={fixed} onClick={onClick}>
             <Font ref={ref} style={{ fontSize }} color={obj.color_font} bg={obj.color_bg}>

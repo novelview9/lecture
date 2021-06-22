@@ -37,7 +37,7 @@ const MemoedChunkedData = React.memo(ChunkedData, checkOnlyData);
 
 const FixedElement = ({ data, clicked, keyValue, isActive }) => {
     const [state, setState] = useState({ x: data.x, y: data.y, width: data.width, height: data.height });
-    const { fontSize, ref } = useFitText({ maxFontSize: 1000 });
+    const { fontSize, ref } = useFitText({ maxFontSize: 1000, resolution: 1 });
     const run = () => {
         clicked(keyValue);
     };
