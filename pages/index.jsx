@@ -161,8 +161,6 @@ const InnerContainer = styled.div`
     ${(props) =>
         props.withFrame &&
         css`
-            padding-top: 4%;
-            padding-bottom: 3%;
             background-image: url("/bg_video5_5_1_shot11.jpg");
             background-size: 100% 100%;
             background-repeat: no-repeat;

@@ -49,6 +49,7 @@ const FixedElement = ({ data, clicked, keyValue, isActive }) => {
             <CustomRnd
                 onDragStart={run}
                 onResizeStart={run}
+                bounds={"window"}
                 isActive={isActive}
                 size={{ width: state.width, height: state.height, background: "red" }}
                 position={{ x: state.x, y: state.y }}
@@ -74,6 +75,7 @@ const FixedElement = ({ data, clicked, keyValue, isActive }) => {
             <CustomRnd
                 onDragStart={run}
                 onResizeStart={run}
+                bounds={"window"}
                 isActive={isActive}
                 size={{ width: state.width, height: state.height, background: "red" }}
                 position={{ x: state.x, y: state.y }}
@@ -106,7 +108,7 @@ const Clear = styled.button`
     }
 `;
 
-function Content({ data, index }) {
+function Content({ data, index, withFrame }) {
     const chunkedData = _.groupBy(data.learning_material, "in_column");
     const [activity] = useAtom(activityAtom);
     const isActive = activity.slide === index;
@@ -134,7 +136,7 @@ function Content({ data, index }) {
                     <TitleImg src={`${sourcePath}${titleObj.path}`} />
                 </TitleContainer>
             )}
-            <ColumnContainer>
+            <ColumnContainer withFrame={withFrame}>
                 {_.times(state.column, (i) => {
                     return <MemoedChunkedData data={state.chunkedData[i + 1]} key={i} addFixedData={addFixedData} />;
                 })}
@@ -151,6 +153,12 @@ const ColumnContainer = styled.div`
     flex-direction: row;
     width: 100%;
     height: 100%;
+    ${(props) =>
+        props.withFrame &&
+        css`
+            padding-top: 4%;
+            padding-bottom: 3%;
+        `};
 `;
 const TitleImg = styled.img`
     width: 100%;
