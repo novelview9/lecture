@@ -6,7 +6,6 @@ import { Rnd } from "react-rnd";
 function Image({ url, addFixedData }) {
     const [fixed, setFixed] = useState();
     const onClick = (e) => {
-        console.log(e.currentTarget.firstChild);
         setFixed(true);
         const { top, right, bottom, left, width, height, x, y } = e.currentTarget.firstChild.getBoundingClientRect();
         addFixedData({
