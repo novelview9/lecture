@@ -11,15 +11,8 @@ import Video from "../components/Video";
 import activityAtom from "../activityAtom";
 import input from "../example_input.json";
 
-const ControllerLine = ({ content, videoRef }) => {
-    const [duration, setDuration] = useState("");
+const ControllerLine = ({ content, duration }) => {
     const startTimes = _.map(content, "end_time");
-    useEffect(() => {
-        const due = _.get(videoRef, "current.duration");
-        if (due) {
-            setDuration(due);
-        }
-    }, [videoRef.current]);
     if (!duration) {
         return <p></p>;
     }
@@ -105,6 +98,8 @@ const Main = () => {
         const action = "jump";
         setActivity({ slide, action, time });
     };
+
+    const [duration, setDuration] = useState("");
     return (
         <Container className="node">
             <InnerContainer isFull={!withVideo} withFrame={withFrame} key={key}>
@@ -112,10 +107,10 @@ const Main = () => {
                     return <NewContent key={index} data={data} index={index} />;
                 })}
             </InnerContainer>
-            <Video src={videoSource} videoRef={videoRef} onTimeEvent={onTimeEvent} withVideo={withVideo} />
+            <Video src={videoSource} videoRef={videoRef} onTimeEvent={onTimeEvent} withVideo={withVideo} setDuration={setDuration} />
             <ControllerContainer>
                 <Controller togglePlay={togglePlay} toggleVideo={toggleVideo} jumpToPlay={jumpToPlay} barRef={barRef} reset={resetKey} toggleFrame={toggleFrame} percent={percent} />
-                <ControllerLine content={content} videoRef={videoRef} />
+                <ControllerLine content={content} duration={duration} />
             </ControllerContainer>
         </Container>
     );

@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 import { Rnd } from "react-rnd";
 import { useState } from "react";
 
-function Video({ videoRef, src, onTimeEvent, withVideo }) {
+function Video({ videoRef, src, onTimeEvent, withVideo, setDuration }) {
     const [fixed, setFixed] = useState();
     const [data, setData] = useState();
     const [state, setState] = useState({});
@@ -23,6 +23,9 @@ function Video({ videoRef, src, onTimeEvent, withVideo }) {
             x,
             y,
         });
+    };
+    const loaded = (e) => {
+        setDuration(e.currentTarget.duration);
     };
     if (fixed) {
         return (
@@ -46,7 +49,7 @@ function Video({ videoRef, src, onTimeEvent, withVideo }) {
     }
     return (
         <Container>
-            <VideoEl src={src} onTimeUpdate={onTimeEvent} ref={videoRef} active={withVideo} playsInline onClick={fixing} />
+            <VideoEl src={src} onTimeUpdate={onTimeEvent} ref={videoRef} active={withVideo} playsInline onClick={fixing} onLoadedMetadata={loaded} />
         </Container>
     );
 }
