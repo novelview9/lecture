@@ -72,8 +72,7 @@ const Main = () => {
         setWithFrame(!withFrame);
     };
 
-    const sourcePath = "/example_input1_source/";
-    const videoSource = sourcePath + input.video.source;
+    const videoSource = input.sourcePath + input.video.source;
 
     const toggleVideo = () => {
         setWithVideo(!withVideo);
@@ -130,7 +129,7 @@ const Main = () => {
         <Container className="node">
             <InnerContainer isFull={!withVideo} withFrame={withFrame} key={key}>
                 {content.map((data, index) => {
-                    return <NewContent key={index} data={data} index={index} withFrame={withFrame} />;
+                    return <NewContent key={index} data={data} index={index} withFrame={withFrame} sourcePath={input.sourcePath} />;
                 })}
             </InnerContainer>
             <Video src={videoSource} videoRef={videoRef} onTimeEvent={onTimeEvent} withVideo={withVideo} setDuration={setDuration} />

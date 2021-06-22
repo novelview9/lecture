@@ -13,9 +13,7 @@ import RndVideo from "./RndVideo";
 import Text from "./Text";
 import activityAtom from "../activityAtom";
 
-const sourcePath = "/example_input1_source/";
-
-const ChunkedData = React.memo(({ data, addFixedData, index }) => {
+const ChunkedData = React.memo(({ data, addFixedData, index, sourcePath }) => {
     const sortedData = _.orderBy(data, "order");
     const [goal, setGoal] = useState(200);
     return (
@@ -146,7 +144,7 @@ const Clear = styled.button`
     }
 `;
 
-function Content({ data, index, withFrame }) {
+function Content({ data, index, withFrame, sourcePath }) {
     const chunkedData = _.groupBy(data.learning_material, "in_column");
     const [activity] = useAtom(activityAtom);
     const isActive = activity.slide === index;
@@ -161,7 +159,6 @@ function Content({ data, index, withFrame }) {
     });
 
     const titleObj = _.find(data.learning_material, (o) => o.label === "title");
-    const sourcePath = "/example_input1_source/";
     const [nodeEl, setNodeEl] = useState();
     const clicked = (key) => {
         setNodeEl(key);
@@ -176,7 +173,7 @@ function Content({ data, index, withFrame }) {
             )}
             <ColumnContainer withFrame={withFrame}>
                 {_.times(state.column, (i) => {
-                    return <MemoedChunkedData data={state.chunkedData[i + 1]} key={i} addFixedData={addFixedData} index={index} />;
+                    return <MemoedChunkedData data={state.chunkedData[i + 1]} key={i} addFixedData={addFixedData} index={index} sourcePath={sourcePath} />;
                 })}
             </ColumnContainer>
             {Object.entries(fixedData).map((value) => (
