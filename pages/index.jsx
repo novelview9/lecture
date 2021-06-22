@@ -84,10 +84,11 @@ const Main = () => {
         const action = activity.slide === slide ? "playing" : "flip";
         setActivity({ slide, action, time });
         const percentPoint = time / video.duration;
-        var minutes = Math.floor(time / 60)
+        const minutes = Math.floor(time / 60);
+        const seconds = Math.floor(time - 60 * minutes)
             .toString()
             .padStart(2, "0");
-        var seconds = Math.floor(time).toString().padStart(2, "0");
+        const stringMin = minutes.toString().padStart(2, "0");
         setCurrentTime(`${minutes}:${seconds}`);
         setPercent(percentPoint * 100);
     };
@@ -96,8 +97,10 @@ const Main = () => {
 
     const jumpToPlay = (e) => {
         const video = videoRef.current;
-        video.play();
-        video.pause();
+        if (video.paused) {
+            video.play();
+            video.pause();
+        }
         const percentPoint = e.nativeEvent.offsetX / barRef.current.offsetWidth;
         setPercent(percentPoint * 100);
         const time = percentPoint * video.duration;
@@ -105,10 +108,11 @@ const Main = () => {
         const slide = _.findLastIndex(input.content, (obj) => obj.start_time < time);
         const action = "jump";
         setActivity({ slide, action, time });
-        var minutes = Math.floor(time / 60)
+        const minutes = Math.floor(time / 60);
+        const seconds = Math.floor(time - 60 * minutes)
             .toString()
             .padStart(2, "0");
-        var seconds = Math.floor(time).toString().padStart(2, "0");
+        const stringMin = minutes.toString().padStart(2, "0");
         setCurrentTime(`${minutes}:${seconds}`);
     };
     // useEffect(() => {
