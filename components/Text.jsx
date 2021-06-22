@@ -7,7 +7,6 @@ import { useState } from "react";
 
 function Text({ obj, addFixedData, goal }) {
     const [fixed, setFixed] = useState();
-    console.log(obj);
     const onClick = (e) => {
         setFixed(true);
         const { top, right, bottom, left, width, height } = e.currentTarget.getBoundingClientRect();

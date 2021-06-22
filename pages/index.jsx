@@ -8,19 +8,19 @@ import { useEffect, useRef, useState } from "react";
 import Controller from "../components/Controller";
 import NewContent from "../components/NewContent";
 import Video from "../components/Video";
-import activityAtom from "../activityAtom";
 import input from "../example_input.json";
+import activityAtom, { playingAtom } from "../activityAtom";
 
 const ControllerLine = ({ content, duration }) => {
     const startTimes = _.map(content, "end_time");
     if (!duration) {
-        return <p></p>;
+        return <p key={shortid.generate()}></p>;
     }
 
     return (
         <Line>
             {startTimes.map((time) => {
-                return <LinePoint value={(time / duration) * 100} key={() => shortid.generate()} />;
+                return <LinePoint value={(time / duration) * 100} key={shortid.generate()} />;
             })}
         </Line>
     );
@@ -51,7 +51,7 @@ const Main = () => {
     const [currentTime, setCurrentTime] = useState("00:00");
     const [key, setKey] = useState(shortid.generate());
     const resetKey = () => {
-        setKey(shortid.generate());
+        setKey(() => shortid.generate());
     };
     const [activity, setActivity] = useAtom(activityAtom);
     const videoRef = useRef(null);
@@ -59,11 +59,13 @@ const Main = () => {
     const [withFrame, setWithFrame] = useState(false);
 
     const [withVideo, setWithVideo] = useState(true);
+    const [playing, setPlaying] = useAtom(playingAtom);
 
     const togglePlay = () => {
         const video = videoRef.current;
         const method = video.paused ? "play" : "pause";
         video[method]();
+        setPlaying(!video.paused);
     };
 
     const toggleFrame = () => {
@@ -97,6 +99,7 @@ const Main = () => {
 
     const jumpToPlay = (e) => {
         const video = videoRef.current;
+        setPlaying(!video.paused);
         if (video.paused) {
             video.play();
             video.pause();

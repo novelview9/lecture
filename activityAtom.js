@@ -6,4 +6,6 @@ const activityAtom = atom({
     slide: 0,
 });
 
+const playingAtom = atom(false);
 export default activityAtom;
+export { playingAtom };

@@ -8,23 +8,35 @@ import { useAtom } from "jotai";
 import { useState } from "react";
 
 import Image from "./Image";
+import InnerVideo from "./InnerVideo";
+import RndVideo from "./RndVideo";
 import Text from "./Text";
 import activityAtom from "../activityAtom";
 
 const sourcePath = "/example_input1_source/";
 
-const ChunkedData = React.memo(({ data, addFixedData }) => {
+const ChunkedData = React.memo(({ data, addFixedData, index }) => {
     const sortedData = _.orderBy(data, "order");
     const [goal, setGoal] = useState(200);
     return (
         <Column>
             {sortedData.map((obj) => {
                 if (obj.label === "text_box") {
-                    return <Text obj={obj} key={shortid.generate()} addFixedData={addFixedData} goal={goal} />;
+                    return <Text obj={obj} addFixedData={addFixedData} goal={goal} key={shortid.generate()} />;
                 } else if (obj.label === "video") {
-                    return <></>;
+                    return (
+                        <InnerVideo
+                            url={`${sourcePath}${obj.path}`}
+                            addFixedData={addFixedData}
+                            startTime={obj.start_time}
+                            endTime={obj.end_time}
+                            index={index}
+                            key={shortid.generate()}
+                            index={index}
+                        />
+                    );
                 } else {
-                    return <Image url={`${sourcePath}${obj.path}`} key={shortid.generate()} addFixedData={addFixedData} />;
+                    return <Image url={`${sourcePath}${obj.path}`} addFixedData={addFixedData} key={shortid.generate()} />;
                 }
             })}
         </Column>
@@ -66,6 +78,32 @@ const FixedElement = ({ data, clicked, keyValue, isActive }) => {
                 }}
             >
                 <RndImg src={data.src} draggable="false" />
+                {isActive && <Clear onClick={clear}>confirm</Clear>}
+            </CustomRnd>
+        );
+    }
+    if (data.label === "VIDEO") {
+        return (
+            <CustomRnd
+                onDragStart={run}
+                onResizeStart={run}
+                bounds={"window"}
+                isActive={isActive}
+                size={{ width: state.width, height: state.height, background: "red" }}
+                position={{ x: state.x, y: state.y }}
+                onDragStop={(e, d) => {
+                    setState({ ...state, x: d.x, y: d.y });
+                }}
+                style={data.style}
+                onResizeStop={(e, direction, ref, delta, position) => {
+                    setState({
+                        width: ref.style.width,
+                        height: ref.style.height,
+                        ...position,
+                    });
+                }}
+            >
+                <RndVideo url={data.src} startTime={data.startTime} />
                 {isActive && <Clear onClick={clear}>confirm</Clear>}
             </CustomRnd>
         );
@@ -138,7 +176,7 @@ function Content({ data, index, withFrame }) {
             )}
             <ColumnContainer withFrame={withFrame}>
                 {_.times(state.column, (i) => {
-                    return <MemoedChunkedData data={state.chunkedData[i + 1]} key={i} addFixedData={addFixedData} />;
+                    return <MemoedChunkedData data={state.chunkedData[i + 1]} key={i} addFixedData={addFixedData} index={index} />;
                 })}
             </ColumnContainer>
             {Object.entries(fixedData).map((value) => (
