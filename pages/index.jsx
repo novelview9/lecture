@@ -2,6 +2,7 @@ import _ from "lodash";
 import React from "react";
 import shortid from "shortid";
 import styled, { css } from "styled-components";
+import { forwardRef, useImperativeHandle } from "react";
 import { useAtom } from "jotai";
 import { useEffect, useRef, useState } from "react";
 
@@ -51,6 +52,7 @@ const Main = () => {
     const [currentTime, setCurrentTime] = useState("00:00");
     const [key, setKey] = useState(shortid.generate());
     const resetKey = () => {
+        childRef.current.resetHandle();
         setKey(() => shortid.generate());
     };
     const [activity, setActivity] = useAtom(activityAtom);
@@ -123,7 +125,7 @@ const Main = () => {
     //         video.paused = "start";
     //     }, 100);
     // }, []);
-
+    const childRef = useRef();
     const [duration, setDuration] = useState("");
     return (
         <Container className="node">
@@ -132,7 +134,7 @@ const Main = () => {
                     return <NewContent key={index} data={data} index={index} withFrame={withFrame} sourcePath={input.sourcePath} />;
                 })}
             </InnerContainer>
-            <Video src={videoSource} videoRef={videoRef} onTimeEvent={onTimeEvent} withVideo={withVideo} setDuration={setDuration} />
+            <Video src={videoSource} videoRef={videoRef} onTimeEvent={onTimeEvent} withVideo={withVideo} setDuration={setDuration} ref={childRef} />
             <ControllerContainer>
                 <Controller
                     togglePlay={togglePlay}

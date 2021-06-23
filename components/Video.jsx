@@ -1,16 +1,41 @@
 import styled, { css } from "styled-components";
 import { Rnd } from "react-rnd";
-import { useEffect, useState } from "react";
+import { forwardRef, useEffect, useImperativeHandle, useState } from "react";
 
-function Video({ videoRef, src, onTimeEvent, withVideo, setDuration }) {
+function Video({ videoRef, src, onTimeEvent, withVideo, setDuration }, ref) {
     const [fixed, setFixed] = useState();
     const [data, setData] = useState();
     const [state, setState] = useState({});
-    const [nodeTime, setNodeTime] = useState({});
+    const [initial, setInitial] = useState({});
+    const [nodeStatus, setNodeStatus] = useState({});
+    useImperativeHandle(ref, () => ({
+        resetHandle() {
+            if (fixed) {
+                setState(initial);
+            }
+        },
+    }));
     const fixing = (e) => {
-        setNodeTime(videoRef.current.currentTime);
+        setNodeStatus({
+            time: videoRef.current.currentTime,
+            isPlaying: !videoRef.current.paused,
+        });
         setFixed(true);
         const { top, right, bottom, left, width, height, x, y } = e.currentTarget.getBoundingClientRect();
+        setInitial({
+            label: e.target.tagName,
+            text: e.target.InnerHTML,
+            src: e.target.src,
+            style: _.pick(window.getComputedStyle(e.currentTarget), ["font-size", "padding", "color", "background-color"]),
+            top,
+            right,
+            bottom,
+            left,
+            width,
+            height,
+            x,
+            y,
+        });
         setState({
             label: e.target.tagName,
             text: e.target.InnerHTML,
@@ -31,8 +56,12 @@ function Video({ videoRef, src, onTimeEvent, withVideo, setDuration }) {
     };
     useEffect(() => {
         if (fixed) {
-            videoRef.current.currentTime = nodeTime;
-            videoRef.current.play();
+            videoRef.current.currentTime = nodeStatus.time;
+            if (nodeStatus.isPlaying) {
+                videoRef.current.play();
+            } else {
+                videoRef.current.pause();
+            }
         }
     }, [fixed]);
     if (fixed) {
@@ -99,5 +128,4 @@ const VideoEl = styled.video`
             object-fit: fill;
         `}
 `;
-
-export default Video;
+export default forwardRef(Video);
