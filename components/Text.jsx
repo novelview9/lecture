@@ -18,7 +18,7 @@ function Text({ obj, addFixedData }) {
             case "L":
                 return 0.3;
             case "S":
-                return 0.3;
+                return 0.2;
         }
     };
     const onClick = (e) => {
