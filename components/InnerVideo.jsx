@@ -71,6 +71,7 @@ const Container = styled.div`
     display: flex;
     flex: 1;
     flex-basis: 0;
+    overflow: hidden;
     visibility: ${(props) => (props.fixed ? "hidden" : "visible")};
 `;
 const Video = styled.video`

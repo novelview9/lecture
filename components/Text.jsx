@@ -3,10 +3,24 @@ import toStyle from "css-to-style";
 import useFitText from "use-fit-text";
 import styled, { css } from "styled-components";
 import { Rnd } from "react-rnd";
+import { createBreakpoint } from "react-use";
 import { useState } from "react";
+
+const useBreakpoint = createBreakpoint({ XL: 1280, L: 768, S: 350 });
 
 function Text({ obj, addFixedData }) {
     const [fixed, setFixed] = useState();
+    const breakpoint = useBreakpoint();
+    const getBreakValue = () => {
+        switch (breakpoint) {
+            case "XL":
+                return 1;
+            case "L":
+                return 0.3;
+            case "S":
+                return 0.3;
+        }
+    };
     const onClick = (e) => {
         setFixed(true);
         const { top, right, bottom, left, width, height } = e.currentTarget.getBoundingClientRect();
@@ -27,8 +41,8 @@ function Text({ obj, addFixedData }) {
             y,
         });
     };
-    const goal = obj.avail_font_size * 100;
-    const { fontSize, ref } = useFitText({ maxFontSize: goal, resolution: 30 });
+    const goal = obj.avail_font_size * 100 * getBreakValue();
+    const { fontSize, ref } = useFitText({ maxFontSize: goal, resolution: 5 });
     return (
         <Container fixed={fixed} onClick={onClick}>
             <Font ref={ref} style={{ fontSize }} color={obj.color_font} bg={obj.color_bg}>
