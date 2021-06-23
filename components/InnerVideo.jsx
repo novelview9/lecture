@@ -23,6 +23,10 @@ function InnerVideo({ url, startTime, endTime, addFixedData, index }) {
         if (action.action === "jump") {
             ref.current.currentTime = action.time - startTime;
         }
+
+        if (action.action === "flip") {
+            ref.current.currentTime = action.time - startTime;
+        }
         if (playing) {
             setOnPlay(true);
         }
@@ -64,16 +68,15 @@ function InnerVideo({ url, startTime, endTime, addFixedData, index }) {
 }
 
 const Container = styled.div`
-    flex: 1 1 100%;
-    overflow-x: hidden;
-    overflow-y: auto;
-    display: inline-flex;
+    display: flex;
+    flex: 1;
+    flex-basis: 0;
     visibility: ${(props) => (props.fixed ? "hidden" : "visible")};
 `;
 const Video = styled.video`
-    max-width: 100%;
-    height: auto;
     margin: 0 auto;
+    max-width: 100%;
+    max-height: 100%;
 `;
 
 export default React.memo(InnerVideo);

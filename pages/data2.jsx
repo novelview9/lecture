@@ -50,6 +50,7 @@ const Main = () => {
     const [percent, setPercent] = useState(0);
     const [currentTime, setCurrentTime] = useState("00:00");
     const [key, setKey] = useState(shortid.generate());
+
     const childRef = useRef();
     const resetKey = () => {
         childRef.current.resetHandle();
@@ -125,7 +126,6 @@ const Main = () => {
     //         video.paused = "start";
     //     }, 100);
     // }, []);
-
     const [duration, setDuration] = useState("");
     return (
         <Container className="node">
@@ -157,11 +157,9 @@ const ControllerContainer = styled.div`
 `;
 const InnerContainer = styled.div`
     flex: 1;
-    box-sizing: border-box;
-    width: 80%;
     display: flex;
     align-items: stretch;
-    overflow: hidden;
+    margin-right: 100px;
     ${(props) =>
         props.withFrame &&
         css`
@@ -172,15 +170,16 @@ const InnerContainer = styled.div`
     ${(props) =>
         props.isFull &&
         css`
-            width: 100%;
+            margin-right: 0;
         `};
 `;
 const Container = styled.div`
     display: flex;
     flex-direction: column;
-    width: 100%;
     height: 100vh;
+    width: 100vw;
     box-sizing: border-box;
+    align-items: stretch;
     position: relative;
     @supports (-webkit-touch-callout: none) {
         height: -webkit-fill-available;

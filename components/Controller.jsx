@@ -26,6 +26,9 @@ const Time = styled.div`
     padding-left: 10px;
 `;
 const Container = styled.div`
+    * {
+        font-size: 10px;
+    }
     display: flex;
     flex-direction: column;
 `;

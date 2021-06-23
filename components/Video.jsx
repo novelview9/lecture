@@ -49,11 +49,11 @@ function Video({ videoRef, src, onTimeEvent, withVideo, setDuration }, ref) {
                 videoRef.current.play();
                 setTimeout(() => {
                     videoRef.current.pause();
-                }, 1);
+                }, 100);
             }
             setTimeout(() => {
                 fixing();
-            }, 200);
+            }, 100);
         }
     }, [parentRef]);
     const loaded = (e) => {
@@ -64,7 +64,7 @@ function Video({ videoRef, src, onTimeEvent, withVideo, setDuration }, ref) {
             videoRef.current.play();
             setTimeout(() => {
                 videoRef.current.pause();
-            }, 1);
+            }, 100);
         }
     }, [fixed]);
     if (fixed) {
@@ -108,7 +108,7 @@ const CustomRnd = styled(Rnd)`
 const Container = styled.div`
     position: absolute;
     right: 0;
-    bottom: 40px;
+    bottom: 55px;
     max-height: 100%;
     width: 20%;
 `;

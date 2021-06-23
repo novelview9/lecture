@@ -16,7 +16,7 @@ import activityAtom from "../activityAtom";
 const ChunkedData = React.memo(({ data, addFixedData, index, sourcePath }) => {
     const sortedData = _.orderBy(data, "order");
     return (
-        <Column>
+        <InnerColumn>
             {sortedData.map((obj) => {
                 if (obj.label === "text_box") {
                     return <Text obj={obj} addFixedData={addFixedData} key={shortid.generate()} />;
@@ -36,7 +36,7 @@ const ChunkedData = React.memo(({ data, addFixedData, index, sourcePath }) => {
                     return <Image url={`${sourcePath}${obj.path}`} addFixedData={addFixedData} key={shortid.generate()} />;
                 }
             })}
-        </Column>
+        </InnerColumn>
     );
 });
 
@@ -165,16 +165,18 @@ function Content({ data, index, withFrame, sourcePath }) {
 
     return (
         <Container isActive={isActive}>
-            {titleObj && (
-                <TitleContainer>
-                    <TitleImg src={`${sourcePath}${titleObj.path}`} />
-                </TitleContainer>
-            )}
-            <ColumnContainer withFrame={withFrame}>
-                {_.times(state.column, (i) => {
-                    return <MemoedChunkedData data={state.chunkedData[i + 1]} key={i} addFixedData={addFixedData} index={index} sourcePath={sourcePath} />;
-                })}
-            </ColumnContainer>
+            <Inner withFrame={withFrame}>
+                {titleObj && (
+                    <TitleContainer>
+                        <TitleImg src={`${sourcePath}${titleObj.path}`} />
+                    </TitleContainer>
+                )}
+                <ColumnContainer>
+                    {_.times(state.column, (i) => {
+                        return <MemoedChunkedData data={state.chunkedData[i + 1]} key={i} addFixedData={addFixedData} index={index} sourcePath={sourcePath} />;
+                    })}
+                </ColumnContainer>
+            </Inner>
             {Object.entries(fixedData).map((value) => (
                 <FixedElement data={value[1]} key={value[0]} clicked={clicked} isActive={nodeEl === value[0]} keyValue={value[0]} />
             ))}
@@ -182,17 +184,21 @@ function Content({ data, index, withFrame, sourcePath }) {
     );
 }
 
-const ColumnContainer = styled.div`
+const Inner = styled.div`
     display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 100%;
+    flex-direction: column;
+    flex: 1;
+    align-items: stretch;
     ${(props) =>
         props.withFrame &&
         css`
-            padding-top: 4%;
-            padding-bottom: 3%;
+            padding-top: 20px;
+            padding-bottom: 20px;
         `};
+`;
+const ColumnContainer = styled.div`
+    flex: 1;
+    display: flex;
 `;
 const TitleImg = styled.img`
     width: 100%;
@@ -224,21 +230,16 @@ const RndImg = styled.img`
     width: inherit;
     height: inherit;
 `;
-const Column = styled.div`
+const InnerColumn = styled.div`
+    flex: 1;
     display: flex;
     flex-direction: column;
-    width: 100%;
-    align-items: stretch;
 `;
 
 const Container = styled.div`
-    box-sizing: content-box;
     display: ${(props) => (props.isActive ? "flex" : "none")};
-    flex-direction: column;
-    position: relative;
+    flex: 1;
     align-items: stretch;
-    width: 100%;
-    padding: 2vh;
 `;
 
 export default React.memo(Content);

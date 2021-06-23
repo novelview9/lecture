@@ -46,7 +46,8 @@ const Font = styled.div`
 `;
 
 const Container = styled.div`
-    flex: 1 1 100%;
+    flex: 1;
+    flex-basis: 0;
     cursor: pointer;
     min-height: 20px;
     background-color: white;

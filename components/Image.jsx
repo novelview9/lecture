@@ -31,16 +31,16 @@ function Image({ url, addFixedData }) {
 }
 
 const Container = styled.div`
-    flex: 1 1 100%;
-    overflow-x: hidden;
-    overflow-y: auto;
-    display: inline-flex;
+    display: flex;
+    flex: 1;
+    flex-basis: 0;
+    overflow: hidden;
     visibility: ${(props) => (props.fixed ? "hidden" : "visible")};
 `;
 const Img = styled.img`
-    max-width: 100%;
-    height: auto;
     margin: 0 auto;
+    max-width: 100%;
+    max-height: 100%;
 `;
 
 export default React.memo(Image);
