@@ -1,6 +1,7 @@
+import _ from "lodash";
 import styled, { css } from "styled-components";
 import { Rnd } from "react-rnd";
-import { forwardRef, useEffect, useImperativeHandle, useState } from "react";
+import { forwardRef, useEffect, useImperativeHandle, useRef, useState } from "react";
 
 function Video({ videoRef, src, onTimeEvent, withVideo, setDuration }, ref) {
     const [fixed, setFixed] = useState();
@@ -20,13 +21,10 @@ function Video({ videoRef, src, onTimeEvent, withVideo, setDuration }, ref) {
             time: videoRef.current.currentTime,
             isPlaying: !videoRef.current.paused,
         });
-        setFixed(true);
-        const { top, right, bottom, left, width, height, x, y } = e.currentTarget.getBoundingClientRect();
+        const { top, right, bottom, left, width, height, x, y } = parentRef.current.getBoundingClientRect();
         setInitial({
-            label: e.target.tagName,
-            text: e.target.InnerHTML,
-            src: e.target.src,
-            style: _.pick(window.getComputedStyle(e.currentTarget), ["font-size", "padding", "color", "background-color"]),
+            src: src,
+            style: _.pick(window.getComputedStyle(videoRef.current), ["font-size", "padding", "color", "background-color"]),
             top,
             right,
             bottom,
@@ -37,10 +35,8 @@ function Video({ videoRef, src, onTimeEvent, withVideo, setDuration }, ref) {
             y,
         });
         setState({
-            label: e.target.tagName,
-            text: e.target.InnerHTML,
-            src: e.target.src,
-            style: _.pick(window.getComputedStyle(e.currentTarget), ["font-size", "padding", "color", "background-color"]),
+            src: src,
+            style: _.pick(window.getComputedStyle(videoRef.current), ["font-size", "padding", "color", "background-color"]),
             top,
             right,
             bottom,
@@ -50,18 +46,25 @@ function Video({ videoRef, src, onTimeEvent, withVideo, setDuration }, ref) {
             x,
             y,
         });
+        setFixed(true);
     };
+    const parentRef = useRef();
+    useEffect(() => {
+        if (parentRef.current) {
+            setTimeout(() => fixing(), 50);
+            videoRef.current.play();
+            videoRef.current.pause();
+        }
+    }, [parentRef]);
     const loaded = (e) => {
         setDuration(e.currentTarget.duration);
     };
     useEffect(() => {
         if (fixed) {
-            videoRef.current.currentTime = nodeStatus.time;
-            if (nodeStatus.isPlaying) {
+            setTimeout(() => {
                 videoRef.current.play();
-            } else {
                 videoRef.current.pause();
-            }
+            }, 50);
         }
     }, [fixed]);
     if (fixed) {
@@ -85,7 +88,7 @@ function Video({ videoRef, src, onTimeEvent, withVideo, setDuration }, ref) {
         );
     }
     return (
-        <Container>
+        <Container ref={parentRef}>
             <VideoEl src={src} onTimeUpdate={onTimeEvent} ref={videoRef} active={withVideo} playsInline onClick={fixing} onLoadedMetadata={loaded} />
         </Container>
     );
