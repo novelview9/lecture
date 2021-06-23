@@ -5,7 +5,7 @@ import styled, { css } from "styled-components";
 import { Rnd } from "react-rnd";
 import { useState } from "react";
 
-function Text({ obj, addFixedData, goal }) {
+function Text({ obj, addFixedData }) {
     const [fixed, setFixed] = useState();
     const onClick = (e) => {
         setFixed(true);
@@ -27,6 +27,7 @@ function Text({ obj, addFixedData, goal }) {
             y,
         });
     };
+    const goal = obj.avail_font_size * 100;
     const { fontSize, ref } = useFitText({ maxFontSize: goal, resolution: 30 });
     return (
         <Container fixed={fixed} onClick={onClick}>

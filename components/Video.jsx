@@ -1,12 +1,14 @@
 import styled, { css } from "styled-components";
 import { Rnd } from "react-rnd";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function Video({ videoRef, src, onTimeEvent, withVideo, setDuration }) {
     const [fixed, setFixed] = useState();
     const [data, setData] = useState();
     const [state, setState] = useState({});
+    const [nodeTime, setNodeTime] = useState({});
     const fixing = (e) => {
+        setNodeTime(videoRef.current.currentTime);
         setFixed(true);
         const { top, right, bottom, left, width, height, x, y } = e.currentTarget.getBoundingClientRect();
         setState({
@@ -27,6 +29,12 @@ function Video({ videoRef, src, onTimeEvent, withVideo, setDuration }) {
     const loaded = (e) => {
         setDuration(e.currentTarget.duration);
     };
+    useEffect(() => {
+        if (fixed) {
+            videoRef.current.currentTime = nodeTime;
+            videoRef.current.play();
+        }
+    }, [fixed]);
     if (fixed) {
         return (
             <CustomRnd
