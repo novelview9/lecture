@@ -2,7 +2,6 @@ import _ from "lodash";
 import React from "react";
 import shortid from "shortid";
 import styled, { css } from "styled-components";
-import { forwardRef, useImperativeHandle } from "react";
 import { useAtom } from "jotai";
 import { useEffect, useRef, useState } from "react";
 
@@ -51,6 +50,8 @@ const Main = () => {
     const [percent, setPercent] = useState(0);
     const [currentTime, setCurrentTime] = useState("00:00");
     const [key, setKey] = useState(shortid.generate());
+
+    const childRef = useRef();
     const resetKey = () => {
         childRef.current.resetHandle();
         setKey(() => shortid.generate());
@@ -125,7 +126,6 @@ const Main = () => {
     //         video.paused = "start";
     //     }, 100);
     // }, []);
-    const childRef = useRef();
     const [duration, setDuration] = useState("");
     return (
         <Container className="node">

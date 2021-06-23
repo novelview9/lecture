@@ -11,9 +11,7 @@ function Video({ videoRef, src, onTimeEvent, withVideo, setDuration }, ref) {
     const [nodeStatus, setNodeStatus] = useState({});
     useImperativeHandle(ref, () => ({
         resetHandle() {
-            if (fixed) {
-                setState(initial);
-            }
+            setState(initial);
         },
     }));
     const fixing = (e) => {
@@ -47,9 +45,15 @@ function Video({ videoRef, src, onTimeEvent, withVideo, setDuration }, ref) {
     const parentRef = useRef();
     useEffect(() => {
         if (parentRef.current) {
-            setTimeout(() => fixing(), 100);
-            videoRef.current.play();
-            videoRef.current.pause();
+            if (fixed) {
+                videoRef.current.play();
+                setTimeout(() => {
+                    videoRef.current.pause();
+                }, 1);
+            }
+            setTimeout(() => {
+                fixing();
+            }, 200);
         }
     }, [parentRef]);
     const loaded = (e) => {
@@ -57,10 +61,10 @@ function Video({ videoRef, src, onTimeEvent, withVideo, setDuration }, ref) {
     };
     useEffect(() => {
         if (fixed) {
+            videoRef.current.play();
             setTimeout(() => {
-                videoRef.current.play();
                 videoRef.current.pause();
-            }, 100);
+            }, 1);
         }
     }, [fixed]);
     if (fixed) {
@@ -69,7 +73,9 @@ function Video({ videoRef, src, onTimeEvent, withVideo, setDuration }, ref) {
                 size={{ width: state.width, height: state.height, background: "red" }}
                 position={{ x: state.x, y: state.y }}
                 onDragStop={(e, d) => {
-                    setState({ ...state, x: d.x, y: d.y });
+                    setState((prevState) => {
+                        return { ...prevState, x: d.x, y: d.y };
+                    });
                 }}
                 onResizeStop={(e, direction, ref, delta, position) => {
                     setState({
@@ -79,13 +85,13 @@ function Video({ videoRef, src, onTimeEvent, withVideo, setDuration }, ref) {
                     });
                 }}
             >
-                <VideoEl src={src} onTimeUpdate={onTimeEvent} ref={videoRef} active={withVideo} playsInline draggable="false" isDrag={true} />
+                <VideoEl src={src} onTimeUpdate={onTimeEvent} ref={videoRef} active={withVideo} playsInline draggable="false" isDrag={true} onLoadedMetadata={loaded} />
             </CustomRnd>
         );
     }
     return (
         <Container ref={parentRef}>
-            <VideoEl src={src} onTimeUpdate={onTimeEvent} ref={videoRef} active={withVideo} playsInline onClick={fixing} onLoadedMetadata={loaded} />
+            <VideoEl src={src} onTimeUpdate={onTimeEvent} ref={videoRef} active={withVideo} playsInline onClick={fixing} />
         </Container>
     );
 }

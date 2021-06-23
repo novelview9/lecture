@@ -50,7 +50,9 @@ const Main = () => {
     const [percent, setPercent] = useState(0);
     const [currentTime, setCurrentTime] = useState("00:00");
     const [key, setKey] = useState(shortid.generate());
+    const childRef = useRef();
     const resetKey = () => {
+        childRef.current.resetHandle();
         setKey(() => shortid.generate());
     };
     const [activity, setActivity] = useAtom(activityAtom);
@@ -132,7 +134,7 @@ const Main = () => {
                     return <NewContent key={index} data={data} index={index} withFrame={withFrame} sourcePath={input.sourcePath} />;
                 })}
             </InnerContainer>
-            <Video src={videoSource} videoRef={videoRef} onTimeEvent={onTimeEvent} withVideo={withVideo} setDuration={setDuration} />
+            <Video src={videoSource} videoRef={videoRef} onTimeEvent={onTimeEvent} withVideo={withVideo} setDuration={setDuration} ref={childRef} />
             <ControllerContainer>
                 <Controller
                     togglePlay={togglePlay}
