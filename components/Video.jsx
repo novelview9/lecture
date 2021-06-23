@@ -17,10 +17,6 @@ function Video({ videoRef, src, onTimeEvent, withVideo, setDuration }, ref) {
         },
     }));
     const fixing = (e) => {
-        setNodeStatus({
-            time: videoRef.current.currentTime,
-            isPlaying: !videoRef.current.paused,
-        });
         const { top, right, bottom, left, width, height, x, y } = parentRef.current.getBoundingClientRect();
         setInitial({
             src: src,
@@ -51,7 +47,7 @@ function Video({ videoRef, src, onTimeEvent, withVideo, setDuration }, ref) {
     const parentRef = useRef();
     useEffect(() => {
         if (parentRef.current) {
-            setTimeout(() => fixing(), 50);
+            setTimeout(() => fixing(), 100);
             videoRef.current.play();
             videoRef.current.pause();
         }
@@ -64,7 +60,7 @@ function Video({ videoRef, src, onTimeEvent, withVideo, setDuration }, ref) {
             setTimeout(() => {
                 videoRef.current.play();
                 videoRef.current.pause();
-            }, 50);
+            }, 100);
         }
     }, [fixed]);
     if (fixed) {
