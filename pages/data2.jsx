@@ -43,6 +43,9 @@ const Line = styled.div`
     z-index: 200;
     overflow: hidden;
     top: 0;
+    > div:last-child {
+        visibility: hidden;
+    }
 `;
 
 const Main = () => {
@@ -138,7 +141,7 @@ const Main = () => {
         <Container className="node">
             <InnerContainer isFull={!withVideo} withFrame={withFrame} key={key}>
                 {content.map((data, index) => {
-                    return <NewContent key={index} data={data} index={index} sourcePath={input.sourcePath} frameInfo={frameInfo} withFrame={withFrame} />;
+                    return <NewContent key={index} data={data} index={index} sourcePath={input.sourcePath} frameInfo={frameInfo} withFrame={withFrame} isFull={!withVideo} />;
                 })}
             </InnerContainer>
             <Video src={videoSource} videoRef={videoRef} onTimeEvent={onTimeEvent} withVideo={withVideo} setDuration={setDuration} ref={childRef} />

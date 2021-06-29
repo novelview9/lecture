@@ -43,6 +43,9 @@ const Line = styled.div`
     z-index: 200;
     overflow: hidden;
     top: 0;
+    > div:last-child {
+        visibility: hidden;
+    }
 `;
 
 const Main = () => {
