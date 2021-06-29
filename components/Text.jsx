@@ -42,7 +42,6 @@ function Text({ obj, addFixedData, isFull }) {
         });
     };
     const goal = obj.avail_font_size * 100 * getBreakValue() * (isFull ? 1.2 : 1);
-    console.log(isFull);
     const { fontSize, ref } = useFitText({ maxFontSize: goal, resolution: 5 });
 
     return (

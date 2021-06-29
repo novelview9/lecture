@@ -11,9 +11,20 @@ function RndVideo({ url, startTime, endTime, index }) {
     const [action] = useAtom(activityAtom);
     const [playing] = useAtom(playingAtom);
     const ref = useRef(null);
+
+    useEffect(() => {
+        if (action.time > startTime && playing) {
+            setOnPlay(true);
+        }
+    }, [action.time]);
     useEffect(() => {
         if (!index == action.slide) {
             setOnPlay(false);
+            return;
+        }
+        if (action.time < startTime) {
+            setOnPlay(false);
+            ref.current.currentTime = 0;
             return;
         }
         if (!playing) {
@@ -21,9 +32,11 @@ function RndVideo({ url, startTime, endTime, index }) {
         }
         if (action.action === "jump") {
             ref.current.currentTime = action.time - startTime;
+            return;
         }
         if (playing) {
             setOnPlay(true);
+            return;
         }
     }, [action.action, playing, index]);
     useEffect(() => {

@@ -13,6 +13,19 @@ function InnerVideo({ url, startTime, endTime, addFixedData, index }) {
     const [playing] = useAtom(playingAtom);
     const ref = useRef(null);
     useEffect(() => {
+        if (action.time > startTime && playing) {
+            setOnPlay(true);
+        }
+    }, [action.time]);
+    useEffect(() => {
+        if (fixed) {
+            return;
+        }
+        if (action.time < startTime) {
+            setOnPlay(false);
+            ref.current.currentTime = 0;
+            return;
+        }
         if (!index == action.slide) {
             setOnPlay(false);
             return;
@@ -29,6 +42,7 @@ function InnerVideo({ url, startTime, endTime, addFixedData, index }) {
         }
         if (playing) {
             setOnPlay(true);
+            return;
         }
     }, [action.action, playing, index]);
     useEffect(() => {
