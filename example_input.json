@@ -5,7 +5,9 @@
         "height": 720,
         "top_padding": 82,
         "bottom_padding": 55,
-        "base_font_size": 16
+        "base_font_size": 16,
+        "top_img": "header.jpg",
+        "bottom_img": "footer.jpg"
     },
     "video": {
         "source": "instructor_whole.mp4",

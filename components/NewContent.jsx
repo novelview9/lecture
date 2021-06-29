@@ -143,7 +143,7 @@ const Clear = styled.button`
     }
 `;
 
-function Content({ data, index, withFrame, sourcePath }) {
+function Content({ data, index, withFrame, sourcePath, frameInfo }) {
     const chunkedData = _.groupBy(data.learning_material, "in_column");
     const [activity] = useAtom(activityAtom);
     const isActive = activity.slide === index;
@@ -165,7 +165,8 @@ function Content({ data, index, withFrame, sourcePath }) {
 
     return (
         <Container isActive={isActive}>
-            <Inner withFrame={withFrame}>
+            <Inner>
+                <Frame src={frameInfo.topBg} withFrame={withFrame} height={frameInfo.topHeight} isActive={withFrame} />
                 {titleObj && (
                     <TitleContainer>
                         <TitleImg src={`${sourcePath}${titleObj.path}`} />
@@ -176,6 +177,7 @@ function Content({ data, index, withFrame, sourcePath }) {
                         return <MemoedChunkedData data={state.chunkedData[i + 1]} key={i} addFixedData={addFixedData} index={index} sourcePath={sourcePath} />;
                     })}
                 </ColumnContainer>
+                <Frame src={frameInfo.bottomBg} withFrame={withFrame} height={frameInfo.bottomHeight} isActive={withFrame} />
             </Inner>
             {Object.entries(fixedData).map((value) => (
                 <FixedElement data={value[1]} key={value[0]} clicked={clicked} isActive={nodeEl === value[0]} keyValue={value[0]} />
@@ -183,18 +185,17 @@ function Content({ data, index, withFrame, sourcePath }) {
         </Container>
     );
 }
+const Frame = styled.img`
+    flex-basis: ${(props) => props.height}%;
+    object-fit: fill;
+    display: ${(props) => (props.isActive ? "block" : "none")};
+`;
 
 const Inner = styled.div`
     display: flex;
     flex-direction: column;
     flex: 1;
     align-items: stretch;
-    ${(props) =>
-        props.withFrame &&
-        css`
-            padding-top: 20px;
-            padding-bottom: 20px;
-        `};
 `;
 const ColumnContainer = styled.div`
     flex: 1;
@@ -223,6 +224,7 @@ const CustomRnd = styled(Rnd)`
     ${(props) =>
         props.isActive &&
         css`
+            z-index: 10;
             outline: 3px solid yellow;
         `};
 `;

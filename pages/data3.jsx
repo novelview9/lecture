@@ -2,6 +2,7 @@ import _ from "lodash";
 import React from "react";
 import shortid from "shortid";
 import styled, { css } from "styled-components";
+import { createBreakpoint } from "react-use";
 import { useAtom } from "jotai";
 import { useEffect, useRef, useState } from "react";
 
@@ -126,12 +127,18 @@ const Main = () => {
     //         video.paused = "start";
     //     }, 100);
     // }, []);
+    const frameInfo = {
+        topBg: input.sourcePath + input.template.top_img,
+        bottomBg: input.sourcePath + input.template.bottom_img,
+        topHeight: (input.template.top_padding / input.template.height) * 100,
+        bottomHeight: (input.template.bottom_padding / input.template.height) * 100,
+    };
     const [duration, setDuration] = useState("");
     return (
         <Container className="node">
             <InnerContainer isFull={!withVideo} withFrame={withFrame} key={key}>
                 {content.map((data, index) => {
-                    return <NewContent key={index} data={data} index={index} withFrame={withFrame} sourcePath={input.sourcePath} />;
+                    return <NewContent key={index} data={data} index={index} sourcePath={input.sourcePath} frameInfo={frameInfo} withFrame={withFrame} />;
                 })}
             </InnerContainer>
             <Video src={videoSource} videoRef={videoRef} onTimeEvent={onTimeEvent} withVideo={withVideo} setDuration={setDuration} ref={childRef} />
@@ -161,13 +168,6 @@ const InnerContainer = styled.div`
     align-items: stretch;
     margin-right: 100px;
     ${(props) =>
-        props.withFrame &&
-        css`
-            background-image: url("/bg_video5_5_1_shot11.jpg");
-            background-size: 100% 100%;
-            background-repeat: no-repeat;
-        `};
-    ${(props) =>
         props.isFull &&
         css`
             margin-right: 0;
@@ -177,7 +177,10 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     height: 100vh;
+    max-height: 100vh;
     width: 100vw;
+    max-width: 100vw;
+    overflow: hidden;
     box-sizing: border-box;
     align-items: stretch;
     position: relative;
