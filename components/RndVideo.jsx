@@ -32,7 +32,6 @@ function RndVideo({ url, startTime, endTime, index }) {
         }
         if (action.action === "jump") {
             ref.current.currentTime = action.time - startTime;
-            return;
         }
         if (playing) {
             setOnPlay(true);
