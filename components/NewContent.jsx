@@ -13,13 +13,13 @@ import RndVideo from "./RndVideo";
 import Text from "./Text";
 import activityAtom from "../activityAtom";
 
-const ChunkedData = React.memo(({ data, addFixedData, index, sourcePath }) => {
+const ChunkedData = React.memo(({ data, addFixedData, index, sourcePath, isFull }) => {
     const sortedData = _.orderBy(data, "order");
     return (
         <InnerColumn>
             {sortedData.map((obj) => {
                 if (obj.label === "text_box") {
-                    return <Text obj={obj} addFixedData={addFixedData} key={shortid.generate()} />;
+                    return <Text obj={obj} addFixedData={addFixedData} key={shortid.generate()} isFull={isFull} />;
                 } else if (obj.label === "video") {
                     return (
                         <InnerVideo
@@ -40,7 +40,9 @@ const ChunkedData = React.memo(({ data, addFixedData, index, sourcePath }) => {
     );
 });
 
-const checkOnlyData = (prev, next) => prev.data === next.data;
+const checkOnlyData = (prev, next) => {
+    return prev.data === next.data && prev.isFull === next.isFull;
+};
 
 const MemoedChunkedData = React.memo(ChunkedData, checkOnlyData);
 
@@ -143,7 +145,7 @@ const Clear = styled.button`
     }
 `;
 
-function Content({ data, index, withFrame, sourcePath, frameInfo }) {
+function Content({ data, index, withFrame, sourcePath, frameInfo, isFull }) {
     const chunkedData = _.groupBy(data.learning_material, "in_column");
     const [activity] = useAtom(activityAtom);
     const isActive = activity.slide === index;
@@ -174,7 +176,7 @@ function Content({ data, index, withFrame, sourcePath, frameInfo }) {
                 )}
                 <ColumnContainer>
                     {_.times(state.column, (i) => {
-                        return <MemoedChunkedData data={state.chunkedData[i + 1]} key={i} addFixedData={addFixedData} index={index} sourcePath={sourcePath} />;
+                        return <MemoedChunkedData data={state.chunkedData[i + 1]} key={i} addFixedData={addFixedData} index={index} sourcePath={sourcePath} isFull={isFull} />;
                     })}
                 </ColumnContainer>
                 <Frame src={frameInfo.bottomBg} withFrame={withFrame} height={frameInfo.bottomHeight} isActive={withFrame} />

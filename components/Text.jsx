@@ -4,11 +4,11 @@ import useFitText from "use-fit-text";
 import styled, { css } from "styled-components";
 import { Rnd } from "react-rnd";
 import { createBreakpoint } from "react-use";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const useBreakpoint = createBreakpoint({ XL: 1280, L: 768, S: 350 });
 
-function Text({ obj, addFixedData }) {
+function Text({ obj, addFixedData, isFull }) {
     const [fixed, setFixed] = useState();
     const breakpoint = useBreakpoint();
     const getBreakValue = () => {
@@ -41,8 +41,9 @@ function Text({ obj, addFixedData }) {
             y,
         });
     };
-    const goal = obj.avail_font_size * 100 * getBreakValue();
+    const goal = obj.avail_font_size * 100 * getBreakValue() * (isFull ? 1.2 : 1);
     const { fontSize, ref } = useFitText({ maxFontSize: goal, resolution: 5 });
+
     return (
         <Container fixed={fixed} onClick={onClick}>
             <Font ref={ref} style={{ fontSize }} color={obj.color_font} bg={obj.color_bg}>
