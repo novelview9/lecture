@@ -72,6 +72,7 @@ function Video({ videoRef, src, onTimeEvent, withVideo, setDuration }, ref) {
             <CustomRnd
                 size={{ width: state.width, height: state.height, background: "red" }}
                 position={{ x: state.x, y: state.y }}
+                bounds={".frame"}
                 onDragStop={(e, d) => {
                     setState((prevState) => {
                         return { ...prevState, x: d.x, y: d.y };

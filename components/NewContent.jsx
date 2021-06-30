@@ -60,7 +60,7 @@ const FixedElement = ({ data, clicked, keyValue, isActive }) => {
             <CustomRnd
                 onDragStart={run}
                 onResizeStart={run}
-                bounds={"window"}
+                bounds={".frame"}
                 isActive={isActive}
                 size={{ width: state.width, height: state.height, background: "red" }}
                 position={{ x: state.x, y: state.y }}
@@ -86,7 +86,7 @@ const FixedElement = ({ data, clicked, keyValue, isActive }) => {
             <CustomRnd
                 onDragStart={run}
                 onResizeStart={run}
-                bounds={"window"}
+                bounds={".frame"}
                 isActive={isActive}
                 size={{ width: state.width, height: state.height, background: "red" }}
                 position={{ x: state.x, y: state.y }}
@@ -112,7 +112,7 @@ const FixedElement = ({ data, clicked, keyValue, isActive }) => {
             <CustomRnd
                 onDragStart={run}
                 onResizeStart={run}
-                bounds={"window"}
+                bounds={".frame"}
                 isActive={isActive}
                 size={{ width: state.width, height: state.height, background: "red" }}
                 position={{ x: state.x, y: state.y }}
@@ -238,6 +238,7 @@ const InnerColumn = styled.div`
     flex: 1;
     display: flex;
     flex-direction: column;
+    padding: 10px;
 `;
 
 const Container = styled.div`

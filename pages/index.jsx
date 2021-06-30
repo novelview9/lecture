@@ -165,15 +165,15 @@ const ControllerContainer = styled.div`
     width: 100%;
     position: relative;
 `;
-const InnerContainer = styled.div`
+const InnerContainer = styled.div.attrs({ className: "frame" })`
     flex: 1;
     display: flex;
     align-items: stretch;
-    margin-right: 100px;
+    padding-right: 100px;
     ${(props) =>
         props.isFull &&
         css`
-            margin-right: 0;
+            padding-right: 0;
         `};
 `;
 const Container = styled.div`
