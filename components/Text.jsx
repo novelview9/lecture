@@ -23,14 +23,12 @@ function Text({ obj, addFixedData, isFull }) {
     };
     const onClick = (e) => {
         setFixed(true);
-        const { top, right, bottom, left, width, height } = e.currentTarget.getBoundingClientRect();
-        const x = e.currentTarget.offsetLeft;
-        const y = e.currentTarget.offsetTop;
+        const { top, right, bottom, left, width, height, x, y } = e.currentTarget.getBoundingClientRect();
         addFixedData({
             label: "P",
             text: obj.text_content,
             src: e.target.src,
-            style: _.pick(window.getComputedStyle(e.currentTarget.firstChild), ["font-size", "padding", "color", "background-color"]),
+            style: _.pick(window.getComputedStyle(e.currentTarget), ["font-size", "padding", "color", "background-color"]),
             top,
             right,
             bottom,
@@ -45,8 +43,8 @@ function Text({ obj, addFixedData, isFull }) {
     const { fontSize, ref } = useFitText({ maxFontSize: goal, resolution: 5 });
 
     return (
-        <Container fixed={fixed} onClick={onClick}>
-            <Font ref={ref} style={{ fontSize }} color={obj.color_font} bg={obj.color_bg}>
+        <Container fixed={fixed}>
+            <Font ref={ref} style={{ fontSize }} color={obj.color_font} bg={obj.color_bg} onClick={onClick}>
                 {obj.text_content}
             </Font>
         </Container>

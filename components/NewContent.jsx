@@ -39,12 +39,48 @@ const ChunkedData = React.memo(({ data, addFixedData, index, sourcePath, isFull 
         </InnerColumn>
     );
 });
+const PositionedData = React.memo(({ data, addFixedData, index, sourcePath, isFull, template }) => {
+    console.log(data.box_info_original);
+    const [x, y, width, height] = data.box_info_original;
+    const startXRatio = (x / template.width) * 100;
+    const startYRatio = (y / template.height) * 100;
+    const widthRatio = (width / template.width) * 100;
+    const heightRatio = (height / template.height) * 100;
+    if (data.label === "text_box") {
+        return (
+            <PositionedDataContainer x={startXRatio} y={startYRatio} width={widthRatio} height={heightRatio}>
+                <Text obj={data} addFixedData={addFixedData} key={shortid.generate()} isFull={isFull} />
+            </PositionedDataContainer>
+        );
+    }
+    if (data.label === "video") {
+        return (
+            <PositionedDataContainer x={startXRatio} y={startYRatio} width={widthRatio} height={heightRatio}>
+                <InnerVideo url={`${sourcePath}${obj.path}`} addFixedData={addFixedData} startTime={obj.start_time} endTime={obj.end_time} index={index} key={shortid.generate()} index={index} />
+            </PositionedDataContainer>
+        );
+    }
+    return (
+        <PositionedDataContainer x={startXRatio} y={startYRatio} width={widthRatio} height={heightRatio}>
+            <Image url={`${sourcePath}${data.path}`} addFixedData={addFixedData} key={shortid.generate()} />;
+        </PositionedDataContainer>
+    );
+});
+const PositionedDataContainer = styled.div`
+    width: ${(props) => props.width}%;
+    height: ${(props) => props.height}%;
+    top: ${(props) => props.y}%;
+    left: ${(props) => props.x}%;
+    position: absolute;
+    display: flex;
+`;
 
 const checkOnlyData = (prev, next) => {
     return prev.data === next.data && prev.isFull === next.isFull;
 };
 
 const MemoedChunkedData = React.memo(ChunkedData, checkOnlyData);
+const MemoedPositionedData = React.memo(PositionedData, checkOnlyData);
 
 const FixedElement = ({ data, clicked, keyValue, isActive }) => {
     const [state, setState] = useState({ x: data.x, y: data.y, width: data.width, height: data.height });
@@ -145,7 +181,7 @@ const Clear = styled.button`
     }
 `;
 
-function Content({ data, index, withFrame, sourcePath, frameInfo, isFull }) {
+function Content({ data, index, withFrame, sourcePath, frameInfo, isFull, template }) {
     const chunkedData = _.groupBy(data.learning_material, "in_column");
     const [activity] = useAtom(activityAtom);
     const isActive = activity.slide === index;
@@ -164,7 +200,32 @@ function Content({ data, index, withFrame, sourcePath, frameInfo, isFull }) {
     const clicked = (key) => {
         setNodeEl(key);
     };
-
+    const frameRatio = template.width / template.height;
+    if (data.column === 0) {
+        return (
+            <Container isActive={isActive}>
+                <Inner>
+                    <Frame src={frameInfo.topBg} withFrame={withFrame} height={frameInfo.topHeight} isActive={withFrame} />
+                    {titleObj && (
+                        <TitleContainer>
+                            <TitleImg src={`${sourcePath}${titleObj.path}`} />
+                        </TitleContainer>
+                    )}
+                    <PositionedContainer>
+                        <PositionedCanvas ratio={frameRatio}>
+                            {state.chunkedData[0].map((obj, index) => {
+                                return <MemoedPositionedData data={obj} key={index} template={template} addFixedData={addFixedData} index={index} sourcePath={sourcePath} isFull={isFull} />;
+                            })}
+                        </PositionedCanvas>
+                    </PositionedContainer>
+                    <Frame src={frameInfo.bottomBg} withFrame={withFrame} height={frameInfo.bottomHeight} isActive={withFrame} />
+                </Inner>
+                {Object.entries(fixedData).map((value) => (
+                    <FixedElement data={value[1]} key={value[0]} clicked={clicked} isActive={nodeEl === value[0]} keyValue={value[0]} />
+                ))}
+            </Container>
+        );
+    }
     return (
         <Container isActive={isActive}>
             <Inner>
@@ -179,6 +240,7 @@ function Content({ data, index, withFrame, sourcePath, frameInfo, isFull }) {
                         return <MemoedChunkedData data={state.chunkedData[i + 1]} key={i} addFixedData={addFixedData} index={index} sourcePath={sourcePath} isFull={isFull} />;
                     })}
                 </ColumnContainer>
+                }
                 <Frame src={frameInfo.bottomBg} withFrame={withFrame} height={frameInfo.bottomHeight} isActive={withFrame} />
             </Inner>
             {Object.entries(fixedData).map((value) => (
@@ -198,6 +260,19 @@ const Inner = styled.div`
     flex-direction: column;
     flex: 1;
     align-items: stretch;
+`;
+
+const PositionedCanvas = styled.div`
+    --current-height: calc(100vh - 50px);
+    width: calc(var(--current-height) * ${(props) => props.ratio});
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+`;
+
+const PositionedContainer = styled.div`
+    display: flex;
+    flex: 1;
 `;
 const ColumnContainer = styled.div`
     flex: 1;
