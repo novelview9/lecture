@@ -16,9 +16,9 @@ function Text({ obj, addFixedData, isFull }) {
             case "XL":
                 return 1;
             case "L":
-                return 1;
+                return 0.8;
             case "S":
-                return 0.3;
+                return 0.5;
         }
     };
     const onClick = (e) => {
