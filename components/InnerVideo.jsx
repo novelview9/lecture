@@ -57,13 +57,12 @@ function InnerVideo({ url, startTime, endTime, addFixedData, index }) {
     }, [onPlay]);
     const onClick = (e) => {
         setFixed(true);
-        const { top, right, bottom, left, width, height, x, y } = e.currentTarget.firstChild.getBoundingClientRect();
+        const { top, right, bottom, left, width, height, x, y } = e.currentTarget.getBoundingClientRect();
         addFixedData({
-            label: e.target.tagName,
-            text: e.target.InnerHTML,
-            src: e.target.src,
+            label: "VIDEO",
+            src: url,
             startTime: startTime,
-            style: _.pick(window.getComputedStyle(e.currentTarget.firstChild), ["font-size", "padding", "color", "background-color"]),
+            style: _.pick(window.getComputedStyle(e.currentTarget), ["font-size", "padding", "color", "background-color"]),
             top,
             right,
             bottom,
@@ -75,8 +74,8 @@ function InnerVideo({ url, startTime, endTime, addFixedData, index }) {
         });
     };
     return (
-        <Container fixed={fixed} onClick={onClick}>
-            <Video src={url} draggable="false" ref={ref} playsInline muted={true} playsInline />
+        <Container fixed={fixed}>
+            <Video src={url} draggable="false" ref={ref} playsInline muted={true} playsInline onClick={onClick} />
         </Container>
     );
 }
@@ -92,6 +91,7 @@ const Video = styled.video`
     margin: 0 auto;
     max-width: 100%;
     max-height: 100%;
+    object-fit: fill;
 `;
 
 export default React.memo(InnerVideo);
