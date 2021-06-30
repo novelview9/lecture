@@ -48,7 +48,7 @@ function RndVideo({ url, startTime, endTime, index }) {
             ref.current.pause();
         }
     }, [onPlay]);
-    return <Video src={url} draggable="false" ref={ref} playsInline muted={true} />;
+    return <Video src={url} draggable="false" ref={ref} playsInline muted={true} playsInline />;
 }
 
 const Video = styled.video`

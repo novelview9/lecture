@@ -76,7 +76,7 @@ function InnerVideo({ url, startTime, endTime, addFixedData, index }) {
     };
     return (
         <Container fixed={fixed} onClick={onClick}>
-            <Video src={url} draggable="false" ref={ref} playsInline muted={true} />
+            <Video src={url} draggable="false" ref={ref} playsInline muted={true} playsInline />
         </Container>
     );
 }
