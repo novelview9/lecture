@@ -48,7 +48,7 @@
 
                     "text_content": "* Forecast Accuracy: the further in advance of demand, the more inaccurate a forecast is.",
                     "original_font_size": 1.67,
-                    "avail_font_size": 1.84,
+                    "avail_font_size": 2.84,
                     "typeface": "Arial",
                     "color_font": "(18, 18, 18)",
                     "color_bg": "(253, 253, 253)"
@@ -93,7 +93,7 @@
 
                     "text_content": "Just-In-Time production is one of the key elements of quantity control in Lean Production.",
                     "original_font_size": 1.67,
-                    "avail_font_size": 1.87,
+                    "avail_font_size": 1.67,
                     "typeface": "Arial",
                     "color_font": "(18, 18, 18)",
                     "color_bg": "(253, 253, 253)"
@@ -107,7 +107,7 @@
 
                     "text_content": "JIT requires a stable pull-system.",
                     "original_font_size": 1.67,
-                    "avail_font_size": 1.87,
+                    "avail_font_size": 1.67,
                     "typeface": "Arial",
                     "color_font": "(18, 18, 18)",
                     "color_bg": "(253, 253, 253)"
@@ -121,7 +121,7 @@
 
                     "text_content": "JIT seeks to reduce any additional inventory in the system, not only from the end products, but upstream in the progress, inlcuding Work-In-Progress (WIP) and buffer stocks.",
                     "original_font_size": 1.67,
-                    "avail_font_size": 1.87,
+                    "avail_font_size": 1.67,
                     "typeface": "Arial",
                     "color_font": "(18, 18, 18)",
                     "color_bg": "(253, 253, 253)"
@@ -135,7 +135,7 @@
 
                     "text_content": "Reduced inventory results in a reduction in flow time",
                     "original_font_size": 1.67,
-                    "avail_font_size": 1.87,
+                    "avail_font_size": 1.67,
                     "typeface": "Arial",
                     "color_font": "(18, 18, 18)",
                     "color_bg": "(253, 253, 253)"
@@ -149,7 +149,7 @@
 
                     "text_content": "and faster identification of process problems,",
                     "original_font_size": 1.67,
-                    "avail_font_size": 1.76,
+                    "avail_font_size": 1.67,
                     "typeface": "Arial",
                     "color_font": "(18, 18, 18)",
                     "color_bg": "(253, 253, 253)"
@@ -163,7 +163,7 @@
 
                     "text_content": "leading to improved processes and less variability,",
                     "original_font_size": 1.67,
-                    "avail_font_size": 1.76,
+                    "avail_font_size": 1.67,
                     "typeface": "Arial",
                     "color_font": "(18, 18, 18)",
                     "color_bg": "(253, 253, 253)"
@@ -177,7 +177,7 @@
 
                     "text_content": "reducing waiting times",
                     "original_font_size": 1.67,
-                    "avail_font_size": 1.76,
+                    "avail_font_size": 1.67,
                     "typeface": "Arial",
                     "color_font": "(18, 18, 18)",
                     "color_bg": "(253, 253, 253)"
@@ -191,7 +191,7 @@
 
                     "text_content": "which improves the continous flow....",
                     "original_font_size": 1.67,
-                    "avail_font_size": 1.76,
+                    "avail_font_size": 1.67,
                     "typeface": "Arial",
                     "color_font": "(18, 18, 18)",
                     "color_bg": "(253, 253, 253)"

@@ -240,7 +240,6 @@ function Content({ data, index, withFrame, sourcePath, frameInfo, isFull, templa
                         return <MemoedChunkedData data={state.chunkedData[i + 1]} key={i} addFixedData={addFixedData} index={index} sourcePath={sourcePath} isFull={isFull} />;
                     })}
                 </ColumnContainer>
-                }
                 <Frame src={frameInfo.bottomBg} withFrame={withFrame} height={frameInfo.bottomHeight} isActive={withFrame} />
             </Inner>
             {Object.entries(fixedData).map((value) => (

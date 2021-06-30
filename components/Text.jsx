@@ -16,9 +16,9 @@ function Text({ obj, addFixedData, isFull }) {
             case "XL":
                 return 1;
             case "L":
-                return 0.3;
+                return 1;
             case "S":
-                return 0.2;
+                return 0.3;
         }
     };
     const onClick = (e) => {
@@ -40,7 +40,7 @@ function Text({ obj, addFixedData, isFull }) {
         });
     };
     const goal = obj.avail_font_size * 100 * getBreakValue() * (isFull ? 1.2 : 1);
-    const { fontSize, ref } = useFitText({ maxFontSize: goal, resolution: 5 });
+    const { fontSize, ref } = useFitText({ maxFontSize: parseInt(goal), resolution: 5 });
 
     return (
         <Container fixed={fixed}>
