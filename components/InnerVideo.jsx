@@ -91,7 +91,6 @@ const Video = styled.video`
     margin: 0 auto;
     max-width: 100%;
     max-height: 100%;
-    object-fit: fill;
 `;
 
 export default React.memo(InnerVideo);

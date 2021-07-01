@@ -16,9 +16,9 @@ function Text({ obj, addFixedData, isFull }) {
             case "XL":
                 return 1;
             case "L":
-                return 0.8;
+                return 1;
             case "S":
-                return 0.5;
+                return 1;
         }
     };
     const onClick = (e) => {
@@ -39,18 +39,23 @@ function Text({ obj, addFixedData, isFull }) {
             y,
         });
     };
-    const goal = obj.avail_font_size * 100 * getBreakValue() * (isFull ? 1.2 : 1);
-    const { fontSize, ref } = useFitText({ maxFontSize: parseInt(goal), resolution: 5 });
+    const goal = obj.avail_font_size * getBreakValue() * (isFull ? 1.2 : 1);
+    // const { fontSize, ref } = useFitText({ maxFontSize: parseInt(goal), resolution: 5 });
 
     return (
         <Container fixed={fixed}>
-            <Font ref={ref} style={{ fontSize }} color={obj.color_font} bg={obj.color_bg} onClick={onClick}>
+            {/* <Font ref={ref} style={{ fontSize }} color={obj.color_font} bg={obj.color_bg} onClick={onClick}>
                 {obj.text_content}
-            </Font>
+            </Font> */}
+            <P fs={goal}>{obj.text_content}</P>
         </Container>
     );
 }
 
+const P = styled.p`
+    font-size: ${(props) => props.fs}em;
+    width: 100%;
+`;
 const Font = styled.div`
     width: 100%;
     height: 100%;
@@ -66,7 +71,7 @@ const Container = styled.div`
     background-color: white;
     box-sizing: border-box;
     visibility: ${(props) => (props.fixed ? "hidden" : "visiable")};
-    display: flex;
+    /* display: flex; */
 `;
 
 export default Text;
