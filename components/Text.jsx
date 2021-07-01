@@ -47,7 +47,9 @@ function Text({ obj, addFixedData, isFull }) {
             {/* <Font ref={ref} style={{ fontSize }} color={obj.color_font} bg={obj.color_bg} onClick={onClick}>
                 {obj.text_content}
             </Font> */}
-            <P fs={goal}>{obj.text_content}</P>
+            <P fs={goal} onClick={onClick} bg={obj.color_bg} color={obj.color_font}>
+                {obj.text_content}
+            </P>
         </Container>
     );
 }
@@ -55,6 +57,8 @@ function Text({ obj, addFixedData, isFull }) {
 const P = styled.p`
     font-size: ${(props) => props.fs}em;
     width: 100%;
+    color: ${(props) => (props.color ? `rgb${props.color}` : "black")};
+    background-color: ${(props) => (props.bg ? `rgb${props.bg}` : "black")};
 `;
 const Font = styled.div`
     width: 100%;
