@@ -62,7 +62,7 @@ const PositionedData = React.memo(({ data, addFixedData, index, sourcePath, isFu
     }
     return (
         <PositionedDataContainer x={startXRatio} y={startYRatio} width={widthRatio} height={heightRatio}>
-            <Image url={`${sourcePath}${data.path}`} addFixedData={addFixedData} key={shortid.generate()} />;
+            <Image url={`${sourcePath}${data.path}`} addFixedData={addFixedData} key={shortid.generate()} />
         </PositionedDataContainer>
     );
 });
