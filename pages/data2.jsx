@@ -169,7 +169,7 @@ const InnerContainer = styled.div.attrs({ className: "frame" })`
     flex: 1;
     display: flex;
     align-items: stretch;
-    margin-right: 100px;
+    padding-right: 100px;
     ${(props) =>
         props.isFull &&
         css`
