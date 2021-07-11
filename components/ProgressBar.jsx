@@ -3,7 +3,9 @@ import styled from "styled-components";
 function Control({ percent, jumpToPlay, barRef }) {
     return (
         <ProgressBarLine onClick={jumpToPlay} ref={barRef}>
-            <ProgressBarFilled percent={percent} />
+            <ProgressBarFilled percent={percent}>
+                <Circle />
+            </ProgressBarFilled>
         </ProgressBarLine>
     );
 }
@@ -11,16 +13,28 @@ function Control({ percent, jumpToPlay, barRef }) {
 const ProgressBarLine = styled.div`
     display: flex;
     width: 100%;
-    height: 20px;
+    height: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
     display: flex;
-    background-color: #c9d5ff;
+    background-color: #adadad;
     cursor: pointer;
 `;
 const ProgressBarFilled = styled.div`
     color: white;
     flex-basis: ${(props) => props.percent}%;
-    background-color: #4568e2;
+    background-color: red;
     z-index: 150;
+    position: relative;
+`;
+const Circle = styled.div`
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    left: calc(100% - 5px);
+    top: -2px;
+    background-color: red;
+    border-radius: 45%;
 `;
 
 export default Control;

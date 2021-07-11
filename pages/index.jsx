@@ -21,18 +21,32 @@ const ControllerLine = ({ content, duration }) => {
     return (
         <Line>
             {startTimes.map((time) => {
-                return <LinePoint value={(time / duration) * 100} key={shortid.generate()} />;
+                return (
+                    <LinePoint value={(time / duration) * 100} key={shortid.generate()}>
+                        <Circle />
+                    </LinePoint>
+                );
             })}
         </Line>
     );
 };
+
+const Circle = styled.div`
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    left: 100%;
+    z-index: 999;
+    border-radius: 45%;
+    background-color: yellow;
+`;
 const LinePoint = styled.div`
     position: absolute;
     top: 0;
     left: 0;
+    margin-top: 5px;
     width: ${(props) => props.value}%;
-    height: 20px;
-    border-right: 2px solid #45b945;
+    height: 10px;
 `;
 const Line = styled.div`
     pointer-events: none;
@@ -102,6 +116,7 @@ const Main = () => {
     };
 
     const barRef = useRef(null);
+    const [duration, setDuration] = useState("00:00");
 
     const jumpToPlay = (e) => {
         const video = videoRef.current;
@@ -124,19 +139,18 @@ const Main = () => {
         const stringMin = minutes.toString().padStart(2, "0");
         setCurrentTime(`${minutes}:${seconds}`);
     };
-    // useEffect(() => {
-    //     setTimeout(function () {
-    //         const video = videoRef.current;
-    //         video.paused = "start";
-    //     }, 100);
-    // }, []);
+    useEffect(() => {
+        setTimeout(() => {
+            const video = videoRef.current;
+            video.method = "start";
+        }, 100);
+    }, []);
     const frameInfo = {
         topBg: input.sourcePath + input.template.top_img,
         bottomBg: input.sourcePath + input.template.bottom_img,
         topHeight: (input.template.top_padding / input.template.height) * 100,
         bottomHeight: (input.template.bottom_padding / input.template.height) * 100,
     };
-    const [duration, setDuration] = useState("");
     return (
         <Container className="node">
             <InnerContainer isFull={!withVideo} withFrame={withFrame} key={key}>
@@ -155,6 +169,7 @@ const Main = () => {
                     toggleFrame={toggleFrame}
                     percent={percent}
                     currentTime={currentTime}
+                    duration={duration}
                 />
                 <ControllerLine content={content} duration={duration} />
             </ControllerContainer>
@@ -164,6 +179,7 @@ const Main = () => {
 const ControllerContainer = styled.div`
     width: 100%;
     position: relative;
+    background-color: black;
 `;
 const InnerContainer = styled.div.attrs({ className: "frame" })`
     flex: 1;
