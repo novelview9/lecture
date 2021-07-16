@@ -4,11 +4,15 @@ import useFitText from "use-fit-text";
 import styled, { css } from "styled-components";
 import { Rnd } from "react-rnd";
 import { createBreakpoint } from "react-use";
+import { useAtom } from "jotai";
 import { useEffect, useState } from "react";
+
+import { lockAtom } from "../activityAtom";
 
 const useBreakpoint = createBreakpoint({ XL: 1280, L: 768, S: 350 });
 
 function Text({ obj, addFixedData, isFull }) {
+    const [lock] = useAtom(lockAtom);
     const [fixed, setFixed] = useState();
     const breakpoint = useBreakpoint();
     const getBreakValue = () => {
@@ -22,13 +26,16 @@ function Text({ obj, addFixedData, isFull }) {
         }
     };
     const onClick = (e) => {
+        if (lock) {
+            return;
+        }
         setFixed(true);
         const { top, right, bottom, left, width, height, x, y } = e.currentTarget.getBoundingClientRect();
         addFixedData({
             label: "P",
             text: obj.text_content,
             src: e.target.src,
-            style: _.pick(window.getComputedStyle(e.currentTarget), ["font-size", "padding", "color", "background-color"]),
+            style: _.pick(window.getComputedStyle(e.currentTarget), ["font-size", "padding", "color", "background-color", "line-height", "letter-spacing"]),
             top,
             right,
             bottom,
@@ -57,6 +64,8 @@ function Text({ obj, addFixedData, isFull }) {
 const P = styled.p`
     font-size: ${(props) => props.fs}em;
     width: 100%;
+    line-height: 150%;
+    letter-spacing: ${(props) => props.fs * 0.12}em;
     color: ${(props) => (props.color ? `rgb${props.color}` : "black")};
     background-color: ${(props) => (props.bg ? `rgb${props.bg}` : "black")};
 `;

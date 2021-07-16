@@ -4,6 +4,9 @@ import { ThemeProvider, createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
 ${reset}
+line-height: 150%;
+letter-spacing: 0.12em;
+
 `;
 
 const theme = {

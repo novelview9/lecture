@@ -6,11 +6,11 @@ import { createBreakpoint } from "react-use";
 import { useAtom } from "jotai";
 import { useEffect, useRef, useState } from "react";
 
+import Content from "../components/Content";
 import Controller from "../components/Controller";
-import NewContent from "../components/NewContent";
 import Video from "../components/Video";
 import input from "../example_input.json";
-import activityAtom, { playingAtom } from "../activityAtom";
+import activityAtom, { playingAtom, withVideoAtom } from "../activityAtom";
 
 const ControllerLine = ({ content, duration }) => {
     const startTimes = _.map(content, "end_time");
@@ -49,6 +49,7 @@ const LinePoint = styled.div`
     height: 10px;
 `;
 const Line = styled.div`
+    margin-top: 10px;
     pointer-events: none;
     display: flex;
     width: 100%;
@@ -77,9 +78,7 @@ const Main = () => {
     const [activity, setActivity] = useAtom(activityAtom);
     const videoRef = useRef(null);
 
-    const [withFrame, setWithFrame] = useState(false);
-
-    const [withVideo, setWithVideo] = useState(true);
+    const [withVideo] = useAtom(withVideoAtom);
     const [playing, setPlaying] = useAtom(playingAtom);
 
     const togglePlay = () => {
@@ -89,15 +88,7 @@ const Main = () => {
         setPlaying(!video.paused);
     };
 
-    const toggleFrame = () => {
-        setWithFrame(!withFrame);
-    };
-
     const videoSource = input.sourcePath + input.video.source;
-
-    const toggleVideo = () => {
-        setWithVideo(!withVideo);
-    };
 
     const onTimeEvent = () => {
         const video = videoRef.current;
@@ -153,24 +144,14 @@ const Main = () => {
     };
     return (
         <Container className="node">
-            <InnerContainer isFull={!withVideo} withFrame={withFrame} key={key}>
+            <InnerContainer isFull={!withVideo} key={key}>
                 {content.map((data, index) => {
-                    return <NewContent key={index} data={data} index={index} sourcePath={input.sourcePath} frameInfo={frameInfo} withFrame={withFrame} isFull={!withVideo} template={input.template} />;
+                    return <Content key={index} data={data} index={index} sourcePath={input.sourcePath} frameInfo={frameInfo} isFull={!withVideo} template={input.template} />;
                 })}
             </InnerContainer>
-            <Video src={videoSource} videoRef={videoRef} onTimeEvent={onTimeEvent} withVideo={withVideo} setDuration={setDuration} ref={childRef} />
+            <Video src={videoSource} videoRef={videoRef} onTimeEvent={onTimeEvent} setDuration={setDuration} ref={childRef} />
             <ControllerContainer>
-                <Controller
-                    togglePlay={togglePlay}
-                    toggleVideo={toggleVideo}
-                    jumpToPlay={jumpToPlay}
-                    barRef={barRef}
-                    reset={resetKey}
-                    toggleFrame={toggleFrame}
-                    percent={percent}
-                    currentTime={currentTime}
-                    duration={duration}
-                />
+                <Controller togglePlay={togglePlay} jumpToPlay={jumpToPlay} barRef={barRef} reset={resetKey} percent={percent} currentTime={currentTime} duration={duration} />
                 <ControllerLine content={content} duration={duration} />
             </ControllerContainer>
         </Container>

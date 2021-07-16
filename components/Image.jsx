@@ -2,10 +2,17 @@ import _ from "lodash";
 import styled from "styled-components";
 import React, { useState } from "react";
 import { Rnd } from "react-rnd";
+import { useAtom } from "jotai";
+
+import { lockAtom } from "../activityAtom";
 
 function Image({ url, addFixedData }) {
     const [fixed, setFixed] = useState();
+    const [lock] = useAtom(lockAtom);
     const onClick = (e) => {
+        if (lock) {
+            return;
+        }
         setFixed(true);
         const { top, right, bottom, left, width, height, x, y } = e.currentTarget.firstChild.getBoundingClientRect();
         addFixedData({

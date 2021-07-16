@@ -5,12 +5,15 @@ import { Rnd } from "react-rnd";
 import { useAtom } from "jotai";
 
 import activityAtom, { playingAtom } from "../activityAtom";
+import { lockAtom } from "../activityAtom";
 
 function InnerVideo({ url, startTime, endTime, addFixedData, index }) {
     const [fixed, setFixed] = useState();
     const [onPlay, setOnPlay] = useState(false);
     const [action] = useAtom(activityAtom);
     const [playing] = useAtom(playingAtom);
+    const [lock] = useAtom(lockAtom);
+
     const ref = useRef(null);
     useEffect(() => {
         if (action.time > startTime && playing) {
@@ -56,13 +59,17 @@ function InnerVideo({ url, startTime, endTime, addFixedData, index }) {
         }
     }, [onPlay]);
     const onClick = (e) => {
+        if (lock) {
+            return;
+        }
         setFixed(true);
-        const { top, right, bottom, left, width, height, x, y } = e.currentTarget.getBoundingClientRect();
+        const { top, right, bottom, left, height, x, y } = e.currentTarget.firstChild.getBoundingClientRect();
+        const width = window.getComputedStyle(e.currentTarget.firstChild)["width"];
         addFixedData({
             label: "VIDEO",
             src: url,
             startTime: startTime,
-            style: _.pick(window.getComputedStyle(e.currentTarget), ["font-size", "padding", "color", "background-color"]),
+            style: _.pick(window.getComputedStyle(e.currentTarget.firstChild), ["font-size", "padding", "color", "background-color"]),
             top,
             right,
             bottom,
@@ -74,8 +81,8 @@ function InnerVideo({ url, startTime, endTime, addFixedData, index }) {
         });
     };
     return (
-        <Container fixed={fixed}>
-            <Video src={url} draggable="false" ref={ref} playsInline muted={true} playsInline onClick={onClick} />
+        <Container fixed={fixed} onClick={onClick}>
+            <Video src={url} draggable="false" ref={ref} playsInline muted={true} playsInline />
         </Container>
     );
 }
@@ -88,9 +95,11 @@ const Container = styled.div`
     visibility: ${(props) => (props.fixed ? "hidden" : "visible")};
 `;
 const Video = styled.video`
+    display: block;
     margin: 0 auto;
     max-width: 100%;
     max-height: 100%;
+    object-fit: fill;
 `;
 
 export default React.memo(InnerVideo);

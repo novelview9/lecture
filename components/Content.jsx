@@ -11,7 +11,8 @@ import Image from "./Image";
 import InnerVideo from "./InnerVideo";
 import RndVideo from "./RndVideo";
 import Text from "./Text";
-import activityAtom from "../activityAtom";
+import activityAtom, { withFrameAtom } from "../activityAtom";
+import { lockAtom } from "../activityAtom";
 
 const ChunkedData = React.memo(({ data, addFixedData, index, sourcePath, isFull }) => {
     const sortedData = _.orderBy(data, "order");
@@ -85,15 +86,19 @@ const MemoedPositionedData = React.memo(PositionedData, checkOnlyData);
 const FixedElement = ({ data, clicked, keyValue, isActive }) => {
     const [state, setState] = useState({ x: data.x, y: data.y, width: data.width, height: data.height });
     const { fontSize, ref } = useFitText({ maxFontSize: 1000, resolution: 1 });
+    const [lock] = useAtom(lockAtom);
     const run = () => {
         clicked(keyValue);
     };
     const clear = () => {
         clicked("");
     };
+
     if (data.label === "IMG") {
         return (
             <CustomRnd
+                enableResizing={!lock}
+                disableDragging={lock}
                 onDragStart={run}
                 onResizeStart={run}
                 bounds={".frame"}
@@ -120,6 +125,8 @@ const FixedElement = ({ data, clicked, keyValue, isActive }) => {
     if (data.label === "VIDEO") {
         return (
             <CustomRnd
+                enableResizing={!lock}
+                disableDragging={lock}
                 onDragStart={run}
                 onResizeStart={run}
                 bounds={".frame"}
@@ -146,6 +153,8 @@ const FixedElement = ({ data, clicked, keyValue, isActive }) => {
     if (data.label === "P") {
         return (
             <CustomRnd
+                enableResizing={!lock}
+                disableDragging={lock}
                 onDragStart={run}
                 onResizeStart={run}
                 bounds={".frame"}
@@ -181,9 +190,10 @@ const Clear = styled.button`
     }
 `;
 
-function Content({ data, index, withFrame, sourcePath, frameInfo, isFull, template }) {
+function Content({ data, index, sourcePath, frameInfo, isFull, template }) {
     const chunkedData = _.groupBy(data.learning_material, "in_column");
     const [activity] = useAtom(activityAtom);
+    const [withFrame] = useAtom(withFrameAtom);
     const isActive = activity.slide === index;
     const [state] = useState({ chunkedData, column: data.column });
     const [fixedData, setFixedData] = useState({});
@@ -205,7 +215,7 @@ function Content({ data, index, withFrame, sourcePath, frameInfo, isFull, templa
         return (
             <Container isActive={isActive}>
                 <Inner>
-                    <Frame src={frameInfo.topBg} withFrame={withFrame} height={frameInfo.topHeight} isActive={withFrame} />
+                    <Frame src={frameInfo.topBg} height={frameInfo.topHeight} isActive={withFrame} />
                     {titleObj && (
                         <TitleContainer>
                             <TitleImg src={`${sourcePath}${titleObj.path}`} />
@@ -218,7 +228,7 @@ function Content({ data, index, withFrame, sourcePath, frameInfo, isFull, templa
                             })}
                         </PositionedCanvas>
                     </PositionedContainer>
-                    <Frame src={frameInfo.bottomBg} withFrame={withFrame} height={frameInfo.bottomHeight} isActive={withFrame} />
+                    <Frame src={frameInfo.bottomBg} height={frameInfo.bottomHeight} isActive={withFrame} />
                 </Inner>
                 {Object.entries(fixedData).map((value) => (
                     <FixedElement data={value[1]} key={value[0]} clicked={clicked} isActive={nodeEl === value[0]} keyValue={value[0]} />
@@ -229,7 +239,7 @@ function Content({ data, index, withFrame, sourcePath, frameInfo, isFull, templa
     return (
         <Container isActive={isActive}>
             <Inner>
-                <Frame src={frameInfo.topBg} withFrame={withFrame} height={frameInfo.topHeight} isActive={withFrame} />
+                <Frame src={frameInfo.topBg} height={frameInfo.topHeight} isActive={withFrame} />
                 {titleObj && (
                     <TitleContainer>
                         <TitleImg src={`${sourcePath}${titleObj.path}`} />
@@ -240,7 +250,7 @@ function Content({ data, index, withFrame, sourcePath, frameInfo, isFull, templa
                         return <MemoedChunkedData data={state.chunkedData[i + 1]} key={i} addFixedData={addFixedData} index={index} sourcePath={sourcePath} isFull={isFull} />;
                     })}
                 </ColumnContainer>
-                <Frame src={frameInfo.bottomBg} withFrame={withFrame} height={frameInfo.bottomHeight} isActive={withFrame} />
+                <Frame src={frameInfo.bottomBg} height={frameInfo.bottomHeight} isActive={withFrame} />
             </Inner>
             {Object.entries(fixedData).map((value) => (
                 <FixedElement data={value[1]} key={value[0]} clicked={clicked} isActive={nodeEl === value[0]} keyValue={value[0]} />
@@ -316,6 +326,7 @@ const InnerColumn = styled.div`
 `;
 
 const Container = styled.div`
+    padding-top: 20px;
     display: ${(props) => (props.isActive ? "flex" : "none")};
     flex: 1;
     align-items: stretch;
