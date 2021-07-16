@@ -2,10 +2,9 @@ import styled, { css } from "styled-components";
 import { DarkMode } from "@styled-icons/material-sharp";
 import { Layout } from "@styled-icons/feather";
 import { Lock as LockIcon } from "@styled-icons/entypo";
+import { Mobile } from "@styled-icons/boxicons-regular";
 import { Pause, Play } from "@styled-icons/boxicons-regular";
-import { PersonLinesFill } from "@styled-icons/bootstrap";
 import { Revision } from "@styled-icons/boxicons-regular";
-import { ZoomIn } from "@styled-icons/feather";
 import { useAtom } from "jotai";
 
 import ProgressBar from "./ProgressBar";
@@ -58,7 +57,7 @@ function Controller({ jumpToPlay, togglePlay, percent, barRef, reset, currentTim
                         </p>
                     </Time>
                     <Button onClick={toggleMobileMode} isActive={mobileMode}>
-                        <ZoomIn />
+                        <Mobile />
                     </Button>
                     <Button onClick={toggleDarkMode} isActive={darkMode}>
                         <DarkMode />

@@ -2,13 +2,17 @@ import _ from "lodash";
 import styled, { css } from "styled-components";
 import { Rnd } from "react-rnd";
 import { forwardRef, useEffect, useImperativeHandle, useRef, useState } from "react";
+import { useAtom } from "jotai";
 
-function Video({ videoRef, src, onTimeEvent, withVideo, setDuration }, ref) {
+import { withVideoAtom } from "../activityAtom";
+
+function Video({ videoRef, src, onTimeEvent, setDuration }, ref) {
     const [fixed, setFixed] = useState();
     const [data, setData] = useState();
     const [state, setState] = useState({});
     const [initial, setInitial] = useState({});
     const [nodeStatus, setNodeStatus] = useState({});
+    const [withVideo] = useAtom(withVideoAtom);
     useImperativeHandle(ref, () => ({
         resetHandle() {
             setState(initial);
