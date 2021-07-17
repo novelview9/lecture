@@ -71,10 +71,10 @@ function Controller({ jumpToPlay, togglePlay, percent, barRef, reset, currentTim
                 </div>
                 <div>
                     <ToggleButton onClick={toggleFrame} isActive={withFrame}>
-                        <p>템플릿</p>
+                        <p>Template</p>
                     </ToggleButton>
                     <ToggleButton onClick={toggleVideo} isActive={withVideo}>
-                        <p>강의자</p>
+                        <p>Instructor</p>
                     </ToggleButton>
                 </div>
             </Buttons>

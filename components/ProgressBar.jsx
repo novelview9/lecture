@@ -3,9 +3,7 @@ import styled from "styled-components";
 function Control({ percent, jumpToPlay, barRef }) {
     return (
         <ProgressBarLine onClick={jumpToPlay} ref={barRef}>
-            <ProgressBarFilled percent={percent}>
-                <Circle />
-            </ProgressBarFilled>
+            <ProgressBarFilled percent={percent}>{/* <Circle /> */}</ProgressBarFilled>
         </ProgressBarLine>
     );
 }

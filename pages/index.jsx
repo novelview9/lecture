@@ -9,8 +9,8 @@ import { useEffect, useRef, useState } from "react";
 import Content from "../components/Content";
 import Controller from "../components/Controller";
 import Video from "../components/Video";
-import input from "../example_input.json";
-import activityAtom, { playingAtom, withVideoAtom } from "../activityAtom";
+import input from "../input1.json";
+import activityAtom, { darkModeAtom, mobileModeAtom, playingAtom, withVideoAtom } from "../activityAtom";
 
 const ControllerLine = ({ content, duration }) => {
     const startTimes = _.map(content, "end_time");
@@ -63,8 +63,27 @@ const Line = styled.div`
     }
 `;
 
+const modeSelector = ({ mobile, dark }) => {
+    switch ((mobile, dark)) {
+        case (false, false):
+            return "original";
+        case (false, true):
+            return "original_dark";
+        case (true, false):
+            return "restructure";
+        case (true, true):
+            return "restructure_dark";
+    }
+};
+
 const Main = () => {
-    const content = input.content;
+    const [dark] = useAtom(darkModeAtom);
+    const [mobile] = useAtom(mobileModeAtom);
+    // // const content = input.content[modeSelector({ mobile, dark })];
+    const [content, setContent] = useState(input.content.original);
+    useEffect(() => {
+        setContent(input.content[modeSelector({ mobile, dark })]);
+    }, [dark, mobile]);
 
     const [percent, setPercent] = useState(0);
     const [currentTime, setCurrentTime] = useState("00:00");
@@ -93,7 +112,7 @@ const Main = () => {
     const onTimeEvent = () => {
         const video = videoRef.current;
         const time = video.currentTime;
-        const slide = _.findLastIndex(input.content, (obj) => obj.start_time < time);
+        const slide = _.findLastIndex(content, (obj) => obj.start_time < time);
         const action = activity.slide === slide ? "playing" : "flip";
         setActivity({ slide, action, time });
         const percentPoint = time / video.duration;
@@ -120,7 +139,7 @@ const Main = () => {
         setPercent(percentPoint * 100);
         const time = percentPoint * video.duration;
         video.currentTime = time;
-        const slide = _.findLastIndex(input.content, (obj) => obj.start_time < time);
+        const slide = _.findLastIndex(content, (obj) => obj.start_time < time);
         const action = "jump";
         setActivity({ slide, action, time });
         const minutes = Math.floor(time / 60);
