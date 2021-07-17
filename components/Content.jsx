@@ -306,6 +306,7 @@ const PCon = styled.div`
     height: 100%;
     line-height: 150%;
     letter-spacing: 0.12em;
+    white-space: pre-wrap;
 `;
 const CustomRnd = styled(Rnd)`
     box-sizing: border-box;
