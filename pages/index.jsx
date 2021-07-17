@@ -80,6 +80,21 @@ const modeSelector = ({ mobile, dark }) => {
         return "restructure_dark";
     }
 };
+const imageSelector = ({ location, dark }) => {
+    if ((location === "top") & (dark === false)) {
+        return "top_img";
+    }
+    if ((location === "top") & (dark === true)) {
+        return "top_img_dark";
+    }
+
+    if ((location === "bottom") & (dark === false)) {
+        return "bottom_img";
+    }
+    if ((location === "bottom") & (dark === true)) {
+        return "bottom_img_dark";
+    }
+};
 
 const Main = () => {
     const [dark] = useAtom(darkModeAtom);
@@ -162,8 +177,8 @@ const Main = () => {
         }, 100);
     }, []);
     const frameInfo = {
-        topBg: input.sourcePath + input.template.top_img,
-        bottomBg: input.sourcePath + input.template.bottom_img,
+        topBg: input.sourcePath + input.template[imageSelector({ location: "top", dark })],
+        bottomBg: input.sourcePath + input.template[imageSelector({ location: "bottom", dark })],
         topHeight: (input.template.top_padding / input.template.height) * 100,
         bottomHeight: (input.template.bottom_padding / input.template.height) * 100,
     };
