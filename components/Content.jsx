@@ -304,6 +304,8 @@ const TitleContainer = styled.div`
 const PCon = styled.div`
     width: 100%;
     height: 100%;
+    line-height: 150%;
+    letter-spacing: 0.12em;
 `;
 const CustomRnd = styled(Rnd)`
     box-sizing: border-box;

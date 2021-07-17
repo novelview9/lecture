@@ -9,7 +9,7 @@ import { useEffect, useRef, useState } from "react";
 import Content from "../components/Content";
 import Controller from "../components/Controller";
 import Video from "../components/Video";
-import input from "../input1.json";
+import input from "../input2.json";
 import activityAtom, { darkModeAtom, mobileModeAtom, playingAtom, withVideoAtom } from "../activityAtom";
 
 const ControllerLine = ({ content, duration }) => {
@@ -87,7 +87,6 @@ const Main = () => {
     // // const content = input.content[modeSelector({ mobile, dark })];
     const [content, setContent] = useState(input.content.original);
     useEffect(() => {
-        reset();
         setContent(input.content[modeSelector({ mobile, dark })]);
     }, [dark, mobile]);
 
@@ -96,7 +95,7 @@ const Main = () => {
     const [key, setKey] = useState(shortid.generate());
 
     const childRef = useRef();
-    const reset = () => {
+    const resetKey = () => {
         childRef.current.resetHandle();
         setKey(() => shortid.generate());
     };
@@ -176,7 +175,7 @@ const Main = () => {
             </InnerContainer>
             <Video src={videoSource} videoRef={videoRef} onTimeEvent={onTimeEvent} setDuration={setDuration} ref={childRef} />
             <ControllerContainer>
-                <Controller togglePlay={togglePlay} jumpToPlay={jumpToPlay} barRef={barRef} reset={reset} percent={percent} currentTime={currentTime} duration={duration} />
+                <Controller togglePlay={togglePlay} jumpToPlay={jumpToPlay} barRef={barRef} reset={resetKey} percent={percent} currentTime={currentTime} duration={duration} />
                 <ControllerLine content={content} duration={duration} />
             </ControllerContainer>
         </Container>
