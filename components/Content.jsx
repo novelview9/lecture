@@ -213,7 +213,7 @@ function Content({ data, index, sourcePath, frameInfo, isFull, template }) {
     const frameRatio = template.width / template.height;
     if (data.column === 0) {
         return (
-            <Container isActive={isActive}>
+            <Container isActive={isActive} bg={`${sourcePath}${data.bg_image}`}>
                 <Inner>
                     <Frame src={frameInfo.topBg} height={frameInfo.topHeight} isActive={withFrame} />
                     {titleObj && (
@@ -237,7 +237,7 @@ function Content({ data, index, sourcePath, frameInfo, isFull, template }) {
         );
     }
     return (
-        <Container isActive={isActive}>
+        <Container isActive={isActive} bg={`${sourcePath}${data.bg_image}`}>
             <Inner>
                 <Frame src={frameInfo.topBg} height={frameInfo.topHeight} isActive={withFrame} />
                 {titleObj && (
@@ -331,6 +331,7 @@ const InnerColumn = styled.div`
 const Container = styled.div`
     padding-top: 20px;
     display: ${(props) => (props.isActive ? "flex" : "none")};
+    /* background-image: url(${(props) => props.bg}); */
     flex: 1;
     align-items: stretch;
 `;

@@ -64,7 +64,7 @@ function Video({ videoRef, src, onTimeEvent, setDuration }, ref) {
         setDuration(e.currentTarget.duration);
     };
     useEffect(() => {
-        if (fixed) {
+        if (fixed & videoRef.current) {
             videoRef.current.play();
             setTimeout(() => {
                 videoRef.current.pause();
