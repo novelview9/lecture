@@ -17,16 +17,6 @@ function Text({ obj, addFixedData, isFull }) {
     const [fixed, setFixed] = useState();
     const breakpoint = useBreakpoint();
     const height = useWindowHeight();
-    const getBreakValue = () => {
-        switch (breakpoint) {
-            case "XL":
-                return 1;
-            case "L":
-                return 1;
-            case "S":
-                return 1;
-        }
-    };
     const onClick = (e) => {
         if (lock) {
             return;
@@ -51,13 +41,15 @@ function Text({ obj, addFixedData, isFull }) {
     // const { fontSize, ref } = useFitText({ maxFontSize: parseInt(goal), resolution: 5 });
     const [dark] = useAtom(darkModeAtom);
     const [frameHeight] = useAtom(frameHeightAtom);
-    const [goal, setGoal] = useState(15);
+    const [goal, setGoal] = useState({ fontSize: 15, lineHeight: 150 });
     useEffect(() => {
         let size = obj.avail_font_size * (isFull ? 1.2 : 1);
-        if (frameHeight && height && breakpoint === "S") {
-            size *= height / frameHeight;
+        if (frameHeight && height && ["S", "L"].includes(breakpoint)) {
+            size *= (height / frameHeight) * 0.8;
+            setGoal({ fontSize: size, lineHeight: 140 });
+        } else {
+            setGoal({ fontSize: size, lineHeight: 150 });
         }
-        setGoal(size);
     }, [frameHeight, height, isFull]);
 
     return (
@@ -65,7 +57,7 @@ function Text({ obj, addFixedData, isFull }) {
             {/* <Font ref={ref} style={{ fontSize }} color={obj.color_font} bg={obj.color_bg} onClick={onClick}>
                 {obj.text_content}
             </Font> */}
-            <P fs={goal} onClick={onClick} bg={obj.color_bg} color={obj.color_font} typeFace={obj.typeface}>
+            <P goal={goal} onClick={onClick} bg={obj.color_bg} color={obj.color_font} typeFace={obj.typeface}>
                 {obj.text_content}
             </P>
         </Container>
@@ -73,9 +65,9 @@ function Text({ obj, addFixedData, isFull }) {
 }
 
 const P = styled.p`
-    font-size: ${(props) => props.fs}em;
+    font-size: ${(props) => props.goal.fontSize}em;
     width: 100%;
-    line-height: 150%;
+    line-height: ${(props) => props.goal.lineHeight}%;
     letter-spacing: 0;
     color: ${(props) => (props.color ? `rgb${props.color}` : "black")};
     background-color: ${(props) => (props.bg ? `rgb${props.bg}` : "black")};

@@ -4,7 +4,7 @@ import { Rnd } from "react-rnd";
 import { forwardRef, useEffect, useImperativeHandle, useRef, useState } from "react";
 import { useAtom } from "jotai";
 
-import { activityAtom, currentAtom, currentTimeAtom, durationAtom, durationTimeAtom, jumpAtom, percentAtom, playingAtom, withVideoAtom } from "../atom";
+import { activityAtom, currentAtom, currentTimeAtom, durationAtom, durationTimeAtom, percentAtom, playingAtom, withVideoAtom } from "../atom";
 
 function Video({ src, content, videoLocation }, ref) {
     const [fixed, setFixed] = useState();
@@ -35,8 +35,13 @@ function Video({ src, content, videoLocation }, ref) {
             },
             jump: (percentPoint) => {
                 const time = percentPoint * duration;
-
+                setPercent(percentPoint);
                 videoRef.current.currentTime = time;
+                videoRef.current.play();
+                setTimeout(() => {
+                    videoRef.current.pause();
+                    setPlay(false);
+                }, 100);
                 const slide = _.findLastIndex(content, (obj) => obj.start_time < time);
                 const action = "jump";
                 setActivity({ slide, action, time });
@@ -113,14 +118,6 @@ function Video({ src, content, videoLocation }, ref) {
             setPlay(false);
         }
     }, [videoRef, fixed]);
-    useEffect(() => {
-        if (duration) {
-            videoRef.current.play();
-            setTimeout(() => {
-                videoRef.current.pause();
-            }, 100);
-        }
-    }, [duration]);
 
     if (fixed) {
         return (
