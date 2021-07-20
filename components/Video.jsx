@@ -113,7 +113,7 @@ function Video({ src, content, videoLocation }, ref) {
             setPlay(false);
         }
     }, [videoRef, fixed]);
-    useEffet(() => {
+    useEffect(() => {
         videoRef.current.play();
         setTimeout(() => {
             videoRef.current.pause();
