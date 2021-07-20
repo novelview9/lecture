@@ -113,33 +113,36 @@ function Video({ src, content, videoLocation }, ref) {
             setPlay(false);
         }
     }, [videoRef, fixed]);
+    useEffect(() => {
+        setFixed(true);
+    }, []);
 
-    // if (fixed) {
-    //     return (
-    //         <CustomRnd
-    //             size={{ width: positionState.width, height: positionState.height, background: "red" }}
-    //             position={{ x: positionState.x, y: positionState.y }}
-    //             bounds={".frame"}
-    //             onDragStop={(e, d) => {
-    //                 setPositionState((prevState) => {
-    //                     return { ...prevState, x: d.x, y: d.y };
-    //                 });
-    //             }}
-    //             onResizeStop={(e, direction, ref, delta, position) => {
-    //                 setPositionState({
-    //                     width: ref.style.width,
-    //                     height: ref.style.height,
-    //                     ...position,
-    //                 });
-    //             }}
-    //         >
-    //             <VideoEl src={src} onTimeUpdate={onTimeEvent} ref={videoRef} active={withVideo} playsInline draggable="false" isDrag={true} onLoadedMetadata={loaded} autoplay />
-    //         </CustomRnd>
-    //     );
-    // }
+    if (fixed) {
+        return (
+            <CustomRnd
+                size={{ width: positionState.width, height: positionState.height, background: "red" }}
+                position={{ x: positionState.x, y: positionState.y }}
+                bounds={".frame"}
+                onDragStop={(e, d) => {
+                    setPositionState((prevState) => {
+                        return { ...prevState, x: d.x, y: d.y };
+                    });
+                }}
+                onResizeStop={(e, direction, ref, delta, position) => {
+                    setPositionState({
+                        width: ref.style.width,
+                        height: ref.style.height,
+                        ...position,
+                    });
+                }}
+            >
+                <VideoEl src={src} onTimeUpdate={onTimeEvent} ref={videoRef} active={withVideo} playsInline draggable="false" isDrag={true} onLoadedMetadata={loaded} autoplay />
+            </CustomRnd>
+        );
+    }
     return (
         <Container visiable={nodeVideoLocation}>
-            <VideoEl src={src} onTimeUpdate={onTimeEvent} ref={videoRef} active={withVideo} playsInline onLoadedMetadata={loaded} autoplay />
+            <VideoEl src={src} onTimeUpdate={onTimeEvent} active={withVideo} playsInline onLoadedMetadata={loaded} autoplay />
         </Container>
     );
 }
