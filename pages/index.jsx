@@ -37,11 +37,16 @@ const ControllerLine = ({ content }) => {
     );
 };
 const Loading = styled.div`
+    > p {
+        color: white;
+    }
+
     z-index: 200;
     background-color: black;
     position: fixed;
     min-width: 100%;
     min-height: 100%;
+    display: ${(props) => (props.isLoading ? "flex" : "none")};
     flex: 1;
     align-items: center;
     justify-content: center;
@@ -124,6 +129,7 @@ const Main = () => {
     useEffect(() => {
         setHeight(input.template.height);
     }, []);
+    const [duration] = useAtom(durationAtom);
 
     const [key, setKey] = useState(shortid.generate());
     const reset = () => {
@@ -149,6 +155,9 @@ const Main = () => {
     };
     return (
         <Container className="node">
+            <Loading isLoading={!duration}>
+                <p>loading..</p>
+            </Loading>
             <InnerContainer isFull={!withVideo}>
                 <InnerContent key={key}>
                     {content.map((data, index) => {

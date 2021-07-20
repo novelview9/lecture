@@ -17,7 +17,11 @@ const ControllerLine = ({ content }) => {
 
     const startTimes = _.map(content, "end_time");
     if (!duration) {
-        return <p key={shortid.generate()}></p>;
+        return (
+            <Loading key={shortid.generate()}>
+                <p>loading...</p>
+            </Loading>
+        );
     }
 
     return (
@@ -32,6 +36,21 @@ const ControllerLine = ({ content }) => {
         </Line>
     );
 };
+const Loading = styled.div`
+    > p {
+        color: white;
+    }
+
+    z-index: 200;
+    background-color: black;
+    position: fixed;
+    min-width: 100%;
+    min-height: 100%;
+    display: ${(props) => (props.isLoading ? "flex" : "none")};
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+`;
 
 const Circle = styled.div`
     width: 10px;
@@ -110,6 +129,7 @@ const Main = () => {
     useEffect(() => {
         setHeight(input.template.height);
     }, []);
+    const [duration] = useAtom(durationAtom);
 
     const [key, setKey] = useState(shortid.generate());
     const reset = () => {
@@ -126,6 +146,7 @@ const Main = () => {
         videoComponentRef.current.jump(percentPoint);
     };
     const videoSource = input.sourcePath + input.video.source;
+
     const frameInfo = {
         topBg: input.sourcePath + input.template[imageSelector({ location: "top", dark })],
         bottomBg: input.sourcePath + input.template[imageSelector({ location: "bottom", dark })],
@@ -134,11 +155,16 @@ const Main = () => {
     };
     return (
         <Container className="node">
-            <InnerContainer isFull={!withVideo} key={key}>
-                {content.map((data, index) => {
-                    return <Content key={index} data={data} index={index} sourcePath={input.sourcePath} frameInfo={frameInfo} isFull={!withVideo} template={input.template} />;
-                })}
-                <Video src={videoSource} content={content} ref={videoComponentRef} />
+            <Loading isLoading={!duration}>
+                <p>loading..</p>
+            </Loading>
+            <InnerContainer isFull={!withVideo}>
+                <InnerContent key={key}>
+                    {content.map((data, index) => {
+                        return <Content key={index} data={data} index={index} sourcePath={input.sourcePath} frameInfo={frameInfo} isFull={!withVideo} template={input.template} />;
+                    })}
+                </InnerContent>
+                <Video src={videoSource} content={content} ref={videoComponentRef} videoLocation={input.video.control} />
             </InnerContainer>
             <ControllerContainer>
                 <Controller reset={reset} togglePlay={togglePlay} jump={jump} />
@@ -181,4 +207,11 @@ const Container = styled.div`
     }
 `;
 
+const InnerContent = styled.div`
+    flex: 1;
+    display: flex;
+    align-items: stretch;
+    padding-right: 100px;
+    position: relative;
+`;
 export default Main;
