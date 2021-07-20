@@ -8,7 +8,8 @@
     "top_img": "header.jpg",
     "top_img_dark": "header_dark.jpg",
     "bottom_img": "footer.jpg",
-    "bottom_img_dark": "footer_dark.jpg"
+    "bottom_img_dark": "footer_dark.jpg",
+    "fontUrl": ["https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"]
   },
   "video": {
     "source": "instructor_whole.mp4",
@@ -35,7 +36,7 @@
         "shot_id": 1,
         "ratio": 0.4,
         "column": 1,
-        "bg_image": "/bg_shot1.jpg",
+        "bg_image": "bg_shot1.jpg",
         "start_time": 0.00,
         "end_time": 31.00,
         "learning_material": [
@@ -47,7 +48,7 @@
               593,
               86
             ],
-            "path": "./shot1_title.jpg"
+            "path": "shot1_title.jpg"
           },
           {
             "label": "text_box",
@@ -60,18 +61,18 @@
             "in_column": 1,
             "order": 1,
             "text_content": "Professor Holly Ott\nProduction and Supply Chain Management\nChair: Prof. Martin Grunow\nTUM School of Management",
-            "avail_font_size": 1.8125,
+            "avail_font_size": 1.5,
             "typeface": "Roboto",
             "color_font": "(18, 18, 18)",
             "color_bg": "(253, 253, 253)"
-          },
+          }
         ]
       },
       {
         "shot_id": 2,
         "ratio": 0.4,
         "column": 1,
-        "bg_image": "/bg_shot2.jpg",
+        "bg_image": "bg_shot2.jpg",
         "start_time": 31.00,
         "end_time": 55.00,
         "learning_material": [
@@ -83,7 +84,7 @@
               408,
               45
             ],
-            "path": "./shot2_title.jpg"
+            "path": "shot2_title.jpg"
           },
           {
             "label": "text_box",
@@ -96,7 +97,7 @@
             "in_column": 1,
             "order": 1,
             "text_content": "• Outline the history of the Toyota Motor Corporation from the Toyota Automatic Loom Works.",
-            "avail_font_size": 1.8125,
+            "avail_font_size": 1.5,
             "typeface": "Roboto",
             "color_font": "(18, 18, 18)",
             "color_bg": "(253, 253, 253)"
@@ -112,7 +113,7 @@
             "in_column": 1,
             "order": 1,
             "text_content": "• Describe the historical drivers for the development of the Toyota Production System at Toyota and identify the important contributors to TPS.",
-            "avail_font_size": 1.8125,
+            "avail_font_size": 1.5,
             "typeface": "Roboto",
             "color_font": "(18, 18, 18)",
             "color_bg": "(253, 253, 253)"
@@ -128,7 +129,7 @@
             "in_column": 1,
             "order": 1,
             "text_content": "• List the core elements of the Toyota Production System.",
-            "avail_font_size": 1.8125,
+            "avail_font_size": 1.5,
             "typeface": "Roboto",
             "color_font": "(18, 18, 18)",
             "color_bg": "(253, 253, 253)"
@@ -139,7 +140,7 @@
         "shot_id": 3,
         "ratio": 0.4,
         "column": 2,
-        "bg_image": "/bg_shot3.jpg",
+        "bg_image": "bg_shot3.jpg",
         "start_time": 55.00,
         "end_time": 110.00,
         "learning_material": [
@@ -151,7 +152,7 @@
               403,
               44
             ],
-            "path": "./shot3_title.jpg"
+            "path": "shot3_title.jpg"
           },
           {
             "label": "text_box",
@@ -164,7 +165,7 @@
             "in_column": 1,
             "order": 1,
             "text_content": "• 1926 Sakichi Toyoda: Toyoda Automatic Loom Works",
-            "avail_font_size": 1.8125,
+            "avail_font_size": 1.5,
             "typeface": "Roboto",
             "color_font": "(18, 18, 18)",
             "color_bg": "(253, 253, 253)"
@@ -180,7 +181,7 @@
             "in_column": 1,
             "order": 2,
             "text_content": "• 1933 Kiichiro Toyoda: automotive division. Produced military trucks during WWII",
-            "avail_font_size": 1.8125,
+            "avail_font_size": 1.5,
             "typeface": "Roboto",
             "color_font": "(18, 18, 18)",
             "color_bg": "(253, 253, 253)"
@@ -193,14 +194,14 @@
               346,
               429
             ],
-            "path": "./shot3_picture1.jpg",
+            "path": "shot3_picture1.jpg",
 
             "in_column": 2,
             "order": 1,
 
-            "avail_size": 1.2
+            "avail_size": 1.0
 
-          },
+          }
         ]
       },
 
@@ -208,7 +209,7 @@
         "shot_id": 4,
         "ratio": 0.4,
         "column": 2,
-        "bg_image": "/bg_shot4.jpg",
+        "bg_image": "bg_shot4.jpg",
         "start_time": 110.00,
         "end_time": 191.00,
         "learning_material": [
@@ -220,7 +221,7 @@
               403,
               44
             ],
-            "path": "./shot4_title.jpg"
+            "path": "shot4_title.jpg"
           },
           {
             "label": "text_box",
@@ -233,7 +234,7 @@
             "in_column": 1,
             "order": 1,
             "text_content": "• 1926 Sakichi Toyoda: Toyoda Automatic Loom Works",
-            "avail_font_size": 1.8125,
+            "avail_font_size": 1.5,
             "typeface": "Roboto",
             "color_font": "(18, 18, 18)",
             "color_bg": "(253, 253, 253)"
@@ -249,7 +250,7 @@
             "in_column": 1,
             "order": 2,
             "text_content": "• 1933 Kiichiro Toyoda: automotive division. Produced military trucks during WWII",
-            "avail_font_size": 1.8125,
+            "avail_font_size": 1.5,
             "typeface": "Roboto",
             "color_font": "(18, 18, 18)",
             "color_bg": "(253, 253, 253)"
@@ -265,7 +266,7 @@
             "in_column": 1,
             "order": 1,
             "text_content": "• After war, shortages, little cash... Ford Motor Co. at the Rouge plant near Detroit producing 7,000 caars/day. Toyota producing 200 per year",
-            "avail_font_size": 1.8125,
+            "avail_font_size": 1.5,
             "typeface": "Roboto",
             "color_font": "(18, 18, 18)",
             "color_bg": "(253, 253, 253)"
@@ -281,7 +282,7 @@
             "in_column": 1,
             "order": 2,
             "text_content": "• 1940s Eiji Toyoda ... needed to do things differently!",
-            "avail_font_size": 1.8125,
+            "avail_font_size": 1.5,
             "typeface": "Roboto",
             "color_font": "(18, 18, 18)",
             "color_bg": "(253, 253, 253)"
@@ -294,21 +295,21 @@
               361,
               333
             ],
-            "path": "./shot4_picture1.jpg",
+            "path": "shot4_picture1.jpg",
 
             "in_column": 2,
             "order": 1,
 
-            "avail_size": 1.2
+            "avail_size": 1.0
 
-          },
+          }
         ]
       },
       {
         "shot_id": 5,
         "ratio": 0.3,
         "column": 2,
-        "bg_image": "/bg_shot5.jpg",
+        "bg_image": "bg_shot5.jpg",
         "start_time": 191.00,
         "end_time": 268.00,
         "learning_material": [
@@ -320,7 +321,7 @@
               403,
               44
             ],
-            "path": "./shot5_title.jpg"
+            "path": "shot5_title.jpg"
           },
           {
             "label": "text_box",
@@ -332,8 +333,8 @@
             ],
             "in_column": 1,
             "order": 1,
-            "text_content": "• Toyota Production System - Lean Manufacturing\n• Taiichi Ohno is credited for creating the system\n• Dr. Shigeo Shingo, author Single Minute Exchange of Die procedure.\n”• Quantity Control (Just In Time)\n• Quality Control & Improvement\n• Waste and Cost Control\n• The term \"Lean\" is from John Krafcik's 1988 article \"Triumph of Lean Production Systems.\",
-            "avail_font_size": 1.8125,
+            "text_content": "• Toyota Production System - Lean Manufacturing\n• Taiichi Ohno is credited for creating the system\n• Dr. Shigeo Shingo, author Single Minute Exchange of Die procedure.\n• Quantity Control (Just In Time)\n• Quality Control & Improvement\n• Waste and Cost Control\n• The term \"Lean\" is from John Krafcik's 1988 article \"Triumph of Lean Production Systems.\"",
+            "avail_font_size": 1.5,
             "typeface": "Roboto",
             "color_font": "(18, 18, 18)",
             "color_bg": "(253, 253, 253)"
@@ -346,21 +347,21 @@
               228,
               259
             ],
-            "path": "./shot5_picture1.jpg",
+            "path": "shot5_picture1.jpg",
 
             "in_column": 2,
             "order": 1,
 
-            "avail_size": 1.5
+            "avail_size": 1.0
 
-          },
+          }
         ]
       },
       {
         "shot_id": 6,
         "ratio": 0.3,
         "column": 2,
-        "bg_image": "/bg_shot7.jpg",
+        "bg_image": "bg_shot7.jpg",
         "start_time": 268.00,
         "end_time": 397.00,
         "learning_material": [
@@ -372,7 +373,7 @@
               453,
               40
             ],
-            "path": "./shot7_title.jpg"
+            "path": "shot7_title.jpg"
           },
           {
             "label": "text_box",
@@ -384,8 +385,8 @@
             ],
             "in_column": 1,
             "order": 1,
-            "text_content": "• Maximize share of value-adding activities\n- Elimination of \"waste\" (muda)\n- Strive to minimize batch sizes (ideally single piece flow)\n- Build processes based on true customer requirements\n• Implement stable, standardized processes\n- Workplace organization\n- Standard Operating Procedures\n- Fail-safe processes (Jidoka)”,
-            "avail_font_size": 1.8125,
+            "text_content": "• Maximize share of value-adding activities\n- Elimination of \"waste\" (muda)\n- Strive to minimize batch sizes (ideally single piece flow)\n- Build processes based on true customer requirements\n• Implement stable, standardized processes\n- Workplace organization\n- Standard Operating Procedures\n- Fail-safe processes (Jidoka)",
+            "avail_font_size": 1.5,
             "typeface": "Roboto",
             "color_font": "(18, 18, 18)",
             "color_bg": "(253, 253, 253)"
@@ -400,22 +401,22 @@
             ],
             "in_column": 2,
             "order": 1,
-            "text_content": "• Create a self-learning, continuously improving organization\n- Create transparency on problems/facilitate immediate identification\n- Conduct rigorous root-cause problem solving\n- Make continuous improvement part of the daily work\n• Take a holistic Supply Chain perspective\n- Customer requirements-driven perspective\n- Backwards integration to include suppliers\n• People development is the key success factor\n- Employee skill building is an important part of the TPS”,
-            "avail_font_size": 1.8125,
+            "text_content": "• Create a self-learning, continuously improving organization\n- Create transparency on problems/facilitate immediate identification\n- Conduct rigorous root-cause problem solving\n- Make continuous improvement part of the daily work\n• Take a holistic Supply Chain perspective\n- Customer requirements-driven perspective\n- Backwards integration to include suppliers\n• People development is the key success factor\n- Employee skill building is an important part of the TPS",
+            "avail_font_size": 1.5,
             "typeface": "Roboto",
             "color_font": "(18, 18, 18)",
             "color_bg": "(253, 253, 253)"
-          },
+          }
         ]
-      },
-
+      }
     ],
+
     "original_dark": [
       {
         "shot_id": 1,
         "ratio": 0.4,
         "column": 1,
-        "bg_image": "/bg_shot1.jpg",
+        "bg_image": "bg_shot1_dark.jpg",
         "start_time": 0.00,
         "end_time": 31.00,
         "learning_material": [
@@ -427,7 +428,7 @@
               593,
               86
             ],
-            "path": "./shot1_title.jpg"
+            "path": "shot1_title_dark.jpg"
           },
           {
             "label": "text_box",
@@ -440,18 +441,18 @@
             "in_column": 1,
             "order": 1,
             "text_content": "Professor Holly Ott\nProduction and Supply Chain Management\nChair: Prof. Martin Grunow\nTUM School of Management",
-            "avail_font_size": 1.8125,
+            "avail_font_size": 1.5,
             "typeface": "Roboto",
-            "color_font": "(18, 18, 18)",
-            "color_bg": "(253, 253, 253)"
-          },
+            "color_font": "(253, 253, 253)",
+            "color_bg": "(30, 30, 30)"
+          }
         ]
       },
       {
         "shot_id": 2,
         "ratio": 0.4,
         "column": 1,
-        "bg_image": "/bg_shot2.jpg",
+        "bg_image": "bg_shot2_dark.jpg",
         "start_time": 31.00,
         "end_time": 55.00,
         "learning_material": [
@@ -463,7 +464,7 @@
               408,
               45
             ],
-            "path": "./shot2_title.jpg"
+            "path": "shot2_title_dark.jpg"
           },
           {
             "label": "text_box",
@@ -476,10 +477,10 @@
             "in_column": 1,
             "order": 1,
             "text_content": "• Outline the history of the Toyota Motor Corporation from the Toyota Automatic Loom Works.",
-            "avail_font_size": 1.8125,
+            "avail_font_size": 1.5,
             "typeface": "Roboto",
-            "color_font": "(18, 18, 18)",
-            "color_bg": "(253, 253, 253)"
+            "color_font": "(253, 253, 253)",
+            "color_bg": "(30, 30, 30)"
           },
           {
             "label": "text_box",
@@ -492,10 +493,10 @@
             "in_column": 1,
             "order": 1,
             "text_content": "• Describe the historical drivers for the development of the Toyota Production System at Toyota and identify the important contributors to TPS.",
-            "avail_font_size": 1.8125,
+            "avail_font_size": 1.5,
             "typeface": "Roboto",
-            "color_font": "(18, 18, 18)",
-            "color_bg": "(253, 253, 253)"
+            "color_font": "(253, 253, 253)",
+            "color_bg": "(30, 30, 30)"
           },
           {
             "label": "text_box",
@@ -508,10 +509,10 @@
             "in_column": 1,
             "order": 1,
             "text_content": "• List the core elements of the Toyota Production System.",
-            "avail_font_size": 1.8125,
+            "avail_font_size": 1.5,
             "typeface": "Roboto",
-            "color_font": "(18, 18, 18)",
-            "color_bg": "(253, 253, 253)"
+            "color_font": "(253, 253, 253)",
+            "color_bg": "(30, 30, 30)"
           }
         ]
       },
@@ -519,7 +520,7 @@
         "shot_id": 3,
         "ratio": 0.4,
         "column": 2,
-        "bg_image": "/bg_shot3.jpg",
+        "bg_image": "bg_shot3_dark.jpg",
         "start_time": 55.00,
         "end_time": 110.00,
         "learning_material": [
@@ -531,7 +532,7 @@
               403,
               44
             ],
-            "path": "./shot3_title.jpg"
+            "path": "shot3_title_dark.jpg"
           },
           {
             "label": "text_box",
@@ -544,10 +545,10 @@
             "in_column": 1,
             "order": 1,
             "text_content": "• 1926 Sakichi Toyoda: Toyoda Automatic Loom Works",
-            "avail_font_size": 1.8125,
+            "avail_font_size": 1.5,
             "typeface": "Roboto",
-            "color_font": "(18, 18, 18)",
-            "color_bg": "(253, 253, 253)"
+            "color_font": "(253, 253, 253)",
+            "color_bg": "(30, 30, 30)"
           },
           {
             "label": "text_box",
@@ -560,10 +561,10 @@
             "in_column": 1,
             "order": 2,
             "text_content": "• 1933 Kiichiro Toyoda: automotive division. Produced military trucks during WWII",
-            "avail_font_size": 1.8125,
+            "avail_font_size": 1.5,
             "typeface": "Roboto",
-            "color_font": "(18, 18, 18)",
-            "color_bg": "(253, 253, 253)"
+            "color_font": "(253, 253, 253)",
+            "color_bg": "(30, 30, 30)"
           },
           {
             "label": "picture",
@@ -573,14 +574,14 @@
               346,
               429
             ],
-            "path": "./shot3_picture1.jpg",
+            "path": "shot3_picture1.jpg",
 
             "in_column": 2,
             "order": 1,
 
-            "avail_size": 1.2
+            "avail_size": 1.0
 
-          },
+          }
         ]
       },
 
@@ -588,7 +589,7 @@
         "shot_id": 4,
         "ratio": 0.4,
         "column": 2,
-        "bg_image": "/bg_shot4.jpg",
+        "bg_image": "bg_shot4_dark.jpg",
         "start_time": 110.00,
         "end_time": 191.00,
         "learning_material": [
@@ -600,7 +601,7 @@
               403,
               44
             ],
-            "path": "./shot4_title.jpg"
+            "path": "shot4_title_dark.jpg"
           },
           {
             "label": "text_box",
@@ -613,10 +614,10 @@
             "in_column": 1,
             "order": 1,
             "text_content": "• 1926 Sakichi Toyoda: Toyoda Automatic Loom Works",
-            "avail_font_size": 1.8125,
+            "avail_font_size": 1.5,
             "typeface": "Roboto",
-            "color_font": "(18, 18, 18)",
-            "color_bg": "(253, 253, 253)"
+            "color_font": "(253, 253, 253)",
+            "color_bg": "(30, 30, 30)"
           },
           {
             "label": "text_box",
@@ -629,10 +630,10 @@
             "in_column": 1,
             "order": 2,
             "text_content": "• 1933 Kiichiro Toyoda: automotive division. Produced military trucks during WWII",
-            "avail_font_size": 1.8125,
+            "avail_font_size": 1.5,
             "typeface": "Roboto",
-            "color_font": "(18, 18, 18)",
-            "color_bg": "(253, 253, 253)"
+            "color_font": "(253, 253, 253)",
+            "color_bg": "(30, 30, 30)"
           },
           {
             "label": "text_box",
@@ -645,10 +646,10 @@
             "in_column": 1,
             "order": 1,
             "text_content": "• After war, shortages, little cash... Ford Motor Co. at the Rouge plant near Detroit producing 7,000 caars/day. Toyota producing 200 per year",
-            "avail_font_size": 1.8125,
+            "avail_font_size": 1.5,
             "typeface": "Roboto",
-            "color_font": "(18, 18, 18)",
-            "color_bg": "(253, 253, 253)"
+            "color_font": "(253, 253, 253)",
+            "color_bg": "(30, 30, 30)"
           },
           {
             "label": "text_box",
@@ -661,10 +662,10 @@
             "in_column": 1,
             "order": 2,
             "text_content": "• 1940s Eiji Toyoda ... needed to do things differently!",
-            "avail_font_size": 1.8125,
+            "avail_font_size": 1.5,
             "typeface": "Roboto",
-            "color_font": "(18, 18, 18)",
-            "color_bg": "(253, 253, 253)"
+            "color_font": "(253, 253, 253)",
+            "color_bg": "(30, 30, 30)"
           },
           {
             "label": "picture",
@@ -674,21 +675,21 @@
               361,
               333
             ],
-            "path": "./shot4_picture1.jpg",
+            "path": "shot4_picture1.jpg",
 
             "in_column": 2,
             "order": 1,
 
-            "avail_size": 1.2
+            "avail_size": 1.0
 
-          },
+          }
         ]
       },
       {
         "shot_id": 5,
         "ratio": 0.3,
         "column": 2,
-        "bg_image": "/bg_shot5.jpg",
+        "bg_image": "bg_shot5_dark.jpg",
         "start_time": 191.00,
         "end_time": 268.00,
         "learning_material": [
@@ -700,7 +701,7 @@
               403,
               44
             ],
-            "path": "./shot5_title.jpg"
+            "path": "shot5_title_dark.jpg"
           },
           {
             "label": "text_box",
@@ -712,11 +713,11 @@
             ],
             "in_column": 1,
             "order": 1,
-            "text_content": "• Toyota Production System - Lean Manufacturing\n• Taiichi Ohno is credited for creating the system\n• Dr. Shigeo Shingo, author Single Minute Exchange of Die procedure.\n”• Quantity Control (Just In Time)\n• Quality Control & Improvement\n• Waste and Cost Control\n• The term \"Lean\" is from John Krafcik's 1988 article \"Triumph of Lean Production Systems.\",
-            "avail_font_size": 1.8125,
+            "text_content": "• Toyota Production System - Lean Manufacturing\n• Taiichi Ohno is credited for creating the system\n• Dr. Shigeo Shingo, author Single Minute Exchange of Die procedure.\n• Quantity Control (Just In Time)\n• Quality Control & Improvement\n• Waste and Cost Control\n• The term \"Lean\" is from John Krafcik's 1988 article \"Triumph of Lean Production Systems.\"",
+            "avail_font_size": 1.5,
             "typeface": "Roboto",
-            "color_font": "(18, 18, 18)",
-            "color_bg": "(253, 253, 253)"
+            "color_font": "(253, 253, 253)",
+            "color_bg": "(30, 30, 30)"
           },
           {
             "label": "picture",
@@ -726,21 +727,21 @@
               228,
               259
             ],
-            "path": "./shot5_picture1.jpg",
+            "path": "shot5_picture1.jpg",
 
             "in_column": 2,
             "order": 1,
 
-            "avail_size": 1.5
+            "avail_size": 1.0
 
-          },
+          }
         ]
       },
       {
         "shot_id": 6,
         "ratio": 0.3,
         "column": 2,
-        "bg_image": "/bg_shot7.jpg",
+        "bg_image": "bg_shot7_dark.jpg",
         "start_time": 268.00,
         "end_time": 397.00,
         "learning_material": [
@@ -752,7 +753,7 @@
               453,
               40
             ],
-            "path": "./shot7_title.jpg"
+            "path": "shot7_title_dark.jpg"
           },
           {
             "label": "text_box",
@@ -764,11 +765,11 @@
             ],
             "in_column": 1,
             "order": 1,
-            "text_content": "• Maximize share of value-adding activities\n- Elimination of \"waste\" (muda)\n- Strive to minimize batch sizes (ideally single piece flow)\n- Build processes based on true customer requirements\n• Implement stable, standardized processes\n- Workplace organization\n- Standard Operating Procedures\n- Fail-safe processes (Jidoka)”,
-            "avail_font_size": 1.8125,
+            "text_content": "• Maximize share of value-adding activities\n- Elimination of \"waste\" (muda)\n- Strive to minimize batch sizes (ideally single piece flow)\n- Build processes based on true customer requirements\n• Implement stable, standardized processes\n- Workplace organization\n- Standard Operating Procedures\n- Fail-safe processes (Jidoka)",
+            "avail_font_size": 1.5,
             "typeface": "Roboto",
-            "color_font": "(18, 18, 18)",
-            "color_bg": "(253, 253, 253)"
+            "color_font": "(253, 253, 253)",
+            "color_bg": "(30, 30, 30)"
           },
           {
             "label": "text_box",
@@ -780,21 +781,21 @@
             ],
             "in_column": 2,
             "order": 1,
-            "text_content": "• Create a self-learning, continuously improving organization\n- Create transparency on problems/facilitate immediate identification\n- Conduct rigorous root-cause problem solving\n- Make continuous improvement part of the daily work\n• Take a holistic Supply Chain perspective\n- Customer requirements-driven perspective\n- Backwards integration to include suppliers\n• People development is the key success factor\n- Employee skill building is an important part of the TPS”,
-            "avail_font_size": 1.8125,
+            "text_content": "• Create a self-learning, continuously improving organization\n- Create transparency on problems/facilitate immediate identification\n- Conduct rigorous root-cause problem solving\n- Make continuous improvement part of the daily work\n• Take a holistic Supply Chain perspective\n- Customer requirements-driven perspective\n- Backwards integration to include suppliers\n• People development is the key success factor\n- Employee skill building is an important part of the TPS",
+            "avail_font_size": 1.5,
             "typeface": "Roboto",
-            "color_font": "(18, 18, 18)",
-            "color_bg": "(253, 253, 253)"
-          },
+            "color_font": "(253, 253, 253)",
+            "color_bg": "(30, 30, 30)"
+          }
         ]
-      },
+      }
     ],
     "restructure": [
       {
         "shot_id": 1,
         "ratio": 0.4,
         "column": 1,
-        "bg_image": "/bg_shot1.jpg",
+        "bg_image": "bg_shot1.jpg",
         "start_time": 0.00,
         "end_time": 31.00,
         "learning_material": [
@@ -806,7 +807,7 @@
               593,
               86
             ],
-            "path": "./shot1_title.jpg"
+            "path": "shot1_title.jpg"
           },
           {
             "label": "text_box",
@@ -823,14 +824,14 @@
             "typeface": "Roboto",
             "color_font": "(18, 18, 18)",
             "color_bg": "(253, 253, 253)"
-          },
+          }
         ]
       },
       {
         "shot_id": 2,
         "ratio": 0.4,
         "column": 1,
-        "bg_image": "/bg_shot2.jpg",
+        "bg_image": "bg_shot2.jpg",
         "start_time": 31.00,
         "end_time": 55.00,
         "learning_material": [
@@ -842,7 +843,7 @@
               408,
               45
             ],
-            "path": "./shot2_title.jpg"
+            "path": "shot2_title.jpg"
           },
           {
             "label": "text_box",
@@ -898,7 +899,7 @@
         "shot_id": 3,
         "ratio": 0.4,
         "column": 2,
-        "bg_image": "/bg_shot3.jpg",
+        "bg_image": "bg_shot3.jpg",
         "start_time": 55.00,
         "end_time": 110.00,
         "learning_material": [
@@ -910,7 +911,7 @@
               403,
               44
             ],
-            "path": "./shot3_title.jpg"
+            "path": "shot3_title.jpg"
           },
           {
             "label": "text_box",
@@ -952,21 +953,21 @@
               346,
               429
             ],
-            "path": "./shot3_picture1.jpg",
+            "path": "shot3_picture1.jpg",
 
             "in_column": 2,
             "order": 1,
 
             "avail_size": 1.2
 
-          },
+          }
         ]
       },
       {
         "shot_id": 4,
         "ratio": 0.4,
         "column": 2,
-        "bg_image": "/bg_shot4.jpg",
+        "bg_image": "bg_shot4.jpg",
         "start_time": 110.00,
         "end_time": 191.00,
         "learning_material": [
@@ -978,7 +979,7 @@
               403,
               44
             ],
-            "path": "./shot4_title.jpg"
+            "path": "shot4_title.jpg"
           },
           {
             "label": "text_box",
@@ -1020,21 +1021,21 @@
               361,
               333
             ],
-            "path": "./shot4_picture1.jpg",
+            "path": "shot4_picture1.jpg",
 
             "in_column": 2,
             "order": 1,
 
             "avail_size": 1.2
 
-          },
+          }
         ]
       },
       {
         "shot_id": 5,
         "ratio": 0.4,
         "column": 2,
-        "bg_image": "/bg_shot5.jpg",
+        "bg_image": "bg_shot5.jpg",
         "start_time": 191.00,
         "end_time": 231.00,
         "learning_material": [
@@ -1046,7 +1047,7 @@
               403,
               44
             ],
-            "path": "./shot5_title.jpg"
+            "path": "shot5_title.jpg"
           },
           {
             "label": "text_box",
@@ -1072,21 +1073,21 @@
               228,
               259
             ],
-            "path": "./shot5_picture1.jpg",
+            "path": "shot5_picture1.jpg",
 
             "in_column": 2,
             "order": 1,
 
             "avail_size": 1.5
 
-          },
+          }
         ]
       },
       {
         "shot_id": 6,
         "ratio": 0.4,
         "column": 2,
-        "bg_image": "/bg_shot6.jpg",
+        "bg_image": "bg_shot6.jpg",
         "start_time": 231.00,
         "end_time": 268.00,
         "learning_material": [
@@ -1098,7 +1099,7 @@
               403,
               44
             ],
-            "path": "./shot6_title.jpg"
+            "path": "shot6_title.jpg"
           },
           {
             "label": "text_box",
@@ -1124,21 +1125,21 @@
               228,
               259
             ],
-            "path": "./shot5_picture1.jpg",
+            "path": "shot5_picture1.jpg",
 
             "in_column": 2,
             "order": 1,
 
             "avail_size": 1.5
 
-          },
+          }
         ]
       },
       {
         "shot_id": 7,
         "ratio": 0.4,
         "column": 1,
-        "bg_image": "/bg_shot7.jpg",
+        "bg_image": "bg_shot7.jpg",
         "start_time": 268.00,
         "end_time": 292.00,
         "learning_material": [
@@ -1150,7 +1151,7 @@
               453,
               40
             ],
-            "path": "./shot7_title.jpg"
+            "path": "shot7_title.jpg"
           },
           {
             "label": "text_box",
@@ -1167,14 +1168,14 @@
             "typeface": "Roboto",
             "color_font": "(18, 18, 18)",
             "color_bg": "(253, 253, 253)"
-          },
+          }
         ]
       },
       {
         "shot_id": 8,
         "ratio": 0.4,
         "column": 1,
-        "bg_image": "/bg_shot8.jpg",
+        "bg_image": "bg_shot8.jpg",
         "start_time": 292.00,
         "end_time": 316.00,
         "learning_material": [
@@ -1186,7 +1187,7 @@
               453,
               40
             ],
-            "path": "./shot8_title.jpg"
+            "path": "shot8_title.jpg"
           },
           {
             "label": "text_box",
@@ -1203,14 +1204,14 @@
             "typeface": "Roboto",
             "color_font": "(18, 18, 18)",
             "color_bg": "(253, 253, 253)"
-          },
+          }
         ]
       },
       {
         "shot_id": 9,
         "ratio": 0.4,
         "column": 1,
-        "bg_image": "/bg_shot9.jpg",
+        "bg_image": "bg_shot9.jpg",
         "start_time": 316.00,
         "end_time": 336.00,
         "learning_material": [
@@ -1222,7 +1223,7 @@
               453,
               40
             ],
-            "path": "./shot9_title.jpg"
+            "path": "shot9_title.jpg"
           },
           {
             "label": "text_box",
@@ -1239,14 +1240,14 @@
             "typeface": "Roboto",
             "color_font": "(18, 18, 18)",
             "color_bg": "(253, 253, 253)"
-          },
+          }
         ]
       },
       {
         "shot_id": 10,
         "ratio": 0.4,
         "column": 1,
-        "bg_image": "/bg_shot10.jpg",
+        "bg_image": "bg_shot10.jpg",
         "start_time": 336.00,
         "end_time": 357.00,
         "learning_material": [
@@ -1258,7 +1259,7 @@
               453,
               40
             ],
-            "path": "./shot10_title.jpg"
+            "path": "shot10_title.jpg"
           },
           {
             "label": "text_box",
@@ -1275,14 +1276,14 @@
             "typeface": "Roboto",
             "color_font": "(18, 18, 18)",
             "color_bg": "(253, 253, 253)"
-          },
+          }
         ]
       },
       {
         "shot_id": 11,
         "ratio": 0.4,
         "column": 1,
-        "bg_image": "/bg_shot11.jpg",
+        "bg_image": "bg_shot11.jpg",
         "start_time": 357.00,
         "end_time": 397.00,
         "learning_material": [
@@ -1294,7 +1295,7 @@
               453,
               40
             ],
-            "path": "./shot11_title.jpg"
+            "path": "shot11_title.jpg"
           },
           {
             "label": "text_box",
@@ -1311,16 +1312,17 @@
             "typeface": "Roboto",
             "color_font": "(18, 18, 18)",
             "color_bg": "(253, 253, 253)"
-          },
+          }
         ]
       }
     ],
+
     "restructure_dark": [
       {
         "shot_id": 1,
         "ratio": 0.4,
         "column": 1,
-        "bg_image": "/bg_shot1.jpg",
+        "bg_image": "bg_shot1_dark.jpg",
         "start_time": 0.00,
         "end_time": 31.00,
         "learning_material": [
@@ -1332,7 +1334,7 @@
               593,
               86
             ],
-            "path": "./shot1_title.jpg"
+            "path": "shot1_title_dark.jpg"
           },
           {
             "label": "text_box",
@@ -1347,16 +1349,16 @@
             "text_content": "Professor Holly Ott\nProduction and Supply Chain Management\nChair: Prof. Martin Grunow\nTUM School of Management",
             "avail_font_size": 1.8125,
             "typeface": "Roboto",
-            "color_font": "(18, 18, 18)",
-            "color_bg": "(253, 253, 253)"
-          },
+            "color_font": "(253, 253, 253)",
+            "color_bg": "(30, 30, 30)"
+          }
         ]
       },
       {
         "shot_id": 2,
         "ratio": 0.4,
         "column": 1,
-        "bg_image": "/bg_shot2.jpg",
+        "bg_image": "bg_shot2_dark.jpg",
         "start_time": 31.00,
         "end_time": 55.00,
         "learning_material": [
@@ -1368,13 +1370,13 @@
               408,
               45
             ],
-            "path": "./shot2_title.jpg"
+            "path": "shot2_title_dark.jpg"
           },
           {
             "label": "text_box",
             "box_info_original": [
               148,
-              202,
+              212,
               757,
               67
             ],
@@ -1383,8 +1385,8 @@
             "text_content": "• Outline the history of the Toyota Motor Corporation from the Toyota Automatic Loom Works.",
             "avail_font_size": 1.8125,
             "typeface": "Roboto",
-            "color_font": "(18, 18, 18)",
-            "color_bg": "(253, 253, 253)"
+            "color_font": "(253, 253, 253)",
+            "color_bg": "(30, 30, 30)"
           },
           {
             "label": "text_box",
@@ -1399,8 +1401,8 @@
             "text_content": "• Describe the historical drivers for the development of the Toyota Production System at Toyota and identify the important contributors to TPS.",
             "avail_font_size": 1.8125,
             "typeface": "Roboto",
-            "color_font": "(18, 18, 18)",
-            "color_bg": "(253, 253, 253)"
+            "color_font": "(253, 253, 253)",
+            "color_bg": "(30, 30, 30)"
           },
           {
             "label": "text_box",
@@ -1415,8 +1417,8 @@
             "text_content": "• List the core elements of the Toyota Production System.",
             "avail_font_size": 1.8125,
             "typeface": "Roboto",
-            "color_font": "(18, 18, 18)",
-            "color_bg": "(253, 253, 253)"
+            "color_font": "(253, 253, 253)",
+            "color_bg": "(30, 30, 30)"
           }
         ]
       },
@@ -1424,7 +1426,7 @@
         "shot_id": 3,
         "ratio": 0.4,
         "column": 2,
-        "bg_image": "/bg_shot3.jpg",
+        "bg_image": "bg_shot3_dark.jpg",
         "start_time": 55.00,
         "end_time": 110.00,
         "learning_material": [
@@ -1436,7 +1438,7 @@
               403,
               44
             ],
-            "path": "./shot3_title.jpg"
+            "path": "shot3_title_dark.jpg"
           },
           {
             "label": "text_box",
@@ -1451,8 +1453,8 @@
             "text_content": "• 1926 Sakichi Toyoda: Toyoda Automatic Loom Works",
             "avail_font_size": 1.8125,
             "typeface": "Roboto",
-            "color_font": "(18, 18, 18)",
-            "color_bg": "(253, 253, 253)"
+            "color_font": "(253, 253, 253)",
+            "color_bg": "(30, 30, 30)"
           },
           {
             "label": "text_box",
@@ -1467,8 +1469,8 @@
             "text_content": "• 1933 Kiichiro Toyoda: automotive division. Produced military trucks during WWII",
             "avail_font_size": 1.8125,
             "typeface": "Roboto",
-            "color_font": "(18, 18, 18)",
-            "color_bg": "(253, 253, 253)"
+            "color_font": "(253, 253, 253)",
+            "color_bg": "(30, 30, 30)"
           },
           {
             "label": "picture",
@@ -1478,21 +1480,21 @@
               346,
               429
             ],
-            "path": "./shot3_picture1.jpg",
+            "path": "shot3_picture1.jpg",
 
             "in_column": 2,
             "order": 1,
 
             "avail_size": 1.2
 
-          },
+          }
         ]
       },
       {
         "shot_id": 4,
         "ratio": 0.4,
         "column": 2,
-        "bg_image": "/bg_shot4.jpg",
+        "bg_image": "bg_shot4_dark.jpg",
         "start_time": 110.00,
         "end_time": 191.00,
         "learning_material": [
@@ -1504,7 +1506,7 @@
               403,
               44
             ],
-            "path": "./shot4_title.jpg"
+            "path": "shot4_title_dark.jpg"
           },
           {
             "label": "text_box",
@@ -1519,8 +1521,8 @@
             "text_content": "• After war, shortages, little cash... Ford Motor Co. at the Rouge plant near Detroit producing 7,000 caars/day. Toyota producing 200 per year",
             "avail_font_size": 1.8125,
             "typeface": "Roboto",
-            "color_font": "(18, 18, 18)",
-            "color_bg": "(253, 253, 253)"
+            "color_font": "(253, 253, 253)",
+            "color_bg": "(30, 30, 30)"
           },
           {
             "label": "text_box",
@@ -1535,8 +1537,8 @@
             "text_content": "• 1940s Eiji Toyoda ... needed to do things differently!",
             "avail_font_size": 1.8125,
             "typeface": "Roboto",
-            "color_font": "(18, 18, 18)",
-            "color_bg": "(253, 253, 253)"
+            "color_font": "(253, 253, 253)",
+            "color_bg": "(30, 30, 30)"
           },
           {
             "label": "picture",
@@ -1546,21 +1548,21 @@
               361,
               333
             ],
-            "path": "./shot4_picture1.jpg",
+            "path": "shot4_picture1.jpg",
 
             "in_column": 2,
             "order": 1,
 
             "avail_size": 1.2
 
-          },
+          }
         ]
       },
       {
         "shot_id": 5,
         "ratio": 0.4,
         "column": 2,
-        "bg_image": "/bg_shot5.jpg",
+        "bg_image": "bg_shot5_dark.jpg",
         "start_time": 191.00,
         "end_time": 231.00,
         "learning_material": [
@@ -1572,7 +1574,7 @@
               403,
               44
             ],
-            "path": "./shot5_title.jpg"
+            "path": "shot5_title_dark.jpg"
           },
           {
             "label": "text_box",
@@ -1587,8 +1589,8 @@
             "text_content": "• Toyota Production System - Lean Manufacturing\n• Taiichi Ohno is credited for creating the system\n• Dr. Shigeo Shingo, author Single Minute Exchange of Die procedure.",
             "avail_font_size": 1.8125,
             "typeface": "Roboto",
-            "color_font": "(18, 18, 18)",
-            "color_bg": "(253, 253, 253)"
+            "color_font": "(253, 253, 253)",
+            "color_bg": "(30, 30, 30)"
           },
           {
             "label": "picture",
@@ -1598,21 +1600,21 @@
               228,
               259
             ],
-            "path": "./shot5_picture1.jpg",
+            "path": "shot5_picture1.jpg",
 
             "in_column": 2,
             "order": 1,
 
             "avail_size": 1.5
 
-          },
+          }
         ]
       },
       {
         "shot_id": 6,
         "ratio": 0.4,
         "column": 2,
-        "bg_image": "/bg_shot6.jpg",
+        "bg_image": "bg_shot6_dark.jpg",
         "start_time": 231.00,
         "end_time": 268.00,
         "learning_material": [
@@ -1624,7 +1626,7 @@
               403,
               44
             ],
-            "path": "./shot6_title.jpg"
+            "path": "shot6_title_dark.jpg"
           },
           {
             "label": "text_box",
@@ -1639,8 +1641,8 @@
             "text_content": "• Quantity Control (Just In Time)\n• Quality Control & Improvement\n• Waste and Cost Control\n• The term \"Lean\" is from John Krafcik's 1988 article \"Triumph of Lean Production Systems.\"",
             "avail_font_size": 1.8125,
             "typeface": "Roboto",
-            "color_font": "(18, 18, 18)",
-            "color_bg": "(253, 253, 253)"
+            "color_font": "(253, 253, 253)",
+            "color_bg": "(30, 30, 30)"
           },
           {
             "label": "picture",
@@ -1650,21 +1652,21 @@
               228,
               259
             ],
-            "path": "./shot5_picture1.jpg",
+            "path": "shot5_picture1.jpg",
 
             "in_column": 2,
             "order": 1,
 
             "avail_size": 1.5
 
-          },
+          }
         ]
       },
       {
         "shot_id": 7,
         "ratio": 0.4,
         "column": 1,
-        "bg_image": "/bg_shot7.jpg",
+        "bg_image": "bg_shot7_dark.jpg",
         "start_time": 268.00,
         "end_time": 292.00,
         "learning_material": [
@@ -1676,7 +1678,7 @@
               453,
               40
             ],
-            "path": "./shot7_title.jpg"
+            "path": "shot7_title_dark.jpg"
           },
           {
             "label": "text_box",
@@ -1691,16 +1693,16 @@
             "text_content": "• Maximize share of value-adding activities\n- Elimination of \"waste\" (muda)\n- Strive to minimize batch sizes (ideally single piece flow)\n- Build processes based on true customer requirements",
             "avail_font_size": 1.8125,
             "typeface": "Roboto",
-            "color_font": "(18, 18, 18)",
-            "color_bg": "(253, 253, 253)"
-          },
+            "color_font": "(253, 253, 253)",
+            "color_bg": "(30, 30, 30)"
+          }
         ]
       },
       {
         "shot_id": 8,
         "ratio": 0.4,
         "column": 1,
-        "bg_image": "/bg_shot8.jpg",
+        "bg_image": "bg_shot8_dark.jpg",
         "start_time": 292.00,
         "end_time": 316.00,
         "learning_material": [
@@ -1712,7 +1714,7 @@
               453,
               40
             ],
-            "path": "./shot8_title.jpg"
+            "path": "shot8_title_dark.jpg"
           },
           {
             "label": "text_box",
@@ -1727,16 +1729,16 @@
             "text_content": "• Implement stable, standardized processes\n- Workplace organization\n- Standard Operating Procedures\n- Fail-safe processes (Jidoka)",
             "avail_font_size": 1.8125,
             "typeface": "Roboto",
-            "color_font": "(18, 18, 18)",
-            "color_bg": "(253, 253, 253)"
-          },
+            "color_font": "(253, 253, 253)",
+            "color_bg": "(30, 30, 30)"
+          }
         ]
       },
       {
         "shot_id": 9,
         "ratio": 0.4,
         "column": 1,
-        "bg_image": "/bg_shot9.jpg",
+        "bg_image": "bg_shot9_dark.jpg",
         "start_time": 316.00,
         "end_time": 336.00,
         "learning_material": [
@@ -1748,7 +1750,7 @@
               453,
               40
             ],
-            "path": "./shot9_title.jpg"
+            "path": "shot9_title_dark.jpg"
           },
           {
             "label": "text_box",
@@ -1763,16 +1765,16 @@
             "text_content": "• Create a self-learning, continuously improving organization\n- Create transparency on problems/facilitate immediate identification\n- Conduct rigorous root-cause problem solving\n- Make continuous improvement part of the daily work",
             "avail_font_size": 1.8125,
             "typeface": "Roboto",
-            "color_font": "(18, 18, 18)",
-            "color_bg": "(253, 253, 253)"
-          },
+            "color_font": "(253, 253, 253)",
+            "color_bg": "(30, 30, 30)"
+          }
         ]
       },
       {
         "shot_id": 10,
         "ratio": 0.4,
         "column": 1,
-        "bg_image": "/bg_shot10.jpg",
+        "bg_image": "bg_shot10_dark.jpg",
         "start_time": 336.00,
         "end_time": 357.00,
         "learning_material": [
@@ -1784,7 +1786,7 @@
               453,
               40
             ],
-            "path": "./shot10_title.jpg"
+            "path": "shot10_title_dark.jpg"
           },
           {
             "label": "text_box",
@@ -1799,16 +1801,16 @@
             "text_content": "• Take a holistic Supply Chain perspective\n- Customer requirements-driven perspective\n- Backwards integration to include suppliers",
             "avail_font_size": 1.8125,
             "typeface": "Roboto",
-            "color_font": "(18, 18, 18)",
-            "color_bg": "(253, 253, 253)"
-          },
+            "color_font": "(253, 253, 253)",
+            "color_bg": "(30, 30, 30)"
+          }
         ]
       },
       {
         "shot_id": 11,
         "ratio": 0.4,
         "column": 1,
-        "bg_image": "/bg_shot11.jpg",
+        "bg_image": "bg_shot11_dark.jpg",
         "start_time": 357.00,
         "end_time": 397.00,
         "learning_material": [
@@ -1820,7 +1822,7 @@
               453,
               40
             ],
-            "path": "./shot11_title.jpg"
+            "path": "shot11_title_dark.jpg"
           },
           {
             "label": "text_box",
@@ -1835,11 +1837,12 @@
             "text_content": "• People development is the key success factor\n- Employee skill building is an important part of the TPS",
             "avail_font_size": 1.8125,
             "typeface": "Roboto",
-            "color_font": "(18, 18, 18)",
-            "color_bg": "(253, 253, 253)"
-          },
+            "color_font": "(253, 253, 253)",
+            "color_bg": "(30, 30, 30)"
+          }
         ]
       }
     ]
+
   }
 }

@@ -9,8 +9,16 @@ const GlobalStyle = createGlobalStyle`
     p {
         white-space: pre-wrap;
     }
-`;
+@font-face {
+  font-family: "Roboto";
+  src:url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap')
+}
 
+@font-face {
+  font-family: "Stint Ultra Condensed";
+  src:url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Stint+Ultra+Condensed&display=swap')
+}
+`;
 const theme = {
     colors: {
         primary: "#0070f3",

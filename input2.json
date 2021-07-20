@@ -9,9 +9,16 @@
         "top_img": null,
         "top_img_dark": null,
         "bottom_img": null,
-        "bottom_img_dark": null
+        "bottom_img_dark": null,
+        "fontUrl": ["https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap", "https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Stint+Ultra+Condensed&display=swap"]
     },
-    "video": null,
+    "video": {
+        "source": "video93_3_2.mp4",
+        "control": {
+            "start_time": 0,
+            "box_info": null
+        }
+    },
     "content": {
         "original": [
             {

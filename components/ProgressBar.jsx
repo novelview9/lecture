@@ -1,8 +1,18 @@
 import styled from "styled-components";
+import { useAtom } from "jotai";
+import { useRef } from "react";
 
-function Control({ percent, jumpToPlay, barRef }) {
+import { jumpAtom, percentAtom } from "../atom";
+
+function Control({ jump }) {
+    const [percent] = useAtom(percentAtom);
+    const ref = useRef();
+    const jumpToPlay = (e) => {
+        const percentPoint = e.nativeEvent.offsetX / ref.current.offsetWidth;
+        jump(percentPoint);
+    };
     return (
-        <ProgressBarLine onClick={jumpToPlay} ref={barRef}>
+        <ProgressBarLine onClick={jumpToPlay} ref={ref}>
             <ProgressBarFilled percent={percent}>{/* <Circle /> */}</ProgressBarFilled>
         </ProgressBarLine>
     );

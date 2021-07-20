@@ -11,8 +11,7 @@ import Image from "./Image";
 import InnerVideo from "./InnerVideo";
 import RndVideo from "./RndVideo";
 import Text from "./Text";
-import activityAtom, { withFrameAtom } from "../activityAtom";
-import { lockAtom } from "../activityAtom";
+import { activityAtom, lockAtom, withFrameAtom } from "../atom";
 
 const ChunkedData = React.memo(({ data, addFixedData, index, sourcePath, isFull }) => {
     const sortedData = _.orderBy(data, "order");
@@ -41,7 +40,6 @@ const ChunkedData = React.memo(({ data, addFixedData, index, sourcePath, isFull 
     );
 });
 const PositionedData = React.memo(({ data, addFixedData, index, sourcePath, isFull, template }) => {
-    console.log(data.box_info_original);
     const [x, y, width, height] = data.box_info_original;
     const startXRatio = (x / template.width) * 100;
     const startYRatio = (y / template.height) * 100;
@@ -269,6 +267,7 @@ const Inner = styled.div`
     flex-direction: column;
     flex: 1;
     align-items: stretch;
+    max-height: 85vh;
 `;
 
 const PositionedCanvas = styled.div`
@@ -305,7 +304,7 @@ const PCon = styled.div`
     width: 100%;
     height: 100%;
     line-height: 150%;
-    letter-spacing: 0.12em;
+    letter-spacing: 0;
     white-space: pre-wrap;
 `;
 const CustomRnd = styled(Rnd)`
@@ -331,7 +330,9 @@ const InnerColumn = styled.div`
 const Container = styled.div`
     padding-top: 20px;
     display: ${(props) => (props.isActive ? "flex" : "none")};
-    /* background-image: url(${(props) => props.bg}); */
+    background-image: url(${(props) => props.bg});
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
     flex: 1;
     align-items: stretch;
 `;

@@ -4,8 +4,8 @@ import React, { useEffect, useRef, useState } from "react";
 import { Rnd } from "react-rnd";
 import { useAtom } from "jotai";
 
-import activityAtom, { playingAtom } from "../activityAtom";
-import { lockAtom } from "../activityAtom";
+import activityAtom, { playingAtom } from "../atom";
+import { darkModeAtom, lockAtom } from "../atom";
 
 function InnerVideo({ url, startTime, endTime, addFixedData, index }) {
     const [fixed, setFixed] = useState();
@@ -13,6 +13,7 @@ function InnerVideo({ url, startTime, endTime, addFixedData, index }) {
     const [action] = useAtom(activityAtom);
     const [playing] = useAtom(playingAtom);
     const [lock] = useAtom(lockAtom);
+    const [dark] = useAtom(darkModeAtom);
 
     const ref = useRef(null);
     useEffect(() => {
@@ -81,7 +82,7 @@ function InnerVideo({ url, startTime, endTime, addFixedData, index }) {
         });
     };
     return (
-        <Container fixed={fixed} onClick={onClick}>
+        <Container fixed={fixed} onClick={onClick} isDark={dark}>
             <Video src={url} draggable="false" ref={ref} playsInline muted={true} playsInline />
         </Container>
     );
@@ -93,6 +94,7 @@ const Container = styled.div`
     flex-basis: 0;
     overflow: hidden;
     visibility: ${(props) => (props.fixed ? "hidden" : "visible")};
+    background-color: ${(props) => (props.isDark ? "black" : "white")};
 `;
 const Video = styled.video`
     display: block;

@@ -8,16 +8,18 @@ import { Revision } from "@styled-icons/boxicons-regular";
 import { useAtom } from "jotai";
 
 import ProgressBar from "./ProgressBar";
-import { darkModeAtom, lockAtom, mobileModeAtom, playingAtom, withFrameAtom, withVideoAtom } from "../activityAtom";
+import { currentTimeAtom, darkModeAtom, durationTimeAtom, lockAtom, mobileModeAtom, percentAtom, playingAtom, withFrameAtom, withVideoAtom } from "../atom";
 
-function Controller({ jumpToPlay, togglePlay, percent, barRef, reset, currentTime, duration }) {
-    const [play] = useAtom(playingAtom);
+function Controller({ reset, togglePlay, jump }) {
     const [withFrame, setWithFrame] = useAtom(withFrameAtom);
     const [darkMode, setDarkMode] = useAtom(darkModeAtom);
     const [mobileMode, setMobileMode] = useAtom(mobileModeAtom);
+    const [currentTime] = useAtom(currentTimeAtom);
+    const [durationTime] = useAtom(durationTimeAtom);
 
     const [lock, setLock] = useAtom(lockAtom);
     const [withVideo, setWithVideo] = useAtom(withVideoAtom);
+    const [play, setPlay] = useAtom(playingAtom);
     const toggleLock = () => {
         setLock(!lock);
     };
@@ -40,20 +42,15 @@ function Controller({ jumpToPlay, togglePlay, percent, barRef, reset, currentTim
         setWithVideo(!withVideo);
     };
 
-    const minutes = Math.floor(duration / 60);
-    const seconds = Math.floor(duration - 60 * minutes)
-        .toString()
-        .padStart(2, "0");
-    const stringDue = `${minutes}:${seconds}`;
     return (
         <Container>
-            <ProgressBar jumpToPlay={jumpToPlay} percent={percent} barRef={barRef} />
+            <ProgressBar jump={jump} />
             <Buttons>
                 <div>
                     <ButtonFull onClick={togglePlay}>{play ? <Pause /> : <Play />}</ButtonFull>
                     <Time>
                         <p>
-                            {currentTime}/{stringDue}
+                            {currentTime}/{durationTime}
                         </p>
                     </Time>
                     <Button onClick={toggleMobileMode} isActive={mobileMode}>
@@ -112,7 +109,7 @@ const ToggleButton = styled.div`
 const Time = styled.div`
     display: flex;
     color: white;
-    width: 50px;
+    width: 100px;
     justify-content: center;
     align-items: center;
     > p {
@@ -127,8 +124,9 @@ const Container = styled.div`
     }
     display: flex;
     flex-direction: column;
-    padding-top: 10px;
-    padding-bottom: 30px;
+    height: 80px;
+    padding-top: 5px;
+    padding-bottom: 15px;
 `;
 const Buttons = styled.div`
     display: flex;

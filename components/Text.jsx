@@ -7,7 +7,8 @@ import { createBreakpoint } from "react-use";
 import { useAtom } from "jotai";
 import { useEffect, useState } from "react";
 
-import { lockAtom } from "../activityAtom";
+import useWindowHeight from "../hooks/windowHeight";
+import { darkModeAtom, frameHeightAtom, lockAtom } from "../atom";
 
 const useBreakpoint = createBreakpoint({ XL: 1280, L: 768, S: 350 });
 
@@ -15,6 +16,7 @@ function Text({ obj, addFixedData, isFull }) {
     const [lock] = useAtom(lockAtom);
     const [fixed, setFixed] = useState();
     const breakpoint = useBreakpoint();
+    const height = useWindowHeight();
     const getBreakValue = () => {
         switch (breakpoint) {
             case "XL":
@@ -46,15 +48,24 @@ function Text({ obj, addFixedData, isFull }) {
             y,
         });
     };
-    const goal = obj.avail_font_size * getBreakValue() * (isFull ? 1.2 : 1);
     // const { fontSize, ref } = useFitText({ maxFontSize: parseInt(goal), resolution: 5 });
+    const [dark] = useAtom(darkModeAtom);
+    const [frameHeight] = useAtom(frameHeightAtom);
+    const [goal, setGoal] = useState(15);
+    useEffect(() => {
+        let size = obj.avail_font_size * (isFull ? 1.2 : 1);
+        if (frameHeight && height && breakpoint === "S") {
+            size *= height / frameHeight;
+        }
+        setGoal(size);
+    }, [frameHeight, height, isFull]);
 
     return (
-        <Container fixed={fixed}>
+        <Container fixed={fixed} isDark={dark}>
             {/* <Font ref={ref} style={{ fontSize }} color={obj.color_font} bg={obj.color_bg} onClick={onClick}>
                 {obj.text_content}
             </Font> */}
-            <P fs={goal} onClick={onClick} bg={obj.color_bg} color={obj.color_font}>
+            <P fs={goal} onClick={onClick} bg={obj.color_bg} color={obj.color_font} typeFace={obj.typeface}>
                 {obj.text_content}
             </P>
         </Container>
@@ -65,15 +76,10 @@ const P = styled.p`
     font-size: ${(props) => props.fs}em;
     width: 100%;
     line-height: 150%;
-    letter-spacing: ${(props) => props.fs * 0.12}em;
+    letter-spacing: 0;
     color: ${(props) => (props.color ? `rgb${props.color}` : "black")};
     background-color: ${(props) => (props.bg ? `rgb${props.bg}` : "black")};
-`;
-const Font = styled.div`
-    width: 100%;
-    height: 100%;
-    color: ${(props) => (props.color ? `rgb${props.color}` : "black")};
-    background-color: ${(props) => (props.bg ? `rgb${props.bg}` : "black")};
+    font-family: ${(props) => props.typeFace};
 `;
 
 const Container = styled.div`
@@ -84,7 +90,7 @@ const Container = styled.div`
     background-color: white;
     box-sizing: border-box;
     visibility: ${(props) => (props.fixed ? "hidden" : "visiable")};
-    /* display: flex; */
+    background-color: ${(props) => (props.isDark ? "black" : "white")};
 `;
 
 export default Text;

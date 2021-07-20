@@ -10,9 +10,11 @@ import Content from "../components/Content";
 import Controller from "../components/Controller";
 import Video from "../components/Video";
 import input from "../input2.json";
-import activityAtom, { darkModeAtom, mobileModeAtom, playingAtom, withVideoAtom } from "../activityAtom";
+import { darkModeAtom, durationAtom, frameHeightAtom, mobileModeAtom, withVideoAtom } from "../atom";
 
-const ControllerLine = ({ content, duration }) => {
+const ControllerLine = ({ content }) => {
+    const [duration] = useAtom(durationAtom);
+
     const startTimes = _.map(content, "end_time");
     if (!duration) {
         return <p key={shortid.generate()}></p>;
@@ -49,7 +51,7 @@ const LinePoint = styled.div`
     height: 10px;
 `;
 const Line = styled.div`
-    margin-top: 10px;
+    margin-top: 5px;
     pointer-events: none;
     display: flex;
     width: 100%;
@@ -80,89 +82,53 @@ const modeSelector = ({ mobile, dark }) => {
         return "restructure_dark";
     }
 };
+const imageSelector = ({ location, dark }) => {
+    if ((location === "top") & (dark === false)) {
+        return "top_img";
+    }
+    if ((location === "top") & (dark === true)) {
+        return "top_img_dark";
+    }
+
+    if ((location === "bottom") & (dark === false)) {
+        return "bottom_img";
+    }
+    if ((location === "bottom") & (dark === true)) {
+        return "bottom_img_dark";
+    }
+};
 
 const Main = () => {
     const [dark] = useAtom(darkModeAtom);
     const [mobile] = useAtom(mobileModeAtom);
-    // // const content = input.content[modeSelector({ mobile, dark })];
+    const [height, setHeight] = useAtom(frameHeightAtom);
     const [content, setContent] = useState(input.content.original);
     useEffect(() => {
+        reset();
         setContent(input.content[modeSelector({ mobile, dark })]);
     }, [dark, mobile]);
+    useEffect(() => {
+        setHeight(input.template.height);
+    }, []);
 
-    const [percent, setPercent] = useState(0);
-    const [currentTime, setCurrentTime] = useState("00:00");
     const [key, setKey] = useState(shortid.generate());
-
-    const childRef = useRef();
-    const resetKey = () => {
-        childRef.current.resetHandle();
+    const reset = () => {
         setKey(() => shortid.generate());
     };
-    const [activity, setActivity] = useAtom(activityAtom);
-    const videoRef = useRef(null);
 
     const [withVideo] = useAtom(withVideoAtom);
-    const [playing, setPlaying] = useAtom(playingAtom);
-
+    const videoComponentRef = useRef();
     const togglePlay = () => {
-        const video = videoRef.current;
-        const method = video.paused ? "play" : "pause";
-        video[method]();
-        setPlaying(!video.paused);
+        videoComponentRef.current.toggle();
     };
 
+    const jump = (percentPoint) => {
+        videoComponentRef.current.jump(percentPoint);
+    };
     const videoSource = input.sourcePath + input.video.source;
-
-    const onTimeEvent = () => {
-        const video = videoRef.current;
-        const time = video.currentTime;
-        const slide = _.findLastIndex(content, (obj) => obj.start_time < time);
-        const action = activity.slide === slide ? "playing" : "flip";
-        setActivity({ slide, action, time });
-        const percentPoint = time / video.duration;
-        const minutes = Math.floor(time / 60);
-        const seconds = Math.floor(time - 60 * minutes)
-            .toString()
-            .padStart(2, "0");
-        const stringMin = minutes.toString().padStart(2, "0");
-        setCurrentTime(`${minutes}:${seconds}`);
-        setPercent(percentPoint * 100);
-    };
-
-    const barRef = useRef(null);
-    const [duration, setDuration] = useState("00:00");
-
-    const jumpToPlay = (e) => {
-        const video = videoRef.current;
-        setPlaying(!video.paused);
-        if (video.paused) {
-            video.play();
-            video.pause();
-        }
-        const percentPoint = e.nativeEvent.offsetX / barRef.current.offsetWidth;
-        setPercent(percentPoint * 100);
-        const time = percentPoint * video.duration;
-        video.currentTime = time;
-        const slide = _.findLastIndex(content, (obj) => obj.start_time < time);
-        const action = "jump";
-        setActivity({ slide, action, time });
-        const minutes = Math.floor(time / 60);
-        const seconds = Math.floor(time - 60 * minutes)
-            .toString()
-            .padStart(2, "0");
-        const stringMin = minutes.toString().padStart(2, "0");
-        setCurrentTime(`${minutes}:${seconds}`);
-    };
-    useEffect(() => {
-        setTimeout(() => {
-            const video = videoRef.current;
-            video.method = "start";
-        }, 100);
-    }, []);
     const frameInfo = {
-        topBg: input.sourcePath + input.template.top_img,
-        bottomBg: input.sourcePath + input.template.bottom_img,
+        topBg: input.sourcePath + input.template[imageSelector({ location: "top", dark })],
+        bottomBg: input.sourcePath + input.template[imageSelector({ location: "bottom", dark })],
         topHeight: (input.template.top_padding / input.template.height) * 100,
         bottomHeight: (input.template.bottom_padding / input.template.height) * 100,
     };
@@ -172,11 +138,11 @@ const Main = () => {
                 {content.map((data, index) => {
                     return <Content key={index} data={data} index={index} sourcePath={input.sourcePath} frameInfo={frameInfo} isFull={!withVideo} template={input.template} />;
                 })}
+                <Video src={videoSource} content={content} ref={videoComponentRef} />
             </InnerContainer>
-            <Video src={videoSource} videoRef={videoRef} onTimeEvent={onTimeEvent} setDuration={setDuration} ref={childRef} />
             <ControllerContainer>
-                <Controller togglePlay={togglePlay} jumpToPlay={jumpToPlay} barRef={barRef} reset={resetKey} percent={percent} currentTime={currentTime} duration={duration} />
-                <ControllerLine content={content} duration={duration} />
+                <Controller reset={reset} togglePlay={togglePlay} jump={jump} />
+                <ControllerLine content={content} />
             </ControllerContainer>
         </Container>
     );
@@ -191,6 +157,7 @@ const InnerContainer = styled.div.attrs({ className: "frame" })`
     display: flex;
     align-items: stretch;
     padding-right: 100px;
+    position: relative;
     ${(props) =>
         props.isFull &&
         css`
@@ -208,6 +175,7 @@ const Container = styled.div`
     box-sizing: border-box;
     align-items: stretch;
     position: relative;
+    background-color: ${(props) => (props.isDark ? "black" : "white")};
     @supports (-webkit-touch-callout: none) {
         height: -webkit-fill-available;
     }

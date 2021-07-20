@@ -4,11 +4,12 @@ import React, { useState } from "react";
 import { Rnd } from "react-rnd";
 import { useAtom } from "jotai";
 
-import { lockAtom } from "../activityAtom";
+import { darkModeAtom, lockAtom } from "../atom";
 
 function Image({ url, addFixedData }) {
     const [fixed, setFixed] = useState();
     const [lock] = useAtom(lockAtom);
+    const [dark] = useAtom(darkModeAtom);
     const onClick = (e) => {
         if (lock) {
             return;
@@ -31,7 +32,7 @@ function Image({ url, addFixedData }) {
         });
     };
     return (
-        <Container fixed={fixed} onClick={onClick}>
+        <Container fixed={fixed} onClick={onClick} isDark={dark}>
             <Img src={url} draggable="false" />
         </Container>
     );
@@ -43,6 +44,7 @@ const Container = styled.div`
     flex-basis: 0;
     overflow: hidden;
     visibility: ${(props) => (props.fixed ? "hidden" : "visible")};
+    background-color: ${(props) => (props.isDark ? "black" : "white")};
 `;
 const Img = styled.img`
     margin: 0 auto;
