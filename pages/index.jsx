@@ -17,7 +17,11 @@ const ControllerLine = ({ content }) => {
 
     const startTimes = _.map(content, "end_time");
     if (!duration) {
-        return <p key={shortid.generate()}></p>;
+        return (
+            <Loading key={shortid.generate()}>
+                <p>loading...</p>
+            </Loading>
+        );
     }
 
     return (
@@ -32,6 +36,16 @@ const ControllerLine = ({ content }) => {
         </Line>
     );
 };
+const Loading = styled.div`
+    z-index: 200;
+    background-color: black;
+    position: fixed;
+    min-width: 100%;
+    min-height: 100%;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+`;
 
 const Circle = styled.div`
     width: 10px;
