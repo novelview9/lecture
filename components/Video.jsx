@@ -114,11 +114,13 @@ function Video({ src, content, videoLocation }, ref) {
         }
     }, [videoRef, fixed]);
     useEffect(() => {
-        videoRef.current.play();
-        setTimeout(() => {
-            videoRef.current.pause();
-        }, 100);
-    }, []);
+        if (duration) {
+            videoRef.current.play();
+            setTimeout(() => {
+                videoRef.current.pause();
+            }, 100);
+        }
+    }, [duration]);
 
     if (fixed) {
         return (

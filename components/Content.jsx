@@ -313,7 +313,8 @@ const CustomRnd = styled(Rnd)`
         props.isActive &&
         css`
             z-index: 10;
-            outline: 3px solid yellow;
+            outline: 2px solid #a9ceeb;
+            box-shadow: 0px 2px 5px 5px #a9ceeb;
         `};
 `;
 const RndImg = styled.img`
