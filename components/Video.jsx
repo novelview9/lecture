@@ -17,7 +17,6 @@ function Video({ src, content, videoLocation }, ref) {
     const [duration, setDuration] = useAtom(durationAtom);
     const [percent, setPercent] = useAtom(percentAtom);
     const [current, setCurrent] = useAtom(currentAtom);
-    const [jump] = useAtom(jumpAtom);
     const [nodeVideoLocation, setNodeVideoLocation] = useState();
 
     const [play, setPlay] = useAtom(playingAtom);
@@ -36,13 +35,14 @@ function Video({ src, content, videoLocation }, ref) {
             },
             jump: (percentPoint) => {
                 const time = percentPoint * duration;
+
                 videoRef.current.currentTime = time;
                 const slide = _.findLastIndex(content, (obj) => obj.start_time < time);
                 const action = "jump";
                 setActivity({ slide, action, time });
             },
         }),
-        [videoRef.current, play]
+        [videoRef.current, play, duration]
     );
 
     const onTimeEvent = () => {
@@ -113,6 +113,12 @@ function Video({ src, content, videoLocation }, ref) {
             setPlay(false);
         }
     }, [videoRef, fixed]);
+    useEffect(() => {
+        videoRef.current.play();
+        setTimeout(() => {
+            videoRef.current.pause();
+        }, 100);
+    }, []);
 
     if (fixed) {
         return (
