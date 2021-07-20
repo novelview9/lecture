@@ -50,7 +50,7 @@ function Video({ src, content, videoLocation }, ref) {
         const time = video.currentTime;
         const slide = _.findLastIndex(content, (obj) => obj.start_time < time);
         const vl = _.findLast(videoLocation, (obj) => obj.start_time < time);
-        if (vl.box_info) {
+        if (vl && vl.box_info) {
             setNodeVideoLocation(true);
         } else {
             setNodeVideoLocation(false);
@@ -113,9 +113,6 @@ function Video({ src, content, videoLocation }, ref) {
             setPlay(false);
         }
     }, [videoRef, fixed]);
-    useEffect(() => {
-        setFixed(true);
-    }, []);
 
     if (fixed) {
         return (
@@ -142,7 +139,7 @@ function Video({ src, content, videoLocation }, ref) {
     }
     return (
         <Container visiable={nodeVideoLocation}>
-            <VideoEl src={src} onTimeUpdate={onTimeEvent} active={withVideo} playsInline onLoadedMetadata={loaded} autoplay />
+            <VideoEl src={src} onTimeUpdate={onTimeEvent} active={withVideo} playsInline onLoadedMetadata={loaded} autoplay ref={videoRef} />
         </Container>
     );
 }

@@ -135,10 +135,12 @@ const Main = () => {
     };
     return (
         <Container className="node">
-            <InnerContainer isFull={!withVideo} key={key}>
-                {content.map((data, index) => {
-                    return <Content key={index} data={data} index={index} sourcePath={input.sourcePath} frameInfo={frameInfo} isFull={!withVideo} template={input.template} />;
-                })}
+            <InnerContainer isFull={!withVideo}>
+                <InnerContent key={key}>
+                    {content.map((data, index) => {
+                        return <Content key={index} data={data} index={index} sourcePath={input.sourcePath} frameInfo={frameInfo} isFull={!withVideo} template={input.template} />;
+                    })}
+                </InnerContent>
                 <Video src={videoSource} content={content} ref={videoComponentRef} videoLocation={input.video.control} />
             </InnerContainer>
             <ControllerContainer>
@@ -182,4 +184,11 @@ const Container = styled.div`
     }
 `;
 
+const InnerContent = styled.div`
+    flex: 1;
+    display: flex;
+    align-items: stretch;
+    padding-right: 100px;
+    position: relative;
+`;
 export default Main;
