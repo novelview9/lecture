@@ -14,10 +14,12 @@
     },
     "video": {
         "source": "video93_3_2.mp4",
-        "control": {
-            "start_time": 0,
-            "box_info": null
-        }
+        "control": [
+            {
+                "start_time": 0,
+                "box_info": null
+            }
+        ]
     },
     "content": {
         "original": [
