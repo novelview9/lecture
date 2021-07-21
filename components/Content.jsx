@@ -228,6 +228,7 @@ function Content({ data, index, sourcePath, frameInfo, isFull, template }) {
                                 .values()
                                 .flatten()
                                 .value()
+                                .filter((o) => o.label !== "title")
                                 .map((obj, index) => {
                                     return <MemoedPositionedData data={obj} key={index} template={template} addFixedData={addFixedData} index={index} sourcePath={sourcePath} isFull={isFull} />;
                                 })}
