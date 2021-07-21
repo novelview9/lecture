@@ -192,7 +192,10 @@ function Content({ data, index, sourcePath, frameInfo, isFull, template }) {
     const chunkedData = _.groupBy(data.learning_material, "in_column");
     const [activity] = useAtom(activityAtom);
     const [withFrame] = useAtom(withFrameAtom);
-    const isActive = activity.slide === index;
+    const [isActive, setIsActive] = useState(false);
+    useEffect(() => {
+        setIsActive(activity.slide === index);
+    }, [activity.slide]);
     const [state] = useState({ chunkedData, column: data.column });
     const [fixedData, setFixedData] = useState({});
     const addFixedData = useCallback((data) => {
