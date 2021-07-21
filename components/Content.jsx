@@ -81,7 +81,7 @@ const checkOnlyData = (prev, next) => {
 const MemoedChunkedData = React.memo(ChunkedData, checkOnlyData);
 const MemoedPositionedData = React.memo(PositionedData, checkOnlyData);
 
-const FixedElement = ({ data, clicked, keyValue, isActive }) => {
+const FixedElement = ({ data, clicked, keyValue, isactive }) => {
     const [state, setState] = useState({ x: data.x, y: data.y, width: data.width, height: data.height });
     const { fontSize, ref } = useFitText({ maxFontSize: 1000, resolution: 1, minFontSize: 5 });
     const [lock] = useAtom(lockAtom);
@@ -100,7 +100,7 @@ const FixedElement = ({ data, clicked, keyValue, isActive }) => {
                 onDragStart={run}
                 onResizeStart={run}
                 bounds={".frame"}
-                isActive={isActive}
+                isactive={isactive}
                 size={{ width: state.width, height: state.height, background: "red" }}
                 position={{ x: state.x, y: state.y }}
                 onDragStop={(e, d) => {
@@ -116,7 +116,7 @@ const FixedElement = ({ data, clicked, keyValue, isActive }) => {
                 }}
             >
                 <RndImg src={data.src} draggable="false" />
-                {isActive && <Clear onClick={clear}>confirm</Clear>}
+                {isactive && <Clear onClick={clear}>confirm</Clear>}
             </CustomRnd>
         );
     }
@@ -128,7 +128,7 @@ const FixedElement = ({ data, clicked, keyValue, isActive }) => {
                 onDragStart={run}
                 onResizeStart={run}
                 bounds={".frame"}
-                isActive={isActive}
+                isactive={isactive}
                 size={{ width: state.width, height: state.height, background: "red" }}
                 position={{ x: state.x, y: state.y }}
                 onDragStop={(e, d) => {
@@ -144,7 +144,7 @@ const FixedElement = ({ data, clicked, keyValue, isActive }) => {
                 }}
             >
                 <RndVideo url={data.src} startTime={data.startTime} />
-                {isActive && <Clear onClick={clear}>confirm</Clear>}
+                {isactive && <Clear onClick={clear}>confirm</Clear>}
             </CustomRnd>
         );
     }
@@ -156,7 +156,7 @@ const FixedElement = ({ data, clicked, keyValue, isActive }) => {
                 onDragStart={run}
                 onResizeStart={run}
                 bounds={".frame"}
-                isActive={isActive}
+                isactive={isactive}
                 size={{ width: state.width, height: state.height, background: "red" }}
                 position={{ x: state.x, y: state.y }}
                 onDragStop={(e, d) => {
@@ -174,7 +174,7 @@ const FixedElement = ({ data, clicked, keyValue, isActive }) => {
                 <PCon ref={ref} style={{ fontSize }} lineHeight={data.style["line-height"]}>
                     {data.text}
                 </PCon>
-                {isActive && <Clear onClick={clear}>confirm</Clear>}
+                {isactive && <Clear onClick={clear}>confirm</Clear>}
             </CustomRnd>
         );
     }
@@ -192,7 +192,7 @@ function Content({ data, index, sourcePath, frameInfo, isFull, template }) {
     const chunkedData = _.groupBy(data.learning_material, "in_column");
     const [activity] = useAtom(activityAtom);
     const [withFrame] = useAtom(withFrameAtom);
-    const [isActive, setIsActive] = useState(false);
+    const [isactive, setIsActive] = useState(false);
     useEffect(() => {
         setIsActive(activity.slide === index);
     }, [activity.slide]);
@@ -214,9 +214,9 @@ function Content({ data, index, sourcePath, frameInfo, isFull, template }) {
     const frameRatio = template.width / template.height;
     if (data.column === 0) {
         return (
-            <Container isActive={isActive} bg={`${sourcePath}${data.bg_image}`}>
+            <Container isactive={isactive} bg={`${sourcePath}${data.bg_image}`}>
                 <Inner>
-                    <Frame src={frameInfo.topBg} height={frameInfo.topHeight} isActive={withFrame} />
+                    <Frame src={frameInfo.topBg} height={frameInfo.topHeight} isactive={withFrame} />
                     {titleObj && (
                         <TitleContainer>
                             <TitleImg src={`${sourcePath}${titleObj.path}`} />
@@ -234,18 +234,18 @@ function Content({ data, index, sourcePath, frameInfo, isFull, template }) {
                                 })}
                         </PositionedCanvas>
                     </PositionedContainer>
-                    <Frame src={frameInfo.bottomBg} height={frameInfo.bottomHeight} isActive={withFrame} />
+                    <Frame src={frameInfo.bottomBg} height={frameInfo.bottomHeight} isactive={withFrame} />
                 </Inner>
                 {Object.entries(fixedData).map((value) => (
-                    <FixedElement data={value[1]} key={value[0]} clicked={clicked} isActive={nodeEl === value[0]} keyValue={value[0]} />
+                    <FixedElement data={value[1]} key={value[0]} clicked={clicked} isactive={nodeEl === value[0]} keyValue={value[0]} />
                 ))}
             </Container>
         );
     }
     return (
-        <Container isActive={isActive} bg={`${sourcePath}${data.bg_image}`}>
+        <Container isactive={isactive} bg={`${sourcePath}${data.bg_image}`}>
             <Inner>
-                <Frame src={frameInfo.topBg} height={frameInfo.topHeight} isActive={withFrame} />
+                <Frame src={frameInfo.topBg} height={frameInfo.topHeight} isactive={withFrame} />
                 {titleObj && (
                     <TitleContainer>
                         <TitleImg src={`${sourcePath}${titleObj.path}`} />
@@ -256,10 +256,10 @@ function Content({ data, index, sourcePath, frameInfo, isFull, template }) {
                         return <MemoedChunkedData data={state.chunkedData[i + 1]} key={i} addFixedData={addFixedData} index={index} sourcePath={sourcePath} isFull={isFull} />;
                     })}
                 </ColumnContainer>
-                <Frame src={frameInfo.bottomBg} height={frameInfo.bottomHeight} isActive={withFrame} />
+                <Frame src={frameInfo.bottomBg} height={frameInfo.bottomHeight} isactive={withFrame} />
             </Inner>
             {Object.entries(fixedData).map((value) => (
-                <FixedElement data={value[1]} key={value[0]} clicked={clicked} isActive={nodeEl === value[0]} keyValue={value[0]} />
+                <FixedElement data={value[1]} key={value[0]} clicked={clicked} isactive={nodeEl === value[0]} keyValue={value[0]} />
             ))}
         </Container>
     );
@@ -267,7 +267,7 @@ function Content({ data, index, sourcePath, frameInfo, isFull, template }) {
 const Frame = styled.img`
     flex-basis: ${(props) => props.height}%;
     object-fit: fill;
-    display: ${(props) => (props.isActive ? "block" : "none")};
+    display: ${(props) => (props.isactive ? "block" : "none")};
 `;
 
 const Inner = styled.div`
@@ -318,7 +318,7 @@ const PCon = styled.div`
 const CustomRnd = styled(Rnd)`
     box-sizing: border-box;
     ${(props) =>
-        props.isActive &&
+        props.isactive &&
         css`
             z-index: 10;
             outline: 2px solid #a9ceeb;
@@ -338,7 +338,7 @@ const InnerColumn = styled.div`
 
 const Container = styled.div`
     padding-top: 20px;
-    display: ${(props) => (props.isActive ? "flex" : "none")};
+    display: ${(props) => (props.isactive ? "flex" : "none")};
     background-image: url(${(props) => props.bg});
     background-repeat: no-repeat;
     background-size: 100% 100%;

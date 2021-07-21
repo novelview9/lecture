@@ -53,13 +53,13 @@ function Controller({ reset, togglePlay, jump }) {
                             {currentTime}/{durationTime}
                         </p>
                     </Time>
-                    <Button onClick={toggleMobileMode} isActive={mobileMode}>
+                    <Button onClick={toggleMobileMode} isactive={mobileMode}>
                         <Mobile />
                     </Button>
-                    <Button onClick={toggleDarkMode} isActive={darkMode}>
+                    <Button onClick={toggleDarkMode} isactive={darkMode}>
                         <DarkMode />
                     </Button>
-                    <Button onClick={toggleLock} isActive={lock}>
+                    <Button onClick={toggleLock} isactive={lock}>
                         <LockIcon />
                     </Button>
                     <Button onClick={reset}>
@@ -67,10 +67,10 @@ function Controller({ reset, togglePlay, jump }) {
                     </Button>
                 </div>
                 <div>
-                    <ToggleButton onClick={toggleFrame} isActive={withFrame}>
+                    <ToggleButton onClick={toggleFrame} isactive={withFrame}>
                         <p>Template</p>
                     </ToggleButton>
-                    <ToggleButton onClick={toggleVideo} isActive={withVideo}>
+                    <ToggleButton onClick={toggleVideo} isactive={withVideo}>
                         <p>Instructor</p>
                     </ToggleButton>
                 </div>
@@ -93,7 +93,7 @@ const ToggleButton = styled.div`
     }
 
     ${(props) =>
-        props.isActive
+        props.isactive
             ? css`
                   color: white;
                   background-color: #5ca6d5;
@@ -158,7 +158,7 @@ const Button = styled.button`
     margin-right: 5px;
 
     ${(props) =>
-        props.isActive
+        props.isactive
             ? css`
                   background-color: #5ca6d5;
                   > svg {
