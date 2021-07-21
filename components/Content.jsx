@@ -224,9 +224,13 @@ function Content({ data, index, sourcePath, frameInfo, isFull, template }) {
                     )}
                     <PositionedContainer>
                         <PositionedCanvas ratio={frameRatio}>
-                            {state.chunkedData[0].map((obj, index) => {
-                                return <MemoedPositionedData data={obj} key={index} template={template} addFixedData={addFixedData} index={index} sourcePath={sourcePath} isFull={isFull} />;
-                            })}
+                            {_.chain(state.chunkedData)
+                                .values()
+                                .flatten()
+                                .value()
+                                .map((obj, index) => {
+                                    return <MemoedPositionedData data={obj} key={index} template={template} addFixedData={addFixedData} index={index} sourcePath={sourcePath} isFull={isFull} />;
+                                })}
                         </PositionedCanvas>
                     </PositionedContainer>
                     <Frame src={frameInfo.bottomBg} height={frameInfo.bottomHeight} isActive={withFrame} />
