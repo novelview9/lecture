@@ -17,6 +17,7 @@ function Text({ obj, addFixedData, isFull }) {
     const [fixed, setFixed] = useState();
     const breakpoint = useBreakpoint();
     const height = useWindowHeight();
+    console.log("gg");
     const onClick = (e) => {
         if (lock) {
             return;
@@ -45,7 +46,7 @@ function Text({ obj, addFixedData, isFull }) {
     useEffect(() => {
         let size = obj.avail_font_size * (isFull ? 1.2 : 1);
         if (frameHeight && height && ["S", "L"].includes(breakpoint)) {
-            size *= (height / frameHeight) * 0.8;
+            size *= ((height - 80) / frameHeight) * 0.8;
             setGoal({ fontSize: size, lineHeight: 130 });
         } else {
             setGoal({ fontSize: size, lineHeight: 150 });

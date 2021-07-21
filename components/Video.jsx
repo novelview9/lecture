@@ -39,12 +39,14 @@ function Video({ src, content, videoLocation }, ref) {
                 videoRef.current.currentTime = time;
                 videoRef.current.play();
                 setTimeout(() => {
-                    videoRef.current.pause();
-                    setPlay(false);
+                    if (!play) {
+                        videoRef.current.pause();
+                        setPlay(false);
+                    }
                 }, 100);
                 const slide = _.findLastIndex(content, (obj) => obj.start_time < time);
                 const action = "jump";
-                setActivity({ slide, action, time });
+                setActivity({ slide, action, time, play });
             },
         }),
         [videoRef.current, play, duration]
