@@ -46,7 +46,7 @@ function Text({ obj, addFixedData, isFull }) {
         let size = obj.avail_font_size * (isFull ? 1.2 : 1);
         if (frameHeight && height && ["S", "L"].includes(breakpoint)) {
             size *= (height / frameHeight) * 0.8;
-            setGoal({ fontSize: size, lineHeight: 140 });
+            setGoal({ fontSize: size, lineHeight: 130 });
         } else {
             setGoal({ fontSize: size, lineHeight: 150 });
         }
