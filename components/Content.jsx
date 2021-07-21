@@ -171,7 +171,7 @@ const FixedElement = ({ data, clicked, keyValue, isActive }) => {
                     });
                 }}
             >
-                <PCon ref={ref} style={{ fontSize }}>
+                <PCon ref={ref} style={{ fontSize }} lineHeight={data.style["line-height"]}>
                     {data.text}
                 </PCon>
                 {isActive && <Clear onClick={clear}>confirm</Clear>}
@@ -306,7 +306,7 @@ const TitleContainer = styled.div`
 const PCon = styled.div`
     width: 100%;
     height: 100%;
-    line-height: 150%;
+    line-height: ${(props) => props.lineHeight && "150%"};
     letter-spacing: 0;
     white-space: pre-wrap;
 `;
