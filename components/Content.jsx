@@ -217,18 +217,17 @@ function Content({ data, index, sourcePath, frameInfo, isFull, template }) {
             <Container isactive={isactive} bg={`${sourcePath}${data.bg_image}`}>
                 <Inner>
                     <Frame src={frameInfo.topBg} height={frameInfo.topHeight} isactive={withFrame} />
-                    {titleObj && (
+                    {/* {titleObj && (
                         <TitleContainer>
                             <TitleImg src={`${sourcePath}${titleObj.path}`} />
                         </TitleContainer>
-                    )}
+                    )} */}
                     <PositionedContainer>
                         <PositionedCanvas ratio={frameRatio}>
                             {_.chain(state.chunkedData)
                                 .values()
                                 .flatten()
                                 .value()
-                                .filter((o) => o.label !== "title")
                                 .map((obj, index) => {
                                     return <MemoedPositionedData data={obj} key={index} template={template} addFixedData={addFixedData} index={index} sourcePath={sourcePath} isFull={isFull} />;
                                 })}
