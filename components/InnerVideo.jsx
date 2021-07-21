@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Rnd } from "react-rnd";
 import { useAtom } from "jotai";
 
-import activityAtom, { playingAtom } from "../atom";
+import { activityAtom, playingAtom } from "../atom";
 import { darkModeAtom, lockAtom } from "../atom";
 
 function InnerVideo({ url, startTime, endTime, addFixedData, index }) {

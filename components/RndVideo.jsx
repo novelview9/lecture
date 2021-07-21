@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Rnd } from "react-rnd";
 import { useAtom } from "jotai";
 
-import activityAtom, { playingAtom } from "../atom";
+import { activityAtom, playingAtom } from "../atom";
 
 function RndVideo({ url, startTime, endTime, index }) {
     const [onPlay, setOnPlay] = useState(false);
