@@ -1,4 +1,5 @@
 import _ from "lodash";
+import Head from "next/head";
 import React from "react";
 import shortid from "shortid";
 import styled, { css } from "styled-components";
@@ -154,23 +155,30 @@ const Main = () => {
         bottomHeight: (input.template.bottom_padding / input.template.height) * 100,
     };
     return (
-        <Container className="node">
-            <Loading isLoading={!duration}>
-                <p>loading..</p>
-            </Loading>
-            <InnerContainer isFull={!withVideo}>
-                <InnerContent key={key}>
-                    {content.map((data, index) => {
-                        return <Content key={index} data={data} index={index} sourcePath={input.sourcePath} frameInfo={frameInfo} isFull={!withVideo} template={input.template} />;
-                    })}
-                </InnerContent>
-                <Video src={videoSource} content={content} ref={videoComponentRef} videoLocation={input.video.control} />
-            </InnerContainer>
-            <ControllerContainer>
-                <Controller reset={reset} togglePlay={togglePlay} jump={jump} />
-                <ControllerLine content={content} />
-            </ControllerContainer>
-        </Container>
+        <>
+            <Head>
+                <link rel="preconnect" href="https://fonts.googleapis.com" />
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+                <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Stint+Ultra+Condensed&display=swap" rel="stylesheet" />
+            </Head>
+            <Container className="node">
+                <Loading isLoading={!duration}>
+                    <p>loading..</p>
+                </Loading>
+                <InnerContainer isFull={!withVideo}>
+                    <InnerContent key={key}>
+                        {content.map((data, index) => {
+                            return <Content key={index} data={data} index={index} sourcePath={input.sourcePath} frameInfo={frameInfo} isFull={!withVideo} template={input.template} />;
+                        })}
+                    </InnerContent>
+                    <Video src={videoSource} content={content} ref={videoComponentRef} videoLocation={input.video.control} />
+                </InnerContainer>
+                <ControllerContainer>
+                    <Controller reset={reset} togglePlay={togglePlay} jump={jump} />
+                    <ControllerLine content={content} />
+                </ControllerContainer>
+            </Container>
+        </>
     );
 };
 const ControllerContainer = styled.div`
