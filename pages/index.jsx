@@ -159,7 +159,9 @@ const Main = () => {
             <Head>
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-                <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Stint+Ultra+Condensed&display=swap" rel="stylesheet" />
+                {input.template.fontUrl.map((url) => {
+                    return <link href={url} rel="stylesheet" />;
+                })}
             </Head>
             <Container className="node">
                 <Loading isLoading={!duration}>
