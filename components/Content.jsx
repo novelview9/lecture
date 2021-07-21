@@ -83,7 +83,7 @@ const MemoedPositionedData = React.memo(PositionedData, checkOnlyData);
 
 const FixedElement = ({ data, clicked, keyValue, isActive }) => {
     const [state, setState] = useState({ x: data.x, y: data.y, width: data.width, height: data.height });
-    const { fontSize, ref } = useFitText({ maxFontSize: 1000, resolution: 1 });
+    const { fontSize, ref } = useFitText({ maxFontSize: 1000, resolution: 1, minFontSize: 5 });
     const [lock] = useAtom(lockAtom);
     const run = () => {
         clicked(keyValue);
