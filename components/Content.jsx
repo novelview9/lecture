@@ -95,7 +95,7 @@ const FixedElement = ({ data, clicked, keyValue, isactive }) => {
     const { fontSize, ref, onStart, onFinish } = useFitText({
         maxFontSize: 1000,
         resolution: 1,
-        minFontSize: 5,
+        minFontSize: 1,
         onStart: () => {
             setVisiable(false);
         },
