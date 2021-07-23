@@ -7,10 +7,10 @@ import { Rnd } from "react-rnd";
 import { useAtom } from "jotai";
 import { useState } from "react";
 
-import Image from "./Image";
 import InnerVideo from "./InnerVideo";
 import RndVideo from "./RndVideo";
 import Text from "./Text";
+import Image, { FixedImage } from "./Image";
 import { activityAtom, lockAtom, withFrameAtom } from "../atom";
 
 const ChunkedData = React.memo(({ data, addFixedData, index, sourcePath, isFull }) => {
@@ -59,6 +59,14 @@ const PositionedData = React.memo(({ data, addFixedData, index, sourcePath, isFu
             </PositionedDataContainer>
         );
     }
+    if (data.label === "title") {
+        return (
+            <PositionedDataContainer x={startXRatio} y={startYRatio} width={widthRatio} height={heightRatio}>
+                <FixedImage url={`${sourcePath}${data.path}`} key={shortid.generate()} />
+            </PositionedDataContainer>
+        );
+    }
+
     return (
         <PositionedDataContainer x={startXRatio} y={startYRatio} width={widthRatio} height={heightRatio}>
             <Image url={`${sourcePath}${data.path}`} addFixedData={addFixedData} key={shortid.generate()} />
@@ -83,7 +91,18 @@ const MemoedPositionedData = React.memo(PositionedData, checkOnlyData);
 
 const FixedElement = ({ data, clicked, keyValue, isactive }) => {
     const [state, setState] = useState({ x: data.x, y: data.y, width: data.width, height: data.height });
-    const { fontSize, ref } = useFitText({ maxFontSize: 1000, resolution: 1, minFontSize: 5 });
+    const [visiable, setVisiable] = useState(false);
+    const { fontSize, ref, onStart, onFinish } = useFitText({
+        maxFontSize: 1000,
+        resolution: 1,
+        minFontSize: 5,
+        onStart: () => {
+            setVisiable(false);
+        },
+        onFinish: () => {
+            setVisiable(true);
+        },
+    });
     const [lock] = useAtom(lockAtom);
     const run = () => {
         clicked(keyValue);
@@ -171,7 +190,7 @@ const FixedElement = ({ data, clicked, keyValue, isactive }) => {
                     });
                 }}
             >
-                <PCon ref={ref} style={{ fontSize }} lineHeight={data.style["line-height"]} font={data.style["font-family"]}>
+                <PCon ref={ref} style={{ fontSize }} lineHeight={data.style["line-height"]} font={data.style["font-family"]} weight={data.style["font-weight"]} visiable={visiable}>
                     {data.text}
                 </PCon>
                 {isactive && <Clear onClick={clear}>confirm</Clear>}
@@ -311,9 +330,11 @@ const PCon = styled.div`
     width: 100%;
     height: 100%;
     line-height: ${(props) => props.lineHeight && "150%"};
+    font-weight: ${(props) => props.weight};
     letter-spacing: 0;
     white-space: pre-wrap;
     font-family: ${(props) => props.font};
+    visibility: ${(props) => (props.visiable ? "visible" : "hidden")};
 `;
 const CustomRnd = styled(Rnd)`
     box-sizing: border-box;

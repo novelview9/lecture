@@ -38,13 +38,29 @@ function Image({ url, addFixedData }) {
     );
 }
 
+function FixedImage({ url }) {
+    const [dark] = useAtom(darkModeAtom);
+    return (
+        <FixedContainer isDark={dark}>
+            <Img src={url} draggable="false" />
+        </FixedContainer>
+    );
+}
+const FixedContainer = styled.div`
+    display: flex;
+    flex: 1;
+    flex-basis: 0;
+    overflow: hidden;
+    background-color: ${(props) => (props.isDark ? rgb(47, 48, 49) : "white")};
+`;
+
 const Container = styled.div`
     display: flex;
     flex: 1;
     flex-basis: 0;
     overflow: hidden;
     visibility: ${(props) => (props.fixed ? "hidden" : "visible")};
-    background-color: ${(props) => (props.isDark ? "black" : "white")};
+    background-color: ${(props) => (props.isDark ? rgb(47, 48, 49) : "white")};
 `;
 const Img = styled.img`
     margin: 0 auto;
@@ -53,3 +69,5 @@ const Img = styled.img`
 `;
 
 export default React.memo(Image);
+
+export { FixedImage };

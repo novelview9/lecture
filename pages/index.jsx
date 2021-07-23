@@ -211,7 +211,7 @@ const Container = styled.div`
     box-sizing: border-box;
     align-items: stretch;
     position: relative;
-    background-color: ${(props) => (props.isDark ? "black" : "white")};
+    background-color: ${(props) => (props.isDark ? rgb(47, 48, 49) : "white")};
     @supports (-webkit-touch-callout: none) {
         height: -webkit-fill-available;
     }

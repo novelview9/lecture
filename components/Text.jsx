@@ -27,7 +27,7 @@ function Text({ obj, addFixedData, isFull }) {
             label: "P",
             text: obj.text_content,
             src: e.target.src,
-            style: _.pick(window.getComputedStyle(e.currentTarget), ["font-size", "padding", "color", "background-color", "line-height", "letter-spacing"]),
+            style: _.pick(window.getComputedStyle(e.currentTarget), ["font-size", "padding", "color", "background-color", "line-height", "letter-spacing", "font-weight", "font-family"]),
             top,
             right,
             bottom,
@@ -82,7 +82,7 @@ const Container = styled.div`
     background-color: white;
     box-sizing: border-box;
     visibility: ${(props) => (props.fixed ? "hidden" : "visiable")};
-    background-color: ${(props) => (props.isDark ? "black" : "white")};
+    background-color: ${(props) => (props.isDark ? rgb(47, 48, 49) : "white")};
 `;
 
 export default Text;
