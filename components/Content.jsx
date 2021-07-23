@@ -171,7 +171,7 @@ const FixedElement = ({ data, clicked, keyValue, isactive }) => {
                     });
                 }}
             >
-                <PCon ref={ref} style={{ fontSize }} lineHeight={data.style["line-height"]}>
+                <PCon ref={ref} style={{ fontSize }} lineHeight={data.style["line-height"]} font={data.style["font-family"]}>
                     {data.text}
                 </PCon>
                 {isactive && <Clear onClick={clear}>confirm</Clear>}
@@ -313,6 +313,7 @@ const PCon = styled.div`
     line-height: ${(props) => props.lineHeight && "150%"};
     letter-spacing: 0;
     white-space: pre-wrap;
+    font-family: ${(props) => props.font};
 `;
 const CustomRnd = styled(Rnd)`
     box-sizing: border-box;
@@ -336,7 +337,7 @@ const InnerColumn = styled.div`
 `;
 
 const Container = styled.div`
-    padding-top: 20px;
+    padding-top: 16px;
     display: ${(props) => (props.isactive ? "flex" : "none")};
     background-image: url(${(props) => props.bg});
     background-repeat: no-repeat;

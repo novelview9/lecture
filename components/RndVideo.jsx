@@ -11,6 +11,8 @@ function RndVideo({ url, startTime, endTime, index }) {
     const [action] = useAtom(activityAtom);
     const [playing] = useAtom(playingAtom);
     const ref = useRef(null);
+    console.log(width);
+    console.log(height);
 
     useEffect(() => {
         if (action.time > startTime && playing) {

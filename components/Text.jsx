@@ -17,7 +17,6 @@ function Text({ obj, addFixedData, isFull }) {
     const [fixed, setFixed] = useState();
     const breakpoint = useBreakpoint();
     const height = useWindowHeight();
-    console.log("gg");
     const onClick = (e) => {
         if (lock) {
             return;
