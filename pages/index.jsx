@@ -149,8 +149,9 @@ const Main = () => {
     const videoSource = input.sourcePath + input.video.source;
 
     const frameInfo = {
-        topBg: input.sourcePath + input.template[imageSelector({ location: "top", dark })],
-        bottomBg: input.sourcePath + input.template[imageSelector({ location: "bottom", dark })],
+        sourcePath: input.sourcePath,
+        topBg: input.template[imageSelector({ location: "top", dark })],
+        bottomBg: input.template[imageSelector({ location: "bottom", dark })],
         topHeight: (input.template.top_padding / input.template.height) * 100,
         bottomHeight: (input.template.bottom_padding / input.template.height) * 100,
     };

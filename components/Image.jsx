@@ -51,7 +51,7 @@ const FixedContainer = styled.div`
     flex: 1;
     flex-basis: 0;
     overflow: hidden;
-    background-color: ${(props) => (props.isDark ? rgb(47, 48, 49) : "white")};
+    background-color: ${(props) => (props.isDark ? "rgb(47, 48, 49)" : "white")};
 `;
 
 const Container = styled.div`
@@ -60,7 +60,7 @@ const Container = styled.div`
     flex-basis: 0;
     overflow: hidden;
     visibility: ${(props) => (props.fixed ? "hidden" : "visible")};
-    background-color: ${(props) => (props.isDark ? rgb(47, 48, 49) : "white")};
+    background-color: ${(props) => (props.isDark ? "rgb(47, 48, 49)" : "white")};
 `;
 const Img = styled.img`
     margin: 0 auto;

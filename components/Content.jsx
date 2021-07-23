@@ -235,7 +235,7 @@ function Content({ data, index, sourcePath, frameInfo, isFull, template }) {
         return (
             <Container isactive={isactive} bg={`${sourcePath}${data.bg_image}`}>
                 <Inner>
-                    <Frame src={frameInfo.topBg} height={frameInfo.topHeight} isactive={withFrame} />
+                    {frameInfo.topBg && <Frame src={frameInfo.sourcePath + frameInfo.topBg} height={frameInfo.topHeight} isactive={withFrame} />}
                     {/* {titleObj && (
                         <TitleContainer>
                             <TitleImg src={`${sourcePath}${titleObj.path}`} />
@@ -252,7 +252,7 @@ function Content({ data, index, sourcePath, frameInfo, isFull, template }) {
                                 })}
                         </PositionedCanvas>
                     </PositionedContainer>
-                    <Frame src={frameInfo.bottomBg} height={frameInfo.bottomHeight} isactive={withFrame} />
+                    {frameInfo.bottomBg && <Frame src={frameInfo.sourcePath + frameInfo.bottomBg} height={frameInfo.bottomHeight} isactive={withFrame} />}
                 </Inner>
                 {Object.entries(fixedData).map((value) => (
                     <FixedElement data={value[1]} key={value[0]} clicked={clicked} isactive={nodeEl === value[0]} keyValue={value[0]} />
@@ -263,7 +263,7 @@ function Content({ data, index, sourcePath, frameInfo, isFull, template }) {
     return (
         <Container isactive={isactive} bg={`${sourcePath}${data.bg_image}`}>
             <Inner>
-                <Frame src={frameInfo.topBg} height={frameInfo.topHeight} isactive={withFrame} />
+                {frameInfo.topBG && <Frame src={frameInfo.sourcePath + frameInfo.topBg} height={frameInfo.topHeight} isactive={withFrame} />}
                 {titleObj && (
                     <TitleContainer>
                         <TitleImg src={`${sourcePath}${titleObj.path}`} />
@@ -274,7 +274,7 @@ function Content({ data, index, sourcePath, frameInfo, isFull, template }) {
                         return <MemoedChunkedData data={state.chunkedData[i + 1]} key={i} addFixedData={addFixedData} index={index} sourcePath={sourcePath} isFull={isFull} />;
                     })}
                 </ColumnContainer>
-                <Frame src={frameInfo.bottomBg} height={frameInfo.bottomHeight} isactive={withFrame} />
+                {frameInfo.bottomBg && <Frame src={frameInfo.sourcePath + frameInfo.bottomBg} height={frameInfo.bottomHeight} isactive={withFrame} />}
             </Inner>
             {Object.entries(fixedData).map((value) => (
                 <FixedElement data={value[1]} key={value[0]} clicked={clicked} isactive={nodeEl === value[0]} keyValue={value[0]} />
@@ -360,7 +360,7 @@ const InnerColumn = styled.div`
 const Container = styled.div`
     padding-top: 16px;
     display: ${(props) => (props.isactive ? "flex" : "none")};
-    background-image: url(${(props) => props.bg});
+    background-image: ${(props) => (props.bg ? `url(${props.bg})` : "none")};
     background-repeat: no-repeat;
     background-size: 100% 100%;
     flex: 1;

@@ -82,7 +82,7 @@ const Container = styled.div`
     background-color: white;
     box-sizing: border-box;
     visibility: ${(props) => (props.fixed ? "hidden" : "visiable")};
-    background-color: ${(props) => (props.isDark ? rgb(47, 48, 49) : "white")};
+    background-color: ${(props) => (props.isDark ? "rgb(47, 48, 49)" : "white")};
 `;
 
 export default Text;
