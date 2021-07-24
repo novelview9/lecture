@@ -43,7 +43,7 @@ function Text({ obj, addFixedData, isFull }) {
     const [frameHeight] = useAtom(frameHeightAtom);
     const [goal, setGoal] = useState({ fontSize: 15, lineHeight: 150 });
     useEffect(() => {
-        let size = obj.avail_font_size * (isFull ? 1.2 : 1);
+        let size = obj.avail_font_size * (isFull ? 1.2 : 1) * 16;
         if (frameHeight && height && ["S", "L"].includes(breakpoint)) {
             size *= ((height - 80) / frameHeight) * 0.8;
             setGoal({ fontSize: size, lineHeight: 130 });
@@ -65,7 +65,7 @@ function Text({ obj, addFixedData, isFull }) {
 }
 
 const P = styled.p`
-    font-size: ${(props) => props.goal.fontSize}em;
+    font-size: ${(props) => props.goal.fontSize}px;
     width: 100%;
     line-height: ${(props) => props.goal.lineHeight}%;
     letter-spacing: 0;
