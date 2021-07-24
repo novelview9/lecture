@@ -90,7 +90,7 @@ const MemoedChunkedData = React.memo(ChunkedData, checkOnlyData);
 const MemoedPositionedData = React.memo(PositionedData, checkOnlyData);
 
 const FixedElement = ({ data, clicked, keyValue, isactive }) => {
-    const [state, setState] = useState({ x: data.x - 4, y: data.y - 4, width: data.width + 4, height: data.height + 4 });
+    const [state, setState] = useState({ x: data.x, y: data.y, width: data.width, height: data.height });
     const [visiable, setVisiable] = useState(false);
     const { fontSize, ref, onStart, onFinish } = useFitText({
         maxFontSize: 1000,
