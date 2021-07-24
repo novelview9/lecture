@@ -8,12 +8,14 @@ import { useAtom } from "jotai";
 import { useEffect, useState } from "react";
 
 import useWindowHeight from "../hooks/windowHeight";
-import { darkModeAtom, frameHeightAtom, lockAtom } from "../atom";
+import { INSTRUCTURE_VALUE, MOBILE_VALUE, TEMPLATE_VALUE } from "../store";
+import { darkModeAtom, frameHeightAtom, lockAtom, withFrameAtom } from "../atom";
 
 const useBreakpoint = createBreakpoint({ XL: 1280, L: 768, S: 350 });
 
 function Text({ obj, addFixedData, isFull }) {
     const [lock] = useAtom(lockAtom);
+    const [withFrame] = useAtom(withFrameAtom);
     const [fixed, setFixed] = useState();
     const breakpoint = useBreakpoint();
     const height = useWindowHeight();
@@ -41,16 +43,17 @@ function Text({ obj, addFixedData, isFull }) {
     // const { fontSize, ref } = useFitText({ maxFontSize: parseInt(goal), resolution: 5 });
     const [dark] = useAtom(darkModeAtom);
     const [frameHeight] = useAtom(frameHeightAtom);
+
     const [goal, setGoal] = useState({ fontSize: 15, lineHeight: 150 });
     useEffect(() => {
-        let size = obj.avail_font_size * (isFull ? 1.2 : 1) * 16;
+        let size = obj.avail_font_size * (isFull ? INSTRUCTURE_VALUE : 1) * (withFrame ? TEMPLATE_VALUE : 1) * 16;
         if (frameHeight && height && ["S", "L"].includes(breakpoint)) {
-            size *= ((height - 80) / frameHeight) * 0.8;
+            size *= ((height - 80) / frameHeight) * MOBILE_VALUE;
             setGoal({ fontSize: size, lineHeight: 130 });
         } else {
             setGoal({ fontSize: size, lineHeight: 150 });
         }
-    }, [frameHeight, height, isFull]);
+    }, [frameHeight, height, isFull, withFrame]);
 
     return (
         <Container fixed={fixed} isDark={dark}>

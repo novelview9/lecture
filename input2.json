@@ -47,11 +47,11 @@
                     },
                     {
                         "label": "text_box",
-                      "box_info_original": [13, 111, 595, 42],
+                        "box_info_original": [13, 111, 595, 42],
                         "in_column": 1,
                         "order": 1,
                         "text_content": "• Understand what data visualization is and why it is an essential tool in public health and epidemiologic practice",
-                        "avail_font_size": 0.9375,
+                        "avail_font_size": 1,
                         "typeface": "Stint Ultra Condensed",
                         "color_font": "(18, 18, 18)",
                         "color_bg": "(253, 253, 253)"
@@ -1368,7 +1368,7 @@
                         "in_column": 1,
                         "order": 1,
                         "text_content": "• Understand what data visualization is and why it is an essential tool in public health and epidemiologic practice",
-                        "avail_font_size": 1.7,
+                        "avail_font_size": 0.5,
                         "typeface": "Open Sans",
                         "color_font": "(18, 18, 18)",
                         "color_bg": "(253, 253, 253)"
