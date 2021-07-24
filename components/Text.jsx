@@ -5,7 +5,7 @@ import styled, { css } from "styled-components";
 import { Rnd } from "react-rnd";
 import { createBreakpoint } from "react-use";
 import { useAtom } from "jotai";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import useWindowHeight from "../hooks/windowHeight";
 import { INSTRUCTURE_VALUE, MOBILE_VALUE, TEMPLATE_VALUE } from "../store";
@@ -19,6 +19,7 @@ function Text({ obj, addFixedData, isFull }) {
     const [fixed, setFixed] = useState();
     const breakpoint = useBreakpoint();
     const height = useWindowHeight();
+    const ref = useRef();
     const onClick = (e) => {
         if (lock) {
             return;
@@ -29,7 +30,10 @@ function Text({ obj, addFixedData, isFull }) {
             label: "P",
             text: obj.text_content,
             src: e.target.src,
-            style: _.pick(window.getComputedStyle(e.currentTarget), ["font-size", "padding", "color", "background-color", "line-height", "letter-spacing", "font-weight", "font-family"]),
+            style: {
+                ..._.pick(window.getComputedStyle(e.currentTarget), ["font-size", "padding", "color", "background-color", "letter-spacing", "font-weight", "font-family"]),
+                lineHeight: goal.lineHeight,
+            },
             top,
             right,
             bottom,
@@ -51,7 +55,7 @@ function Text({ obj, addFixedData, isFull }) {
             size *= ((height - 80) / frameHeight) * MOBILE_VALUE;
             setGoal({ fontSize: size, lineHeight: 130 });
         } else {
-            setGoal({ fontSize: size, lineHeight: 150 });
+            setGoal({ fontSize: size, lineHeight: 130 });
         }
     }, [frameHeight, height, isFull, withFrame]);
 
@@ -60,7 +64,7 @@ function Text({ obj, addFixedData, isFull }) {
             {/* <Font ref={ref} style={{ fontSize }} color={obj.color_font} bg={obj.color_bg} onClick={onClick}>
                 {obj.text_content}
             </Font> */}
-            <P goal={goal} onClick={onClick} bg={obj.color_bg} color={obj.color_font} typeFace={obj.typeface}>
+            <P goal={goal} onClick={onClick} bg={obj.color_bg} color={obj.color_font} typeFace={obj.typeface} ref={ref}>
                 {obj.text_content}
             </P>
         </Container>
@@ -84,7 +88,7 @@ const Container = styled.div`
     min-height: 20px;
     background-color: white;
     box-sizing: border-box;
-    visibility: ${(props) => (props.fixed ? "hidden" : "visiable")};
+    visibility: ${(props) => (props.fixed ? "hidden" : "visible")};
     background-color: ${(props) => (props.isDark ? "rgb(47, 48, 49)" : "white")};
 `;
 

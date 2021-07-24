@@ -90,7 +90,7 @@ const MemoedChunkedData = React.memo(ChunkedData, checkOnlyData);
 const MemoedPositionedData = React.memo(PositionedData, checkOnlyData);
 
 const FixedElement = ({ data, clicked, keyValue, isactive }) => {
-    const [state, setState] = useState({ x: data.x, y: data.y, width: data.width, height: data.height });
+    const [state, setState] = useState({ x: data.x - 4, y: data.y - 4, width: data.width + 4, height: data.height + 4 });
     const [visiable, setVisiable] = useState(false);
     const { fontSize, ref, onStart, onFinish } = useFitText({
         maxFontSize: 1000,
@@ -168,6 +168,7 @@ const FixedElement = ({ data, clicked, keyValue, isactive }) => {
         );
     }
     if (data.label === "P") {
+        console.log(data);
         return (
             <CustomRnd
                 enableResizing={!lock}
@@ -190,7 +191,7 @@ const FixedElement = ({ data, clicked, keyValue, isactive }) => {
                     });
                 }}
             >
-                <PCon ref={ref} style={{ fontSize }} lineHeight={data.style["line-height"]} font={data.style["font-family"]} weight={data.style["font-weight"]} visiable={visiable}>
+                <PCon ref={ref} style={{ fontSize }} lineHeight={data.style.lineHeight} font={data.style["font-family"]} weight={data.style["font-weight"]} visiable={visiable}>
                     {data.text}
                 </PCon>
                 {isactive && <Clear onClick={clear}>confirm</Clear>}
@@ -252,7 +253,7 @@ function Content({ data, index, sourcePath, frameInfo, isFull, template }) {
                                 })}
                         </PositionedCanvas>
                     </PositionedContainer>
-                    {frameInfo.bottomBg && <Frame src={frameInfo.sourcePath + frameInfo.bottomBg} height={frameInfo.bottomHeight} isactive={withFrame} />}
+                    <Frame src={frameInfo.sourcePath + frameInfo.bottomBg} height={frameInfo.bottomHeight} isactive={withFrame} />
                 </Inner>
                 {Object.entries(fixedData).map((value) => (
                     <FixedElement data={value[1]} key={value[0]} clicked={clicked} isactive={nodeEl === value[0]} keyValue={value[0]} />
@@ -329,12 +330,14 @@ const TitleContainer = styled.div`
 const PCon = styled.div`
     width: 100%;
     height: 100%;
-    line-height: ${(props) => props.lineHeight && "150%"};
+    line-height: ${(props) => `${props.lineHeight}%`};
     font-weight: ${(props) => props.weight};
     letter-spacing: 0;
     white-space: pre-wrap;
     font-family: ${(props) => props.font};
     visibility: ${(props) => (props.visiable ? "visible" : "hidden")};
+    box-sizing: border-box;
+    padding: 0.5px;
 `;
 const CustomRnd = styled(Rnd)`
     box-sizing: border-box;
