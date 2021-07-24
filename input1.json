@@ -245,7 +245,7 @@
                     },
                     {
                         "label": "picture",
-                        "box_info_original": [661, 140, 228, 300],
+                        "box_info_original": [661, 140, 228, 320],
                         "path": "shot5_picture1.jpg",
 
                         "in_column": 2,
@@ -331,7 +331,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [162, 53, 408, 75],
+                        "box_info_original": [162, 53, 390, 75],
                         "path": "shot2_title_dark.jpg"
                     },
                     {
@@ -395,7 +395,7 @@
                     },
                     {
                         "label": "text_box",
-                        "box_info_original": [132, 281, 400, 96],
+                        "box_info_original": [132, 310, 400, 96],
                         "in_column": 1,
                         "order": 2,
                         "text_content": "• 1933 Kiichiro Toyoda: automotive division. Produced military trucks during WWII",
@@ -432,7 +432,7 @@
                     },
                     {
                         "label": "text_box",
-                        "box_info_original": [132, 208, 357, 60],
+                        "box_info_original": [132, 170, 357, 60],
                         "in_column": 1,
                         "order": 1,
                         "text_content": "• 1926 Sakichi Toyoda: Toyoda Automatic Loom Works",
@@ -476,7 +476,7 @@
                     },
                     {
                         "label": "picture",
-                        "box_info_original": [612, 191, 361, 333],
+                        "box_info_original": [612, 191, 301, 353],
                         "path": "shot4_picture1.jpg",
 
                         "in_column": 2,
@@ -512,7 +512,7 @@
                     },
                     {
                         "label": "picture",
-                        "box_info_original": [661, 140, 228, 259],
+                        "box_info_original": [661, 140, 228, 320],
                         "path": "shot5_picture1.jpg",
 
                         "in_column": 2,
@@ -532,15 +532,15 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [162, 53, 453, 75],
+                        "box_info_original": [155, 53, 453, 75],
                         "path": "shot7_title_dark.jpg"
                     },
                     {
                         "label": "text_box",
-                        "box_info_original": [111, 191, 440, 332],
+                        "box_info_original": [111, 180, 440, 332],
                         "in_column": 1,
                         "order": 1,
-                        "text_content": "• Maximize share of value-adding activities\n- Elimination of \"waste\" (muda)\n- Strive to minimize batch sizes (ideally single piece flow)\n- Build processes based on true customer requirements\n• Implement stable, standardized processes\n- Workplace organization\n- Standard Operating Procedures\n- Fail-safe processes (Jidoka)",
+                        "text_content": "• Maximize share of value-adding activities\n     - Elimination of \"waste\" (muda)\n     - Strive to minimize batch sizes (ideally single piece flow)\n     - Build processes based on true customer requirements\n• Implement stable, standardized processes\n     - Workplace organization\n     - Standard Operating Procedures\n     - Fail-safe processes (Jidoka)",
                         "avail_font_size": 1.5,
                         "typeface": "Roboto",
                         "color_font": "(253, 253, 253)",
@@ -548,10 +548,10 @@
                     },
                     {
                         "label": "text_box",
-                        "box_info_original": [574, 191, 463, 470],
+                        "box_info_original": [574, 180, 463, 470],
                         "in_column": 2,
                         "order": 1,
-                        "text_content": "• Create a self-learning, continuously improving organization\n- Create transparency on problems/facilitate immediate identification\n- Conduct rigorous root-cause problem solving\n- Make continuous improvement part of the daily work\n• Take a holistic Supply Chain perspective\n- Customer requirements-driven perspective\n- Backwards integration to include suppliers\n• People development is the key success factor\n- Employee skill building is an important part of the TPS",
+                        "text_content": "• Create a self-learning, continuously improving organization\n  - Create transparency on problems/facilitate immediate identification\n  - Conduct rigorous root-cause problem solving\n  - Make continuous improvement part of the daily work\n• Take a holistic Supply Chain perspective\n  - Customer requirements-driven perspective\n  - Backwards integration to include suppliers\n• People development is the key success factor\n  - Employee skill building is an important part of the TPS",
                         "avail_font_size": 1.5,
                         "typeface": "Roboto",
                         "color_font": "(253, 253, 253)",
@@ -597,12 +597,12 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [162, 53, 408, 75],
+                        "box_info_original": [162, 53, 390, 75],
                         "path": "shot2_title.jpg"
                     },
                     {
                         "label": "text_box",
-                        "box_info_original": [148, 212, 757, 67],
+                        "box_info_original": [148, 202, 757, 67],
                         "in_column": 1,
                         "order": 1,
                         "text_content": "• Outline the history of the Toyota Motor Corporation from the Toyota Automatic Loom Works.",
@@ -613,7 +613,7 @@
                     },
                     {
                         "label": "text_box",
-                        "box_info_original": [148, 296, 805, 102],
+                        "box_info_original": [148, 306, 805, 102],
                         "in_column": 1,
                         "order": 1,
                         "text_content": "• Describe the historical drivers for the development of the Toyota Production System at Toyota and identify the important contributors to TPS.",
@@ -624,7 +624,7 @@
                     },
                     {
                         "label": "text_box",
-                        "box_info_original": [148, 415, 714, 27],
+                        "box_info_original": [148, 425, 714, 27],
                         "in_column": 1,
                         "order": 1,
                         "text_content": "• List the core elements of the Toyota Production System.",
@@ -661,7 +661,7 @@
                     },
                     {
                         "label": "text_box",
-                        "box_info_original": [132, 301, 400, 96],
+                        "box_info_original": [132, 330, 400, 96],
                         "in_column": 1,
                         "order": 2,
                         "text_content": "• 1933 Kiichiro Toyoda: automotive division. Produced military trucks during WWII",
@@ -719,7 +719,7 @@
                     },
                     {
                         "label": "picture",
-                        "box_info_original": [612, 191, 361, 333],
+                        "box_info_original": [612, 191, 301, 353],
                         "path": "shot4_picture1.jpg",
 
                         "in_column": 2,
@@ -755,7 +755,7 @@
                     },
                     {
                         "label": "picture",
-                        "box_info_original": [661, 140, 228, 259],
+                        "box_info_original": [661, 140, 228, 320],
                         "path": "shot5_picture1.jpg",
 
                         "in_column": 2,
@@ -791,7 +791,7 @@
                     },
                     {
                         "label": "picture",
-                        "box_info_original": [661, 140, 228, 259],
+                        "box_info_original": [661, 140, 228, 320],
                         "path": "shot5_picture1.jpg",
 
                         "in_column": 2,
@@ -811,7 +811,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [162, 53, 453, 75],
+                        "box_info_original": [155, 53, 453, 75],
                         "path": "shot7_title.jpg"
                     },
                     {
@@ -819,7 +819,7 @@
                         "box_info_original": [110, 194, 912, 208],
                         "in_column": 1,
                         "order": 1,
-                        "text_content": "• Maximize share of value-adding activities\n- Elimination of \"waste\" (muda)\n- Strive to minimize batch sizes (ideally single piece flow)\n- Build processes based on true customer requirements",
+                        "text_content": "• Maximize share of value-adding activities\n     - Elimination of \"waste\" (muda)\n     - Strive to minimize batch sizes (ideally single piece flow)\n     - Build processes based on true customer requirements",
                         "avail_font_size": 1.84,
                         "typeface": "Roboto",
                         "color_font": "(18, 18, 18)",
@@ -837,7 +837,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [162, 53, 453, 75],
+                        "box_info_original": [155, 53, 453, 75],
                         "path": "shot8_title.jpg"
                     },
                     {
@@ -845,7 +845,7 @@
                         "box_info_original": [110, 194, 912, 208],
                         "in_column": 1,
                         "order": 1,
-                        "text_content": "• Implement stable, standardized processes\n- Workplace organization\n- Standard Operating Procedures\n- Fail-safe processes (Jidoka)",
+                        "text_content": "• Implement stable, standardized processes\n     - Workplace organization\n     - Standard Operating Procedures\n     - Fail-safe processes (Jidoka)",
                         "avail_font_size": 1.84,
                         "typeface": "Roboto",
                         "color_font": "(18, 18, 18)",
@@ -863,7 +863,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [162, 53, 453, 75],
+                        "box_info_original": [155, 53, 453, 75],
                         "path": "shot9_title.jpg"
                     },
                     {
@@ -871,7 +871,7 @@
                         "box_info_original": [110, 194, 912, 208],
                         "in_column": 1,
                         "order": 1,
-                        "text_content": "• Create a self-learning, continuously improving organization\n- Create transparency on problems/facilitate immediate identification\n- Conduct rigorous root-cause problem solving\n- Make continuous improvement part of the daily work",
+                        "text_content": "• Create a self-learning, continuously improving organization\n     - Create transparency on problems/facilitate immediate identification\n     - Conduct rigorous root-cause problem solving\n     - Make continuous improvement part of the daily work",
                         "avail_font_size": 1.84,
                         "typeface": "Roboto",
                         "color_font": "(18, 18, 18)",
@@ -889,7 +889,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [162, 53, 453, 75],
+                        "box_info_original": [155, 53, 453, 75],
                         "path": "shot10_title.jpg"
                     },
                     {
@@ -897,7 +897,7 @@
                         "box_info_original": [110, 194, 912, 208],
                         "in_column": 1,
                         "order": 1,
-                        "text_content": "• Take a holistic Supply Chain perspective\n- Customer requirements-driven perspective\n- Backwards integration to include suppliers",
+                        "text_content": "• Take a holistic Supply Chain perspective\n     - Customer requirements-driven perspective\n     - Backwards integration to include suppliers",
                         "avail_font_size": 1.84,
                         "typeface": "Roboto",
                         "color_font": "(18, 18, 18)",
@@ -915,7 +915,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [162, 53, 453, 75],
+                        "box_info_original": [155, 53, 453, 75],
                         "path": "shot11_title.jpg"
                     },
                     {
@@ -923,7 +923,7 @@
                         "box_info_original": [110, 194, 912, 160],
                         "in_column": 1,
                         "order": 1,
-                        "text_content": "• People development is the key success factor\n- Employee skill building is an important part of the TPS",
+                        "text_content": "• People development is the key success factor\n     - Employee skill building is an important part of the TPS",
                         "avail_font_size": 1.84,
                         "typeface": "Roboto",
                         "color_font": "(18, 18, 18)",
@@ -970,12 +970,12 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [162, 53, 408, 75],
+                        "box_info_original": [162, 53, 390, 75],
                         "path": "shot2_title_dark.jpg"
                     },
                     {
                         "label": "text_box",
-                        "box_info_original": [148, 212, 757, 67],
+                        "box_info_original": [148, 202, 757, 67],
                         "in_column": 1,
                         "order": 1,
                         "text_content": "• Outline the history of the Toyota Motor Corporation from the Toyota Automatic Loom Works.",
@@ -986,7 +986,7 @@
                     },
                     {
                         "label": "text_box",
-                        "box_info_original": [148, 296, 805, 102],
+                        "box_info_original": [148, 306, 805, 102],
                         "in_column": 1,
                         "order": 1,
                         "text_content": "• Describe the historical drivers for the development of the Toyota Production System at Toyota and identify the important contributors to TPS.",
@@ -997,7 +997,7 @@
                     },
                     {
                         "label": "text_box",
-                        "box_info_original": [148, 415, 714, 27],
+                        "box_info_original": [148, 425, 714, 27],
                         "in_column": 1,
                         "order": 1,
                         "text_content": "• List the core elements of the Toyota Production System.",
@@ -1034,7 +1034,7 @@
                     },
                     {
                         "label": "text_box",
-                        "box_info_original": [132, 301, 400, 96],
+                        "box_info_original": [132, 330, 400, 96],
                         "in_column": 1,
                         "order": 2,
                         "text_content": "• 1933 Kiichiro Toyoda: automotive division. Produced military trucks during WWII",
@@ -1092,7 +1092,7 @@
                     },
                     {
                         "label": "picture",
-                        "box_info_original": [612, 191, 361, 333],
+                        "box_info_original": [612, 191, 301, 353],
                         "path": "shot4_picture1.jpg",
 
                         "in_column": 2,
@@ -1128,7 +1128,7 @@
                     },
                     {
                         "label": "picture",
-                        "box_info_original": [661, 140, 228, 259],
+                        "box_info_original": [661, 140, 228, 320],
                         "path": "shot5_picture1.jpg",
 
                         "in_column": 2,
@@ -1164,7 +1164,7 @@
                     },
                     {
                         "label": "picture",
-                        "box_info_original": [661, 140, 228, 259],
+                        "box_info_original": [661, 140, 228, 320],
                         "path": "shot5_picture1.jpg",
 
                         "in_column": 2,
@@ -1184,7 +1184,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [162, 53, 453, 75],
+                        "box_info_original": [155, 53, 453, 75],
                         "path": "shot7_title_dark.jpg"
                     },
                     {
@@ -1192,7 +1192,7 @@
                         "box_info_original": [110, 194, 912, 208],
                         "in_column": 1,
                         "order": 1,
-                        "text_content": "• Maximize share of value-adding activities\n- Elimination of \"waste\" (muda)\n- Strive to minimize batch sizes (ideally single piece flow)\n- Build processes based on true customer requirements",
+                        "text_content": "• Maximize share of value-adding activities\n     - Elimination of \"waste\" (muda)\n     - Strive to minimize batch sizes (ideally single piece flow)\n     - Build processes based on true customer requirements",
                         "avail_font_size": 1.84,
                         "typeface": "Roboto",
                         "color_font": "(253, 253, 253)",
@@ -1210,7 +1210,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [162, 53, 453, 75],
+                        "box_info_original": [155, 53, 453, 75],
                         "path": "shot8_title_dark.jpg"
                     },
                     {
@@ -1218,7 +1218,7 @@
                         "box_info_original": [110, 194, 912, 208],
                         "in_column": 1,
                         "order": 1,
-                        "text_content": "• Implement stable, standardized processes\n- Workplace organization\n- Standard Operating Procedures\n- Fail-safe processes (Jidoka)",
+                        "text_content": "• Implement stable, standardized processes\n     - Workplace organization\n     - Standard Operating Procedures\n     - Fail-safe processes (Jidoka)",
                         "avail_font_size": 1.84,
                         "typeface": "Roboto",
                         "color_font": "(253, 253, 253)",
@@ -1236,7 +1236,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [162, 53, 453, 75],
+                        "box_info_original": [155, 53, 453, 75],
                         "path": "shot9_title_dark.jpg"
                     },
                     {
@@ -1244,7 +1244,7 @@
                         "box_info_original": [110, 194, 912, 208],
                         "in_column": 1,
                         "order": 1,
-                        "text_content": "• Create a self-learning, continuously improving organization\n- Create transparency on problems/facilitate immediate identification\n- Conduct rigorous root-cause problem solving\n- Make continuous improvement part of the daily work",
+                        "text_content": "• Create a self-learning, continuously improving organization\n     - Create transparency on problems/facilitate immediate identification\n     - Conduct rigorous root-cause problem solving\n     - Make continuous improvement part of the daily work",
                         "avail_font_size": 1.84,
                         "typeface": "Roboto",
                         "color_font": "(253, 253, 253)",
@@ -1262,7 +1262,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [162, 53, 453, 75],
+                        "box_info_original": [155, 53, 453, 75],
                         "path": "shot10_title_dark.jpg"
                     },
                     {
@@ -1270,7 +1270,7 @@
                         "box_info_original": [110, 194, 912, 208],
                         "in_column": 1,
                         "order": 1,
-                        "text_content": "• Take a holistic Supply Chain perspective\n- Customer requirements-driven perspective\n- Backwards integration to include suppliers",
+                        "text_content": "• Take a holistic Supply Chain perspective\n     - Customer requirements-driven perspective\n     - Backwards integration to include suppliers",
                         "avail_font_size": 1.84,
                         "typeface": "Roboto",
                         "color_font": "(253, 253, 253)",
@@ -1288,7 +1288,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [162, 53, 453, 75],
+                        "box_info_original": [155, 53, 453, 75],
                         "path": "shot11_title_dark.jpg"
                     },
                     {
@@ -1296,7 +1296,7 @@
                         "box_info_original": [110, 194, 912, 160],
                         "in_column": 1,
                         "order": 1,
-                        "text_content": "• People development is the key success factor\n- Employee skill building is an important part of the TPS",
+                        "text_content": "• People development is the key success factor\n     - Employee skill building is an important part of the TPS",
                         "avail_font_size": 1.84,
                         "typeface": "Roboto",
                         "color_font": "(253, 253, 253)",
