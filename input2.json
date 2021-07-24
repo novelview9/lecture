@@ -42,7 +42,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [14, 25, 181, 23],
+                        "box_info_original": [14, 0, 181, 40],
                         "path": "shot2_title.jpg"
                     },
                     {
@@ -110,7 +110,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [14, 25, 259, 27],
+                        "box_info_original": [14, 0, 259, 27],
                         "path": "shot4_title.jpg"
                     },
                     {
@@ -120,7 +120,7 @@
                         "order": 1,
                         "text_content": "• The presentation of data in pictorial or graphical format\n- Can be interactive, allowing the user to change inputs and view the resulting patterns and trends",
                         "avail_font_size": 0.9375,
-                        "typeface": "Open Stint Ultra Condensed",
+                        "typeface": "Stint Ultra Condensed",
                         "color_font": "(18, 18, 18)",
                         "color_bg": "(253, 253, 253)"
                     },
@@ -131,7 +131,7 @@
                         "order": 2,
                         "text_content": "• As computer technology has improved, data visualization has been brought to the forefront of corporate work and, more recently, of, public health practice",
                         "avail_font_size": 0.9375,
-                        "typeface": "Open Stint Ultra Condensed",
+                        "typeface": "Stint Ultra Condensed",
                         "color_font": "(18, 18, 18)",
                         "color_bg": "(253, 253, 253)"
                     },
@@ -142,7 +142,7 @@
                         "order": 3,
                         "text_content": "• Large amounts of complex data can be better understand using visualizations as opposed to charts and tables",
                         "avail_font_size": 0.9375,
-                        "typeface": "Open Stint Ultra Condensed",
+                        "typeface": "Stint Ultra Condensed",
                         "color_font": "(18, 18, 18)",
                         "color_bg": "(253, 253, 253)"
                     },
@@ -153,7 +153,7 @@
                         "order": 4,
                         "text_content": "• \"A picture is worth a thousand words\"",
                         "avail_font_size": 0.9375,
-                        "typeface": "Open Stint Ultra Condensed",
+                        "typeface": "Stint Ultra Condensed",
                         "color_font": "(18, 18, 18)",
                         "color_bg": "(253, 253, 253)"
                     }
@@ -169,7 +169,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [15, 11, 129, 82],
+                        "box_info_original": [15, 0, 129, 82],
                         "path": "shot6_title.jpg"
                     },
                     {
@@ -215,7 +215,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [14, 25, 263, 27],
+                        "box_info_original": [14, 0, 263, 27],
                         "path": "shot8_title.jpg"
                     },
                     {
@@ -285,7 +285,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [16, 23, 167, 30],
+                        "box_info_original": [16, 0, 167, 30],
                         "path": "shot10_title.jpg"
                     },
                     {
@@ -312,7 +312,7 @@
                     },
                     {
                         "label": "text_box",
-                        "box_info_original": [14, 191, 205, 25],
+                        "box_info_original": [14, 191, 205, 100],
                         "in_column": 1,
                         "order": 3,
                         "text_content": "• Has won numerous awards",
@@ -344,7 +344,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [16, 23, 170, 31],
+                        "box_info_original": [16, 0, 170, 31],
                         "path": "shot12_title.jpg"
                     },
                     {
@@ -397,7 +397,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [12, 22, 247, 29],
+                        "box_info_original": [12, 0, 247, 29],
                         "path": "shot13_title.jpg"
                     },
                     {
@@ -478,7 +478,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [12, 22, 357, 33],
+                        "box_info_original": [12, 0, 357, 33],
                         "path": "shot14_title.jpg"
                     },
                     {
@@ -526,7 +526,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [12, 22, 354, 30],
+                        "box_info_original": [12, 0, 354, 30],
                         "path": "shot15_title.jpg"
                     },
                     {
@@ -574,7 +574,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [12, 22, 296, 28],
+                        "box_info_original": [12, 0, 296, 28],
                         "path": "shot16_title.jpg"
                     },
                     {
@@ -630,7 +630,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [13, 24, 363, 28],
+                        "box_info_original": [13, 0, 363, 28],
                         "path": "shot19_title.jpg"
                     },
                     {
@@ -690,7 +690,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [14, 25, 181, 23],
+                        "box_info_original": [14, 0, 181, 23],
                         "path": "shot2_title.jpg"
                     },
                     {
@@ -758,7 +758,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [14, 25, 259, 27],
+                        "box_info_original": [14, 0, 259, 27],
                         "path": "shot4_title.jpg"
                     },
                     {
@@ -768,7 +768,7 @@
                         "order": 1,
                         "text_content": "• The presentation of data in pictorial or graphical format\n- Can be interactive, allowing the user to change inputs and view the resulting patterns and trends",
                         "avail_font_size": 0.9375,
-                        "typeface": "Open Stint Ultra Condensed",
+                        "typeface": "Stint Ultra Condensed",
                         "color_font": "(253, 253, 253)",
                         "color_bg": "(30, 30, 30)"
                     },
@@ -779,7 +779,7 @@
                         "order": 2,
                         "text_content": "• As computer technology has improved, data visualization has been brought to the forefront of corporate work and, more recently, of, public health practice",
                         "avail_font_size": 0.9375,
-                        "typeface": "Open Stint Ultra Condensed",
+                        "typeface": "Stint Ultra Condensed",
                         "color_font": "(253, 253, 253)",
                         "color_bg": "(30, 30, 30)"
                     },
@@ -790,7 +790,7 @@
                         "order": 3,
                         "text_content": "• Large amounts of complex data can be better understand using visualizations as opposed to charts and tables",
                         "avail_font_size": 0.9375,
-                        "typeface": "Open Stint Ultra Condensed",
+                        "typeface": "Stint Ultra Condensed",
                         "color_font": "(253, 253, 253)",
                         "color_bg": "(30, 30, 30)"
                     },
@@ -801,7 +801,7 @@
                         "order": 4,
                         "text_content": "• \"A picture is worth a thousand words\"",
                         "avail_font_size": 0.9375,
-                        "typeface": "Open Stint Ultra Condensed",
+                        "typeface": "Stint Ultra Condensed",
                         "color_font": "(253, 253, 253)",
                         "color_bg": "(30, 30, 30)"
                     }
@@ -817,7 +817,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [15, 11, 129, 82],
+                        "box_info_original": [15, 0, 129, 82],
                         "path": "shot6_title.jpg"
                     },
                     {
@@ -863,7 +863,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [14, 25, 263, 27],
+                        "box_info_original": [14, 0, 263, 27],
                         "path": "shot8_title.jpg"
                     },
                     {
@@ -933,7 +933,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [16, 23, 167, 30],
+                        "box_info_original": [16, 0, 167, 30],
                         "path": "shot10_title.jpg"
                     },
                     {
@@ -992,7 +992,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [16, 23, 170, 31],
+                        "box_info_original": [16, 0, 170, 31],
                         "path": "shot12_title.jpg"
                     },
                     {
@@ -1045,7 +1045,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [12, 22, 247, 29],
+                        "box_info_original": [12, 0, 247, 29],
                         "path": "shot13_title.jpg"
                     },
                     {
@@ -1126,7 +1126,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [12, 22, 357, 33],
+                        "box_info_original": [12, 0, 357, 33],
                         "path": "shot14_title.jpg"
                     },
                     {
@@ -1174,7 +1174,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [12, 22, 354, 30],
+                        "box_info_original": [12, 0, 354, 30],
                         "path": "shot15_title.jpg"
                     },
                     {
@@ -1222,7 +1222,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [12, 22, 296, 28],
+                        "box_info_original": [12, 0, 296, 28],
                         "path": "shot16_title.jpg"
                     },
                     {
@@ -1278,7 +1278,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [13, 24, 363, 28],
+                        "box_info_original": [13, 0, 363, 28],
                         "path": "shot19_title.jpg"
                     },
                     {
@@ -1337,7 +1337,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [14, 25, 181, 23],
+                        "box_info_original": [14, 0, 181, 23],
                         "path": "shot2_title.jpg"
                     },
                     {
@@ -1405,7 +1405,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [14, 25, 259, 27],
+                        "box_info_original": [14, 0, 259, 27],
                         "path": "shot4_title.jpg"
                     },
                     {
@@ -1442,7 +1442,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [14, 25, 259, 27],
+                        "box_info_original": [14, 0, 259, 27],
                         "path": "shot5_title.jpg"
                     },
                     {
@@ -1479,7 +1479,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [15, 11, 129, 82],
+                        "box_info_original": [15, 0, 129, 82],
                         "path": "shot6_title.jpg"
                     },
                     {
@@ -1514,7 +1514,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [15, 11, 129, 82],
+                        "box_info_original": [15, 0, 129, 82],
                         "path": "shot7_title.jpg"
                     },
                     {
@@ -1549,7 +1549,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [14, 25, 263, 27],
+                        "box_info_original": [14, 0, 263, 27],
                         "path": "shot8_title.jpg"
                     },
                     {
@@ -1597,7 +1597,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [14, 25, 263, 27],
+                        "box_info_original": [14, 0, 263, 27],
                         "path": "shot8_title.jpg"
                     },
                     {
@@ -1634,7 +1634,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [16, 23, 167, 30],
+                        "box_info_original": [16, 0, 167, 30],
                         "path": "shot10_title.jpg"
                     },
                     {
@@ -1671,7 +1671,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [16, 23, 167, 30],
+                        "box_info_original": [16, 0, 167, 30],
                         "path": "shot11_title.jpg"
                     },
                     {
@@ -1708,7 +1708,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [16, 23, 170, 31],
+                        "box_info_original": [16, 0, 170, 31],
                         "path": "shot12_title.jpg"
                     },
 
@@ -1762,7 +1762,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [12, 22, 247, 29],
+                        "box_info_original": [12, 0, 247, 29],
                         "path": "shot13_title.jpg"
                     },
                     {
@@ -1843,7 +1843,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [12, 22, 357, 33],
+                        "box_info_original": [12, 0, 357, 33],
                         "path": "shot14_title.jpg"
                     },
                     {
@@ -1891,7 +1891,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [12, 22, 354, 30],
+                        "box_info_original": [12, 0, 354, 30],
                         "path": "shot15_title.jpg"
                     },
                     {
@@ -1939,7 +1939,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [12, 22, 296, 28],
+                        "box_info_original": [12, 0, 296, 28],
                         "path": "shot16_title.jpg"
                     },
                     {
@@ -1974,7 +1974,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [12, 22, 296, 28],
+                        "box_info_original": [12, 0, 296, 28],
                         "path": "shot17_title.jpg"
                     },
                     {
@@ -2009,7 +2009,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [12, 22, 296, 28],
+                        "box_info_original": [12, 0, 296, 28],
                         "path": "shot18_title.jpg"
                     },
                     {
@@ -2044,7 +2044,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [13, 24, 363, 28],
+                        "box_info_original": [13, 0, 363, 28],
                         "path": "shot19_title.jpg"
                     },
                     {
@@ -2081,7 +2081,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [13, 24, 363, 28],
+                        "box_info_original": [13, 0, 363, 28],
                         "path": "shot19_title.jpg"
                     },
                     {
@@ -2129,7 +2129,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [14, 25, 181, 23],
+                        "box_info_original": [14, 0, 181, 23],
                         "path": "shot2_title.jpg"
                     },
                     {
@@ -2197,7 +2197,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [14, 25, 259, 27],
+                        "box_info_original": [14, 0, 259, 27],
                         "path": "shot4_title.jpg"
                     },
                     {
@@ -2234,7 +2234,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [14, 25, 259, 27],
+                        "box_info_original": [14, 0, 259, 27],
                         "path": "shot5_title.jpg"
                     },
                     {
@@ -2271,7 +2271,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [15, 11, 129, 82],
+                        "box_info_original": [15, 0, 129, 82],
                         "path": "shot6_title.jpg"
                     },
                     {
@@ -2306,7 +2306,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [15, 11, 129, 82],
+                        "box_info_original": [15, 0, 129, 82],
                         "path": "shot7_title.jpg"
                     },
                     {
@@ -2341,7 +2341,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [14, 25, 263, 27],
+                        "box_info_original": [14, 0, 263, 27],
                         "path": "shot8_title.jpg"
                     },
                     {
@@ -2389,7 +2389,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [14, 25, 263, 27],
+                        "box_info_original": [14, 0, 263, 27],
                         "path": "shot8_title.jpg"
                     },
                     {
@@ -2426,7 +2426,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [16, 23, 167, 30],
+                        "box_info_original": [16, 0, 167, 30],
                         "path": "shot10_title.jpg"
                     },
                     {
@@ -2463,7 +2463,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [16, 23, 167, 30],
+                        "box_info_original": [16, 0, 167, 30],
                         "path": "shot11_title.jpg"
                     },
                     {
@@ -2500,7 +2500,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [16, 23, 170, 31],
+                        "box_info_original": [16, 0, 170, 31],
                         "path": "shot12_title.jpg"
                     },
 
@@ -2554,7 +2554,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [12, 22, 247, 29],
+                        "box_info_original": [12, 0, 247, 29],
                         "path": "shot13_title.jpg"
                     },
                     {
@@ -2635,7 +2635,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [12, 22, 357, 33],
+                        "box_info_original": [12, 0, 357, 33],
                         "path": "shot14_title.jpg"
                     },
                     {
@@ -2683,7 +2683,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [12, 22, 354, 30],
+                        "box_info_original": [12, 0, 354, 30],
                         "path": "shot15_title.jpg"
                     },
                     {
@@ -2731,7 +2731,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [12, 22, 296, 28],
+                        "box_info_original": [12, 0, 296, 28],
                         "path": "shot16_title.jpg"
                     },
                     {
@@ -2766,7 +2766,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [12, 22, 296, 28],
+                        "box_info_original": [12, 0, 296, 28],
                         "path": "shot17_title.jpg"
                     },
                     {
@@ -2801,7 +2801,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [12, 22, 296, 28],
+                        "box_info_original": [12, 0, 296, 28],
                         "path": "shot18_title.jpg"
                     },
                     {
@@ -2836,7 +2836,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [13, 24, 363, 28],
+                        "box_info_original": [13, 0, 363, 28],
                         "path": "shot19_title.jpg"
                     },
                     {
@@ -2873,7 +2873,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [13, 24, 363, 28],
+                        "box_info_original": [13, 0, 363, 28],
                         "path": "shot19_title.jpg"
                     },
                     {
