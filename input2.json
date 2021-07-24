@@ -42,12 +42,12 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [14, 0, 181, 40],
+                        "box_info_original": [14, 0, 181, 31],
                         "path": "shot2_title.jpg"
                     },
                     {
                         "label": "text_box",
-                        "box_info_original": [13, 91, 595, 42],
+                      "box_info_original": [13, 111, 595, 42],
                         "in_column": 1,
                         "order": 1,
                         "text_content": "• Understand what data visualization is and why it is an essential tool in public health and epidemiologic practice",
@@ -110,7 +110,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [14, 0, 259, 27],
+                        "box_info_original": [14, 0, 181, 31],
                         "path": "shot4_title.jpg"
                     },
                     {
@@ -118,7 +118,7 @@
                         "box_info_original": [16, 91, 604, 60],
                         "in_column": 1,
                         "order": 1,
-                        "text_content": "• The presentation of data in pictorial or graphical format\n- Can be interactive, allowing the user to change inputs and view the resulting patterns and trends",
+                        "text_content": "• The presentation of data in pictorial or graphical format\n     - Can be interactive, allowing the user to change inputs and view the resulting patterns and trends",
                         "avail_font_size": 0.9375,
                         "typeface": "Stint Ultra Condensed",
                         "color_font": "(18, 18, 18)",
@@ -148,7 +148,7 @@
                     },
                     {
                         "label": "text_box",
-                        "box_info_original": [16, 285, 281, 32],
+                        "box_info_original": [16, 285, 281, 50],
                         "in_column": 1,
                         "order": 4,
                         "text_content": "• \"A picture is worth a thousand words\"",
@@ -163,13 +163,13 @@
                 "shot_id": 5,
                 "ratio": 0.3,
                 "column": 0,
-                "bg_image": "bg_shot6.jpg",
+                "bg_image": "bg_shot5.jpg",
                 "start_time": 101.0,
                 "end_time": 139.0,
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [15, 0, 129, 82],
+                        "box_info_original": [15, 0, 129, 102],
                         "path": "shot6_title.jpg"
                     },
                     {
@@ -209,18 +209,18 @@
                 "shot_id": 6,
                 "ratio": 0.3,
                 "column": 0,
-                "bg_image": "bg_shot8.jpg",
+                "bg_image": "bg_shot6.jpg",
                 "start_time": 139.0,
                 "end_time": 176.0,
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [14, 0, 263, 27],
+                        "box_info_original": [14, 0, 181, 31],
                         "path": "shot8_title.jpg"
                     },
                     {
                         "label": "text_box",
-                        "box_info_original": [16, 92, 446, 22],
+                        "box_info_original": [16, 92, 446, 31],
                         "in_column": 1,
                         "order": 1,
                         "text_content": "• Allow individuals to comprehend information quickly and easily",
@@ -231,7 +231,7 @@
                     },
                     {
                         "label": "text_box",
-                        "box_info_original": [16, 130, 300, 20],
+                        "box_info_original": [16, 130, 300, 31],
                         "in_column": 1,
                         "order": 2,
                         "text_content": "• Show patterns, relationships, and trends",
@@ -242,7 +242,7 @@
                     },
                     {
                         "label": "text_box",
-                        "box_info_original": [16, 170, 394, 20],
+                        "box_info_original": [16, 170, 394, 31],
                         "in_column": 1,
                         "order": 3,
                         "text_content": "• Identifies newly emerging changes, hotspots, or outliers",
@@ -253,7 +253,7 @@
                     },
                     {
                         "label": "text_box",
-                        "box_info_original": [16, 211, 500, 24],
+                        "box_info_original": [16, 211, 500, 31],
                         "in_column": 1,
                         "order": 4,
                         "text_content": "• Allows prediction of future events (through extrapolation, not modeling)",
@@ -264,7 +264,7 @@
                     },
                     {
                         "label": "text_box",
-                        "box_info_original": [16, 253, 267, 24],
+                        "box_info_original": [16, 253, 267, 31],
                         "in_column": 1,
                         "order": 5,
                         "text_content": "• Communicates a story or a message",
@@ -285,7 +285,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [16, 0, 167, 30],
+                        "box_info_original": [14, 0, 161, 45],
                         "path": "shot10_title.jpg"
                     },
                     {
@@ -304,7 +304,7 @@
                         "box_info_original": [14, 131, 418, 41],
                         "in_column": 1,
                         "order": 2,
-                        "text_content": "• A licensed feature of the New York Times online since 2010\n- Acquired by ABC News in April 2018",
+                        "text_content": "• A licensed feature of the New York Times online since 2010\n     - Acquired by ABC News in April 2018",
                         "avail_font_size": 0.9375,
                         "typeface": "Stint Ultra Condensed",
                         "color_font": "(18, 18, 18)",
@@ -326,7 +326,7 @@
                         "box_info_original": [14, 230, 261, 40],
                         "in_column": 1,
                         "order": 4,
-                        "text_content": "• Look at the FiveThirtyEight website\n- Why is it so popular?",
+                        "text_content": "• Look at the FiveThirtyEight website\n     - Why is it so popular?",
                         "avail_font_size": 0.9375,
                         "typeface": "Stint Ultra Condensed",
                         "color_font": "(18, 18, 18)",
@@ -344,7 +344,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [16, 0, 170, 31],
+                        "box_info_original": [14, 0, 161, 45],
                         "path": "shot12_title.jpg"
                     },
                     {
@@ -369,7 +369,7 @@
                     },
                     {
                         "label": "picture",
-                        "box_info_original": [189, 169, 266, 106],
+                        "box_info_original": [189, 169, 226, 126],
                         "path": "shot12_picture2.png",
                         "in_column": 1,
                         "order": 0,
@@ -397,7 +397,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [12, 0, 247, 29],
+                        "box_info_original": [14, 0, 181, 31],
                         "path": "shot13_title.jpg"
                     },
                     {
@@ -478,7 +478,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [12, 0, 357, 33],
+                        "box_info_original": [14, 0, 181, 31],
                         "path": "shot14_title.jpg"
                     },
                     {
@@ -494,7 +494,7 @@
                     },
                     {
                         "label": "text_box",
-                        "box_info_original": [15, 148, 329, 25],
+                        "box_info_original": [15, 148, 329, 44],
                         "in_column": 1,
                         "order": 2,
                         "text_content": "• One of its tools is a Data Visualization Gallery",
@@ -508,7 +508,7 @@
                         "box_info_original": [15, 189, 434, 42],
                         "in_column": 1,
                         "order": 3,
-                        "text_content": "• Open one of the visualization options that is of interest to you\n- Answer the questions displayed on the following slide",
+                        "text_content": "• Open one of the visualization options that is of interest to you\n     - Answer the questions displayed on the following slide",
                         "avail_font_size": 0.9375,
                         "typeface": "Stint Ultra Condensed",
                         "color_font": "(18, 18, 18)",
@@ -526,7 +526,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [12, 0, 354, 30],
+                        "box_info_original": [14, 0, 181, 31],
                         "path": "shot15_title.jpg"
                     },
                     {
@@ -556,7 +556,7 @@
                         "box_info_original": [14, 171, 528, 39],
                         "in_column": 1,
                         "order": 3,
-                        "text_content": "• Name two areas for improvement or challenges of your chosen visualization\n- Consider: how might you have done this differently?",
+                        "text_content": "• Name two areas for improvement or challenges of your chosen visualization\n     - Consider: how might you have done this differently?",
                         "avail_font_size": 0.9375,
                         "typeface": "Stint Ultra Condensed",
                         "color_font": "(18, 18, 18)",
@@ -574,7 +574,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [12, 0, 296, 28],
+                        "box_info_original": [14, 0, 181, 31],
                         "path": "shot16_title.jpg"
                     },
                     {
@@ -593,7 +593,7 @@
                         "box_info_original": [14, 145, 389, 88],
                         "in_column": 1,
                         "order": 2,
-                        "text_content": "• Positive aspects:\n- The map is engaging as it scrolls through the relevant years in a fairly rapid fashion\n- It is easy to spot the patterns, or geographic areas where coverage is particularly good or poor",
+                        "text_content": "• Positive aspects:\n     - The map is engaging as it scrolls through the relevant years in a fairly rapid fashion\n     - It is easy to spot the patterns, or geographic areas where coverage is particularly good or poor",
                         "avail_font_size": 0.9375,
                         "typeface": "Stint Ultra Condensed",
                         "color_font": "(18, 18, 18)",
@@ -604,7 +604,7 @@
                         "box_info_original": [14, 239, 388, 83],
                         "in_column": 1,
                         "order": 3,
-                        "text_content": "• Areas for improvement:\n- There is no clear delineation of major policy changes, like the passing of the Affordable Cara Act\n- You do not see years next to each other, making it more difficult to compare",
+                        "text_content": "• Areas for improvement:\n     - There is no clear delineation of major policy changes, like the passing of the Affordable Cara Act\n     - You do not see years next to each other, making it more difficult to compare",
                         "avail_font_size": 0.9375,
                         "typeface": "Stint Ultra Condensed",
                         "color_font": "(18, 18, 18)",
@@ -630,15 +630,26 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [13, 0, 363, 28],
+                        "box_info_original": [14, 0, 181, 42],
                         "path": "shot19_title.jpg"
+                    },
+                    {
+                        "label": "text_box",
+                        "box_info_original": [12, 60, 320, 50],
+                        "in_column": 1,
+                        "order": 1,
+                        "text_content": "• Understand your data",
+                        "avail_font_size": 0.9375,
+                        "typeface": "Stint Ultra Condensed",
+                        "color_font": "(18, 18, 18)",
+                        "color_bg": "(253, 253, 253)"
                     },
                     {
                         "label": "text_box",
                         "box_info_original": [12, 126, 442, 39],
                         "in_column": 1,
                         "order": 2,
-                        "text_content": "• Decide on the message or story you would like to Communicate\n- This must be tailored to your target audience",
+                        "text_content": "• Decide on the message or story you would like to Communicate\n     - This must be tailored to your target audience",
                         "avail_font_size": 0.9375,
                         "typeface": "Stint Ultra Condensed",
                         "color_font": "(18, 18, 18)",
@@ -649,7 +660,7 @@
                         "box_info_original": [12, 179, 520, 83],
                         "in_column": 1,
                         "order": 3,
-                        "text_content": "• Consider logistical details\n- Should it be interactive?\n- What is the computing access and power of your target audience?\n- How current or updated can you keep your visualization?",
+                        "text_content": "• Consider logistical details\n     - Should it be interactive?\n     - What is the computing access and power of your target audience?\n     - How current or updated can you keep your visualization?",
                         "avail_font_size": 0.9375,
                         "typeface": "Stint Ultra Condensed",
                         "color_font": "(18, 18, 18)",
@@ -690,12 +701,12 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [14, 0, 181, 23],
+                        "box_info_original": [14, 0, 181, 31],
                         "path": "shot2_title.jpg"
                     },
                     {
                         "label": "text_box",
-                        "box_info_original": [13, 91, 595, 42],
+                        "box_info_original": [13, 111, 595, 42],
                         "in_column": 1,
                         "order": 1,
                         "text_content": "• Understand what data visualization is and why it is an essential tool in public health and epidemiologic practice",
@@ -758,7 +769,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [14, 0, 259, 27],
+                        "box_info_original": [14, 0, 181, 31],
                         "path": "shot4_title.jpg"
                     },
                     {
@@ -766,7 +777,7 @@
                         "box_info_original": [16, 91, 604, 60],
                         "in_column": 1,
                         "order": 1,
-                        "text_content": "• The presentation of data in pictorial or graphical format\n- Can be interactive, allowing the user to change inputs and view the resulting patterns and trends",
+                        "text_content": "• The presentation of data in pictorial or graphical format\n     - Can be interactive, allowing the user to change inputs and view the resulting patterns and trends",
                         "avail_font_size": 0.9375,
                         "typeface": "Stint Ultra Condensed",
                         "color_font": "(253, 253, 253)",
@@ -796,7 +807,7 @@
                     },
                     {
                         "label": "text_box",
-                        "box_info_original": [16, 285, 281, 32],
+                        "box_info_original": [16, 285, 281, 50],
                         "in_column": 1,
                         "order": 4,
                         "text_content": "• \"A picture is worth a thousand words\"",
@@ -811,13 +822,13 @@
                 "shot_id": 5,
                 "ratio": 0.3,
                 "column": 0,
-                "bg_image": "bg_shot6_dark.jpg",
+                "bg_image": "bg_shot5_dark.jpg",
                 "start_time": 101.0,
                 "end_time": 139.0,
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [15, 0, 129, 82],
+                        "box_info_original": [15, 0, 129, 102],
                         "path": "shot6_title.jpg"
                     },
                     {
@@ -857,18 +868,18 @@
                 "shot_id": 6,
                 "ratio": 0.3,
                 "column": 0,
-                "bg_image": "bg_shot8_dark.jpg",
+                "bg_image": "bg_shot6_dark.jpg",
                 "start_time": 139.0,
                 "end_time": 176.0,
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [14, 0, 263, 27],
+                        "box_info_original": [14, 0, 181, 31],
                         "path": "shot8_title.jpg"
                     },
                     {
                         "label": "text_box",
-                        "box_info_original": [16, 92, 446, 22],
+                        "box_info_original": [16, 92, 446, 31],
                         "in_column": 1,
                         "order": 1,
                         "text_content": "• Allow individuals to comprehend information quickly and easily",
@@ -879,7 +890,7 @@
                     },
                     {
                         "label": "text_box",
-                        "box_info_original": [16, 130, 300, 20],
+                        "box_info_original": [16, 130, 300, 31],
                         "in_column": 1,
                         "order": 2,
                         "text_content": "• Show patterns, relationships, and trends",
@@ -890,7 +901,7 @@
                     },
                     {
                         "label": "text_box",
-                        "box_info_original": [16, 170, 394, 20],
+                        "box_info_original": [16, 170, 394, 31],
                         "in_column": 1,
                         "order": 3,
                         "text_content": "• Identifies newly emerging changes, hotspots, or outliers",
@@ -901,7 +912,7 @@
                     },
                     {
                         "label": "text_box",
-                        "box_info_original": [16, 211, 500, 24],
+                        "box_info_original": [16, 211, 500, 31],
                         "in_column": 1,
                         "order": 4,
                         "text_content": "• Allows prediction of future events (through extrapolation, not modeling)",
@@ -912,7 +923,7 @@
                     },
                     {
                         "label": "text_box",
-                        "box_info_original": [16, 253, 267, 24],
+                        "box_info_original": [16, 253, 267, 31],
                         "in_column": 1,
                         "order": 5,
                         "text_content": "• Communicates a story or a message",
@@ -933,7 +944,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [16, 0, 167, 30],
+                        "box_info_original": [14, 0, 161, 45],
                         "path": "shot10_title.jpg"
                     },
                     {
@@ -952,7 +963,7 @@
                         "box_info_original": [14, 131, 418, 41],
                         "in_column": 1,
                         "order": 2,
-                        "text_content": "• A licensed feature of the New York Times online since 2010\n- Acquired by ABC News in April 2018",
+                        "text_content": "• A licensed feature of the New York Times online since 2010\n     - Acquired by ABC News in April 2018",
                         "avail_font_size": 0.9375,
                         "typeface": "Stint Ultra Condensed",
                         "color_font": "(253, 253, 253)",
@@ -974,7 +985,7 @@
                         "box_info_original": [14, 230, 261, 40],
                         "in_column": 1,
                         "order": 4,
-                        "text_content": "• Look at the FiveThirtyEight website\n- Why is it so popular?",
+                        "text_content": "• Look at the FiveThirtyEight website\n     - Why is it so popular?",
                         "avail_font_size": 0.9375,
                         "typeface": "Stint Ultra Condensed",
                         "color_font": "(253, 253, 253)",
@@ -1017,7 +1028,7 @@
                     },
                     {
                         "label": "picture",
-                        "box_info_original": [189, 169, 266, 106],
+                        "box_info_original": [189, 169, 226, 126],
                         "path": "shot12_picture2.png",
                         "in_column": 1,
                         "order": 0,
@@ -1045,7 +1056,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [12, 0, 247, 29],
+                        "box_info_original": [14, 0, 181, 31],
                         "path": "shot13_title.jpg"
                     },
                     {
@@ -1126,7 +1137,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [12, 0, 357, 33],
+                        "box_info_original": [14, 0, 181, 31],
                         "path": "shot14_title.jpg"
                     },
                     {
@@ -1142,7 +1153,7 @@
                     },
                     {
                         "label": "text_box",
-                        "box_info_original": [15, 148, 329, 25],
+                        "box_info_original": [15, 148, 329, 44],
                         "in_column": 1,
                         "order": 2,
                         "text_content": "• One of its tools is a Data Visualization Gallery",
@@ -1156,7 +1167,7 @@
                         "box_info_original": [15, 189, 434, 42],
                         "in_column": 1,
                         "order": 3,
-                        "text_content": "• Open one of the visualization options that is of interest to you\n- Answer the questions displayed on the following slide",
+                        "text_content": "• Open one of the visualization options that is of interest to you\n     - Answer the questions displayed on the following slide",
                         "avail_font_size": 0.9375,
                         "typeface": "Stint Ultra Condensed",
                         "color_font": "(253, 253, 253)",
@@ -1174,7 +1185,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [12, 0, 354, 30],
+                        "box_info_original": [14, 0, 181, 31],
                         "path": "shot15_title.jpg"
                     },
                     {
@@ -1204,7 +1215,7 @@
                         "box_info_original": [14, 171, 528, 39],
                         "in_column": 1,
                         "order": 3,
-                        "text_content": "• Name two areas for improvement or challenges of your chosen visualization\n- Consider: how might you have done this differently?",
+                        "text_content": "• Name two areas for improvement or challenges of your chosen visualization\n     - Consider: how might you have done this differently?",
                         "avail_font_size": 0.9375,
                         "typeface": "Stint Ultra Condensed",
                         "color_font": "(253, 253, 253)",
@@ -1222,7 +1233,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [12, 0, 296, 28],
+                        "box_info_original": [14, 0, 181, 31],
                         "path": "shot16_title.jpg"
                     },
                     {
@@ -1241,7 +1252,7 @@
                         "box_info_original": [14, 145, 389, 88],
                         "in_column": 1,
                         "order": 2,
-                        "text_content": "• Positive aspects:\n- The map is engaging as it scrolls through the relevant years in a fairly rapid fashion\n- It is easy to spot the patterns, or geographic areas where coverage is particularly good or poor",
+                        "text_content": "• Positive aspects:\n     - The map is engaging as it scrolls through the relevant years in a fairly rapid fashion\n     - It is easy to spot the patterns, or geographic areas where coverage is particularly good or poor",
                         "avail_font_size": 0.9375,
                         "typeface": "Stint Ultra Condensed",
                         "color_font": "(253, 253, 253)",
@@ -1252,7 +1263,7 @@
                         "box_info_original": [14, 239, 388, 83],
                         "in_column": 1,
                         "order": 3,
-                        "text_content": "• Areas for improvement:\n- There is no clear delineation of major policy changes, like the passing of the Affordable Cara Act\n- You do not see years next to each other, making it more difficult to compare",
+                        "text_content": "• Areas for improvement:\n     - There is no clear delineation of major policy changes, like the passing of the Affordable Cara Act\n     - You do not see years next to each other, making it more difficult to compare",
                         "avail_font_size": 0.9375,
                         "typeface": "Stint Ultra Condensed",
                         "color_font": "(253, 253, 253)",
@@ -1278,8 +1289,19 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [13, 0, 363, 28],
+                        "box_info_original": [14, 0, 181, 42],
                         "path": "shot19_title.jpg"
+                    },
+                    {
+                        "label": "text_box",
+                        "box_info_original": [12, 60, 320, 50],
+                        "in_column": 1,
+                        "order": 1,
+                        "text_content": "• Understand your data",
+                        "avail_font_size": 0.9375,
+                        "typeface": "Stint Ultra Condensed",
+                        "color_font": "(18, 18, 18)",
+                        "color_bg": "(253, 253, 253)"
                     },
                     {
                         "label": "text_box",
@@ -1346,7 +1368,7 @@
                         "in_column": 1,
                         "order": 1,
                         "text_content": "• Understand what data visualization is and why it is an essential tool in public health and epidemiologic practice",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(18, 18, 18)",
                         "color_bg": "(253, 253, 253)"
@@ -1357,7 +1379,7 @@
                         "in_column": 1,
                         "order": 2,
                         "text_content": "• Describe risk factors in public health and how they are measured",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(18, 18, 18)",
                         "color_bg": "(253, 253, 253)"
@@ -1368,7 +1390,7 @@
                         "in_column": 1,
                         "order": 3,
                         "text_content": "• Explore the Visualization Hub of the Institute for Health Metrics and Evaluation",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(18, 18, 18)",
                         "color_bg": "(253, 253, 253)"
@@ -1379,7 +1401,7 @@
                         "in_column": 1,
                         "order": 4,
                         "text_content": "• Describe the key components and considerations in graphing public health data",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(18, 18, 18)",
                         "color_bg": "(253, 253, 253)"
@@ -1414,7 +1436,7 @@
                         "in_column": 1,
                         "order": 1,
                         "text_content": "• The presentation of data in pictorial or graphical format\n- Can be interactive, allowing the user to change inputs and view the resulting patterns and trends",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(18, 18, 18)",
                         "color_bg": "(253, 253, 253)"
@@ -1425,7 +1447,7 @@
                         "in_column": 1,
                         "order": 2,
                         "text_content": "• As computer technology has improved, data visualization has been brought to the forefront of corporate work and, more recently, of, public health practice",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(18, 18, 18)",
                         "color_bg": "(253, 253, 253)"
@@ -1451,7 +1473,7 @@
                         "in_column": 1,
                         "order": 1,
                         "text_content": "• Large amounts of complex data can be better understand using visualizations as opposed to charts and tables",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(18, 18, 18)",
                         "color_bg": "(253, 253, 253)"
@@ -1462,7 +1484,7 @@
                         "in_column": 1,
                         "order": 2,
                         "text_content": "• \"A picture is worth a thousand words\"",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(18, 18, 18)",
                         "color_bg": "(253, 253, 253)"
@@ -1488,7 +1510,7 @@
                         "in_column": 1,
                         "order": 1,
                         "text_content": "• 1812-1813: Charls Minard (a civil engineer) created a map showing the movement of Napoleon's army into and out of Russia",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(18, 18, 18)",
                         "color_bg": "(253, 253, 253)"
@@ -1523,7 +1545,7 @@
                         "in_column": 1,
                         "order": 1,
                         "text_content": "• Shows the army's path, including number of soldiers, temperature, and time",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(18, 18, 18)",
                         "color_bg": "(253, 253, 253)"
@@ -1558,7 +1580,7 @@
                         "in_column": 1,
                         "order": 1,
                         "text_content": "• Allow individuals to comprehend information quickly and easily",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(18, 18, 18)",
                         "color_bg": "(253, 253, 253)"
@@ -1569,7 +1591,7 @@
                         "in_column": 1,
                         "order": 2,
                         "text_content": "• Show patterns, relationships, and trends",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(18, 18, 18)",
                         "color_bg": "(253, 253, 253)"
@@ -1580,7 +1602,7 @@
                         "in_column": 1,
                         "order": 3,
                         "text_content": "• Identifies newly emerging changes, hotspots, or outliers",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(18, 18, 18)",
                         "color_bg": "(253, 253, 253)"
@@ -1606,7 +1628,7 @@
                         "in_column": 1,
                         "order": 1,
                         "text_content": "• Allows prediction of future events (through extrapolation, not modeling)",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(18, 18, 18)",
                         "color_bg": "(253, 253, 253)"
@@ -1617,7 +1639,7 @@
                         "in_column": 1,
                         "order": 2,
                         "text_content": "• Communicates a story or a message",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(18, 18, 18)",
                         "color_bg": "(253, 253, 253)"
@@ -1643,7 +1665,7 @@
                         "in_column": 1,
                         "order": 1,
                         "text_content": "• Analyses of politics, economics, sports, and anything else of popular concern",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(18, 18, 18)",
                         "color_bg": "(253, 253, 253)"
@@ -1654,7 +1676,7 @@
                         "in_column": 1,
                         "order": 2,
                         "text_content": "• A licensed feature of the New York Times online since 2010\n- Acquired by ABC News in April 2018",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(18, 18, 18)",
                         "color_bg": "(253, 253, 253)"
@@ -1680,7 +1702,7 @@
                         "in_column": 1,
                         "order": 1,
                         "text_content": "• Has won numerous awards",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(18, 18, 18)",
                         "color_bg": "(253, 253, 253)"
@@ -1691,7 +1713,7 @@
                         "in_column": 1,
                         "order": 2,
                         "text_content": "• Look at the FiveThirtyEight website\n- Why is it so popular?",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(18, 18, 18)",
                         "color_bg": "(253, 253, 253)"
@@ -1718,7 +1740,7 @@
                         "in_column": 1,
                         "order": 0,
                         "text_content": "• One of the reasons is the creativity they use in visually depicting data related to issues taht are of concern or interests to the general public",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(18, 18, 18)",
                         "color_bg": "(253, 253, 253)"
@@ -1771,7 +1793,7 @@
                         "in_column": 1,
                         "order": 1,
                         "text_content": "• Charts",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(18, 18, 18)",
                         "color_bg": "(253, 253, 253)"
@@ -1782,7 +1804,7 @@
                         "in_column": 1,
                         "order": 2,
                         "text_content": "• Graphs",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(18, 18, 18)",
                         "color_bg": "(253, 253, 253)"
@@ -1793,7 +1815,7 @@
                         "in_column": 1,
                         "order": 3,
                         "text_content": "• Maps",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(18, 18, 18)",
                         "color_bg": "(253, 253, 253)"
@@ -1804,7 +1826,7 @@
                         "in_column": 1,
                         "order": 4,
                         "text_content": "• Infographics",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(18, 18, 18)",
                         "color_bg": "(253, 253, 253)"
@@ -1815,7 +1837,7 @@
                         "in_column": 1,
                         "order": 5,
                         "text_content": "• Dashboards",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(18, 18, 18)",
                         "color_bg": "(253, 253, 253)"
@@ -1826,7 +1848,7 @@
                         "in_column": 1,
                         "order": 6,
                         "text_content": "• Storyboards",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(18, 18, 18)",
                         "color_bg": "(253, 253, 253)"
@@ -1852,7 +1874,7 @@
                         "in_column": 1,
                         "order": 1,
                         "text_content": "• The US Census Bureau compiles geographic and sociodemographic information on all US residents on a regular basis",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(18, 18, 18)",
                         "color_bg": "(253, 253, 253)"
@@ -1863,7 +1885,7 @@
                         "in_column": 1,
                         "order": 2,
                         "text_content": "• One of its tools is a Data Visualization Gallery",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(18, 18, 18)",
                         "color_bg": "(253, 253, 253)"
@@ -1874,7 +1896,7 @@
                         "in_column": 1,
                         "order": 3,
                         "text_content": "• Open one of the visualizaion options that is of interest to you\n- Answer the questions displayed on the following slide",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(18, 18, 18)",
                         "color_bg": "(253, 253, 253)"
@@ -1900,7 +1922,7 @@
                         "in_column": 1,
                         "order": 1,
                         "text_content": "• In two to three sentences, describe the data and the message that is being conveyed",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(18, 18, 18)",
                         "color_bg": "(253, 253, 253)"
@@ -1911,7 +1933,7 @@
                         "in_column": 1,
                         "order": 2,
                         "text_content": "• Name two positive aspects of the chosen method of visualization",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(18, 18, 18)",
                         "color_bg": "(253, 253, 253)"
@@ -1922,7 +1944,7 @@
                         "in_column": 1,
                         "order": 3,
                         "text_content": "• Name two areas for improvement or challenges of your chosen visualization\n- Consider: how might you have done this differently?",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(18, 18, 18)",
                         "color_bg": "(253, 253, 253)"
@@ -1948,7 +1970,7 @@
                         "in_column": 1,
                         "order": 1,
                         "text_content": "• Description: this is a time-trend map showing the US population without health insurance coverage from 2008 to 2015",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(18, 18, 18)",
                         "color_bg": "(253, 253, 253)"
@@ -1983,7 +2005,7 @@
                         "in_column": 1,
                         "order": 1,
                         "text_content": "• Positive aspects:\n- The map is engaging as it scrolls through the relevant years in a fairly rapid fashion\n- It is easy to spot the patterns, or geographic areas where coverage is particularly good or poor",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(18, 18, 18)",
                         "color_bg": "(253, 253, 253)"
@@ -2018,7 +2040,7 @@
                         "in_column": 1,
                         "order": 1,
                         "text_content": "• Areas for improvement:\n- There is no clear delineation of major policy changes, like the passing of the Affordable Cara Act\n- You do not see years next to each other, making it more difficult to compare",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(18, 18, 18)",
                         "color_bg": "(253, 253, 253)"
@@ -2053,7 +2075,7 @@
                         "in_column": 1,
                         "order": 1,
                         "text_content": "• Understand your data",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(18, 18, 18)",
                         "color_bg": "(253, 253, 253)"
@@ -2064,7 +2086,7 @@
                         "in_column": 1,
                         "order": 2,
                         "text_content": "• Decide on the message or story you would like to Communicate\n- This must be tailored to your target audience",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(18, 18, 18)",
                         "color_bg": "(253, 253, 253)"
@@ -2090,7 +2112,7 @@
                         "in_column": 1,
                         "order": 1,
                         "text_content": "• Consider logistical details\n- Should it be interactive?\n- What is the computing access and power of your target audience?\n- How current or updated can you keep your visualization?",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(18, 18, 18)",
                         "color_bg": "(253, 253, 253)"
@@ -2101,7 +2123,7 @@
                         "in_column": 1,
                         "order": 2,
                         "text_content": "• Learn from others - numerous blogs, books and articles, and examples are available on the Internet",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(18, 18, 18)",
                         "color_bg": "(253, 253, 253)"
@@ -2138,7 +2160,7 @@
                         "in_column": 1,
                         "order": 1,
                         "text_content": "• Understand what data visualization is and why it is an essential tool in public health and epidemiologic practice",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(253, 253, 253)",
                         "color_bg": "(30, 30, 30)"
@@ -2149,7 +2171,7 @@
                         "in_column": 1,
                         "order": 2,
                         "text_content": "• Describe risk factors in public health and how they are measured",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(253, 253, 253)",
                         "color_bg": "(30, 30, 30)"
@@ -2160,7 +2182,7 @@
                         "in_column": 1,
                         "order": 3,
                         "text_content": "• Explore the Visualization Hub of the Institute for Health Metrics and Evaluation",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(253, 253, 253)",
                         "color_bg": "(30, 30, 30)"
@@ -2171,7 +2193,7 @@
                         "in_column": 1,
                         "order": 4,
                         "text_content": "• Describe the key components and considerations in graphing public health data",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(253, 253, 253)",
                         "color_bg": "(30, 30, 30)"
@@ -2206,7 +2228,7 @@
                         "in_column": 1,
                         "order": 1,
                         "text_content": "• The presentation of data in pictorial or graphical format\n- Can be interactive, allowing the user to change inputs and view the resulting patterns and trends",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(253, 253, 253)",
                         "color_bg": "(30, 30, 30)"
@@ -2217,7 +2239,7 @@
                         "in_column": 1,
                         "order": 2,
                         "text_content": "• As computer technology has improved, data visualization has been brought to the forefront of corporate work and, more recently, of, public health practice",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(253, 253, 253)",
                         "color_bg": "(30, 30, 30)"
@@ -2243,7 +2265,7 @@
                         "in_column": 1,
                         "order": 1,
                         "text_content": "• Large amounts of complex data can be better understand using visualizations as opposed to charts and tables",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(253, 253, 253)",
                         "color_bg": "(30, 30, 30)"
@@ -2254,7 +2276,7 @@
                         "in_column": 1,
                         "order": 2,
                         "text_content": "• \"A picture is worth a thousand words\"",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(253, 253, 253)",
                         "color_bg": "(30, 30, 30)"
@@ -2280,7 +2302,7 @@
                         "in_column": 1,
                         "order": 1,
                         "text_content": "• 1812-1813: Charls Minard (a civil engineer) created a map showing the movement of Napoleon's army into and out of Russia",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(253, 253, 253)",
                         "color_bg": "(30, 30, 30)"
@@ -2315,7 +2337,7 @@
                         "in_column": 1,
                         "order": 1,
                         "text_content": "• Shows the army's path, including number of soldiers, temperature, and time",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(253, 253, 253)",
                         "color_bg": "(30, 30, 30)"
@@ -2350,7 +2372,7 @@
                         "in_column": 1,
                         "order": 1,
                         "text_content": "• Allow individuals to comprehend information quickly and easily",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(253, 253, 253)",
                         "color_bg": "(30, 30, 30)"
@@ -2361,7 +2383,7 @@
                         "in_column": 1,
                         "order": 2,
                         "text_content": "• Show patterns, relationships, and trends",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(253, 253, 253)",
                         "color_bg": "(30, 30, 30)"
@@ -2372,7 +2394,7 @@
                         "in_column": 1,
                         "order": 3,
                         "text_content": "• Identifies newly emerging changes, hotspots, or outliers",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(253, 253, 253)",
                         "color_bg": "(30, 30, 30)"
@@ -2398,7 +2420,7 @@
                         "in_column": 1,
                         "order": 1,
                         "text_content": "• Allows prediction of future events (through extrapolation, not modeling)",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(253, 253, 253)",
                         "color_bg": "(30, 30, 30)"
@@ -2409,7 +2431,7 @@
                         "in_column": 1,
                         "order": 2,
                         "text_content": "• Communicates a story or a message",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(253, 253, 253)",
                         "color_bg": "(30, 30, 30)"
@@ -2435,7 +2457,7 @@
                         "in_column": 1,
                         "order": 1,
                         "text_content": "• Analyses of politics, economics, sports, and anything else of popular concern",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(253, 253, 253)",
                         "color_bg": "(30, 30, 30)"
@@ -2446,7 +2468,7 @@
                         "in_column": 1,
                         "order": 2,
                         "text_content": "• A licensed feature of the New York Times online since 2010\n- Acquired by ABC News in April 2018",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(253, 253, 253)",
                         "color_bg": "(30, 30, 30)"
@@ -2472,7 +2494,7 @@
                         "in_column": 1,
                         "order": 1,
                         "text_content": "• Has won numerous awards",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(253, 253, 253)",
                         "color_bg": "(30, 30, 30)"
@@ -2483,7 +2505,7 @@
                         "in_column": 1,
                         "order": 2,
                         "text_content": "• Look at the FiveThirtyEight website\n- Why is it so popular?",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(253, 253, 253)",
                         "color_bg": "(30, 30, 30)"
@@ -2510,7 +2532,7 @@
                         "in_column": 1,
                         "order": 0,
                         "text_content": "• One of the reasons is the creativity they use in visually depicting data related to issues taht are of concern or interests to the general public",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(253, 253, 253)",
                         "color_bg": "(30, 30, 30)"
@@ -2563,7 +2585,7 @@
                         "in_column": 1,
                         "order": 1,
                         "text_content": "• Charts",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(253, 253, 253)",
                         "color_bg": "(30, 30, 30)"
@@ -2574,7 +2596,7 @@
                         "in_column": 1,
                         "order": 2,
                         "text_content": "• Graphs",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(253, 253, 253)",
                         "color_bg": "(30, 30, 30)"
@@ -2585,7 +2607,7 @@
                         "in_column": 1,
                         "order": 3,
                         "text_content": "• Maps",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(253, 253, 253)",
                         "color_bg": "(30, 30, 30)"
@@ -2596,7 +2618,7 @@
                         "in_column": 1,
                         "order": 4,
                         "text_content": "• Infographics",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(253, 253, 253)",
                         "color_bg": "(30, 30, 30)"
@@ -2607,7 +2629,7 @@
                         "in_column": 1,
                         "order": 5,
                         "text_content": "• Dashboards",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(253, 253, 253)",
                         "color_bg": "(30, 30, 30)"
@@ -2618,7 +2640,7 @@
                         "in_column": 1,
                         "order": 6,
                         "text_content": "• Storyboards",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(253, 253, 253)",
                         "color_bg": "(30, 30, 30)"
@@ -2644,7 +2666,7 @@
                         "in_column": 1,
                         "order": 1,
                         "text_content": "• The US Census Bureau compiles geographic and sociodemographic information on all US residents on a regular basis",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(253, 253, 253)",
                         "color_bg": "(30, 30, 30)"
@@ -2655,7 +2677,7 @@
                         "in_column": 1,
                         "order": 2,
                         "text_content": "• One of its tools is a Data Visualization Gallery",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(253, 253, 253)",
                         "color_bg": "(30, 30, 30)"
@@ -2666,7 +2688,7 @@
                         "in_column": 1,
                         "order": 3,
                         "text_content": "• Open one of the visualizaion options that is of interest to you\n- Answer the questions displayed on the following slide",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(253, 253, 253)",
                         "color_bg": "(30, 30, 30)"
@@ -2692,7 +2714,7 @@
                         "in_column": 1,
                         "order": 1,
                         "text_content": "• In two to three sentences, describe the data and the message that is being conveyed",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(253, 253, 253)",
                         "color_bg": "(30, 30, 30)"
@@ -2703,7 +2725,7 @@
                         "in_column": 1,
                         "order": 2,
                         "text_content": "• Name two positive aspects of the chosen method of visualization",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(253, 253, 253)",
                         "color_bg": "(30, 30, 30)"
@@ -2714,7 +2736,7 @@
                         "in_column": 1,
                         "order": 3,
                         "text_content": "• Name two areas for improvement or challenges of your chosen visualization\n- Consider: how might you have done this differently?",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(253, 253, 253)",
                         "color_bg": "(30, 30, 30)"
@@ -2740,7 +2762,7 @@
                         "in_column": 1,
                         "order": 1,
                         "text_content": "• Description: this is a time-trend map showing the US population without health insurance coverage from 2008 to 2015",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(253, 253, 253)",
                         "color_bg": "(30, 30, 30)"
@@ -2775,7 +2797,7 @@
                         "in_column": 1,
                         "order": 1,
                         "text_content": "• Positive aspects:\n- The map is engaging as it scrolls through the relevant years in a fairly rapid fashion\n- It is easy to spot the patterns, or geographic areas where coverage is particularly good or poor",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(253, 253, 253)",
                         "color_bg": "(30, 30, 30)"
@@ -2810,7 +2832,7 @@
                         "in_column": 1,
                         "order": 1,
                         "text_content": "• Areas for improvement:\n- There is no clear delineation of major policy changes, like the passing of the Affordable Cara Act\n- You do not see years next to each other, making it more difficult to compare",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(253, 253, 253)",
                         "color_bg": "(30, 30, 30)"
@@ -2845,7 +2867,7 @@
                         "in_column": 1,
                         "order": 1,
                         "text_content": "• Understand your data",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(253, 253, 253)",
                         "color_bg": "(30, 30, 30)"
@@ -2856,7 +2878,7 @@
                         "in_column": 1,
                         "order": 2,
                         "text_content": "• Decide on the message or story you would like to Communicate\n- This must be tailored to your target audience",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(253, 253, 253)",
                         "color_bg": "(30, 30, 30)"
@@ -2882,7 +2904,7 @@
                         "in_column": 1,
                         "order": 1,
                         "text_content": "• Consider logistical details\n- Should it be interactive?\n- What is the computing access and power of your target audience?\n- How current or updated can you keep your visualization?",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(253, 253, 253)",
                         "color_bg": "(30, 30, 30)"
@@ -2893,7 +2915,7 @@
                         "in_column": 1,
                         "order": 2,
                         "text_content": "• Learn from others - numerous blogs, books and articles, and examples are available on the Internet",
-                        "avail_font_size": 1.7833,
+                        "avail_font_size": 1.7,
                         "typeface": "Open Sans",
                         "color_font": "(253, 253, 253)",
                         "color_bg": "(30, 30, 30)"
