@@ -97,7 +97,6 @@ function Video({ src, content, videoLocation }, ref) {
             setPlay(false);
         }
     }, [videoRef]);
-    console.log(positionState);
 
     return (
         <CustomRnd

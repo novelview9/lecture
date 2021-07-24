@@ -168,7 +168,6 @@ const FixedElement = ({ data, clicked, keyValue, isactive }) => {
         );
     }
     if (data.label === "P") {
-        console.log(data);
         return (
             <CustomRnd
                 enableResizing={!lock}
