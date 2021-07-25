@@ -210,7 +210,7 @@
                     },
                     {
                         "label": "picture",
-                        "box_info_original": [612, 191, 301, 353],
+                        "box_info_original": [652, 191, 301, 401],
                         "path": "shot4_picture1.jpg",
 
                         "in_column": 2,
@@ -477,7 +477,7 @@
                     },
                     {
                         "label": "picture",
-                        "box_info_original": [612, 191, 301, 353],
+                        "box_info_original": [652, 191, 301, 401],
                         "path": "shot4_picture1.jpg",
 
                         "in_column": 2,
