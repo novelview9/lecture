@@ -612,7 +612,7 @@
                     },
                     {
                         "label": "picture",
-                        "box_info_original": [412, 103, 201, 240],
+                        "box_info_original": [412, 103, 155, 185],
                         "path": "shot17_picture1.png",
                         "in_column": 1,
                         "order": 1,
@@ -1271,7 +1271,7 @@
                     },
                     {
                         "label": "picture",
-                        "box_info_original": [412, 103, 201, 240],
+                        "box_info_original": [412, 103, 155, 185],
                         "path": "shot17_picture1.png",
                         "in_column": 1,
                         "order": 1,
@@ -1977,7 +1977,7 @@
                     },
                     {
                         "label": "picture",
-                        "box_info_original": [206, 122, 225, 205],
+                        "box_info_original": [206, 122, 225, 235],
                         "path": "shot16_picture1.png",
                         "in_column": 1,
                         "order": 2,
@@ -2769,7 +2769,7 @@
                     },
                     {
                         "label": "picture",
-                        "box_info_original": [206, 122, 225, 205],
+                        "box_info_original": [206, 122, 225, 235],
                         "path": "shot16_picture1.png",
                         "in_column": 1,
                         "order": 2,
