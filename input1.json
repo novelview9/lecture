@@ -246,7 +246,7 @@
                     },
                     {
                         "label": "picture",
-                        "box_info_original": [661, 140, 228, 320],
+                        "box_info_original": [661, 140, 228, 390],
                         "path": "shot5_picture1.jpg",
 
                         "in_column": 2,
@@ -513,7 +513,7 @@
                     },
                     {
                         "label": "picture",
-                        "box_info_original": [661, 140, 228, 320],
+                        "box_info_original": [661, 140, 228, 390],
                         "path": "shot5_picture1.jpg",
 
                         "in_column": 2,
@@ -756,7 +756,7 @@
                     },
                     {
                         "label": "picture",
-                        "box_info_original": [661, 140, 228, 320],
+                        "box_info_original": [661, 140, 228, 390],
                         "path": "shot5_picture1.jpg",
 
                         "in_column": 2,
@@ -792,7 +792,7 @@
                     },
                     {
                         "label": "picture",
-                        "box_info_original": [661, 140, 228, 320],
+                        "box_info_original": [661, 140, 228, 390],
                         "path": "shot5_picture1.jpg",
 
                         "in_column": 2,
@@ -950,7 +950,7 @@
                     },
                     {
                         "label": "text_box",
-                        "box_info_original": [288, 431, 523, 153],
+                        "box_info_original": [335, 401, 493, 153],
                         "in_column": 1,
                         "order": 1,
                         "text_content": "Professor Holly Ott\nProduction and Supply Chain Management\nChair: Prof. Martin Grunow\nTUM School of Management",
@@ -976,7 +976,7 @@
                     },
                     {
                         "label": "text_box",
-                        "box_info_original": [148, 202, 757, 67],
+                        "box_info_original": [148, 180, 830, 100],
                         "in_column": 1,
                         "order": 1,
                         "text_content": "• Outline the history of the Toyota Motor Corporation from the Toyota Automatic Loom Works.",
@@ -987,7 +987,7 @@
                     },
                     {
                         "label": "text_box",
-                        "box_info_original": [148, 306, 805, 102],
+                        "box_info_original": [148, 350, 895, 102],
                         "in_column": 1,
                         "order": 1,
                         "text_content": "• Describe the historical drivers for the development of the Toyota Production System at Toyota and identify the important contributors to TPS.",
@@ -998,7 +998,7 @@
                     },
                     {
                         "label": "text_box",
-                        "box_info_original": [148, 425, 714, 27],
+                        "box_info_original": [148, 540, 734, 50],
                         "in_column": 1,
                         "order": 1,
                         "text_content": "• List the core elements of the Toyota Production System.",
@@ -1024,7 +1024,7 @@
                     },
                     {
                         "label": "text_box",
-                        "box_info_original": [132, 208, 357, 60],
+                        "box_info_original": [132, 208, 435, 60],
                         "in_column": 1,
                         "order": 1,
                         "text_content": "• 1926 Sakichi Toyoda: Toyoda Automatic Loom Works",
@@ -1035,7 +1035,7 @@
                     },
                     {
                         "label": "text_box",
-                        "box_info_original": [132, 330, 400, 96],
+                        "box_info_original": [132, 370, 450, 96],
                         "in_column": 1,
                         "order": 2,
                         "text_content": "• 1933 Kiichiro Toyoda: automotive division. Produced military trucks during WWII",
@@ -1071,7 +1071,7 @@
                     },
                     {
                         "label": "text_box",
-                        "box_info_original": [132, 208, 424, 167],
+                        "box_info_original": [132, 208, 484, 167],
                         "in_column": 1,
                         "order": 1,
                         "text_content": "• After war, shortages, little cash... Ford Motor Co. at the Rouge plant near Detroit producing 7,000 cars/day. Toyota producing 200 per year",
@@ -1082,7 +1082,7 @@
                     },
                     {
                         "label": "text_box",
-                        "box_info_original": [132, 425, 409, 64],
+                        "box_info_original": [132, 495, 489, 64],
                         "in_column": 1,
                         "order": 2,
                         "text_content": "• 1940s Eiji Toyoda ... needed to do things differently!",
@@ -1093,7 +1093,7 @@
                     },
                     {
                         "label": "picture",
-                        "box_info_original": [612, 191, 301, 353],
+                        "box_info_original": [652, 191, 301, 401],
                         "path": "shot4_picture1.jpg",
 
                         "in_column": 2,
@@ -1129,7 +1129,7 @@
                     },
                     {
                         "label": "picture",
-                        "box_info_original": [661, 140, 228, 320],
+                        "box_info_original": [661, 140, 228, 390],
                         "path": "shot5_picture1.jpg",
 
                         "in_column": 2,
@@ -1165,7 +1165,7 @@
                     },
                     {
                         "label": "picture",
-                        "box_info_original": [661, 140, 228, 320],
+                        "box_info_original": [661, 140, 228, 390],
                         "path": "shot5_picture1.jpg",
 
                         "in_column": 2,
