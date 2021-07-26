@@ -9,6 +9,7 @@ import { useEffect, useRef, useState } from "react";
 
 import useWindowHeight from "../hooks/windowHeight";
 import { INSTRUCTURE_VALUE, MOBILE_VALUE, TEMPLATE_VALUE } from "../store";
+import { LINE_HEIGHT } from "../store";
 import { darkModeAtom, frameHeightAtom, lockAtom, withFrameAtom } from "../atom";
 
 const useBreakpoint = createBreakpoint({ XL: 1280, L: 768, S: 350 });
@@ -53,9 +54,9 @@ function Text({ obj, addFixedData, isFull }) {
         let size = obj.avail_font_size * (isFull ? INSTRUCTURE_VALUE : 1) * (withFrame ? TEMPLATE_VALUE : 1) * 16;
         if (frameHeight && height && ["S", "L"].includes(breakpoint)) {
             size *= ((height - 80) / frameHeight) * MOBILE_VALUE;
-            setGoal({ fontSize: size, lineHeight: 130 });
+            setGoal({ fontSize: size, lineHeight: LINE_HEIGHT });
         } else {
-            setGoal({ fontSize: size, lineHeight: 130 });
+            setGoal({ fontSize: size, lineHeight: LINE_HEIGHT });
         }
     }, [frameHeight, height, isFull, withFrame]);
 

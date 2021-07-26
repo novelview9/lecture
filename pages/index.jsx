@@ -126,6 +126,7 @@ const Main = () => {
     useEffect(() => {
         reset();
         setContent(input.content[modeSelector({ mobile, dark })]);
+        videoComponentRef.current.move();
     }, [dark, mobile]);
     useEffect(() => {
         setHeight(input.template.height);

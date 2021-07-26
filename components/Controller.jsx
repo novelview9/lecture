@@ -39,6 +39,7 @@ function Controller({ reset, togglePlay, jump }) {
     };
 
     const toggleVideo = () => {
+        reset();
         setWithVideo(!withVideo);
     };
 
