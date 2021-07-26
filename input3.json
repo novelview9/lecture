@@ -10,8 +10,9 @@
         "top_img_dark": "header_dark.jpg",
         "bottom_img": "footer.jpg",
         "bottom_img_dark": "footer_dark.jpg",
-
-        "fontUrl": ["https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"]
+        "fontUrl": ["https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"],
+        "toggleTemplateButton":true,
+        "toggleInstructorButton":true        
     },
     "video": {
         "source": "instructor_whole.mp4",

@@ -10,7 +10,9 @@
         "top_img_dark": null,
         "bottom_img": null,
         "bottom_img_dark": null,
-        "fontUrl": ["https://fonts.googleapis.com/css2?family=Roboto&display=swap", "https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Stint+Ultra+Condensed&display=swap"]
+        "fontUrl": ["https://fonts.googleapis.com/css2?family=Roboto&display=swap", "https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Stint+Ultra+Condensed&display=swap"],
+        "toggleTemplateButton":false,
+        "toggleInstructorButton":false
     },
     "video": {
         "source": "video93_3_2.mp4",
@@ -115,7 +117,7 @@
                     },
                     {
                         "label": "text_box",
-                        "box_info_original": [16, 91, 630, 60],
+                        "box_info_original": [16, 91, 600, 60],
                         "in_column": 1,
                         "order": 1,
                         "text_content": "• The presentation of data in pictorial or graphical format\n     - Can be interactive, allowing the user to change inputs and view the resulting patterns and trends",
@@ -126,7 +128,7 @@
                     },
                     {
                         "label": "text_box",
-                        "box_info_original": [16, 159, 630, 45],
+                        "box_info_original": [16, 159, 600, 45],
                         "in_column": 1,
                         "order": 2,
                         "text_content": "• As computer technology has improved, data visualization has been brought to the forefront of corporate work and, more recently, of, public health practice",
@@ -137,7 +139,7 @@
                     },
                     {
                         "label": "text_box",
-                        "box_info_original": [16, 200, 630, 43],
+                        "box_info_original": [16, 200, 600, 43],
                         "in_column": 1,
                         "order": 3,
                         "text_content": "• Large amounts of complex data can be better understand using visualizations as opposed to charts and tables",
@@ -148,7 +150,7 @@
                     },
                     {
                         "label": "text_box",
-                        "box_info_original": [16, 255, 630, 50],
+                        "box_info_original": [16, 255, 600, 50],
                         "in_column": 1,
                         "order": 4,
                         "text_content": "• \"A picture is worth a thousand words\"",
@@ -713,7 +715,7 @@
                         "avail_font_size": 1.0,
                         "typeface": "Stint Ultra Condensed",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     },
                     {
                         "label": "text_box",
@@ -724,7 +726,7 @@
                         "avail_font_size": 1.0,
                         "typeface": "Stint Ultra Condensed",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     },
                     {
                         "label": "text_box",
@@ -735,7 +737,7 @@
                         "avail_font_size": 1.0,
                         "typeface": "Stint Ultra Condensed",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     },
                     {
                         "label": "text_box",
@@ -746,7 +748,7 @@
                         "avail_font_size": 1.0,
                         "typeface": "Stint Ultra Condensed",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     }
                 ]
             },
@@ -774,47 +776,47 @@
                     },
                     {
                         "label": "text_box",
-                        "box_info_original": [16, 91, 630, 60],
+                        "box_info_original": [16, 91, 600, 60],
                         "in_column": 1,
                         "order": 1,
                         "text_content": "• The presentation of data in pictorial or graphical format\n     - Can be interactive, allowing the user to change inputs and view the resulting patterns and trends",
                         "avail_font_size": 0.8,
                         "typeface": "Stint Ultra Condensed",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     },
                     {
                         "label": "text_box",
-                        "box_info_original": [16, 159, 630, 45],
+                        "box_info_original": [16, 159, 600, 45],
                         "in_column": 1,
                         "order": 2,
                         "text_content": "• As computer technology has improved, data visualization has been brought to the forefront of corporate work and, more recently, of, public health practice",
                         "avail_font_size": 0.8,
                         "typeface": "Stint Ultra Condensed",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     },
                     {
                         "label": "text_box",
-                        "box_info_original": [16, 200, 630, 43],
+                        "box_info_original": [16, 200, 600, 43],
                         "in_column": 1,
                         "order": 3,
                         "text_content": "• Large amounts of complex data can be better understand using visualizations as opposed to charts and tables",
                         "avail_font_size": 0.8,
                         "typeface": "Stint Ultra Condensed",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     },
                     {
                         "label": "text_box",
-                        "box_info_original": [16, 255, 630, 50],
+                        "box_info_original": [16, 255, 600, 50],
                         "in_column": 1,
                         "order": 4,
                         "text_content": "• \"A picture is worth a thousand words\"",
                         "avail_font_size": 0.8,
                         "typeface": "Stint Ultra Condensed",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     }
                 ]
             },
@@ -840,7 +842,7 @@
                         "avail_font_size": 1.0,
                         "typeface": "Stint Ultra Condensed",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     },
                     {
                         "label": "text_box",
@@ -851,7 +853,7 @@
                         "avail_font_size": 1.0,
                         "typeface": "Stint Ultra Condensed",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     },
                     {
                         "label": "picture",
@@ -886,7 +888,7 @@
                         "avail_font_size": 1.0,
                         "typeface": "Stint Ultra Condensed",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     },
                     {
                         "label": "text_box",
@@ -897,7 +899,7 @@
                         "avail_font_size": 1.0,
                         "typeface": "Stint Ultra Condensed",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     },
                     {
                         "label": "text_box",
@@ -908,7 +910,7 @@
                         "avail_font_size": 1.0,
                         "typeface": "Stint Ultra Condensed",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     },
                     {
                         "label": "text_box",
@@ -919,7 +921,7 @@
                         "avail_font_size": 1.0,
                         "typeface": "Stint Ultra Condensed",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     },
                     {
                         "label": "text_box",
@@ -930,7 +932,7 @@
                         "avail_font_size": 1.0,
                         "typeface": "Stint Ultra Condensed",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     }
                 ]
             },
@@ -956,7 +958,7 @@
                         "avail_font_size": 1.0,
                         "typeface": "Stint Ultra Condensed",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     },
                     {
                         "label": "text_box",
@@ -967,7 +969,7 @@
                         "avail_font_size": 1.0,
                         "typeface": "Stint Ultra Condensed",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     },
                     {
                         "label": "text_box",
@@ -978,7 +980,7 @@
                         "avail_font_size": 1.0,
                         "typeface": "Stint Ultra Condensed",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     },
                     {
                         "label": "text_box",
@@ -989,7 +991,7 @@
                         "avail_font_size": 1.0,
                         "typeface": "Stint Ultra Condensed",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     }
                 ]
             },
@@ -1015,7 +1017,7 @@
                         "avail_font_size": 1.7,
                         "typeface": "Stint Ultra Condensed",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     },
                     {
                         "label": "picture",
@@ -1068,7 +1070,7 @@
                         "avail_font_size": 1.3,
                         "typeface": "Stint Ultra Condensed",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     },
                     {
                         "label": "text_box",
@@ -1079,7 +1081,7 @@
                         "avail_font_size": 1.3,
                         "typeface": "Stint Ultra Condensed",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     },
                     {
                         "label": "text_box",
@@ -1090,7 +1092,7 @@
                         "avail_font_size": 1.3,
                         "typeface": "Stint Ultra Condensed",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     },
                     {
                         "label": "text_box",
@@ -1101,7 +1103,7 @@
                         "avail_font_size": 1.3,
                         "typeface": "Stint Ultra Condensed",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     },
                     {
                         "label": "text_box",
@@ -1112,7 +1114,7 @@
                         "avail_font_size": 1.3,
                         "typeface": "Stint Ultra Condensed",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     },
                     {
                         "label": "text_box",
@@ -1123,7 +1125,7 @@
                         "avail_font_size": 1.3,
                         "typeface": "Stint Ultra Condensed",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     }
                 ]
             },
@@ -1149,7 +1151,7 @@
                         "avail_font_size": 1.0,
                         "typeface": "Stint Ultra Condensed",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     },
                     {
                         "label": "text_box",
@@ -1160,7 +1162,7 @@
                         "avail_font_size": 1.0,
                         "typeface": "Stint Ultra Condensed",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     },
                     {
                         "label": "text_box",
@@ -1171,7 +1173,7 @@
                         "avail_font_size": 1.0,
                         "typeface": "Stint Ultra Condensed",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     }
                 ]
             },
@@ -1197,7 +1199,7 @@
                         "avail_font_size": 1.0,
                         "typeface": "Stint Ultra Condensed",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     },
                     {
                         "label": "text_box",
@@ -1208,7 +1210,7 @@
                         "avail_font_size": 1.0,
                         "typeface": "Stint Ultra Condensed",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     },
                     {
                         "label": "text_box",
@@ -1219,7 +1221,7 @@
                         "avail_font_size": 1.0,
                         "typeface": "Stint Ultra Condensed",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     }
                 ]
             },
@@ -1245,7 +1247,7 @@
                         "avail_font_size": 1.3,
                         "typeface": "Stint Ultra Condensed",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     },
                     {
                         "label": "text_box",
@@ -1256,7 +1258,7 @@
                         "avail_font_size": 1.3,
                         "typeface": "Stint Ultra Condensed",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     },
                     {
                         "label": "text_box",
@@ -1267,7 +1269,7 @@
                         "avail_font_size": 1.3,
                         "typeface": "Stint Ultra Condensed",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     },
                     {
                         "label": "picture",
@@ -1301,7 +1303,7 @@
                         "avail_font_size": 0.9,
                         "typeface": "Stint Ultra Condensed",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     },
                     {
                         "label": "text_box",
@@ -1312,7 +1314,7 @@
                         "avail_font_size": 0.9,
                         "typeface": "Stint Ultra Condensed",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     },
                     {
                         "label": "text_box",
@@ -1323,7 +1325,7 @@
                         "avail_font_size": 0.9,
                         "typeface": "Stint Ultra Condensed",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     },
                     {
                         "label": "text_box",
@@ -1334,7 +1336,7 @@
                         "avail_font_size": 0.9,
                         "typeface": "Stint Ultra Condensed",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     }
                 ]
             }
@@ -2163,7 +2165,7 @@
                         "avail_font_size": 1.0,
                         "typeface": "Roboto",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     },
                     {
                         "label": "text_box",
@@ -2174,7 +2176,7 @@
                         "avail_font_size": 1.0,
                         "typeface": "Roboto",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     },
                     {
                         "label": "text_box",
@@ -2185,7 +2187,7 @@
                         "avail_font_size": 1.0,
                         "typeface": "Roboto",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     },
                     {
                         "label": "text_box",
@@ -2196,7 +2198,7 @@
                         "avail_font_size": 1.0,
                         "typeface": "Roboto",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     }
                 ]
             },
@@ -2231,7 +2233,7 @@
                         "avail_font_size": 1.0,
                         "typeface": "Roboto",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     },
                     {
                         "label": "text_box",
@@ -2242,7 +2244,7 @@
                         "avail_font_size": 1.0,
                         "typeface": "Roboto",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     }
                 ]
             },
@@ -2268,7 +2270,7 @@
                         "avail_font_size": 1.5,
                         "typeface": "Roboto",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     },
                     {
                         "label": "text_box",
@@ -2279,7 +2281,7 @@
                         "avail_font_size": 1.5,
                         "typeface": "Roboto",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     }
                 ]
             },
@@ -2305,7 +2307,7 @@
                         "avail_font_size": 2.0,
                         "typeface": "Roboto",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     },
                     {
                         "label": "picture",
@@ -2340,7 +2342,7 @@
                         "avail_font_size": 2.0,
                         "typeface": "Roboto",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     },
                     {
                         "label": "picture",
@@ -2357,7 +2359,7 @@
                 "shot_id": 8,
                 "ratio": 0.3,
                 "column": 0,
-                "bg_image": "bg_shot8_dark.jpg",
+                "bg_image": "bg_shot6_dark.jpg",
                 "start_time": 139.0,
                 "end_time": 165.0,
                 "learning_material": [
@@ -2375,7 +2377,7 @@
                         "avail_font_size": 1.8,
                         "typeface": "Roboto",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     },
                     {
                         "label": "text_box",
@@ -2386,7 +2388,7 @@
                         "avail_font_size": 1.8,
                         "typeface": "Roboto",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     },
                     {
                         "label": "text_box",
@@ -2397,7 +2399,7 @@
                         "avail_font_size": 1.8,
                         "typeface": "Roboto",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     }
                 ]
             },
@@ -2423,7 +2425,7 @@
                         "avail_font_size": 1.8,
                         "typeface": "Roboto",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     },
                     {
                         "label": "text_box",
@@ -2434,7 +2436,7 @@
                         "avail_font_size": 1.8,
                         "typeface": "Roboto",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     }
                 ]
             },
@@ -2460,7 +2462,7 @@
                         "avail_font_size": 1.0,
                         "typeface": "Roboto",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     },
                     {
                         "label": "text_box",
@@ -2471,7 +2473,7 @@
                         "avail_font_size": 1.0,
                         "typeface": "Roboto",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     }
                 ]
             },
@@ -2497,7 +2499,7 @@
                         "avail_font_size": 1.8,
                         "typeface": "Roboto",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     },
                     {
                         "label": "text_box",
@@ -2508,7 +2510,7 @@
                         "avail_font_size": 1.8,
                         "typeface": "Roboto",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     }
                 ]
             },
@@ -2535,7 +2537,7 @@
                         "avail_font_size": 1.8,
                         "typeface": "Roboto",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     },
                     {
                         "label": "picture",
@@ -2588,7 +2590,7 @@
                         "avail_font_size": 1.8,
                         "typeface": "Roboto",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     },
                     {
                         "label": "text_box",
@@ -2599,7 +2601,7 @@
                         "avail_font_size": 1.8,
                         "typeface": "Roboto",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     },
                     {
                         "label": "text_box",
@@ -2610,7 +2612,7 @@
                         "avail_font_size": 1.8,
                         "typeface": "Roboto",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     },
                     {
                         "label": "text_box",
@@ -2621,7 +2623,7 @@
                         "avail_font_size": 1.8,
                         "typeface": "Roboto",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     },
                     {
                         "label": "text_box",
@@ -2632,7 +2634,7 @@
                         "avail_font_size": 1.8,
                         "typeface": "Roboto",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     },
                     {
                         "label": "text_box",
@@ -2643,7 +2645,7 @@
                         "avail_font_size": 1.8,
                         "typeface": "Roboto",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     }
                 ]
             },
@@ -2669,7 +2671,7 @@
                         "avail_font_size": 1.0,
                         "typeface": "Roboto",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     },
                     {
                         "label": "text_box",
@@ -2680,7 +2682,7 @@
                         "avail_font_size": 1.0,
                         "typeface": "Roboto",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     },
                     {
                         "label": "text_box",
@@ -2691,7 +2693,7 @@
                         "avail_font_size": 1.0,
                         "typeface": "Roboto",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     }
                 ]
             },
@@ -2717,7 +2719,7 @@
                         "avail_font_size": 1.0,
                         "typeface": "Roboto",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     },
                     {
                         "label": "text_box",
@@ -2728,7 +2730,7 @@
                         "avail_font_size": 1.0,
                         "typeface": "Roboto",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     },
                     {
                         "label": "text_box",
@@ -2739,7 +2741,7 @@
                         "avail_font_size": 1.0,
                         "typeface": "Roboto",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     }
                 ]
             },
@@ -2765,7 +2767,7 @@
                         "avail_font_size": 1.8,
                         "typeface": "Roboto",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     },
                     {
                         "label": "picture",
@@ -2800,11 +2802,11 @@
                         "avail_font_size": 1.8,
                         "typeface": "Roboto",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     },
                     {
                         "label": "picture",
-                        "box_info_original": [412, 48, 231, 275],
+                        "box_info_original": [390, 60, 231, 275],
                         "path": "shot17_picture1.png",
                         "in_column": 2,
                         "order": 1,
@@ -2835,11 +2837,11 @@
                         "avail_font_size": 1.8,
                         "typeface": "Roboto",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     },
                     {
                         "label": "picture",
-                        "box_info_original": [412, 48, 231, 275],
+                        "box_info_original": [390, 60, 231, 275],
                         "path": "shot17_picture1.png",
                         "in_column": 2,
                         "order": 1,
@@ -2870,7 +2872,7 @@
                         "avail_font_size": 1.8,
                         "typeface": "Roboto",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     },
                     {
                         "label": "text_box",
@@ -2881,7 +2883,7 @@
                         "avail_font_size": 1.8,
                         "typeface": "Roboto",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     }
                 ]
             },
@@ -2907,7 +2909,7 @@
                         "avail_font_size": 1.0,
                         "typeface": "Roboto",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     },
                     {
                         "label": "text_box",
@@ -2918,7 +2920,7 @@
                         "avail_font_size": 1.0,
                         "typeface": "Roboto",
                         "color_font": "(253, 253, 253)",
-                        "color_bg": "(30, 30, 30)"
+                        "color_bg": "(47, 48, 49)"
                     }
                 ]
             }
