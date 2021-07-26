@@ -214,7 +214,6 @@ function Content({ data, index, sourcePath, frameInfo, isFull, template }) {
     const [isactive, setIsActive] = useState(false);
     useEffect(() => {
         setIsActive(activity.slide === index);
-        console.log(activity);
     }, [activity.slide]);
     const [state] = useState({ chunkedData, column: data.column });
     const [fixedData, setFixedData] = useState({});

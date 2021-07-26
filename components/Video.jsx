@@ -28,6 +28,15 @@ function Video({ src, content, videoLocation }, ref) {
     useImperativeHandle(
         ref,
         () => ({
+            move: () => {
+                videoRef.current.play();
+                setTimeout(() => {
+                    if (!play) {
+                        videoRef.current.pause();
+                        setPlay(false);
+                    }
+                }, 100);
+            },
             toggle: () => {
                 if (play) {
                     videoRef.current.pause();
