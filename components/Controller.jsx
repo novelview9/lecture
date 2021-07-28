@@ -125,7 +125,7 @@ const Container = styled.div`
     }
     display: flex;
     flex-direction: column;
-    height: 80px;
+    height: 50px;
     padding-top: 5px;
     padding-bottom: 15px;
 `;

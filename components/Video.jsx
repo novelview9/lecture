@@ -20,11 +20,31 @@ function Video({ src, content, videoLocation }, ref) {
     const [duration, setDuration] = useAtom(durationAtom);
     const [percent, setPercent] = useAtom(percentAtom);
     const [current, setCurrent] = useAtom(currentAtom);
+    const [fixed, setFixed] = useState(false);
+    const [viable, setViable] = useState(true);
     const [nodeVideoLocation, setNodeVideoLocation] = useState();
     const [lock] = useAtom(lockAtom);
+    const setFixedTrue = () => {
+        setFixed(true);
+    };
 
     const [play, setPlay] = useAtom(playingAtom);
     const videoRef = useRef();
+    useEffect(() => {
+        if (!nodeVideoLocation) {
+            setViable(false);
+            return;
+        } else {
+            setViable(true);
+        }
+        if (fixed) {
+            return;
+        }
+        const [, , w, h] = nodeVideoLocation;
+        const targetWidth = window.innerWidth * 0.2;
+        const targetHeight = (targetWidth / w) * h;
+        setPositionState((prev) => ({ width: `${targetWidth}px`, height: `${targetHeight}px`, x: window.innerWidth - targetWidth, y: window.innerHeight - targetHeight - 70 }));
+    }, [nodeVideoLocation, fixed]);
     useImperativeHandle(
         ref,
         () => ({
@@ -71,7 +91,7 @@ function Video({ src, content, videoLocation }, ref) {
         const slide = _.findLastIndex(content, (obj) => obj.start_time < time);
         const vl = _.findLast(videoLocation, (obj) => obj.start_time < time);
         if (vl && vl.box_info) {
-            setNodeVideoLocation(true);
+            setNodeVideoLocation(vl.box_info);
         } else {
             setNodeVideoLocation(false);
         }
@@ -92,7 +112,7 @@ function Video({ src, content, videoLocation }, ref) {
         const { videoWidth, videoHeight } = e.currentTarget;
         const targetWidth = window.innerWidth * 0.2;
         const targetHeight = (targetWidth / videoWidth) * videoHeight;
-        setPositionState((prev) => ({ width: `${targetWidth}px`, height: `${targetHeight}px`, x: window.innerWidth - targetWidth, y: window.innerHeight - targetHeight - 100 }));
+        // setPositionState((prev) => ({ width: `${targetWidth}px`, height: `${targetHeight}px`, x: window.innerWidth - targetWidth, y: window.innerHeight - targetHeight - 50 }));
         const minutes = Math.floor(targetDue / 60);
         const seconds = Math.floor(targetDue - 60 * minutes)
             .toString()
@@ -109,9 +129,11 @@ function Video({ src, content, videoLocation }, ref) {
 
     return (
         <CustomRnd
-            visiable={nodeVideoLocation}
+            visiable={viable}
             size={{ width: positionState.width, height: positionState.height, background: "red" }}
             position={{ x: positionState.x, y: positionState.y }}
+            onDragStart={setFixedTrue}
+            onResizeStart={setFixedTrue}
             bounds={".frame"}
             enableResizing={!lock}
             disableDragging={lock}
