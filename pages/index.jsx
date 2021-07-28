@@ -122,11 +122,12 @@ const Main = () => {
     const [dark] = useAtom(darkModeAtom);
     const [mobile] = useAtom(mobileModeAtom);
     const [height, setHeight] = useAtom(frameHeightAtom);
+    const [frame, setWithFrame] = useAtom(withFrame);
+    const [v, setV] = useAtom(withVideo);
     const [content, setContent] = useState(input.content.original);
     useEffect(() => {
         reset();
         setContent(input.content[modeSelector({ mobile, dark })]);
-        videoComponentRef.current.move();
     }, [dark, mobile]);
     useEffect(() => {
         setHeight(input.template.height);
@@ -136,6 +137,7 @@ const Main = () => {
     const [key, setKey] = useState(shortid.generate());
     const reset = () => {
         setKey(() => shortid.generate());
+        videoComponentRef.current.move();
     };
 
     const [withVideo] = useAtom(withVideoAtom);

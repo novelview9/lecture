@@ -136,6 +136,7 @@ const Main = () => {
     const [key, setKey] = useState(shortid.generate());
     const reset = () => {
         setKey(() => shortid.generate());
+        videoComponentRef.current.move();
     };
 
     const [withVideo] = useAtom(withVideoAtom);
