@@ -122,8 +122,6 @@ const Main = () => {
     const [dark] = useAtom(darkModeAtom);
     const [mobile] = useAtom(mobileModeAtom);
     const [height, setHeight] = useAtom(frameHeightAtom);
-    const [frame, setWithFrame] = useAtom(withFrame);
-    const [v, setV] = useAtom(withVideo);
     const [content, setContent] = useState(input.content.original);
     useEffect(() => {
         reset();
@@ -166,6 +164,9 @@ const Main = () => {
                 {input.template.fontUrl.map((url) => {
                     return <link href={url} rel="stylesheet" />;
                 })}
+                <meta name="apple-mobile-web-app-capable" content="yes" />
+                <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+                <meta name="viewport" content="viewport-fit=cover, user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1" />
             </Head>
             <Container className="node">
                 <Loading isLoading={!duration}>
