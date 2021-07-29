@@ -267,12 +267,12 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [155, 53, 453, 75],
+                        "box_info_original": [155, 30, 453, 75],
                         "path": "shot7_title.jpg"
                     },
                     {
                         "label": "text_box",
-                        "box_info_original": [111, 180, 440, 332],
+                        "box_info_original": [111, 130, 440, 332],
                         "in_column": 1,
                         "order": 1,
                         "text_content": "• Maximize share of value-adding activities\n     - Elimination of \"waste\" (muda)\n     - Strive to minimize batch sizes (ideally single piece flow)\n     - Build processes based on true customer requirements\n• Implement stable, standardized processes\n     - Workplace organization\n     - Standard Operating Procedures\n     - Fail-safe processes (Jidoka)",
@@ -283,7 +283,7 @@
                     },
                     {
                         "label": "text_box",
-                        "box_info_original": [574, 180, 463, 470],
+                        "box_info_original": [574, 130, 463, 470],
                         "in_column": 2,
                         "order": 1,
                         "text_content": "• Create a self-learning, continuously improving organization\n  - Create transparency on problems/facilitate immediate identification\n  - Conduct rigorous root-cause problem solving\n  - Make continuous improvement part of the daily work\n• Take a holistic Supply Chain perspective\n  - Customer requirements-driven perspective\n  - Backwards integration to include suppliers\n• People development is the key success factor\n  - Employee skill building is an important part of the TPS",
@@ -534,12 +534,12 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [155, 53, 453, 75],
+                        "box_info_original": [155, 30, 453, 75],
                         "path": "shot7_title_dark.jpg"
                     },
                     {
                         "label": "text_box",
-                        "box_info_original": [111, 180, 440, 332],
+                        "box_info_original": [111, 130, 440, 332],
                         "in_column": 1,
                         "order": 1,
                         "text_content": "• Maximize share of value-adding activities\n     - Elimination of \"waste\" (muda)\n     - Strive to minimize batch sizes (ideally single piece flow)\n     - Build processes based on true customer requirements\n• Implement stable, standardized processes\n     - Workplace organization\n     - Standard Operating Procedures\n     - Fail-safe processes (Jidoka)",
@@ -550,7 +550,7 @@
                     },
                     {
                         "label": "text_box",
-                        "box_info_original": [574, 180, 463, 470],
+                        "box_info_original": [574, 130, 463, 470],
                         "in_column": 2,
                         "order": 1,
                         "text_content": "• Create a self-learning, continuously improving organization\n  - Create transparency on problems/facilitate immediate identification\n  - Conduct rigorous root-cause problem solving\n  - Make continuous improvement part of the daily work\n• Take a holistic Supply Chain perspective\n  - Customer requirements-driven perspective\n  - Backwards integration to include suppliers\n• People development is the key success factor\n  - Employee skill building is an important part of the TPS",
@@ -813,7 +813,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [155, 53, 453, 75],
+                        "box_info_original": [155, 30, 453, 75],
                         "path": "shot7_title.jpg"
                     },
                     {
@@ -1186,7 +1186,7 @@
                 "learning_material": [
                     {
                         "label": "title",
-                        "box_info_original": [155, 53, 453, 75],
+                        "box_info_original": [155, 30, 453, 75],
                         "path": "shot7_title_dark.jpg"
                     },
                     {

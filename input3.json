@@ -12,14 +12,14 @@
         "bottom_img_dark": "footer_dark.jpg",
         "fontUrl": ["https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"],
         "toggleTemplateButton":true,
-        "toggleInstructorButton":true        
+        "toggleInstructorButton":true
     },
     "video": {
         "source": "instructor_whole.mp4",
         "control": [
             {
                 "start_time": 0.0,
-                "box_info": [0, 0, 150, 160]
+                "box_info": [0, 0, 8, 10]
             },
             {
                 "start_time": 144.0,
@@ -27,7 +27,7 @@
             },
             {
                 "start_time": 275.0,
-                "box_info": [0, 0, 150, 160]
+                "box_info": [0, 0, 8, 10]
             },
             {
                 "start_time": 568.0,
