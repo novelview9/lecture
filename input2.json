@@ -1,6 +1,7 @@
 {
     "sourcePath": "/input2/",
     "template": {
+        "disableControl": true,
         "width": 640,
         "height": 360,
         "top_padding": 0,

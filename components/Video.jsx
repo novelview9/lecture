@@ -68,16 +68,13 @@ function Video({ src, content, videoLocation }, ref) {
                 initialSize()
             },
             move: () => {
-                videoRef.current.play();
                 setTimeout(() => {
-                    if (!videoRef.current){
-                        return
-                    }
+                    videoRef.current.play();
                     if (!play) {
                         videoRef.current.pause();
                         setPlay(false);
                     }
-                }, 100);
+                }, 200);
             },
             toggle: () => {
                 if (play) {

@@ -9,8 +9,9 @@ import { useAtom } from "jotai";
 
 import ProgressBar from "./ProgressBar";
 import { currentTimeAtom, darkModeAtom, durationTimeAtom, lockAtom, mobileModeAtom, percentAtom, playingAtom, withFrameAtom, withVideoAtom } from "../atom";
+import { useEffect } from "react";
 
-function Controller({ reset, togglePlay, jump }) {
+function Controller({ reset, togglePlay, jump, disableControl }) {
     const [withFrame, setWithFrame] = useAtom(withFrameAtom);
     const [darkMode, setDarkMode] = useAtom(darkModeAtom);
     const [mobileMode, setMobileMode] = useAtom(mobileModeAtom);
@@ -20,6 +21,12 @@ function Controller({ reset, togglePlay, jump }) {
     const [lock, setLock] = useAtom(lockAtom);
     const [withVideo, setWithVideo] = useAtom(withVideoAtom);
     const [play, setPlay] = useAtom(playingAtom);
+    useEffect(()=> {
+        if(disableControl){
+            setWithFrame(false)
+            setWithVideo(false)
+        }
+    }, [])
     const toggleLock = () => {
         setLock(!lock);
     };
@@ -67,19 +74,22 @@ function Controller({ reset, togglePlay, jump }) {
                         <Revision />
                     </Button>
                 </div>
-                <div>
+                <RightButtons deActivate={!disableControl}>
                     <ToggleButton onClick={toggleFrame} isactive={withFrame}>
                         <p>Template</p>
                     </ToggleButton>
                     <ToggleButton onClick={toggleVideo} isactive={withVideo}>
                         <p>Instructor</p>
                     </ToggleButton>
-                </div>
+                </RightButtons>
             </Buttons>
         </Container>
     );
 }
 
+const RightButtons = styled.div`
+    ${(props)=> !props.deActivate&&css`display:none !important`}
+`
 const ToggleButton = styled.div`
     cursor: pointer;
     border: 1px solid gray;
