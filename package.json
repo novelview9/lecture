@@ -20,7 +20,8 @@
     "styled-components": "^5.2.3",
     "styled-icons": "^10.35.0",
     "styled-reset": "^4.3.4",
-    "use-fit-text": "^2.4.0"
+    "use-fit-text": "^2.4.0",
+    "use-window-orientation": "^1.0.3"
   },
   "devDependencies": {
     "babel-plugin-styled-components": "^1.12.0"

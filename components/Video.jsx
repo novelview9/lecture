@@ -5,6 +5,7 @@ import { forwardRef, useEffect, useImperativeHandle, useRef, useState } from "re
 import { useAtom } from "jotai";
 
 import { activityAtom, currentAtom, currentTimeAtom, durationAtom, durationTimeAtom, lockAtom, percentAtom, playingAtom, withVideoAtom } from "../atom";
+import useOnClickOutside from "../hooks/onClickOutside";
 
 function Video({ src, content, videoLocation }, ref) {
     const [positionState, setPositionState] = useState({
@@ -28,8 +29,26 @@ function Video({ src, content, videoLocation }, ref) {
         setFixed(true);
     };
 
+    const [onActive, setOnActive] = useState(true)
     const [play, setPlay] = useAtom(playingAtom);
     const videoRef = useRef();
+    useOnClickOutside(videoRef, () => setOnActive(false));
+    const initialSize = () => {
+        const video = videoRef.current;
+        const time = video.currentTime;
+        const vl = _.findLast(videoLocation, (obj) => obj.start_time < time);
+        if (!vl){
+            return
+        }
+        if (!vl.box_info){
+            return
+        }
+        const [, , w, h] = vl.box_info;
+        const targetWidth = window.innerWidth * 0.2;
+        const targetHeight = (targetWidth / w) * h;
+        setPositionState((prev) => ({ width: `${targetWidth}px`, height: `${targetHeight}px`, x: window.innerWidth - targetWidth, y: window.innerHeight - targetHeight - 70 }));
+
+    }
     useEffect(() => {
         if (!nodeVideoLocation) {
             setViable(false);
@@ -40,17 +59,20 @@ function Video({ src, content, videoLocation }, ref) {
         if (fixed) {
             return;
         }
-        const [, , w, h] = nodeVideoLocation;
-        const targetWidth = window.innerWidth * 0.2;
-        const targetHeight = (targetWidth / w) * h;
-        setPositionState((prev) => ({ width: `${targetWidth}px`, height: `${targetHeight}px`, x: window.innerWidth - targetWidth, y: window.innerHeight - targetHeight - 70 }));
+        initialSize()
     }, [nodeVideoLocation, fixed]);
     useImperativeHandle(
         ref,
         () => ({
+            initial: () => {
+                initialSize()
+            },
             move: () => {
                 videoRef.current.play();
                 setTimeout(() => {
+                    if (!videoRef.current){
+                        return
+                    }
                     if (!play) {
                         videoRef.current.pause();
                         setPlay(false);
@@ -139,14 +161,17 @@ function Video({ src, content, videoLocation }, ref) {
             disableDragging={lock}
             onDragStop={(e, d) => {
                 setPositionState({ ...positionState, x: d.x, y: d.y });
+                setOnActive(true)
             }}
             onResizeStop={(e, direction, ref, delta, position) => {
+                setOnActive(true)
                 setPositionState({
                     width: ref.style.width,
                     height: ref.style.height,
                     ...position,
                 });
             }}
+            colored={onActive}
         >
             <VideoEl src={src} onTimeUpdate={onTimeEvent} ref={videoRef} active={withVideo} playsInline isDrag={true} onLoadedMetadata={loaded} />
         </CustomRnd>
@@ -157,6 +182,12 @@ const CustomRnd = styled(Rnd)`
     box-sizing: border-box;
     z-index: 100;
     visibility: ${(props) => (props.visiable ? "visiable" : "hidden")};
+    ${(props)=> props.colored&&css`
+        z-index: 10;
+        outline: 1px solid #a9ceeb;
+        box-shadow: 0px 1px 2px 2px #a9ceeb;
+    `
+    }
 `;
 
 const VideoEl = styled.video`

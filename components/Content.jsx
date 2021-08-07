@@ -12,6 +12,7 @@ import RndVideo from "./RndVideo";
 import Text from "./Text";
 import Image, { FixedImage } from "./Image";
 import { activityAtom, lockAtom, withFrameAtom } from "../atom";
+import useOnClickOutside from "../hooks/onClickOutside";
 
 const ChunkedData = React.memo(({ data, addFixedData, index, sourcePath, isFull }) => {
     const sortedData = _.orderBy(data, "order");
@@ -110,10 +111,16 @@ const FixedElement = ({ data, clicked, keyValue, isactive }) => {
     const clear = () => {
         clicked("");
     };
+    const nodeRef = useRef(null)
+    const [onActive, setOnActive] = useState(true)
+
+
 
     if (data.label === "IMG") {
+        useOnClickOutside(nodeRef, () => setOnActive(false));
         return (
             <CustomRnd
+                colored={onActive}
                 enableResizing={!lock}
                 disableDragging={lock}
                 onDragStart={run}
@@ -123,10 +130,12 @@ const FixedElement = ({ data, clicked, keyValue, isactive }) => {
                 size={{ width: state.width, height: state.height, background: "red" }}
                 position={{ x: state.x, y: state.y }}
                 onDragStop={(e, d) => {
+                    setOnActive(true)
                     setState({ ...state, x: d.x, y: d.y });
                 }}
                 style={data.style}
                 onResizeStop={(e, direction, ref, delta, position) => {
+                    setOnActive(true)
                     setState({
                         width: ref.style.width,
                         height: ref.style.height,
@@ -134,12 +143,13 @@ const FixedElement = ({ data, clicked, keyValue, isactive }) => {
                     });
                 }}
             >
-                <RndImg src={data.src} draggable="false" />
+                <RndImg src={data.src} draggable="false" ref={nodeRef}/>
                 {isactive && <Clear onClick={clear}>confirm</Clear>}
             </CustomRnd>
         );
     }
     if (data.label === "VIDEO") {
+        useOnClickOutside(nodeRef, () => setOnActive(false));
         return (
             <CustomRnd
                 enableResizing={!lock}
@@ -151,10 +161,13 @@ const FixedElement = ({ data, clicked, keyValue, isactive }) => {
                 size={{ width: state.width, height: state.height, background: "red" }}
                 position={{ x: state.x, y: state.y }}
                 onDragStop={(e, d) => {
+                    setOnActive(true)
                     setState({ ...state, x: d.x, y: d.y });
                 }}
                 style={data.style}
                 onResizeStop={(e, direction, ref, delta, position) => {
+
+                    setOnActive(true)
                     setState({
                         width: ref.style.width,
                         height: ref.style.height,
@@ -162,14 +175,16 @@ const FixedElement = ({ data, clicked, keyValue, isactive }) => {
                     });
                 }}
             >
-                <RndVideo url={data.src} startTime={data.startTime} />
+                <RndVideo url={data.src} startTime={data.startTime} ref={nodeRef}/>
                 {isactive && <Clear onClick={clear}>confirm</Clear>}
             </CustomRnd>
         );
     }
     if (data.label === "P") {
+        useOnClickOutside(ref, () => setOnActive(false));
         return (
             <CustomRnd
+                colored={onActive}
                 enableResizing={!lock}
                 disableDragging={lock}
                 onDragStart={run}
@@ -179,10 +194,12 @@ const FixedElement = ({ data, clicked, keyValue, isactive }) => {
                 size={{ width: state.width, height: state.height, background: "red" }}
                 position={{ x: state.x, y: state.y }}
                 onDragStop={(e, d) => {
+                    setOnActive(true)
                     setState({ ...state, x: d.x, y: d.y });
                 }}
                 style={data.style}
                 onResizeStop={(e, direction, ref, delta, position) => {
+                    setOnActive(true)
                     setState({
                         width: ref.style.width,
                         height: ref.style.height,
@@ -190,7 +207,7 @@ const FixedElement = ({ data, clicked, keyValue, isactive }) => {
                     });
                 }}
             >
-                <PCon ref={ref} style={{ fontSize }} lineHeight={data.style.lineHeight} font={data.style["font-family"]} weight={data.style["font-weight"]} visiable={visiable}>
+                <PCon ref={ref} style={{ fontSize }} lineHeight={data.style.lineHeight} font={data.style["font-family"]} weight={data.style["font-weight"]} visiable={visiable} >
                     {data.text}
                 </PCon>
                 {isactive && <Clear onClick={clear}>confirm</Clear>}
@@ -341,11 +358,11 @@ const PCon = styled.div`
 const CustomRnd = styled(Rnd)`
     box-sizing: border-box;
     ${(props) =>
-        props.isactive &&
+        props.colored &&
         css`
             z-index: 10;
-            outline: 2px solid #a9ceeb;
-            box-shadow: 0px 2px 5px 5px #a9ceeb;
+            outline: 1px solid #a9ceeb;
+            box-shadow: 0px 1px 2px 2px #a9ceeb;
         `};
 `;
 const RndImg = styled.img`

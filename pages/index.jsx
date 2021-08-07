@@ -12,6 +12,9 @@ import Controller from "../components/Controller";
 import Video from "../components/Video";
 import input from "../input1.json";
 import { darkModeAtom, durationAtom, frameHeightAtom, mobileModeAtom, withVideoAtom } from "../atom";
+import useWindowOrientation from "use-window-orientation";
+
+const useBreakpoint = createBreakpoint({ XL: 1280, L: 768, S: 350 });
 
 const ControllerLine = ({ content }) => {
     const [duration] = useAtom(durationAtom);
@@ -54,13 +57,13 @@ const Loading = styled.div`
 `;
 
 const Circle = styled.div`
-    width: 10px;
+    width: 2px;
     height: 10px;
     position: absolute;
     left: 100%;
     z-index: 999;
-    border-radius: 45%;
-    background-color: yellow;
+    /* border-radius: 45%; */
+    background-color:#25252599;
 `;
 const LinePoint = styled.div`
     position: absolute;
@@ -136,6 +139,7 @@ const Main = () => {
     const reset = () => {
         setKey(() => shortid.generate());
         videoComponentRef.current.move();
+        videoComponentRef.current.initial()
     };
 
     const [withVideo] = useAtom(withVideoAtom);
@@ -156,6 +160,15 @@ const Main = () => {
         topHeight: (input.template.top_padding / input.template.height) * 100,
         bottomHeight: (input.template.bottom_padding / input.template.height) * 100,
     };
+    const {portrait} = useWindowOrientation();
+    const breakpoint = useBreakpoint();
+    useEffect(()=> {
+        if (portrait){
+            reset()
+        }
+
+    }, [portrait])
+
     return (
         <>
             <Head>
@@ -168,7 +181,8 @@ const Main = () => {
                 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
                 <meta name="viewport" content="viewport-fit=cover, user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1" />
             </Head>
-            <Container className="node">
+            <Container className="node" isDark={dark}>
+                {portrait&&breakpoint==='S'&&<Block><p>가로잠금을 해제 후 화면을 가로로 놓아주세요</p></Block>}
                 <Loading isLoading={!duration}>
                     <p>loading..</p>
                 </Loading>
@@ -188,6 +202,18 @@ const Main = () => {
         </>
     );
 };
+
+const Block = styled.div`
+    color: white;
+    position:fixed;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 3000;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+`
 const ControllerContainer = styled.div`
     width: 100%;
     position: relative;
@@ -199,6 +225,7 @@ const InnerContainer = styled.div.attrs({ className: "frame" })`
     align-items: stretch;
     padding-right: 100px;
     position: relative;
+    background-color:transparent;
     ${(props) =>
         props.isFull &&
         css`
@@ -216,7 +243,7 @@ const Container = styled.div`
     box-sizing: border-box;
     align-items: stretch;
     position: relative;
-    background-color: ${(props) => (props.isDark ? rgb(47, 48, 49) : "white")};
+    background-color: ${(props) => (props.isDark ? `rgb(47, 48, 48)` : "white")};
     @supports (-webkit-touch-callout: none) {
         height: -webkit-fill-available;
     }

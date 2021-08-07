@@ -1553,6 +1553,11 @@ locate-path@^5.0.0:
   dependencies:
     p-locate "^4.1.0"
 
+lodash.debounce@^4.0.8:
+  version "4.0.8"
+  resolved "https://registry.yarnpkg.com/lodash.debounce/-/lodash.debounce-4.0.8.tgz#82d79bff30a67c4005ffd5e2515300ad9ca4d7af"
+  integrity sha1-gteb/zCmfEAF/9XiUVMArZyk168=
+
 lodash.sortby@^4.7.0:
   version "4.7.0"
   resolved "https://registry.yarnpkg.com/lodash.sortby/-/lodash.sortby-4.7.0.tgz#edd14c824e2cc9c1e0b0a1b42bb5210516a42438"
@@ -2596,6 +2601,13 @@ use-subscription@1.5.1:
   integrity sha512-Xv2a1P/yReAjAbhylMfFplFKj9GssgTwN7RlcTxBujFQcloStWNDQdc4g4NRWH9xS4i/FDk04vQBptAXoF3VcA==
   dependencies:
     object-assign "^4.1.1"
+
+use-window-orientation@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/use-window-orientation/-/use-window-orientation-1.0.3.tgz#3ced627459d8eb18b77ebf41d890423938eddc5e"
+  integrity sha512-Kgafc/VvdyyZK6SZoPLTIn4b+PNvQHd+WpLv0Z0X3o7HSg0/K3fAUnfHqEQLHYPsbodtWV1TPYJNUHAdkYPUbw==
+  dependencies:
+    lodash.debounce "^4.0.8"
 
 util-deprecate@^1.0.1, util-deprecate@~1.0.1:
   version "1.0.2"
