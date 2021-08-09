@@ -182,7 +182,7 @@ const Base = ({input}) => {
                 <Loading isLoading={!duration}>
                     <p>loading..</p>
                 </Loading>
-                <InnerContainer isFull={!withVideo}>
+                <InnerContainer isFull={!withVideo} disableControl={_.get(input, 'template.disableControl')}>
                     <InnerContent key={key}>
                         {content.map((data, index) => {
                             return <Content key={index} data={data} index={index} sourcePath={input.sourcePath} frameInfo={frameInfo} isFull={!withVideo} template={input.template} />;
@@ -226,6 +226,12 @@ const InnerContainer = styled.div.attrs({ className: "frame" })`
         props.isFull &&
         css`
             padding-right: 0;
+        `};
+    ${(props) =>
+        props.disableControl &&
+        css`
+            padding-left: 100px;
+            padding-right: 100px;
         `};
 `;
 const Container = styled.div`
