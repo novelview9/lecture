@@ -224,7 +224,7 @@ const Clear = styled.button`
     }
 `;
 
-function Content({ data, index, sourcePath, frameInfo, isFull, template }) {
+function Content({ data, index, sourcePath, frameInfo, isFull, template, disableControl }) {
     const chunkedData = _.groupBy(data.learning_material, "in_column");
     const [activity] = useAtom(activityAtom);
     const [withFrame] = useAtom(withFrameAtom);
@@ -250,7 +250,7 @@ function Content({ data, index, sourcePath, frameInfo, isFull, template }) {
     const frameRatio = template.width / template.height;
     if (data.column === 0) {
         return (
-            <Container isactive={isactive} bg={`${sourcePath}${data.bg_image}`}>
+            <Container isactive={isactive} bg={`${sourcePath}${data.bg_image}`} disableControl={disableControl}>
                 <Inner>
                     {frameInfo.topBg && <Frame src={frameInfo.sourcePath + frameInfo.topBg} height={frameInfo.topHeight} isactive={withFrame} />}
                     {/* {titleObj && (
@@ -384,6 +384,12 @@ const Container = styled.div`
     background-size: 100% 100%;
     flex: 1;
     align-items: stretch;
+    ${(props) =>
+        props.disableControl &&
+        css`
+            outline: 1px solid gray;
+        `};
+
 `;
 
 export default React.memo(Content);

@@ -185,7 +185,7 @@ const Base = ({input}) => {
                 <InnerContainer isFull={!withVideo} disableControl={_.get(input, 'template.disableControl')}>
                     <InnerContent key={key}>
                         {content.map((data, index) => {
-                            return <Content key={index} data={data} index={index} sourcePath={input.sourcePath} frameInfo={frameInfo} isFull={!withVideo} template={input.template} />;
+                            return <Content key={index} data={data} index={index} sourcePath={input.sourcePath} frameInfo={frameInfo} isFull={!withVideo} template={input.template} disableControl={_.get(input, 'template.disableControl')}/>;
                         })}
                     </InnerContent>
                     <Video src={videoSource} content={content} ref={videoComponentRef} videoLocation={input.video.control} />
