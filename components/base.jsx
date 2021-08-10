@@ -227,12 +227,6 @@ const InnerContainer = styled.div.attrs({ className: "frame" })`
         css`
             padding-right: 0;
         `};
-    ${(props) =>
-        props.disableControl &&
-        css`
-            padding-left: 100px;
-            padding-right: 100px;
-        `};
 `;
 const Container = styled.div`
     display: flex;

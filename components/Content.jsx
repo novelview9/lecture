@@ -250,6 +250,7 @@ function Content({ data, index, sourcePath, frameInfo, isFull, template, disable
     const frameRatio = template.width / template.height;
     if (data.column === 0) {
         return (
+            <>
             <Container isactive={isactive} bg={`${sourcePath}${data.bg_image}`} disableControl={disableControl}>
                 <Inner>
                     {frameInfo.topBg && <Frame src={frameInfo.sourcePath + frameInfo.topBg} height={frameInfo.topHeight} isactive={withFrame} />}
@@ -271,13 +272,15 @@ function Content({ data, index, sourcePath, frameInfo, isFull, template, disable
                     </PositionedContainer>
                     <Frame src={frameInfo.sourcePath + frameInfo.bottomBg} height={frameInfo.bottomHeight} isactive={withFrame} />
                 </Inner>
+            </Container>
                 {Object.entries(fixedData).map((value) => (
                     <FixedElement data={value[1]} key={value[0]} clicked={clicked} isactive={nodeEl === value[0]} keyValue={value[0]} />
                 ))}
-            </Container>
+                </>
         );
     }
     return (
+        <>
         <Container isactive={isactive} bg={`${sourcePath}${data.bg_image}`}>
             <Inner>
                 {frameInfo.topBG && <Frame src={frameInfo.sourcePath + frameInfo.topBg} height={frameInfo.topHeight} isactive={withFrame} />}
@@ -293,10 +296,11 @@ function Content({ data, index, sourcePath, frameInfo, isFull, template, disable
                 </ColumnContainer>
                 {frameInfo.bottomBg && <Frame src={frameInfo.sourcePath + frameInfo.bottomBg} height={frameInfo.bottomHeight} isactive={withFrame} />}
             </Inner>
-            {Object.entries(fixedData).map((value) => (
-                <FixedElement data={value[1]} key={value[0]} clicked={clicked} isactive={nodeEl === value[0]} keyValue={value[0]} />
-            ))}
         </Container>
+        {Object.entries(fixedData).map((value) => (
+            <FixedElement data={value[1]} key={value[0]} clicked={clicked} isactive={nodeEl === value[0]} keyValue={value[0]} />
+        ))}
+        </>
     );
 }
 const Frame = styled.img`
@@ -387,9 +391,10 @@ const Container = styled.div`
     ${(props) =>
         props.disableControl &&
         css`
+            margin-left:100px;
+            margin-right:100px;
             outline: 1px solid gray;
         `};
-
 `;
 
 export default React.memo(Content);
