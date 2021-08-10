@@ -251,7 +251,7 @@ function Content({ data, index, sourcePath, frameInfo, isFull, template, disable
     if (data.column === 0) {
         return (
             <>
-        <Container isactive={isactive}>
+        <Container isactive={isactive} >
             <Inner bg={`${sourcePath}${data.bg_image}`} disableControl={disableControl}>
                     {frameInfo.topBg && <Frame src={frameInfo.sourcePath + frameInfo.topBg} height={frameInfo.topHeight} isactive={withFrame} />}
                     {/* {titleObj && (
@@ -281,8 +281,8 @@ function Content({ data, index, sourcePath, frameInfo, isFull, template, disable
     }
     return (
         <>
-        <Container isactive={isactive}>
-            <Inner bg={`${sourcePath}${data.bg_image}`} disableContro={disableControl}>
+        <Container isactive={isactive} >
+            <Inner bg={`${sourcePath}${data.bg_image}`} disableControl={disableControl}>
                 {frameInfo.topBG && <Frame src={frameInfo.sourcePath + frameInfo.topBg} height={frameInfo.topHeight} isactive={withFrame} />}
                 {titleObj && (
                     <TitleContainer>
@@ -321,6 +321,7 @@ const Inner = styled.div`
     ${(props)=> props.disableControl && css`
             margin-left:100px;
             margin-right:100px;
+            outline: 1px solid gray;
         `
     }
 `;
@@ -395,9 +396,6 @@ const Container = styled.div`
     ${(props) =>
         props.disableControl &&
         css`
-            margin-left:100px;
-            margin-right:100px;
-            outline: 1px solid gray;
         `};
 `;
 
