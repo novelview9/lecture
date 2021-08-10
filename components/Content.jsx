@@ -144,7 +144,7 @@ const FixedElement = ({ data, clicked, keyValue, isactive }) => {
                 }}
             >
                 <RndImg src={data.src} draggable="false" ref={nodeRef}/>
-                {isactive && <Clear onClick={clear}>confirm</Clear>}
+                {/* {isactive && <Clear onClick={clear}>confirm</Clear>} */}
             </CustomRnd>
         );
     }
@@ -176,7 +176,7 @@ const FixedElement = ({ data, clicked, keyValue, isactive }) => {
                 }}
             >
                 <RndVideo url={data.src} startTime={data.startTime} ref={nodeRef}/>
-                {isactive && <Clear onClick={clear}>confirm</Clear>}
+                {/* {isactive && <Clear onClick={clear}>confirm</Clear>} */}
             </CustomRnd>
         );
     }
@@ -210,7 +210,7 @@ const FixedElement = ({ data, clicked, keyValue, isactive }) => {
                 <PCon ref={ref} style={{ fontSize }} lineHeight={data.style.lineHeight} font={data.style["font-family"]} weight={data.style["font-weight"]} visiable={visiable} >
                     {data.text}
                 </PCon>
-                {isactive && <Clear onClick={clear}>confirm</Clear>}
+                {/* {isactive && <Clear onClick={clear}>confirm</Clear>} */}
             </CustomRnd>
         );
     }
@@ -251,8 +251,8 @@ function Content({ data, index, sourcePath, frameInfo, isFull, template, disable
     if (data.column === 0) {
         return (
             <>
-            <Container isactive={isactive} bg={`${sourcePath}${data.bg_image}`} disableControl={disableControl}>
-                <Inner>
+        <Container isactive={isactive}>
+            <Inner bg={`${sourcePath}${data.bg_image}`} disableControl={disableControl}>
                     {frameInfo.topBg && <Frame src={frameInfo.sourcePath + frameInfo.topBg} height={frameInfo.topHeight} isactive={withFrame} />}
                     {/* {titleObj && (
                         <TitleContainer>
@@ -272,17 +272,17 @@ function Content({ data, index, sourcePath, frameInfo, isFull, template, disable
                     </PositionedContainer>
                     <Frame src={frameInfo.sourcePath + frameInfo.bottomBg} height={frameInfo.bottomHeight} isactive={withFrame} />
                 </Inner>
-            </Container>
                 {Object.entries(fixedData).map((value) => (
                     <FixedElement data={value[1]} key={value[0]} clicked={clicked} isactive={nodeEl === value[0]} keyValue={value[0]} />
                 ))}
+            </Container>
                 </>
         );
     }
     return (
         <>
-        <Container isactive={isactive} bg={`${sourcePath}${data.bg_image}`}>
-            <Inner>
+        <Container isactive={isactive}>
+            <Inner bg={`${sourcePath}${data.bg_image}`} disableContro={disableControl}>
                 {frameInfo.topBG && <Frame src={frameInfo.sourcePath + frameInfo.topBg} height={frameInfo.topHeight} isactive={withFrame} />}
                 {titleObj && (
                     <TitleContainer>
@@ -296,10 +296,10 @@ function Content({ data, index, sourcePath, frameInfo, isFull, template, disable
                 </ColumnContainer>
                 {frameInfo.bottomBg && <Frame src={frameInfo.sourcePath + frameInfo.bottomBg} height={frameInfo.bottomHeight} isactive={withFrame} />}
             </Inner>
-        </Container>
         {Object.entries(fixedData).map((value) => (
             <FixedElement data={value[1]} key={value[0]} clicked={clicked} isactive={nodeEl === value[0]} keyValue={value[0]} />
         ))}
+        </Container>
         </>
     );
 }
@@ -310,11 +310,19 @@ const Frame = styled.img`
 `;
 
 const Inner = styled.div`
+    padding-top: 16px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: ${(props) => (props.bg ? `url(${props.bg})` : "none")};
     display: flex;
     flex-direction: column;
     flex: 1;
     align-items: stretch;
-    max-height: 85vh;
+    ${(props)=> props.disableControl && css`
+            margin-left:100px;
+            margin-right:100px;
+        `
+    }
 `;
 
 const PositionedCanvas = styled.div`
@@ -381,11 +389,7 @@ const InnerColumn = styled.div`
 `;
 
 const Container = styled.div`
-    padding-top: 16px;
     display: ${(props) => (props.isactive ? "flex" : "none")};
-    background-image: ${(props) => (props.bg ? `url(${props.bg})` : "none")};
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
     flex: 1;
     align-items: stretch;
     ${(props) =>
